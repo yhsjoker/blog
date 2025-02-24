@@ -1,0 +1,894 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>数据结构实验四 | Yhs_JokerのBlog</title>
+        <meta name="author" content="Yhs_Joker" />
+        <meta name="description" content="There is only one kind of heroism in the world, which is to love life after knowing the truth of life." />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/avatar.jpg" />
+        <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>YHS_JOKERのBLOG</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;YHS_JOKERのBLOG</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div class="article">
+    <div>
+        <h1>数据结构实验四</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/11/17
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E4%BD%9C%E4%B8%9A/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                作业
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="color: #ff7d73">数据结构</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/C/" style="color: #03a9f4">C++</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h2 id="第1关-基于哈夫曼树的数据压缩算法"><a href="#第1关-基于哈夫曼树的数据压缩算法" class="headerlink" title="第1关 基于哈夫曼树的数据压缩算法"></a>第1关 基于哈夫曼树的数据压缩算法</h2><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;string.h&gt;
+#define MAXSIZE 100
+using namespace std;
+typedef struct
+&#123;//哈夫曼树结点的形式
+    int weight;               //结点的权值
+    int parent,lchild,rchild;  //结点的双亲、左孩子、右孩子的下标
+&#125;HTNode,*HuffmanTree;       //动态分配数组存储哈夫曼树
+typedef char **HuffmanCode;   //定义编码表类型
+int Search(char a[],char ch)
+&#123;//查找数组中字符ch所在的位置，返回数组下标，否则返回-1
+    for(int i = 0; a[i]; i++)&#123;
+        if(a[i] == ch) return i;
+    &#125;
+    return -1;
+&#125;
+void Sort(char a[],int b[],int len)
+&#123;//按ASCII码冒泡排序
+    for(int i = len - 1; i &gt;= 0; i--)&#123;
+        for(int j = 0; j &lt; i; j++)&#123;
+            if(a[j] &gt; a[j + 1])&#123;
+                swap(a[j], a[j + 1]);
+                swap(b[j], b[j + 1]);
+            &#125;
+        &#125;
+    &#125;
+&#125;
+void Select_min(HuffmanTree HT,int n,int &amp;s1,int &amp;s2)
+&#123;// 在HT[k](1≤k≤i-1）中选择两个其双亲域为0且权值最小的结点，并返回它们在HT中的序号s1和s2
+    int m_1 = MAXSIZE, m_2 = MAXSIZE;
+    for(int i = 1; i &lt;= n; i++)&#123;
+        if(HT[i].parent == 0)&#123;
+            if(HT[i].weight &lt; m_1)&#123;
+                m_1 = HT[i].weight;
+                s1 = i;
+            &#125;
+        &#125;
+    &#125;
+    for(int i = 1; i &lt;= n; i++)&#123;
+        if(HT[i].parent == 0 &amp;&amp; i != s1)&#123;
+            if(HT[i].weight &lt; m_2)&#123;
+                m_2 = HT[i].weight;
+                s2 = i;
+            &#125;
+        &#125;
+    &#125;
+&#125;
+int m;
+void CreateHuffmanTree(HuffmanTree &amp;HT,int n,int b[])
+&#123;//构造哈夫曼树HT
+    if(n &lt;= 1) return;
+    int s1, s2;
+    m = 2 * n - 1;
+    HT = new HTNode[m + 1];
+    for(int i = 1; i &lt;= m; i++)&#123;
+        HT[i].parent = 0;
+        HT[i].lchild = 0;
+        HT[i].rchild = 0;
+    &#125;
+    for(int i = 1; i &lt;= n; i++)
+        HT[i].weight = b[i - 1];
+  
+    for(int i = n + 1; i &lt;= m; i++)
+    &#123;
+        Select_min(HT, i - 1, s1, s2);
+       
+        HT[s1].parent = i;
+        HT[s2].parent = i;
+        HT[i].lchild = s1;
+        HT[i].rchild = s2;
+        HT[i].weight = HT[s1].weight + HT[s2].weight;
+    &#125;
+&#125;
+void CreateHuffmanCode(HuffmanTree HT,HuffmanCode &amp;HC,int n)
+&#123;//从叶子到根逆向求每个字符的哈夫曼编码，存储在编码表HC中
+    HC = new char*[n + 1];
+    char* cd;
+    int c,f,start;
+    cd = new char[n];
+    cd[n - 1] = &#39;\0&#39;;
+    for(int i = 1; i &lt;= n; i++)
+    &#123;
+        start = n - 1;   
+        c = i;
+        f = HT[i].parent; 
+        while(f != 0)   
+        &#123;
+            --start;
+            if(HT[f].lchild == i)
+                cd[start] = &#39;0&#39;;
+            else        
+                cd[start] = &#39;1&#39;;
+            c = f;
+            f = HT[c].parent;      
+        &#125;                       
+        HC[i] = new char[n - start];
+        strcpy(HC[i], &amp;cd[start]);
+    &#125;
+    delete cd;
+&#125;
+void CharFrequency(char ch[],char a[],int b[],int &amp;j)
+&#123;//统计词频
+    int pos;
+    for(int i = 0; ch[i] != &#39;\0&#39;; i++)&#123;
+        pos = Search(a,ch[i]);
+        if(pos == -1)  
+        &#123;
+            a[j] = ch[i];  
+            a[j+1] = &#39;\0&#39;;
+            b[j]++;
+            j++; 
+        &#125;
+        else
+        &#123;
+            b[pos]++;
+        &#125;
+    &#125;
+&#125;
+void PrintHT(HuffmanTree HT)
+&#123;//输出哈夫曼树的存储结构的终态
+    for(int i = 1; i &lt;= m; i++)&#123;
+        cout &lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; HT[i].weight &lt;&lt; &quot; &quot; &lt;&lt; HT[i].parent &lt;&lt; &quot; &quot; &lt;&lt; HT[i].lchild &lt;&lt; &quot; &quot; &lt;&lt; HT[i].rchild &lt;&lt; &#39;\n&#39;;
+    &#125;
+&#125;
+void PrintHC(HuffmanCode HC,char a[],int j)
+&#123;//输出每个字符的哈夫曼编码
+    for(int i = 1; i &lt;= j; i++)&#123;
+        if(i != j)
+            cout &lt;&lt; a[i - 1] &lt;&lt; &quot;:&quot; &lt;&lt; HC[i] &lt;&lt; &quot; &quot;;
+        else
+            cout &lt;&lt; a[i - 1] &lt;&lt; &quot;:&quot; &lt;&lt; HC[i] &lt;&lt; &#39;\n&#39;;
+    &#125;
+&#125;
+
+</code></pre>
+<h2 id="第2关-基于二叉链表的树结构相等的判断"><a href="#第2关-基于二叉链表的树结构相等的判断" class="headerlink" title="第2关 基于二叉链表的树结构相等的判断"></a>第2关 基于二叉链表的树结构相等的判断</h2><h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp"> #include&lt;iostream&gt;
+using namespace std;
+typedef struct BiTNode
+&#123;
+    char data;
+    struct BiTNode *lchild,*rchild;
+&#125;BiTNode,*BiTree;
+void CreateBiTree(BiTree &amp;T,char S[],int &amp;i)
+&#123;////先序建立二叉树
+/**************begin************/
+    if(S[i] == &#39;0&#39;)&#123;
+        T = nullptr;
+        return;
+    &#125;
+    T = new BiTNode;
+    T -&gt; data = S[i];
+    CreateBiTree(T -&gt; lchild, S, ++i);
+    CreateBiTree(T -&gt; rchild, S, ++i);
+    /**************end************/
+&#125;
+
+int Compare(BiTree T1,BiTree T2)
+&#123;//判断两棵二叉树是否相等，不相等返回0，相等返回1
+/**************begin************/
+    if(!T1 &amp;&amp; !T2) return 1;
+    if(T1 &amp;&amp; !T2) return 0;
+    if(!T1 &amp;&amp; T2) return 0;
+    if(T1 -&gt; data != T2 -&gt; data) return 0;
+    return Compare(T1 -&gt; lchild, T2 -&gt; lchild) &amp;&amp; Compare(T1 -&gt; rchild, T2 -&gt; rchild);
+    /**************end************/
+&#125;
+</code></pre>
+<h2 id="第3关-基于二叉链表的二叉树左右孩子的交换"><a href="#第3关-基于二叉链表的二叉树左右孩子的交换" class="headerlink" title="第3关 基于二叉链表的二叉树左右孩子的交换"></a>第3关 基于二叉链表的二叉树左右孩子的交换</h2><h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp"> #include&lt;iostream&gt;
+#include&lt;cstring&gt;
+using namespace std;
+typedef struct BiTNode
+&#123;
+    char data;
+    struct BiTNode *lchild,*rchild;
+&#125;BiTNode,*BiTree;
+void CreateBiTree(BiTree &amp;T,char S[],int &amp;i)
+&#123;//先序建立二叉树
+    if(S[i]==&#39;0&#39;)
+        T=NULL;
+    else
+    &#123;
+        T=new BiTNode;
+        T-&gt;data=S[i];
+        CreateBiTree(T-&gt;lchild,S,++i);
+        CreateBiTree(T-&gt;rchild,S,++i);
+    &#125;
+&#125;
+
+void ChangeRL(BiTree &amp;T)
+&#123;//二叉树左右孩子的交换
+/**************begin************/
+    if(!T) return;
+    swap(T -&gt; lchild, T -&gt; rchild);
+    ChangeRL(T -&gt; lchild);
+    ChangeRL(T -&gt; rchild);
+
+    
+    /**************end************/
+&#125;
+
+void PreOrderTraverse(BiTree T)
+&#123;//先序遍历
+    if(T)
+    &#123;
+        cout&lt;&lt;T-&gt;data;
+        PreOrderTraverse(T-&gt;lchild);
+        PreOrderTraverse(T-&gt;rchild);
+    &#125;
+&#125;
+</code></pre>
+<h2 id="第4关-基于二叉链表的二叉树的双序遍历"><a href="#第4关-基于二叉链表的二叉树的双序遍历" class="headerlink" title="第4关 基于二叉链表的二叉树的双序遍历"></a>第4关 基于二叉链表的二叉树的双序遍历</h2><h3 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp"> #include&lt;iostream&gt;
+#include &lt;string.h&gt;
+using namespace std;
+typedef struct BiTNode
+&#123;
+    char data;
+    struct BiTNode *lchild,*rchild;
+&#125;BiTNode,*BiTree;
+void CreateBiTree(BiTree &amp;T,char S[],int &amp;i)
+&#123;//先序建立二叉树
+    if(S[i]==&#39;0&#39;)
+        T=NULL;
+    else
+    &#123;
+        T=new BiTNode;
+        T-&gt;data=S[i];
+        CreateBiTree(T-&gt;lchild,S,++i);
+        CreateBiTree(T-&gt;rchild,S,++i);
+    &#125;
+&#125;
+void DoubleTraverse(BiTree T)
+&#123;//双序遍历二叉树T的递归算法
+/**************begin************/
+    if(!T) return;
+    cout &lt;&lt; T -&gt; data;
+    DoubleTraverse(T -&gt; lchild);
+    cout &lt;&lt; T -&gt; data;
+    DoubleTraverse(T -&gt; rchild);
+
+    /**************end************/
+&#125;
+</code></pre>
+<h2 id="第5关-基于二叉链表的二叉树最大宽度的计算"><a href="#第5关-基于二叉链表的二叉树最大宽度的计算" class="headerlink" title="第5关 基于二叉链表的二叉树最大宽度的计算"></a>第5关 基于二叉链表的二叉树最大宽度的计算</h2><h3 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp"> #include &lt;iostream&gt;
+#include &lt;string.h&gt;
+using namespace std;
+
+typedef struct BiTNode
+&#123;
+    char data;
+    struct BiTNode *lchild,*rchild;
+&#125;BiTNode,*BiTree;
+
+BiTree CreateBiTree(int &amp;pos, char *str)
+&#123;// 先序建立二叉树
+    if(str[pos] == &#39;0&#39;) return nullptr;
+    BiTree T = new BiTNode;
+    T -&gt; data = str[pos];
+    T -&gt; lchild = CreateBiTree(++pos, str);
+    T -&gt; rchild = CreateBiTree(++pos, str);
+    return T;
+&#125;
+
+int Width(BiTree T)
+&#123;// 求二叉树T最大宽度
+   static BiTree q[10000];
+   int hh = 0, tt = -1;
+   q[++tt] = T;
+   int max_width = 0;
+   while(hh &lt;= tt)&#123;
+        int width = tt - hh + 1;
+        max_width = max(max_width, width);
+        for(int i = 0; i &lt; width; i++)&#123;
+            auto u = q[hh++];
+            if(u -&gt; lchild) q[++tt] = u -&gt; lchild;
+            if(u -&gt; rchild) q[++tt] = u -&gt; rchild;
+        &#125;
+   &#125;
+   return max_width;
+&#125;
+</code></pre>
+<h2 id="第6关-基于二叉链表的二叉树最长路径的求解"><a href="#第6关-基于二叉链表的二叉树最长路径的求解" class="headerlink" title="第6关 基于二叉链表的二叉树最长路径的求解"></a>第6关 基于二叉链表的二叉树最长路径的求解</h2><h3 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp"> #include&lt;iostream&gt;
+#define MAXSIZE 100
+using namespace std;
+typedef struct BiTNode
+&#123;
+    char data;
+    struct BiTNode *lchild,*rchild;
+&#125;BiTNode,*BiTree;
+
+void CreateBiTree(BiTree &amp;T,char S[],int &amp;i)
+&#123;//先序建立二叉树
+    if(S[i]==&#39;0&#39;)
+        T=NULL;
+    else
+    &#123;
+        T=new BiTNode;
+        T-&gt;data=S[i];
+        CreateBiTree(T-&gt;lchild,S,++i);
+        CreateBiTree(T-&gt;rchild,S,++i);
+    &#125;
+&#125;
+
+int GetDepth(BiTree T)&#123;
+    if(!T) return 0;
+    return max(GetDepth(T -&gt; lchild), GetDepth(T -&gt; rchild)) + 1;
+&#125;
+
+void GetPath(BiTree T, BiTree l[], int &amp;longest, int length)&#123;
+    if(longest == length) return;
+    if(!T)&#123;
+        return;
+    &#125;
+    l[++longest] = T;
+    if(longest == length) return;
+    GetPath(T -&gt; lchild, l, longest, length);
+    if(longest == length) return;
+    GetPath(T -&gt; rchild, l, longest, length);
+    if(longest == length) return;
+    longest--;
+&#125;
+
+void LongestPath(BiTree T,BiTree l[],int &amp;longest)
+&#123;//二叉树最长路径的求解
+    int depth = GetDepth(T);
+    GetPath(T, l, longest, depth);
+&#125;
+</code></pre>
+<h2 id="第7关-基于二叉链表的二叉树叶子结点到根结点的路径的求解"><a href="#第7关-基于二叉链表的二叉树叶子结点到根结点的路径的求解" class="headerlink" title="第7关 基于二叉链表的二叉树叶子结点到根结点的路径的求解"></a>第7关 基于二叉链表的二叉树叶子结点到根结点的路径的求解</h2><h3 id="代码-6"><a href="#代码-6" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp"> #include&lt;iostream&gt;
+using namespace std;
+typedef struct BiTNode
+&#123;
+    char data;
+    struct BiTNode *lchild,*rchild;
+&#125;BiTNode,*BiTree;
+
+void CreateBiTree(BiTree &amp;T,char S[],int &amp;i)
+&#123;//先序建立二叉树
+    if(S[i]==&#39;0&#39;)
+        T=NULL;
+    else
+    &#123;
+        T=new BiTNode;
+        T-&gt;data=S[i];
+        CreateBiTree(T-&gt;lchild,S,++i);
+        CreateBiTree(T-&gt;rchild,S,++i);
+    &#125;
+&#125;
+
+void AllPath(BiTree T,char path[],int pathlen)
+&#123;//二叉树叶子结点到根结点的路径的求解
+/**************begin************/
+    if(!T) return;
+    path[pathlen++] = T -&gt; data;
+    if(!T -&gt; lchild &amp;&amp; !T -&gt; rchild)&#123;
+        for(int i = pathlen - 1; i &gt;= 0; i--)&#123;
+            cout &lt;&lt; path[i];
+        &#125;
+        cout &lt;&lt; &#39;\n&#39;;
+    &#125;
+    AllPath(T -&gt; lchild, path, pathlen);
+    AllPath(T -&gt; rchild, path, pathlen);
+    
+    /**************end************/
+&#125;
+</code></pre>
+<h2 id="第8关-基于二叉链表的二叉树的遍历"><a href="#第8关-基于二叉链表的二叉树的遍历" class="headerlink" title="第8关 基于二叉链表的二叉树的遍历"></a>第8关 基于二叉链表的二叉树的遍历</h2><h3 id="代码-7"><a href="#代码-7" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp"> #include&lt;iostream&gt;
+#include&lt;string.h&gt;
+using namespace std;
+typedef struct BiTNode
+&#123;
+    char data;
+    struct BiTNode *lchild,*rchild;
+&#125;BiTNode,*BiTree;
+void CreateBiTree(BiTree &amp;T,char S[],int &amp;i)
+&#123;//先序建立二叉树
+    if(S[i]==&#39;0&#39;)
+        T=NULL;
+    else
+    &#123;
+        T=new BiTNode;
+        T-&gt;data=S[i];
+        CreateBiTree(T-&gt;lchild,S,++i);
+        CreateBiTree(T-&gt;rchild,S,++i);
+    &#125;
+&#125;
+void PreOrderTraverse(BiTree T)
+&#123;//二叉树的先序遍历
+/**************begin************/
+    if(!T) return;
+    cout &lt;&lt; T -&gt; data;
+    PreOrderTraverse(T -&gt; lchild);
+    PreOrderTraverse(T -&gt; rchild);
+
+    /**************end************/
+&#125;
+void InOrderTraverse(BiTree T)
+&#123;//二叉树的中序遍历
+/**************begin************/
+    if(!T) return;
+    InOrderTraverse(T -&gt; lchild);
+    cout &lt;&lt; T -&gt; data;
+    InOrderTraverse(T -&gt; rchild);
+
+    /**************end************/
+&#125;
+void PostOrderTraverse(BiTree T)
+&#123;//二叉树的后序遍历
+/**************begin************/
+    if(!T) return;
+    PostOrderTraverse(T -&gt; lchild);
+    PostOrderTraverse(T -&gt; rchild);
+    cout &lt;&lt; T -&gt; data;
+
+    /**************end************/
+&#125;
+</code></pre>
+<h2 id="第9关-基于二叉链表的二叉树结点个数的统计"><a href="#第9关-基于二叉链表的二叉树结点个数的统计" class="headerlink" title="第9关 基于二叉链表的二叉树结点个数的统计"></a>第9关 基于二叉链表的二叉树结点个数的统计</h2><h3 id="代码-8"><a href="#代码-8" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp"> #include&lt;iostream&gt;
+#include&lt;string.h&gt;
+using namespace std;
+
+typedef struct BiTNode
+&#123;
+    char data;
+    struct BiTNode *lchild,*rchild;
+&#125;BiTNode,*BiTree;
+void CreateBiTree(BiTree &amp;T,char S[],int &amp;i)
+&#123;//先序建立二叉树
+    if(S[i]==&#39;0&#39;)
+        T=NULL;
+    else
+    &#123;
+        T=new BiTNode;
+        T-&gt;data=S[i];
+        CreateBiTree(T-&gt;lchild,S,++i);
+        CreateBiTree(T-&gt;rchild,S,++i);
+    &#125;
+&#125;
+void Count(BiTree T,int &amp;a,int &amp;b,int &amp;c)
+&#123;//二叉树结点个数的统计
+    int cnt = 0;
+    if(T -&gt; lchild)&#123;
+        cnt++;
+        Count(T -&gt; lchild, a, b, c);
+    &#125;
+    if(T -&gt; rchild)&#123;
+        cnt++;
+        Count(T -&gt; rchild, a, b, c);
+    &#125;
+
+    if(cnt == 0) a++;
+    else if(cnt == 1) b++;
+    else c++;
+&#125;
+</code></pre>
+<h2 id="第10关-基于二叉链表的二叉树高度的计算"><a href="#第10关-基于二叉链表的二叉树高度的计算" class="headerlink" title="第10关 基于二叉链表的二叉树高度的计算"></a>第10关 基于二叉链表的二叉树高度的计算</h2><h3 id="代码-9"><a href="#代码-9" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp"> #include&lt;iostream&gt;
+#include &lt;string.h&gt;
+using namespace std;
+typedef struct BiTNode
+&#123;
+    char data;
+    struct BiTNode *lchild,*rchild;
+&#125;BiTNode,*BiTree;
+void CreateBiTree(BiTree &amp;T,char S[],int &amp;i)
+&#123;//先序建立二叉树
+    if(S[i]==&#39;0&#39;)
+        T=NULL;
+    else
+    &#123;
+        T=new BiTNode;
+        T-&gt;data=S[i];
+        CreateBiTree(T-&gt;lchild,S,++i);
+        CreateBiTree(T-&gt;rchild,S,++i);
+    &#125;
+&#125;
+int Depth(BiTree T)
+&#123;//二叉树高度的计算
+/**************begin************/
+    if(!T) return 0;
+    return max(Depth(T -&gt; lchild), Depth(T -&gt; rchild)) + 1;
+    /**************end************/
+&#125;
+</code></pre>
+<h2 id="第11关-基于二叉树的表达式求值"><a href="#第11关-基于二叉树的表达式求值" class="headerlink" title="第11关 基于二叉树的表达式求值"></a>第11关 基于二叉树的表达式求值</h2><h3 id="代码-10"><a href="#代码-10" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp"> #include&lt;iostream&gt;
+#define MAXSIZE 100
+using namespace std;
+typedef struct BiTNode
+&#123;//二叉树的双链表存储表示
+    double data;          //结点数据域
+    bool ischaracter;      //判断结点是否为字符
+    struct BiTNode *lchild,*rchild;    //左右孩子指针
+&#125;BiTNode,*BiTree;
+typedef struct
+&#123;//字符栈的存储结构
+    char *base;     //栈底指针
+    char *top;       //栈顶指针
+    int stacksize;   //栈可用的最大容量
+&#125;SqStack1;
+typedef struct
+&#123;//结点栈的存储结构
+    BiTree *base;
+    BiTree *top;
+    int stacksize;
+&#125;SqStack2;
+void InitStack1(SqStack1 &amp;s)
+&#123;//字符栈的初始化
+    s.base = new char[MAXSIZE];
+    s.top = s.base;
+    s.stacksize = MAXSIZE;
+&#125;
+void InitStack2(SqStack2 &amp;s)
+&#123;//结点栈的初始化
+    s.base = new BiTree[MAXSIZE];
+    s.top = s.base;
+    s.stacksize = MAXSIZE;
+&#125;
+void Push1(SqStack1 &amp;s,char ch)
+&#123;//字符入栈操作
+    if(s.top - s.base == s.stacksize)&#123;
+        return;
+    &#125;
+    *s.top++ = ch;
+&#125;
+void Push2(SqStack2 &amp;s,BiTree t)
+&#123;//结点入栈操作
+    if(s.top - s.base == s.stacksize)&#123;
+        return;
+    &#125;
+    *s.top++ = t;
+&#125;
+void Pop1(SqStack1 &amp;s,char &amp;ch)
+&#123;//字符出栈操作
+    if(s.top == s.base) return;
+    ch = *(--s.top);
+&#125;
+void Pop2(SqStack2 &amp;s,BiTree &amp;t)
+&#123;//结点出栈操作
+    if(s.top == s.base) return;
+    t = *(--s.top);
+&#125;
+char GetTop(SqStack1 s)
+&#123;//取字符栈的栈顶元素
+    return *(s.top - 1);
+&#125;
+bool EmptyStack(SqStack1 s)
+&#123;//栈的判空操作
+    return s.base == s.top;
+&#125;
+char Precede(char a,char b)
+&#123;//判断符号的优先级
+    if(a == &#39;+&#39; || a == &#39;-&#39;)&#123;
+        if(b == &#39;+&#39; || b == &#39;-&#39; || b == &#39;)&#39; || b == &#39;=&#39;)&#123;
+            return &#39;&gt;&#39;;
+        &#125;
+        else&#123;
+            return &#39;&lt;&#39;;
+        &#125;
+    &#125;
+    else if(a == &#39;*&#39; || a == &#39;/&#39;)&#123;
+        if(b == &#39;+&#39; || b == &#39;-&#39; || b == &#39;*&#39; || b == &#39;/&#39; || b == &#39;)&#39; || b == &#39;=&#39;)&#123;
+            return &#39;&gt;&#39;;
+        &#125;
+        else&#123;
+            return &#39;&lt;&#39;;
+        &#125;
+    &#125;
+    else if(a == &#39;(&#39;)&#123;
+        if(b == &#39;)&#39;)&#123;
+            return &#39;=&#39;;
+        &#125;
+        else&#123;
+            return &#39;&lt;&#39;;
+        &#125;
+    &#125;
+    else if(a == &#39;)&#39;)&#123;
+        return &#39;&gt;&#39;;
+    &#125;
+    else&#123;
+        if(b == &#39;=&#39;)&#123;
+            return &#39;=&#39;;
+        &#125;
+        else&#123;
+            return &#39;&lt;&#39;;
+        &#125;
+    &#125;
+&#125;
+double Operate(double a,char ch,double b)
+&#123;//运算操作，返回相应的数值结果
+    if(ch == &#39;+&#39;) return a+b;
+    if(ch == &#39;-&#39;) return a-b;
+    if(ch==&#39;*&#39;) return a*b;
+    return a/b;
+&#125;
+bool IsCharacter(char ch)
+&#123;//判断ch是否为+、-、*、/、(、)、= 这类的字符，是则返回true
+    if(ch == &#39;+&#39; || ch == &#39;-&#39; || ch == &#39;*&#39; || ch == &#39;/&#39; || ch == &#39;(&#39; || ch == &#39;)&#39; || ch == &#39;=&#39;)
+        return true;
+    else
+        return false;
+&#125;
+double InOrder(BiTree T)
+&#123;//中序遍历二叉树并求表达式的值
+    if(!T) return 0;
+    if(T-&gt;ischaracter == false) return T-&gt;data;
+    double x=InOrder(T-&gt;lchild);
+    char op=(char)(T-&gt;data);
+    double y=InOrder(T-&gt;rchild);
+    return Operate(x,op,y);
+&#125;
+void CreateBT(char ch[],BiTree &amp;t,SqStack1 optr,SqStack2 expt)
+&#123;//创建二叉树
+    int i = 0;
+    char op;
+    BiTree t1, t2;
+    double num;
+    while(ch[i] != &#39;\0&#39; || !EmptyStack(optr))&#123;
+        if(!IsCharacter(ch[i]))&#123;
+            BiTree q = new BiTNode;
+            num = ch[i]-&#39;0&#39;;
+            q-&gt;ischaracter = false;
+            q-&gt;data = num;
+            q-&gt;lchild = nullptr;
+            q-&gt;rchild = nullptr;
+            Push2(expt, q);
+            i++;
+        &#125;
+        else&#123;
+            char c = Precede(GetTop(optr), ch[i]);
+            if(c == &#39;&lt;&#39;)&#123;
+                Push1(optr, ch[i]);
+                i++;
+            &#125;
+            else if(c == &#39;&gt;&#39;)&#123;
+                Pop1(optr, op);
+                Pop2(expt, t2);
+                Pop2(expt, t1);
+                t = new BiTNode;
+                t-&gt;ischaracter = true;
+                t-&gt;data = op;
+                t-&gt;lchild = t1;
+                t-&gt;rchild = t2;
+                Push2(expt, t);
+            &#125;
+            else&#123;
+                Pop1(optr, op);
+                i++;
+            &#125;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2025 Yhs_JokerのBlog
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Yhs_Joker
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+    </body>
+</html>

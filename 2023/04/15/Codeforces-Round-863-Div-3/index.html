@@ -1,0 +1,510 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Codeforces Round 863 (Div.3) | Yhs_JokerのBlog</title>
+        <meta name="author" content="Yhs_Joker" />
+        <meta name="description" content="There is only one kind of heroism in the world, which is to love life after knowing the truth of life." />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/avatar.jpg" />
+        <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>YHS_JOKERのBLOG</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;YHS_JOKERのBLOG</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div class="article">
+    <div>
+        <h1>Codeforces Round 863 (Div.3)</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/4/15
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E9%A2%98%E8%A7%A3/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                题解
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/codeforces/" style="color: #00a596">codeforces</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h2 id="原题链接：戳这里"><a href="#原题链接：戳这里" class="headerlink" title="原题链接：戳这里"></a>原题链接：<a target="_blank" rel="noopener" href="https://codeforces.com/contest/1811">戳这里</a></h2><h2 id="A-Insert-Digit"><a href="#A-Insert-Digit" class="headerlink" title="A. Insert Digit"></a>A. Insert Digit</h2><h3 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h3><p>输入一个数字n和一个数字d(d&lt;&#x3D;9)， 将数字d插入到数字n的任意位置中， 求n的最大值。</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>当k大于n中的某一个数时， 插入到这个数的前一个位置一定能保证最大</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre><code class="c++">int n, k;
+char s[N];
+ 
+void solve()&#123;
+    cin&gt;&gt;n&gt;&gt;k&gt;&gt;s;
+    for(int i=0; i&lt;n; i++)&#123;
+        if(k&gt;s[i]-&#39;0&#39;)&#123;
+            for(int j=0; j&lt;i; j++) cout&lt;&lt;s[j];
+            cout&lt;&lt;k;
+            for(int j=i; j&lt;n; j++) cout&lt;&lt;s[j];
+            cout&lt;&lt;&#39;\n&#39;;
+            return;
+        &#125;
+    &#125;cout&lt;&lt;s&lt;&lt;k&lt;&lt;&#39;\n&#39;;
+    
+    
+&#125;
+</code></pre>
+<h2 id="B-Conveyor-Belts"><a href="#B-Conveyor-Belts" class="headerlink" title="B. Conveyor Belts"></a>B. Conveyor Belts</h2><h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>将一个点所在的层数理解为到最外层的最短距离， 则本题可以转化为求两个点所在层数的差值</p>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><pre><code class="c++">int n, x1, y1, x2, y2;
+ 
+void solve()&#123;
+    cin&gt;&gt;n&gt;&gt;x1&gt;&gt;y1&gt;&gt;x2&gt;&gt;y2;
+    int t1 = min(min(x1, y1), min(n+1-x1, n+1-y1));
+    int t2 = min(min(x2, y2), min(n+1-x2, n+1-y2));
+    cout&lt;&lt;abs(t1-t2)&lt;&lt;&#39;\n&#39;;
+&#125;
+</code></pre>
+<h2 id="C-Restore-the-Array"><a href="#C-Restore-the-Array" class="headerlink" title="C. Restore the Array"></a>C. Restore the Array</h2><h3 id="题目大意-1"><a href="#题目大意-1" class="headerlink" title="题目大意"></a>题目大意</h3><p>构造一个序列a， 使得其经过转化后等于给定的序列b。</p>
+<p>转化规则为b[i] &#x3D; max(a[i], a[i+1])</p>
+<h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><p>首先a[1]应该等于b[1]，接下来每次选择a[i+1]值的时候， 先考虑是否a[i]已经等于b[i]， 如果相等的话则只要a[i+1]&lt;&#x3D;a[i]并且a[i+1]&lt;&#x3D;b[i+1]就可以满足要求, 并且如果想要接下来的取值范围更大， 那么我们要让a[i+1]的值尽可能等于b[i+1]。 当a[i]不等于b[i]时， 则a[i]就取值为b[i]即可。</p>
+<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><pre><code class="c++">int n;
+int a[N], b[N];
+ 
+void solve()&#123;
+    cin&gt;&gt;n;
+    for(int i=1; i&lt;n; i++) cin&gt;&gt;b[i];
+    a[1] = b[1];
+    for(int i=2; i&lt;=n; i++)&#123;
+        if(a[i-1]==b[i-1]) &#123;
+            if(i!=n&amp;&amp;b[i]&lt;=a[i-1])
+                a[i] = b[i];
+            else
+                a[i] = 0;
+        &#125;
+        else a[i] = b[i-1];
+    &#125;
+    for(int i=1; i&lt;=n; i++) cout&lt;&lt;a[i]&lt;&lt;&#39; &#39;;
+    cout&lt;&lt;&#39;\n&#39;;
+&#125;
+</code></pre>
+<h2 id="D-Umka-and-a-Long-Flight"><a href="#D-Umka-and-a-Long-Flight" class="headerlink" title="D. Umka and a Long Flight"></a>D. Umka and a Long Flight</h2><h3 id="题目大意-2"><a href="#题目大意-2" class="headerlink" title="题目大意"></a>题目大意</h3><p>给定一个n阶斐波那契矩形， 问是否可以将其用以下规则剪切为n+1个正方形。</p>
+<ul>
+<li>喷涂的那一块正方形边长为1</li>
+<li>最多有一对正方形边长相同</li>
+<li>每一块正方形的边长都是斐波那契数</li>
+</ul>
+<h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><p>根据斐波那契数的性质， 我们发现每次减出一块正方形时都优先剪出最大的正方形， 即边长为当前矩形的宽。然后每一次都这样减下去， 如果出现无论怎么剪都无法让涂色的块不出现在正方形中的话， 则无法满足题意。</p>
+<h3 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h3><pre><code class="c++">int f[N] = &#123;1, 1&#125;;
+ 
+void init()&#123;
+    for(int i = 2; i&lt;=45; i++) f[i] = f[i-1] + f[i-2];
+&#125;
+ 
+int n, x, y;
+ 
+void solve()&#123;
+    cin&gt;&gt;n&gt;&gt;x&gt;&gt;y;
+    int h = f[n], w = f[n+1];
+    while(!(h==1&amp;&amp;w==1))&#123;
+        if(h&lt;w)&#123;
+            if(y&gt;h) w-=h, y-=h;
+            else if(y&lt;=w-h) w-=h;
+            else&#123;
+                cout&lt;&lt;&quot;NO\n&quot;;
+                return;
+            &#125;
+        &#125;
+        else&#123;
+            if(x&gt;w) x-=w, h-=w;
+            else if(x&lt;=h-w) h-=w;
+            else&#123;
+                cout&lt;&lt;&quot;NO\n&quot;;
+                return;
+            &#125;
+        &#125;
+    &#125;
+    cout&lt;&lt;&quot;YES\n&quot;;
+&#125;
+</code></pre>
+<h2 id="E-Living-Sequence"><a href="#E-Living-Sequence" class="headerlink" title="E. Living Sequence"></a>E. Living Sequence</h2><h3 id="题目大意-3"><a href="#题目大意-3" class="headerlink" title="题目大意"></a>题目大意</h3><p>给定一个数在a序列的位置， 求该数是多少。 其中序列a为正整数序列与包含4的数的序列的差集</p>
+<h3 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h3><p>通过打表找规律即可。</p>
+<h3 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h3><pre><code class="c++">int a[N] = &#123;1&#125;;
+int b[N] = &#123;1&#125;;
+int idx;
+ 
+void init()&#123;
+    for(int i=1; b[i-1]&lt;=1e12; i++) a[i] = a[i-1]*10, b[i] = b[i-1]*9, idx = i;
+&#125;
+ 
+int n;
+ 
+void solve()&#123;
+    cin&gt;&gt;n;
+    int res = 0;
+    for(int i = idx; i&gt;=0; i--)&#123;
+        if(b[i]&gt;n) continue;
+        int times = n/b[i];
+        res+=(n/b[i])*a[i];
+        n-=n/b[i]*b[i];	
+        if(times&gt;=4) res+=a[i];
+    &#125;
+    cout&lt;&lt;res&lt;&lt;&#39;\n&#39;;
+&#125;
+</code></pre>
+<h2 id="F-Is-It-Flower"><a href="#F-Is-It-Flower" class="headerlink" title="F. Is It Flower?"></a>F. Is It Flower?</h2><h3 id="题目大意-4"><a href="#题目大意-4" class="headerlink" title="题目大意"></a>题目大意</h3><p>判定一个图形是否满足以下性质。</p>
+<ul>
+<li><p>有n个顶点和m条边</p>
+</li>
+<li><p>由k+1个正k边形组成, 其中中心图形的每一个顶点都有一个k边形。如图所示。</p>
+</li>
+</ul>
+<p><img src="/../post_source/CodeforcesRound863/kflowers.png" alt="k-flowers"></p>
+<h3 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h3><p>判断这是否满足以下条件：</p>
+<ul>
+<li>有k*k个顶点，k*(k+1)条边， k&gt;&#x3D;3</li>
+<li>满足度数为4的点有k个， 剩余点的度数均为2</li>
+<li>度数为4的k个点构成一个环</li>
+<li>度数为4的每一点都挂着一个长度为k环</li>
+</ul>
+<h3 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h3><pre><code class="c++">
+int n, m, k;
+vector&lt;int&gt; g[N];
+int deg[N];
+bool st[N];
+ 
+void input()&#123;
+    cin&gt;&gt;n&gt;&gt;m;
+    for(int i=1; i&lt;=n; i++) &#123;
+        g[i].clear();
+        deg[i] = 0;
+        st[i] = 0;
+    &#125;
+    for(int i=0; i&lt;m; i++)&#123;
+        int x, y;
+        cin&gt;&gt;x&gt;&gt;y;
+        g[x].push_back(y);
+        g[y].push_back(x);
+        deg[x]++, deg[y]++;
+    &#125;
+&#125;
+ 
+bool check_deg()&#123;
+    int deg_2_num = 0, deg_4_num = 0;
+    for(int i=1; i&lt;=n; i++)&#123;
+        if(deg[i] == 2) deg_2_num++;
+        if(deg[i] == 4) deg_4_num++;
+    &#125;
+    return deg_4_num == k &amp;&amp; deg_2_num + deg_4_num == n;
+&#125;
+ 
+int starting_ver;
+ 
+bool check_deg_4_is_circle_dfs(int u, int fa, int num)&#123;
+    vector&lt;int&gt; deg_4_vers;
+    
+    bool has_starting_ver = 0;
+    
+    for(auto ver:g[u])&#123;
+        if(ver == starting_ver) has_starting_ver = 1;
+        if(deg[ver] == 4 &amp;&amp; !st[ver])&#123;
+            deg_4_vers.push_back(ver);
+        &#125;
+    &#125;
+    
+    st[u] = 1;
+    num++;
+    
+    int vers_size = deg_4_vers.size();
+    
+    if(vers_size == 0)&#123;
+        return num == k &amp;&amp; has_starting_ver;
+    &#125;
+    else if(vers_size == 2)&#123;
+        if(fa == 0) deg_4_vers.pop_back();
+        else return false;
+    &#125;
+    else if(vers_size &gt; 2 )&#123;
+        return false;
+    &#125;
+    
+    return check_deg_4_is_circle_dfs(deg_4_vers[0], u, num);
+&#125;
+ 
+bool check_deg_2_is_circle_dfs(int u, int fa, int num)&#123;
+    vector&lt;int&gt; deg_2_vers;
+    
+    bool has_starting_ver = 0;
+    
+    for(auto ver:g[u])&#123;
+        if(ver == starting_ver) has_starting_ver = 1;
+        if(deg[ver] == 2 &amp;&amp; !st[ver])&#123;
+            deg_2_vers.push_back(ver);
+        &#125;
+    &#125;
+    
+    st[u] = 1;
+    num++;
+    
+    int vers_size = deg_2_vers.size();
+    
+    if(vers_size == 0)&#123;
+        return num == k &amp;&amp; has_starting_ver;
+    &#125;
+    else if(vers_size == 2)&#123;
+        if(fa == 0) deg_2_vers.pop_back();
+        else return false;
+    &#125;
+    else if(vers_size &gt; 2 )&#123;
+        return false;
+    &#125;
+    
+    return check_deg_2_is_circle_dfs(deg_2_vers[0], u, num);
+&#125;
+ 
+bool check_deg_4_is_circle()&#123;
+    for(int i=1; i&lt;=n; i++)&#123;
+        if(deg[i] == 4)&#123;
+            starting_ver = i;
+            return check_deg_4_is_circle_dfs(i, 0, 0);
+        &#125;
+    &#125;
+    return false;
+&#125;
+ 
+bool check_all_deg_2_is_circle()&#123;
+    for(int i=1; i&lt;=n; i++)&#123;
+        if(deg[i] == 4)&#123;
+            starting_ver = i;
+            if(!check_deg_2_is_circle_dfs(i, 0, 0))
+                return false;
+        &#125;
+    &#125;
+    return true;
+&#125;
+ 
+bool check()&#123;
+    if(!check_deg()) return false;
+    if(!check_deg_4_is_circle()) return false;
+    if(!check_all_deg_2_is_circle()) return false;
+    return true;
+&#125;
+ 
+void solve()
+&#123;
+    input();
+    
+    k = round(sqrt(n));
+    if(k&lt;3 || k*k!=n || k*(k+1)!=m)&#123;
+        cout&lt;&lt;&quot;NO\n&quot;; return;
+    &#125;
+    
+    if(check())&#123;
+        cout&lt;&lt;&quot;YES\n&quot;;
+    &#125;
+    else&#123;
+        cout&lt;&lt;&quot;NO\n&quot;;
+    &#125;
+&#125;
+</code></pre>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2025 Yhs_JokerのBlog
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Yhs_Joker
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+    </body>
+</html>

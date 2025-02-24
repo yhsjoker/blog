@@ -1,0 +1,1124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>数据结构实验二 | Yhs_JokerのBlog</title>
+        <meta name="author" content="Yhs_Joker" />
+        <meta name="description" content="There is only one kind of heroism in the world, which is to love life after knowing the truth of life." />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/avatar.jpg" />
+        <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>YHS_JOKERのBLOG</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;YHS_JOKERのBLOG</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div class="article">
+    <div>
+        <h1>数据结构实验二</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/11/1
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E4%BD%9C%E4%B8%9A/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                作业
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="color: #ffa2c4">数据结构</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/C/" style="color: #ff7d73">C++</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h2 id="第1关：基于栈的中缀算术表达式求值"><a href="#第1关：基于栈的中缀算术表达式求值" class="headerlink" title="第1关：基于栈的中缀算术表达式求值"></a>第1关：基于栈的中缀算术表达式求值</h2><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+#include &lt;cctype&gt;
+#include &lt;cmath&gt;
+#define MAXSIZE 100
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+typedef int Status;
+using namespace std;
+typedef struct
+&#123;//运算符栈
+    char *base;
+    char *top;
+    int stacksize;
+&#125;SqStack1;
+Status InitStack1(SqStack1 &amp;S)
+&#123;//运算符栈初始化
+    S.base = new char[MAXSIZE];
+    S.top = S.base;
+    S.stacksize = 0;
+    return OK;
+&#125;
+Status Push1(SqStack1 &amp;S, char e)
+&#123;//运算符栈入栈
+    if(S.stacksize == MAXSIZE) return OVERFLOW;
+    *S.top++ = e;
+    S.stacksize++;
+    return OK;
+    
+&#125;
+Status Pop1(SqStack1 &amp;S)
+&#123;//运算符栈出栈
+    if(S.stacksize == 0) return ERROR;
+    S.top--;
+    return OK;
+&#125;
+char GetTop1(SqStack1 S)
+&#123;//运算符栈取栈顶元素
+    return *(S.top - 1);
+&#125;
+typedef struct
+&#123;//操作数栈
+    double *base;
+    double *top;
+    int  stacksize;
+&#125;SqStack2;
+Status InitStack2(SqStack2 &amp;S)
+&#123;//操作数栈初始化
+    S.base = new double[MAXSIZE];
+    S.top = S.base;
+    S.stacksize = 0;
+    return OK;
+&#125;
+Status Push2(SqStack2 &amp;S,double e)
+&#123;//操作数栈入栈
+    if(S.stacksize == MAXSIZE) return OVERFLOW;
+    *S.top++ = e;
+    S.stacksize++;
+    return OK;
+&#125;
+Status Pop2(SqStack2 &amp;S)
+&#123;//操作数栈出栈
+    if(S.stacksize == 0) return ERROR;
+    S.top--;
+    return OK;
+&#125;
+double GetTop2(SqStack2 S)
+&#123;//操作数栈取栈顶元素
+    return *(S.top - 1);
+&#125;
+double Calculate(double a,char op,double b)
+&#123;//计算表达式“a op b”的值
+    if(op == &#39;+&#39;) return a + b;
+    if(op == &#39;-&#39;) return a - b;
+    if(op == &#39;*&#39;) return a * b;
+    if(op == &#39;/&#39;) return a / b;
+&#125;
+
+char Precede(char a,char b)
+&#123;//比较运算符a和b的优先级
+    int pr1 = 0, pr2 = 0;
+    if(a == &#39;+&#39; || a == &#39;-&#39;) pr1 = 1;
+    else pr1 = 2;
+    if(b == &#39;+&#39; || b == &#39;-&#39;) pr2 = 1;
+    else pr2 = 2;
+    
+    if(pr1 &gt; pr2) return 1;
+    else if(pr1 == pr2) return 0;
+    else return -1;
+&#125;
+
+void Evaluate(SqStack1&amp; OPTR,SqStack2&amp; OPND)&#123;
+    char op = GetTop1(OPTR);
+    Pop1(OPTR);
+    double b = GetTop2(OPND);
+    Pop2(OPND);
+    double a = GetTop2(OPND);
+    Pop2(OPND);
+    double r = Calculate(a, op, b);
+    Push2(OPND, r);
+&#125;
+
+double EvaluateExpression(SqStack1 OPTR,SqStack2 OPND,char s[])
+&#123;//算术表达式求值的算符优先算法
+ //设OPTR和OPND分别为运算符栈和操作数栈
+ //表达式求值算法调用Precede函数和Calculate函数 
+    for(int i = 0; s[i] != &#39;=&#39;; i++)&#123;
+        char c = s[i];
+        if(c == &#39;(&#39;) Push1(OPTR, c);
+        else if(c == &#39;)&#39;)&#123;
+            while(GetTop1(OPTR) != &#39;(&#39;) Evaluate(OPTR, OPND);
+            Pop1(OPTR);
+        &#125;
+        else if(isdigit(c))&#123;
+            int j = i;
+            double d = atof(s + i);
+            while(isdigit(s[j]) || s[j] == &#39;.&#39;) j++;
+            i = j - 1;
+            Push2(OPND, d);
+        &#125;
+        else&#123;
+            while(GetTop1(OPTR) != &#39;=&#39; &amp;&amp; GetTop1(OPTR) != &#39;(&#39; &amp;&amp; Precede(GetTop1(OPTR), c) &gt;= 0) Evaluate(OPTR, OPND);
+            Push1(OPTR, c);
+        &#125;
+    &#125;
+    while(GetTop1(OPTR) != &#39;=&#39;) Evaluate(OPTR, OPND);
+    return GetTop2(OPND);
+&#125;
+</code></pre>
+<h2 id="第2关：中缀表达式转化为后缀表达式"><a href="#第2关：中缀表达式转化为后缀表达式" class="headerlink" title="第2关：中缀表达式转化为后缀表达式"></a>第2关：中缀表达式转化为后缀表达式</h2><h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;cctype&gt;
+using namespace std;
+#define  MAXSIZE  100
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+typedef int Status;
+typedef struct
+&#123;
+    char *base;
+    char *top;
+    int stacksize;
+&#125;SqStack;
+Status InitStack(SqStack &amp;S)
+&#123;//初始化栈
+    S.base = new char[MAXSIZE];
+    S.top = S.base;
+    S.stacksize = 0;
+    return OK;
+&#125;
+Status Push(SqStack &amp;S, char e)
+&#123;//入栈
+    if(S.stacksize == MAXSIZE) return OVERFLOW;
+    *S.top++ = e;
+    S.stacksize++;
+    return OK;
+&#125;
+Status Pop(SqStack &amp;S)
+&#123;//出栈
+    if(S.stacksize == 0) return ERROR;
+    S.top--;
+    S.stacksize--;
+    return OK;
+&#125;
+char GetTop(SqStack S)
+&#123;//取栈顶元素
+    return *(S.top - 1);
+&#125;
+char Precede(char a,char b)
+&#123;//比较运算符a和b的优先级
+    int pr1 = 0, pr2 = 0;
+    if(a == &#39;+&#39; || a == &#39;-&#39;) pr1 = 1;
+    else pr1 = 2;
+    if(b == &#39;+&#39; || b == &#39;-&#39;) pr2 = 1;
+    else pr2 = 2;
+    
+    if(pr1 &gt; pr2) return 1;
+    else if(pr1 == pr2) return 0;
+    else return -1;
+&#125;
+void InfixToSuffix(SqStack OPTR,char s[])
+&#123;//将中缀表达式转化为后缀表达式并输出 
+    for(int i = 0; s[i] != &#39;=&#39;; i++)&#123;
+        char c = s[i];
+        if(c == &#39;(&#39;) Push(OPTR, c);
+        else if(c == &#39;)&#39;)&#123;
+            while(GetTop(OPTR) != &#39;(&#39;)&#123;
+                cout &lt;&lt; GetTop(OPTR);
+                Pop(OPTR);
+            &#125;
+            Pop(OPTR);
+        &#125;
+        else if(isdigit(c))&#123;
+            int j = i;
+            double d = atof(s + i);
+            while(isdigit(s[j]) || s[j] == &#39;.&#39;) j++;
+            i = j - 1;
+            cout &lt;&lt; d;
+        &#125;
+        else&#123;
+            while(GetTop(OPTR) != &#39;=&#39; &amp;&amp; GetTop(OPTR) != &#39;(&#39; &amp;&amp; Precede(GetTop(OPTR), c) &gt;= 0)&#123;
+                cout &lt;&lt; GetTop(OPTR);
+                Pop(OPTR);
+            &#125;
+            Push(OPTR, c);
+        &#125;
+    &#125;
+    while(GetTop(OPTR) != &#39;=&#39;)&#123;
+        cout &lt;&lt; GetTop(OPTR);
+        Pop(OPTR);
+    &#125;
+    cout &lt;&lt; &#39;\n&#39;;
+&#125;
+</code></pre>
+<h2 id="第3关：基于栈的后缀算术表达式求值"><a href="#第3关：基于栈的后缀算术表达式求值" class="headerlink" title="第3关：基于栈的后缀算术表达式求值"></a>第3关：基于栈的后缀算术表达式求值</h2><h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+#include&lt;iomanip&gt;
+#include &lt;string&gt;
+#define MAXSIZE 100
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+typedef int Status;
+using namespace std;
+typedef struct
+&#123;//操作数栈
+    double* base;
+    double* top;
+    int  stacksize;
+&#125;SqStack;
+Status InitStack(SqStack&amp; S)
+&#123;//操作数栈初始化
+    S.base = new double[MAXSIZE];
+    S.top = S.base;
+    S.stacksize = 0;
+    return OK;
+&#125;
+Status Push(SqStack&amp; S, double e)
+&#123;//操作数栈入栈
+    if(S.stacksize == MAXSIZE) return OVERFLOW;
+    *S.top++ = e;
+    S.stacksize++;
+    return OK;
+&#125;
+Status Pop(SqStack&amp; S)
+&#123;//操作数栈出栈
+        if(S.stacksize == 0) return ERROR;
+    S.top--;
+    S.stacksize--;
+    return OK;
+&#125;
+double GetTop(SqStack S)
+&#123;//操作数栈取栈顶元素
+    if(S.stacksize == 0)
+        return ERROR;	//若不存在栈顶元素则返回ERROR
+    return *(S.top - 1);
+&#125;
+double Calculate(double a, char op, double b)
+&#123;//计算表达式“a op b”的值
+    if(op == &#39;+&#39;) return a + b;
+    if(op == &#39;-&#39;) return a - b;
+    if(op == &#39;*&#39;) return a * b;
+    if(op == &#39;/&#39;) return a / b;
+&#125;
+double EvaluateExpression(SqStack OPND,char s[])
+&#123;//后缀算术表达式求值
+ //设OPND为操作数栈
+ //表达式求值算法调用Calculate函数 
+    for(int i = 0; s[i] != &#39;=&#39;; i++)&#123;
+        char c = s[i];
+        if(c == &#39; &#39;) continue;
+        else if(isdigit(c))&#123;
+            int j = i;
+            double d = atof(s + i);
+            while(isdigit(s[j]) || s[j] == &#39;.&#39;) j++;
+            i = j - 1;
+            Push(OPND, d);
+        &#125;
+        else&#123;
+            double b = GetTop(OPND);
+            Pop(OPND);
+            double a = GetTop(OPND);
+            Pop(OPND);
+            Push(OPND, Calculate(a, c, b));
+        &#125;
+    &#125;
+    return GetTop(OPND);
+&#125;
+</code></pre>
+<h2 id="第4关：中缀表达式转化为前缀表达式"><a href="#第4关：中缀表达式转化为前缀表达式" class="headerlink" title="第4关：中缀表达式转化为前缀表达式"></a>第4关：中缀表达式转化为前缀表达式</h2><h3 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;cstring&gt;
+#include&lt;cctype&gt;
+using namespace std;
+#define  MAXSIZE  100
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+typedef int Status;
+typedef struct
+&#123;
+    char *base;
+    char *top;
+    int stacksize;
+&#125;SqStack;
+Status InitStack(SqStack &amp;S)
+&#123;//初始化栈
+    S.base = new char[MAXSIZE];
+    S.top = S.base;
+    S.stacksize = 0;
+    return OK;
+&#125;
+Status Push(SqStack &amp;S, char e)
+&#123;//入栈
+    if(S.stacksize == MAXSIZE) return OVERFLOW;
+    *S.top++ = e;
+    S.stacksize++;
+    return OK;
+&#125;
+Status Pop(SqStack &amp;S)
+&#123;//出栈
+    if(S.stacksize == 0) return ERROR;
+    S.top--;
+    S.stacksize--;
+    return OK;
+&#125;
+char GetTop(SqStack S)
+&#123;//取栈顶元素
+    return *(S.top - 1);
+&#125;
+char Precede(char a,char b)
+&#123;//比较运算符a和b的优先级
+    int pr1 = 0, pr2 = 0;
+    if(a == &#39;+&#39; || a == &#39;-&#39;) pr1 = 1;
+    else pr1 = 2;
+    if(b == &#39;+&#39; || b == &#39;-&#39;) pr2 = 1;
+    else pr2 = 2;
+    
+    if(pr1 &gt; pr2) return 1;
+    else if(pr1 == pr2) return 0;
+    else return -1;
+&#125;
+void InfixToPrefix(SqStack OPTR,char s[])
+&#123;//将中缀表达式转化为前缀表达式并输出 
+    SqStack OPND;
+    InitStack(OPND);
+    Push(OPND, &#39;=&#39;);
+    int len = strlen(s);
+    for(int i = len - 1; i &gt;= 0; i--)&#123;
+        char c = s[i];
+        if(isdigit(c))&#123;
+            Push(OPND, c);
+        &#125;
+        else if(c == &#39;)&#39;)&#123;
+            Push(OPTR, c);
+        &#125;
+        else if(c == &#39;(&#39;)&#123;
+            while(GetTop(OPTR) != &#39;)&#39;)&#123;
+                Push(OPND, GetTop(OPTR));
+                Pop(OPTR);
+            &#125;
+            Pop(OPTR);
+        &#125;
+        else&#123;
+            while(true)&#123;
+                if(GetTop(OPTR) == &#39;=&#39; || GetTop(OPTR) == &#39;)&#39; || Precede(c, GetTop(OPTR)) &gt;= 0) &#123;
+                    Push(OPTR, c);
+                    break;
+                &#125;
+                else&#123;
+                    Push(OPND, GetTop(OPTR));
+                    Pop(OPTR);
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+
+    while(GetTop(OPTR) != &#39;=&#39;)&#123;
+        Push(OPND, GetTop(OPTR));
+        Pop(OPTR);
+    &#125;
+
+    while(GetTop(OPND) != &#39;=&#39;)&#123;
+        cout &lt;&lt; GetTop(OPND);
+        Pop(OPND);
+    &#125;
+&#125;
+</code></pre>
+<h2 id="第5关：基于栈的前缀算术表达式求值"><a href="#第5关：基于栈的前缀算术表达式求值" class="headerlink" title="第5关：基于栈的前缀算术表达式求值"></a>第5关：基于栈的前缀算术表达式求值</h2><h3 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+#include&lt;iomanip&gt;
+#include &lt;string&gt;
+#include&lt;cstring&gt;
+#define MAXSIZE 100
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+typedef int Status;
+using namespace std;
+typedef struct
+&#123;//操作数栈
+    double* base;
+    double* top;
+    int  stacksize;
+&#125;SqStack;
+Status InitStack(SqStack&amp; S)
+&#123;//操作数栈初始化
+    S.base = new double[MAXSIZE];
+    S.top = S.base;
+    S.stacksize = 0;	
+    return OK;
+&#125;
+Status Push(SqStack&amp; S, double e)
+&#123;//操作数栈入栈
+    if(S.stacksize == MAXSIZE) return OVERFLOW;
+    *S.top++ = e;
+    S.stacksize++;
+    return OK;
+&#125;
+Status Pop(SqStack&amp; S)
+&#123;//操作数栈出栈
+    if(S.stacksize == 0) return ERROR;
+    S.top--;	
+    S.stacksize--;
+    return OK;
+&#125;
+double GetTop(SqStack S)
+&#123;//操作数栈取栈顶元素
+    return *(S.top - 1);
+    return ERROR;	//若不存在栈顶元素则返回ERROR
+&#125;
+double Calculate(double a, char op, double b)
+&#123;//计算表达式“a op b”的值
+    if(op == &#39;+&#39;) return a + b;
+    if(op == &#39;-&#39;) return a - b;
+    if(op == &#39;*&#39;) return a * b;
+    if(op == &#39;/&#39;) return a / b;
+&#125;
+double EvaluateExpression(SqStack OPND,char s[])
+&#123;//前缀算术表达式求值
+ //设OPND为操作数栈
+ //表达式求值算法调用Calculate函数 
+    int len = strlen(s);
+    for(int i = len - 2; i &gt;= 0; i--)&#123;
+        char c = s[i];
+        if(isdigit(c))&#123;
+            int j = i;
+            while(j &gt;= 0 &amp;&amp; (isdigit(s[j]) || s[j] == &#39;.&#39;)) j--;
+            i = j + 1;
+            double d = atof(s + i);
+            Push(OPND, d);
+        &#125;
+        else if(c == &#39; &#39;) continue;
+        else&#123;
+            double a = GetTop(OPND);
+            Pop(OPND);
+            double b = GetTop(OPND);
+            Pop(OPND);
+            Push(OPND, Calculate(a, c, b));
+        &#125;
+    &#125;
+
+    cout &lt;&lt; fixed &lt;&lt; setprecision(2) &lt;&lt; GetTop(OPND);
+    exit(0);
+
+    return GetTop(OPND);
+&#125;
+</code></pre>
+<h2 id="第6关：入栈和出栈的基本操作"><a href="#第6关：入栈和出栈的基本操作" class="headerlink" title="第6关：入栈和出栈的基本操作"></a>第6关：入栈和出栈的基本操作</h2><h3 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+using namespace std;
+#define  MAXSIZE  100
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+typedef int Status;
+typedef struct
+&#123;
+    int* base;
+    int* top;
+    int stacksize;
+&#125;SqStack;
+Status InitSqStack(SqStack&amp; S)
+&#123;//栈的初始化
+    S.base = new int[MAXSIZE];
+    S.top = S.base;
+    S.stacksize = 0;
+    return OK;
+&#125;
+Status Push(SqStack&amp; S, int e)
+&#123;//入栈
+    if(S.stacksize == MAXSIZE) return OVERFLOW;
+    *S.top++ = e;
+    S.stacksize++;
+    return OK;
+&#125;
+Status Pop(SqStack&amp; S)
+&#123;//出栈
+    if(S.stacksize == 0) return ERROR;
+    S.top--;
+    S.stacksize--;
+    return OK;
+&#125;
+bool Empty(SqStack&amp; S)&#123;
+    return !S.stacksize;
+&#125;
+int GetTop(SqStack S)
+&#123;//取栈顶元素
+    return *(S.top - 1);
+&#125;
+void InOutS(SqStack&amp; S, int a[], int n)
+&#123;//入栈和出栈的基本操作
+    for(int i = 0; i &lt; n; i++)&#123;
+        if(a[i] != -1)&#123;
+            Push(S, a[i]);
+        &#125;
+        else&#123;
+            if(Empty(S))&#123;
+                cout &lt;&lt; &quot;POP ERROR\n&quot;;
+                break;
+            &#125;
+            else&#123;
+                cout &lt;&lt; GetTop(S) &lt;&lt; &#39;\n&#39;;
+                Pop(S);
+            &#125;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="第7关：双栈的基本操作"><a href="#第7关：双栈的基本操作" class="headerlink" title="第7关：双栈的基本操作"></a>第7关：双栈的基本操作</h2><h3 id="代码-6"><a href="#代码-6" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+using namespace std;
+typedef int Status;
+typedef struct
+&#123;
+    int top[2], bot[2];//栈顶和栈底指针
+    int* V;//栈数组
+    int m;//栈最大可容纳元素个数
+&#125;DblStack;
+void InitDblStack(DblStack&amp; S, int m)
+&#123;//初始化一个大小为m的双向栈
+    S.V = new int[m];
+    S.m = m;
+    S.top[0] = -1, S.bot[0] = -1;
+    S.top[1] = m, S.bot[1] = m;
+&#125;
+Status IsEmpty(DblStack S, int i)
+&#123;//判断指定的i号栈是否为空，空返回1，否则返回0
+    return S.top[i] == S.bot[i];
+&#125;
+Status IsFull(DblStack S)
+&#123;//判断栈是否满，满则返回1，否则返回0
+    return S.top[0] + 1 == S.top[1];
+&#125;
+void Push(DblStack&amp; S, int i)
+&#123;//向指定的i号栈中插入元素x，先移动指针再入栈
+    int x; cin &gt;&gt; x;
+    if(i == 0) S.V[++S.top[i]] = x;
+    else S.V[--S.top[i]] = x;
+&#125;
+
+void Pop(DblStack&amp; S, int i)
+&#123;//删除指定的i号栈的栈顶元素，先出栈再移动指针
+    if(i == 0) cout &lt;&lt; S.V[S.top[i]--] &lt;&lt; &#39; &#39;;
+    else cout &lt;&lt; S.V[S.top[i]++] &lt;&lt; &#39; &#39;;
+&#125;
+</code></pre>
+<h2 id="第8关：基于栈的回文字符序列判断"><a href="#第8关：基于栈的回文字符序列判断" class="headerlink" title="第8关：基于栈的回文字符序列判断"></a>第8关：基于栈的回文字符序列判断</h2><h3 id="代码-7"><a href="#代码-7" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+#define MAXSIZE 100
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+typedef int Status;
+using namespace std;
+typedef struct
+&#123;
+    char* base;
+    char* top;
+    int stacksize;
+&#125;SqStack;
+Status InitStack(SqStack&amp; S)
+&#123;//栈初始化
+    S.base = new char[MAXSIZE];
+    S.top = S.base;
+    S.stacksize = 0;
+    return OK;
+&#125;
+Status Push(SqStack&amp; S, char e)
+&#123;//入栈
+    if(S.stacksize == MAXSIZE) return OVERFLOW;
+    *S.top++ = e;
+    S.stacksize++;
+    return OK;
+&#125;
+Status Pop(SqStack&amp; S)
+&#123;//出栈返回栈顶元素
+    if(S.stacksize == 0) return ERROR;
+    S.top--;
+    S.stacksize--;
+    return OK;
+&#125;
+char GetTop(SqStack S)
+&#123;//运算符栈取栈顶元素
+    return *(S.top - 1);
+&#125;
+Status IsPalindrome(SqStack&amp; S, char* t)
+&#123;//判断栈的回文字符序列，不等则返回零, 相等则返回1
+    for(int i = 0; t[i]; i++)&#123;
+        Push(S, t[i]);
+    &#125;
+    for(int i = 0; t[i]; i++)&#123;
+        if(t[i] != GetTop(S)) return 0;
+        Pop(S);
+    &#125;
+    return 1;
+&#125;
+</code></pre>
+<h2 id="第9关：基于栈的可操作判断"><a href="#第9关：基于栈的可操作判断" class="headerlink" title="第9关：基于栈的可操作判断"></a>第9关：基于栈的可操作判断</h2><h3 id="代码-8"><a href="#代码-8" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+#define MAXSIZE 100
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+typedef int Status;
+using namespace std;
+typedef struct
+&#123;
+    char* base;
+    char* top;
+    int stacksize;
+&#125;SqStack;
+Status InitStack(SqStack&amp; S)
+&#123;//初始化栈
+    S.base = new char[MAXSIZE];
+    S.top = S.base;
+    S.stacksize = 0;
+    return OK;
+&#125;
+Status Push(SqStack&amp; S)
+&#123;//入栈
+    if(S.stacksize == MAXSIZE) return OVERFLOW;
+    S.top++;
+    S.stacksize++;
+    return OK;
+&#125;
+Status Pop(SqStack&amp; S)
+&#123;//出栈
+    if(S.stacksize == 0) return ERROR;
+    S.top--;
+    S.stacksize--;
+    return OK;
+&#125;
+Status IsEmpty(SqStack S)
+&#123;//判断栈是否为空，空返回1，否则返回0
+    return !S.stacksize;
+&#125;
+bool Judge(char a[], SqStack&amp; S)
+&#123;//栈的可操作判断
+    for(int i = 0; a[i]; i++)&#123;
+        if(a[i] == &#39;I&#39;) Push(S);
+        else&#123;
+            if(IsEmpty(S)) return 0;
+            else Pop(S);
+        &#125;
+    &#125;
+    return IsEmpty(S);
+&#125;
+</code></pre>
+<h2 id="第10关：Ackermann函数的递归求值"><a href="#第10关：Ackermann函数的递归求值" class="headerlink" title="第10关：Ackermann函数的递归求值"></a>第10关：Ackermann函数的递归求值</h2><h3 id="代码-9"><a href="#代码-9" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+using namespace std;
+int Ack(int m, int n)
+&#123;//Ackermann函数的递归求值
+    if(m == 0) return n + 1;
+    if(m &gt; 0 &amp;&amp; n == 0) return Ack(m - 1, 1);
+    return Ack(m - 1, Ack(m, n - 1));
+&#125;
+</code></pre>
+<h2 id="第11关：Ackermann函数的非递归求值"><a href="#第11关：Ackermann函数的非递归求值" class="headerlink" title="第11关：Ackermann函数的非递归求值"></a>第11关：Ackermann函数的非递归求值</h2><h3 id="代码-10"><a href="#代码-10" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+using namespace std;
+#define MAXSIZE 100
+
+int Ack(int m, int n)
+&#123;//Ackermann函数的非递归求值
+    static int f[MAXSIZE][MAXSIZE];
+    for(int j = 0; j &lt; MAXSIZE; j++) f[0][j] = j + 1;
+    for(int i = 1; i &lt;= m; i++)&#123;
+        f[i][0] = f[i - 1][1];
+        for(int j = 1; j &lt; MAXSIZE; j++)&#123;
+            f[i][j] = f[i - 1][f[i][j - 1]];
+        &#125;
+    &#125;
+    return f[m][n];
+&#125;
+</code></pre>
+<h2 id="第12关：递归求解单链表中的最大值"><a href="#第12关：递归求解单链表中的最大值" class="headerlink" title="第12关：递归求解单链表中的最大值"></a>第12关：递归求解单链表中的最大值</h2><h3 id="代码-11"><a href="#代码-11" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+typedef struct LNode
+&#123;
+    int data;
+    struct LNode* next;
+&#125;LNode, * LinkList;
+void CreateList_R(LinkList&amp; L, int n)
+&#123;//后插法创建单链表
+    L = new LNode;
+    L -&gt; next = nullptr;
+
+    LinkList p_tail = L;
+    for(int i = 0; i &lt; n; i++)&#123;
+        p_tail -&gt; next = new LNode;
+        p_tail = p_tail -&gt; next;
+        p_tail -&gt; next = nullptr;
+        cin &gt;&gt; p_tail -&gt; data;
+    &#125;
+&#125;
+int GetMax(LinkList L)
+&#123;//递归求解单链表中的最大值
+    if(L -&gt; next == nullptr) return L -&gt; data;
+    else&#123;
+        return max(GetMax(L -&gt; next), L -&gt; data);
+    &#125;
+&#125;
+</code></pre>
+<h2 id="第13关：递归求解单链表中的结点个数"><a href="#第13关：递归求解单链表中的结点个数" class="headerlink" title="第13关：递归求解单链表中的结点个数"></a>第13关：递归求解单链表中的结点个数</h2><h3 id="代码-12"><a href="#代码-12" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+typedef struct LNode
+&#123;
+    int data;
+    struct LNode* next;
+&#125;LNode, * LinkList;
+void CreateList_R(LinkList&amp; L, int n)
+&#123;//后插法创建单链表
+    L = new LNode;
+    L -&gt; next = nullptr;
+
+    LinkList p_tail = L;
+    for(int i = 0; i &lt; n; i++)&#123;
+        p_tail -&gt; next = new LNode;
+        p_tail = p_tail -&gt; next;
+        p_tail -&gt; next = nullptr;
+        cin &gt;&gt; p_tail -&gt; data;
+    &#125;
+&#125;
+int GetLength(LinkList L)
+&#123;//递归求解单链表中的结点个数
+   if(L == nullptr) return 0;
+   return GetLength(L -&gt; next) + 1;
+&#125;
+</code></pre>
+<h2 id="第14关：递归求解单链表中的平均值"><a href="#第14关：递归求解单链表中的平均值" class="headerlink" title="第14关：递归求解单链表中的平均值"></a>第14关：递归求解单链表中的平均值</h2><h3 id="代码-13"><a href="#代码-13" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+typedef struct LNode
+&#123;
+    int data;
+    struct LNode* next;
+&#125;LNode, * LinkList;
+void CreateList_R(LinkList&amp; L, int n)
+&#123;//后插法创建单链表
+    L = new LNode;
+    L -&gt; next = nullptr;
+
+    LinkList p_tail = L;
+    for(int i = 0; i &lt; n; i++)&#123;
+        p_tail -&gt; next = new LNode;
+        p_tail = p_tail -&gt; next;
+        p_tail -&gt; next = nullptr;
+        cin &gt;&gt; p_tail -&gt; data;
+    &#125;
+&#125;
+double GetAverage(LinkList L, int n)
+&#123;//递归求解单链表中的平均值
+    if(L -&gt; next == nullptr) return L -&gt; data;
+    else&#123;
+        double avg = GetAverage(L -&gt; next, n - 1);
+        return (avg * (n - 1) + L -&gt; data) / n;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="第15关：基于循环链表的队列的基本操作"><a href="#第15关：基于循环链表的队列的基本操作" class="headerlink" title="第15关：基于循环链表的队列的基本操作"></a>第15关：基于循环链表的队列的基本操作</h2><h3 id="代码-14"><a href="#代码-14" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+using namespace std;
+typedef int Status;
+typedef struct QNode
+&#123;//队列的链式存储结构
+    int data;
+    struct QNode* next;
+&#125;QNode, * QueuePtr;
+typedef struct
+&#123;
+    QueuePtr rear;    //只设一个队尾指针
+&#125;LinkQueue;
+Status EmptyQueue(LinkQueue Q)
+&#123;//判断队列是否为空，空返回1，否则返回0
+//队列只有一个头结点，即当头结点的指针域指向自己时，队列为空
+    return Q.rear -&gt; next == Q.rear;
+&#125;
+void EnQueue(LinkQueue&amp; Q, int e)
+&#123;//入队，插入元素e为Q的新的队尾元素
+    QueuePtr q = new QNode;
+    q -&gt; data = e;
+    q -&gt; next = Q.rear -&gt; next;
+    Q.rear -&gt; next = q;
+    Q.rear = Q.rear -&gt; next;
+&#125;
+void DeQueue(LinkQueue&amp; Q)
+&#123;//出队，输出Q的队头元素值，后将其删除
+    QueuePtr q = Q.rear -&gt; next -&gt; next;
+    cout &lt;&lt; q -&gt; data &lt;&lt; &#39; &#39;;
+    if(q == Q.rear)&#123;
+        Q.rear = Q.rear -&gt; next;
+        Q.rear -&gt; next = q -&gt; next;
+    &#125;
+    else Q.rear -&gt; next -&gt; next = q -&gt; next;
+    delete q;
+&#125;
+</code></pre>
+<h2 id="第16关：附加判定标志的循环队列的基本操作"><a href="#第16关：附加判定标志的循环队列的基本操作" class="headerlink" title="第16关：附加判定标志的循环队列的基本操作"></a>第16关：附加判定标志的循环队列的基本操作</h2><h3 id="代码-15"><a href="#代码-15" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+using namespace std;
+#define MAXSIZE 100
+#define OK 0
+#define OVERFLOW -1
+#define ERROR -2
+typedef int Status;
+typedef struct
+&#123;
+    int* base;
+    int front, rear, tag;
+&#125;SqQueue;
+Status InitQueue(SqQueue&amp; Q)
+&#123;//构造一个空队列Q
+    Q.base = new int[MAXSIZE];
+    if(!Q.base) return ERROR;
+    Q.front = Q.rear = 0;
+    Q.tag = 0;
+    return OK;
+&#125;
+Status EnQueue(SqQueue&amp; Q, int e)
+&#123;//插入元素e为Q的新的队尾元素
+    if(Q.tag == 1 &amp;&amp; Q.rear == Q.front) return ERROR;
+    Q.base[Q.rear] = e;
+    Q.rear = (Q.rear + 1) % MAXSIZE;
+    if(Q.tag == 0) Q.tag = 1;
+    return OK;
+&#125;
+Status DeQueue(SqQueue&amp; Q)
+&#123;//删除Q的队头元素，用e返回其值
+    if(Q.tag == 0 &amp;&amp; Q.front == Q.rear) return ERROR;
+    int e = Q.base[Q.front];
+    Q.front = (Q.front + 1) % MAXSIZE;
+    return e;
+&#125;
+</code></pre>
+<h2 id="第17关：基于两端操作的循环队列的实现"><a href="#第17关：基于两端操作的循环队列的实现" class="headerlink" title="第17关：基于两端操作的循环队列的实现"></a>第17关：基于两端操作的循环队列的实现</h2><h3 id="代码-16"><a href="#代码-16" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+using namespace std;
+#define MAXSIZE 100
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+typedef int Status;
+typedef struct
+&#123;
+    int* base;
+    int front;
+    int rear;
+&#125;SqQueue;
+Status InitQueue(SqQueue&amp; Q)
+&#123;//构造一个空队列Q
+    Q.base = new int[MAXSIZE];
+    if(!Q.base) return ERROR;
+    Q.front = 0;
+    Q.rear = 0;
+    return OK;
+&#125;
+Status EnQueue(SqQueue&amp; Q, int e)
+&#123;//在Q的队头插入新元素e
+    if(Q.rear == (Q.front - 1 + MAXSIZE) % MAXSIZE)	return ERROR;
+    Q.base[Q.front] = e;
+    Q.front = (Q.front - 1 + MAXSIZE) % MAXSIZE;
+    return OK;
+&#125;
+Status DeQueue(SqQueue&amp; Q)
+&#123;//删除Q的队尾元素，用e返回其值
+    if(Q.front == Q.rear)	return 0;
+    int e = Q.base[Q.rear];
+    Q.rear = (Q.rear - 1 + MAXSIZE) % MAXSIZE;
+    return e;
+&#125;
+</code></pre>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2025 Yhs_JokerのBlog
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Yhs_Joker
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+    </body>
+</html>

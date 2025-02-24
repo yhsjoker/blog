@@ -1,0 +1,574 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>BJFU-2023-集训队训练赛-1 | Yhs_JokerのBlog</title>
+        <meta name="author" content="Yhs_Joker" />
+        <meta name="description" content="There is only one kind of heroism in the world, which is to love life after knowing the truth of life." />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/avatar.jpg" />
+        <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>YHS_JOKERのBLOG</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;YHS_JOKERのBLOG</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div class="article">
+    <div>
+        <h1>BJFU-2023-集训队训练赛-1</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/1/10
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E9%A2%98%E8%A7%A3/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                题解
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E9%9B%86%E8%AE%AD%E9%98%9F%E8%AE%AD%E7%BB%83%E8%B5%9B/" style="color: #00bcd4">集训队训练赛</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h2 id="A"><a href="#A" class="headerlink" title="A"></a>A</h2><h3 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h3><p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1220/C">https://codeforces.com/problemset/problem/1220/C</a></p>
+<h3 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h3><p>给定字符串s，在一定规则下，求出每一次由谁获胜</p>
+<p>规则如下：</p>
+<ul>
+<li>k为起始l和r的坐标，k从0到strlen(s)</li>
+<li>每一次可以将l和r移动到l’和r’，其中l’&lt;&#x3D;l,r’&gt;&#x3D;r，并且s[l’,r’]的字典序要小于s[l,r]</li>
+<li>Ann先移动</li>
+<li>谁无法移动谁就输了</li>
+</ul>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>我们考虑当什么情况下可以移动，如果l前面存在一个数l’，使得s[l’]&lt;s[l]，则可以移动，否则无法移动。因此，若想要自己尽可能能赢，则一定会选择l’，使得l’尽可能小，则下一个人一定无法移动。因此，题目就可以转化为初始时Ann是否可以移动，若Ann可以移动，则一定可以移动到l’，使得在s[l’]最小时，l’最小，Mike无法移动，则Ann获胜，若Ann初始时Ann无法移动，则Mike获胜。因此，题目可以进一步转化为是否存在l’，满足l’&lt;k,且s[l’]&lt;s[k]。我们可以存储前0到k-1中最小的ascii值，判断是否小于当前的s[k]，若小于，则Ann赢，否则，Mike赢。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">char s[500010];
+
+void solve()
+&#123;
+    cin&gt;&gt;s;
+    char m=s[0];
+    cout&lt;&lt;&quot;Mike\n&quot;;
+    for(int i=1;s[i];i++)
+    &#123;
+        m=min(m,s[i-1]);
+        if(s[i]&lt;=m)
+            cout&lt;&lt;&quot;Mike\n&quot;;
+        else
+            cout&lt;&lt;&quot;Ann\n&quot;;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="D"><a href="#D" class="headerlink" title="D"></a>D</h2><h3 id="题目链接-1"><a href="#题目链接-1" class="headerlink" title="题目链接"></a>题目链接</h3><p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1092/D1">https://codeforces.com/problemset/problem/1092/D1</a></p>
+<h3 id="题目大意-1"><a href="#题目大意-1" class="headerlink" title="题目大意"></a>题目大意</h3><p>给定一堵墙的每一处的高度，判断我们是否可以通过使用2*1的砖，使这堵墙水平</p>
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>我们可以考虑2*1的砖竖直放置时可以使得一堵墙成为每一处高度只差1的情况，如2,1,1,4,5可以变为6,5,5,6,5，也就相当于0,1,1,0,1。如何判断是否可以水平呢，我们发现，如果相邻两个数相等，则一定可以转化为任意高度，就可以忽略这两堵墙，如果这两处墙左右两边的墙高度也一致，则一定可以使这四处墙高度一致，因此我们可以使用栈来判断相邻处奇偶性。</p>
+<pre><code class="cpp">int n;
+int a[N];
+int sta[N],top;
+
+void init()
+&#123;
+    cin&gt;&gt;n;
+    for(int i=1;i&lt;=n;i++) cin&gt;&gt;a[i];
+    for(int i=1;i&lt;=n;i++) a[i]&amp;=1;
+&#125;
+
+void solve()
+&#123;
+    init();
+    for(int i=1;i&lt;=n;i++)
+    &#123;
+        sta[++top]=a[i];
+        while(top&gt;=2&amp;&amp;sta[top]==sta[top-1]) top-=2;
+    &#125;
+    if(top&gt;1)
+        cout&lt;&lt;&quot;NO\n&quot;;
+    else
+        cout&lt;&lt;&quot;YES\n&quot;;
+&#125;
+</code></pre>
+<h2 id="H"><a href="#H" class="headerlink" title="H"></a>H</h2><h3 id="题目链接-2"><a href="#题目链接-2" class="headerlink" title="题目链接"></a>题目链接</h3><p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1481/C">https://codeforces.com/problemset/problem/1481/C</a></p>
+<h3 id="题目大意-2"><a href="#题目大意-2" class="headerlink" title="题目大意"></a>题目大意</h3><p>给定篱笆的颜色，新篱笆的颜色，以及每一个粉刷匠携带的颜色，其中粉刷匠按给定顺序来，并且每一个粉刷匠必须且只能喷一扇篱笆，问是否可以得到新篱笆的颜色，若可以，则输出每一个粉刷匠喷的篱笆是哪一个</p>
+<h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><p>由于前面来的没有用的粉刷匠都可以让他们喷到后面会被再次喷的篱笆上，就可以使这些粉刷匠不污染颜色，因此我们从后往前找粉刷匠。优先喷与原篱笆颜色不符的篱笆，如果喷完后还有原篱笆的颜色与新篱笆不同，则一定失败。还有一种情况是比如当前面所有粉刷匠喷完篱笆后已经完全相同了，最后一个粉刷匠拿着一个与前面都不同的颜色，那一定失败。我们可以在喷完必须喷的颜色后，找到未喷的粉刷匠中与新色彩一致的满足条件的最后一个粉刷匠，如果在这个粉刷匠之前，就可以喷到这个粉刷匠粉刷的篱笆上，否则，就失败。</p>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">int n,m;
+int a[N],b[N],c[N];
+int ans[N];
+multimap&lt;int,int&gt; mp;   //储存必须喷的篱笆，第一个int是颜色，第二个是坐标
+map&lt;int,int&gt; mp2;       //储存新老篱笆颜色相同的篱笆，每种颜色只存储一个即可，int信息同上
+void init()
+&#123;
+    cin&gt;&gt;n&gt;&gt;m;
+    for(int i=1;i&lt;=m;i++) ans[i]=0;
+    for(int i=1;i&lt;=n;i++) cin&gt;&gt;a[i];
+    for(int i=1;i&lt;=n;i++) cin&gt;&gt;b[i];
+    for(int i=1;i&lt;=m;i++) cin&gt;&gt;c[i];
+    mp.clear();
+    mp2.clear();
+    for(int i=n;i&gt;=1;i--)
+        if(a[i]!=b[i])
+            mp.insert(&#123;b[i],i&#125;);
+        else
+            if(!mp2.count(b[i]))
+                mp2.insert(&#123;b[i],i&#125;);
+&#125;
+
+void solve()
+&#123;
+    init();
+    int mx_ord=-1,idx;
+    for(int i=m;i&gt;=1;i--)   //从后往前喷必须喷的
+    &#123;
+        auto it=mp.find(c[i]);
+        if(it!=mp.end())
+        &#123;
+            ans[i]=it-&gt;second;
+            if(mx_ord&lt;i)
+            &#123;
+                mx_ord=i;
+                idx=it-&gt;second;
+            &#125;
+            mp.erase(it);
+        &#125;
+    &#125;
+    if(mp.size())   //如果还有需要喷的，则一定失败
+    &#123;
+        cout&lt;&lt;&quot;NO\n&quot;;
+        return;
+    &#125;
+    for(int i=m;i&gt;=1;i--)   //从后往前给剩余未喷的粉刷匠找目标
+    &#123;
+        if(ans[i]) continue;
+        if(i&lt;mx_ord)
+        &#123;
+            ans[i]=idx;
+            continue;
+        &#125;
+        auto it=mp2.find(c[i]);
+        if(it!=mp2.end())
+        &#123;
+            ans[i]=it-&gt;second;
+            if(mx_ord&lt;i)
+            &#123;
+                mx_ord=i;
+                idx=it-&gt;second;
+            &#125;
+            continue;
+        &#125;
+        else
+        &#123;
+            cout&lt;&lt;&quot;NO\n&quot;;
+            return;
+        &#125;
+    &#125;
+    cout&lt;&lt;&quot;YES\n&quot;;
+    for(int i=1;i&lt;=m;i++)
+        cout&lt;&lt;ans[i]&lt;&lt;&#39; &#39;;
+    cout&lt;&lt;&quot;\n&quot;;
+&#125;
+</code></pre>
+<h2 id="I"><a href="#I" class="headerlink" title="I"></a>I</h2><h3 id="题目链接-3"><a href="#题目链接-3" class="headerlink" title="题目链接"></a>题目链接</h3><p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1481/B">https://codeforces.com/problemset/problem/1481/B</a></p>
+<h3 id="题目大意-3"><a href="#题目大意-3" class="headerlink" title="题目大意"></a>题目大意</h3><p>有n座高分别为hi的山，你需要进行k次操作，求出第k次操作结束后你的坐标，操作如下</p>
+<ul>
+<li>每次操作开始时，你在第一座山</li>
+<li>如果下一座山高度&lt;&#x3D;你所在山，则你到下一座山</li>
+<li>如果下一座山高度&gt;你所在山，则你让当前山高度加一，回到起点，本次操作结束</li>
+<li>如果到最后第n座山没有拦住你，则你的坐标为-1</li>
+</ul>
+<h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><p>纯模拟题，无需思路</p>
+<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">int n,k;
+int h[105];
+
+void init()
+&#123;
+    cin&gt;&gt;n&gt;&gt;k;
+    for(int i=1;i&lt;=n;i++)
+        cin&gt;&gt;h[i];
+&#125;
+
+void solve()
+&#123;
+    init();
+    h[n+1]=-1;
+    for(int i=1;i&lt;=k;i++)
+    &#123;
+        for(int j=1;j&lt;=n+1;j++)
+        &#123;
+            if(j==n+1)
+            &#123;
+                cout&lt;&lt;-1&lt;&lt;&#39;\n&#39;;
+                return;
+            &#125;
+            if(h[j]&lt;h[j+1])
+            &#123;
+                if(i==k)
+                &#123;
+                    cout&lt;&lt;j&lt;&lt;&#39;\n&#39;;
+                    return;
+                &#125;
+                h[j]++;
+                break;
+            &#125;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="J"><a href="#J" class="headerlink" title="J"></a>J</h2><h3 id="题目链接-4"><a href="#题目链接-4" class="headerlink" title="题目链接"></a>题目链接</h3><p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/796/B">https://codeforces.com/problemset/problem/796/B</a></p>
+<h3 id="题目大意-4"><a href="#题目大意-4" class="headerlink" title="题目大意"></a>题目大意</h3><p>给定n个杯子，m个洞和k次操作，给一个小球，初始时在1处，每次操作交换坐标为a,b的杯子。如果小球在的位置有洞，则掉进洞中，不再改变位置。求小球最后所在的位置。</p>
+<h3 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h3><p>纯模拟，用set记录洞的位置，每次判断是否在洞中即可</p>
+<h3 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">int n,m,k;
+set&lt;int&gt; hole;
+
+void init()
+&#123;
+    cin&gt;&gt;n&gt;&gt;m&gt;&gt;k;
+    while(m--)
+    &#123;
+        int x;
+        cin&gt;&gt;x;
+        hole.insert(x);
+    &#125;
+&#125;
+
+void solve()
+&#123;
+    int pos=1;
+    bool in_hole=0;
+    init();
+    while(k--)
+    &#123;
+        if(hole.count(pos)) in_hole=1;
+        int x,y;
+        cin&gt;&gt;x&gt;&gt;y;
+        if(!in_hole)
+        &#123;
+            if(pos==x)
+                pos=y;
+            else if(pos==y)
+                pos=x;
+        &#125;
+    &#125;
+    cout&lt;&lt;pos&lt;&lt;&#39;\n&#39;;
+&#125;
+</code></pre>
+<h2 id="K"><a href="#K" class="headerlink" title="K"></a>K</h2><h3 id="题目链接-5"><a href="#题目链接-5" class="headerlink" title="题目链接"></a>题目链接</h3><p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1474/A">https://codeforces.com/problemset/problem/1474/A</a></p>
+<h3 id="题目大意-5"><a href="#题目大意-5" class="headerlink" title="题目大意"></a>题目大意</h3><p>给定一个长度为n的字符串b，求字符串a，满足以下规则</p>
+<ul>
+<li>a,b长度相等，且只含有0,1，但这不是二进制</li>
+<li>使a+b尽可能大，但是，a+b中如果相邻的数相等，则会只保留一个</li>
+</ul>
+<h3 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h3><p>贪心，使最高位尽可能的大。之后的位和前一个位比较，如果a为1时与前一位不同，则a为1，否则为0，这样就可以保证在高位尽可能大时不会发生合并</p>
+<h3 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">char s[100010];
+void solve()
+&#123;
+    int n;
+    cin&gt;&gt;n&gt;&gt;s;
+    s[0]++;
+    cout&lt;&lt;1;
+    for(int i=1;i&lt;n;i++)
+    &#123;
+        if(s[i]+1!=s[i-1])
+        &#123;
+            cout&lt;&lt;1;
+            s[i]++;
+        &#125;
+        else
+        &#123;
+            cout&lt;&lt;0;
+        &#125;
+    &#125;
+    cout&lt;&lt;&#39;\n&#39;;
+&#125;
+</code></pre>
+<h2 id="L"><a href="#L" class="headerlink" title="L"></a>L</h2><h3 id="题目链接-6"><a href="#题目链接-6" class="headerlink" title="题目链接"></a>题目链接</h3><p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1474/B">https://codeforces.com/problemset/problem/1474/B</a></p>
+<h3 id="题目大意-6"><a href="#题目大意-6" class="headerlink" title="题目大意"></a>题目大意</h3><p>给定t个数d，对每一个d，求出一个最小的数a，其中a的因子个数大于等于4，且a的任意因子的差值大于等于d</p>
+<h3 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h3><p>a一定包含1和a本身，因此只需要再找出两个因子即可。若这两个因子中有非质因子仍满足条件，则只含其质因子也一定满足条件，所以两个因子都是质因子。可以用任意素数筛预处理出需要的素数，然后找到两个素数满足题目表述即可</p>
+<h3 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">const int N=1000000;
+int prime[100000],sz;
+bool is_prime[N];
+
+void init() //预处理素数，写在主函数即可
+&#123;
+    memset(is_prime,1,sizeof is_prime);
+    is_prime[0]=0,is_prime[1]=0;
+    for(int i=2;i&lt;N;i++)
+    &#123;
+        if(is_prime[i])
+        &#123;
+            prime[sz++]=i;
+            for(int j=i+i;j&lt;N;j+=i)
+            &#123;
+                is_prime[j]=0;
+            &#125;
+        &#125;
+    &#125;
+&#125;
+
+void solve()
+&#123;
+    int d,a,b;
+    cin&gt;&gt;d;
+    int i=0;
+    while(prime[i]-1&lt;d)
+        i++;
+    a=prime[i];
+    while(prime[i]-a&lt;d)
+        i++;
+    b=prime[i];
+    cout&lt;&lt;(long long)a*b&lt;&lt;&#39;\n&#39;; //保险起见开long long
+&#125;
+</code></pre>
+<h2 id="M"><a href="#M" class="headerlink" title="M"></a>M</h2><h3 id="题目链接-7"><a href="#题目链接-7" class="headerlink" title="题目链接"></a>题目链接</h3><p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1474/C">https://codeforces.com/problemset/problem/1474/C</a></p>
+<h3 id="题目大意-7"><a href="#题目大意-7" class="headerlink" title="题目大意"></a>题目大意</h3><p>给定一个长度为n*2的数列，问是否存在一个数x，使得数列能清空，若可以，给出x和每一次的清除元素，清空规则如下：</p>
+<ul>
+<li>选择两个数a,b,使得a+b&#x3D;&#x3D;x，清除a，b，并将x改为max(a,b)</li>
+<li>继续执行，直到数列为空</li>
+</ul>
+<h3 id="思路-7"><a href="#思路-7" class="headerlink" title="思路"></a>思路</h3><p>由于x满足a+b&#x3D;&#x3D;x，所以，每一次的x一定大于剩余数列中最大的数。因此，当确定x后，我们每次一定取剩余数列中最大数a和另一个数x-a，并将x改为a。当结束之前，我们无法在数列中取到x-a时，说明初始x不合法。确定检验x规则后，我们可以枚举所有可能的x，判断是否有成立的若都不成立，则不存在。x一定是初始数列中最大数和一个其他元素的和。</p>
+<h3 id="代码-6"><a href="#代码-6" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">int n;
+int a[2010];
+
+vector&lt;pii&gt; check(int mx)
+&#123;
+    vector&lt;pii&gt; ans;
+    multiset&lt;int&gt; ms;
+    for(int i=0;i&lt;2*n;i++)
+        ms.insert(a[i]);
+    for(int i=0;i&lt;n;i++)
+    &#123;
+        auto e=*(--ms.end());
+        ms.erase(--ms.end());
+        auto it=ms.find(mx-e);
+        if(it==ms.end())
+            return &#123;&#125;;
+        ans.push_back(&#123;mx-e,e&#125;);
+        ms.erase(it);
+        mx=e;
+    &#125;
+    return ans;
+&#125;
+
+void solve()
+&#123;
+    cin&gt;&gt;n;
+    for(int i=0;i&lt;2*n;i++)
+        cin&gt;&gt;a[i];
+    sort(a,a+2*n);
+    for(int i=2*n-2;i&gt;=0;i--)
+    &#123;
+        auto ans=check(a[i]+a[2*n-1]);
+        if(ans.empty()) continue;
+        cout&lt;&lt;&quot;YES\n&quot;;
+        cout&lt;&lt;a[i]+a[2*n-1]&lt;&lt;&#39;\n&#39;;
+        for(auto e:ans)
+        &#123;
+            cout&lt;&lt;e.first&lt;&lt;&#39; &#39;&lt;&lt;e.second&lt;&lt;&#39;\n&#39;;
+        &#125;
+        return;
+    &#125;
+    cout&lt;&lt;&quot;NO&quot;&lt;&lt;&#39;\n&#39;;
+&#125;
+</code></pre>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2025 Yhs_JokerのBlog
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Yhs_Joker
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+    </body>
+</html>

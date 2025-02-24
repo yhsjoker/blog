@@ -1,0 +1,2004 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>学生出入校管理系统 | Yhs_JokerのBlog</title>
+        <meta name="author" content="Yhs_Joker" />
+        <meta name="description" content="There is only one kind of heroism in the world, which is to love life after knowing the truth of life." />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/avatar.jpg" />
+        <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>YHS_JOKERのBLOG</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;YHS_JOKERのBLOG</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div class="article">
+    <div>
+        <h1>学生出入校管理系统</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2022/12/6
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E9%A1%B9%E7%9B%AE/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                项目
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/C/" style="color: #03a9f4">C</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E4%BD%9C%E4%B8%9A/" style="color: #00a596">作业</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h2 id="实现功能"><a href="#实现功能" class="headerlink" title="实现功能"></a>实现功能</h2><h3 id="文字描述"><a href="#文字描述" class="headerlink" title="文字描述"></a>文字描述</h3><ol>
+<li>录入出入校园人员信息</li>
+<li>保存出入校园人员信息</li>
+<li>浏览出入校园人员信息</li>
+<li>查询出入校园人员信息</li>
+<li>增加出入校园人员信息</li>
+<li>删除出入校园人员信息</li>
+<li>修改出入校园人员信息</li>
+<li>统计出入校园人员信息</li>
+<li>对出、入校园人员信息分别进行排序</li>
+<li>退出</li>
+</ol>
+<h3 id="示意图"><a href="#示意图" class="headerlink" title="示意图"></a>示意图</h3><p><img src="/../post_source/CampusSystem/demo.png"></p>
+<h3 id="功能展示"><a href="#功能展示" class="headerlink" title="功能展示"></a>功能展示</h3><h4 id="主页面"><a href="#主页面" class="headerlink" title="主页面"></a>主页面</h4><p><img src="/../post_source/CampusSystem/%E4%B8%BB%E7%95%8C%E9%9D%A2.png" alt="主页面"></p>
+<h4 id="录入界面"><a href="#录入界面" class="headerlink" title="录入界面"></a>录入界面</h4><p><img src="/../post_source/CampusSystem/%E5%BD%95%E5%85%A5%E7%95%8C%E9%9D%A2.png" alt="录入页面"></p>
+<h4 id="保存界面"><a href="#保存界面" class="headerlink" title="保存界面"></a>保存界面</h4><p><img src="/../post_source/CampusSystem/%E4%BF%9D%E5%AD%98%E7%95%8C%E9%9D%A2.png" alt="保存页面"></p>
+<h4 id="浏览界面"><a href="#浏览界面" class="headerlink" title="浏览界面"></a>浏览界面</h4><p><img src="/../post_source/CampusSystem/%E6%B5%8F%E8%A7%88%E7%95%8C%E9%9D%A2.png" alt="浏览页面"></p>
+<h4 id="查询界面"><a href="#查询界面" class="headerlink" title="查询界面"></a>查询界面</h4><p><img src="/../post_source/CampusSystem/%E6%9F%A5%E8%AF%A2%E7%95%8C%E9%9D%A2.png" alt="查询界面"></p>
+<h4 id="增加界面"><a href="#增加界面" class="headerlink" title="增加界面"></a>增加界面</h4><p><img src="/../post_source/CampusSystem/%E5%A2%9E%E5%8A%A0%E7%95%8C%E9%9D%A2.png" alt="增加界面"></p>
+<h4 id="删除界面"><a href="#删除界面" class="headerlink" title="删除界面"></a>删除界面</h4><p><img src="/../post_source/CampusSystem/%E5%88%A0%E9%99%A4%E7%95%8C%E9%9D%A2.png" alt="删除界面"></p>
+<h4 id="修改界面"><a href="#修改界面" class="headerlink" title="修改界面"></a>修改界面</h4><p><img src="/../post_source/CampusSystem/%E4%BF%AE%E6%94%B9%E7%95%8C%E9%9D%A2.png" alt="修改界面"></p>
+<h4 id="统计界面"><a href="#统计界面" class="headerlink" title="统计界面"></a>统计界面</h4><p><img src="/../post_source/CampusSystem/%E7%BB%9F%E8%AE%A1%E7%95%8C%E9%9D%A2.png" alt="统计界面"></p>
+<h4 id="排序界面"><a href="#排序界面" class="headerlink" title="排序界面"></a>排序界面</h4><p><img src="/../post_source/CampusSystem/%E6%8E%92%E5%BA%8F%E7%95%8C%E9%9D%A2.png" alt="排序界面"></p>
+<h4 id="退出界面"><a href="#退出界面" class="headerlink" title="退出界面"></a>退出界面</h4><p><img src="/../post_source/CampusSystem/%E9%80%80%E5%87%BA%E7%95%8C%E9%9D%A2.png" alt="退出界面"><br><img src="/../post_source/CampusSystem/%E9%80%80%E5%87%BA%E7%95%8C%E9%9D%A22.png" alt="退出界面"></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="文件结构目录"><a href="#文件结构目录" class="headerlink" title="文件结构目录"></a>文件结构目录</h3><ul>
+<li>CampusSystem<ul>
+<li>files<ul>
+<li><strong>database.txt</strong></li>
+</ul>
+</li>
+<li>include<ul>
+<li><strong>CampusSystem.h</strong></li>
+<li><strong>Person.h</strong></li>
+<li><strong>Time.h</strong></li>
+</ul>
+</li>
+<li>source<ul>
+<li><strong>CampusSystem.c</strong></li>
+<li><strong>Person.c</strong></li>
+<li><strong>Time.c</strong></li>
+</ul>
+</li>
+<li><strong>main.c</strong></li>
+<li><strong>CampusSystem.dev</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h3><h4 id="main-c"><a href="#main-c" class="headerlink" title="main.c"></a>main.c</h4><pre><code class="c">/*******************************************
+ *
+ *	@File name:校园出入管理系统 
+ * 	@Author:Yhs_Joker
+ *	@Version:1.1
+ *	@Data:2022-11-5
+ *
+ ******************************************/
+
+#include&quot;./include/CampusSystem.h&quot;
+
+int main()
+&#123;
+    System* p_system = (System*)malloc(sizeof(System));
+    
+    InitialSystem(p_system);
+    OperationPage(p_system);
+    DestructSystem(p_system);
+    
+    free(p_system);
+    
+&#125;
+</code></pre>
+<h4 id="CampusSystem-h"><a href="#CampusSystem-h" class="headerlink" title="CampusSystem.h"></a>CampusSystem.h</h4><pre><code class="c">#ifndef CAMPUS_SYSTEM_H
+#define CAMPUS_SYSTEM_H
+
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+#include&lt;ctype.h&gt;
+#include&lt;conio.h&gt;
+
+#include&quot;Person.h&quot;
+
+#define EXPENSION_CAPACITY 100
+#define INITIAL_CAPACITY 100
+#define NPOS (SIZE_T)(-1)
+
+typedef struct
+&#123;
+    Person* person_array;
+    SIZE_T size;
+    SIZE_T capacity;
+&#125;System;
+
+void InitialInfo(System* p_system);	//从文件中读取历史信息,初始化信息
+void InitialSystem(System* p_system);	//构造系统
+void DestructSystem(System* p_system);	//析构系统
+
+void ExpandSystemCapacity(System* p_system);	//扩容系统
+
+void PushBack(System* p_system, Person* p_person);	//尾插数据
+void Erase(System* p_system, SIZE_T pos);			//删除数据
+
+void PrintInfoList(System* p_system, SIZE_T index_array[]);	//打印列表中的数据
+
+int InputPersonInfoToFind(Person* p_person);	//读入查找人员信息所需的数据
+SIZE_T Find(System* p_system, SIZE_T index_array[]);	//查找人员
+
+int IsSIZE_TFormat(const char str[]);	//判断是否是下标类型
+void StrToSIZE_T(const char str[], SIZE_T* number);	//将字符串类型转化为下标类型
+int InputSIZE_T(SIZE_T* number);	//读入下标类型
+
+int InputSIZE_TFromRange(SIZE_T* number, SIZE_T left, SIZE_T right);	//读入下标类型,限制其范围为left-right
+
+void ShowMenu();	//展示菜单
+
+void ShowInputFormat();	//展示输入数据格式要求
+
+void EnterInfo(System* p_system);//批量录入出入校园人员信息
+
+void SaveInfo(System* p_system);	//保存出入校园人员信息
+
+void ReadInfo(System* p_system);	//浏览出入校园人员信息
+
+void SearchByIdentity(System* p_system);	//通过身份查询出入校园人员信息
+void SearchByName(System* p_system);	//通过姓名查询出入校园人员信息
+void SearchByTime(System* p_system);	//通过时间查询出入校园人员信息
+void SearchInfo(System* p_system);	//查询出入校园人员信息
+
+void CreateInfo(System* p_system);	//增加出入校园人员信息
+
+void DeleteInfo(System* p_system);	//删除出入校园人员信息
+
+void UpdateInfo(System* p_system);	//修改出入校园人员信息
+
+void CountInfoFunc1(System* p_system, Time* p_time);	//通过某日时间统计出校园人员信息
+void CountInfoFunc2(System* p_system, Time* p_time);	//通过某日时间统计入校园人员信息
+void CountInfoFunc3(System* p_system);	//统计所有出校园人员信息
+void CountInfoFunc4(System* p_system);	//统计所有入校园人员信息
+void CountInfo(System* p_system);	//统计出入校园人员信息 
+
+void SortInfoFunc1(System* p_system);	//出校升序方式排序
+void SortInfoFunc2(System* p_system);	//入校降序方式排序
+void SortInfo(System* p_system);	//排序出入校园人员信息 
+ 
+void ExitSystem(System* p_system);	//退出系统
+
+void OperationPage(System* p_system);	//用户操作界面
+
+#endif
+</code></pre>
+<h4 id="Person-h"><a href="#Person-h" class="headerlink" title="Person.h"></a>Person.h</h4><pre><code class="c">#ifndef PERSON_H
+#define PERSON_H
+
+#include&lt;stdio.h&gt;
+#include&lt;string.h&gt;
+
+#include&quot;Time.h&quot;
+
+#define IDENTITY_SIZE 20
+#define NAME_SIZE 12
+#define NUMBER_SIZE 20
+#define PHONE_NUMBER_SIZE 20
+#define ID_NUMBER_SIZE 20
+
+typedef enum
+&#123;
+    ENTRY = 1,
+    EXIT = 0
+&#125;Status;
+
+typedef struct
+&#123;
+    char identity[IDENTITY_SIZE];
+    char name[NAME_SIZE];
+    char number[NUMBER_SIZE];
+    char phone_number[PHONE_NUMBER_SIZE];
+    char id_number[ID_NUMBER_SIZE];
+    Status status;	//出入校状态
+    Time time;		//出入校时间
+&#125;Person;
+
+int IsIdentityFormat(const char str[]);	//判断是否是身份类型格式
+int InputIdentity(char identity[]);	//输入身份信息
+int InputIdentityByFile(FILE* fp, char identity[]);	//通过文件输入身份信息
+
+int IsNameFormat(const char str[]);		//判断是否是姓名类型格式
+int InputName(char name[]);	//输入姓名信息
+int InputNameByFile(FILE* fp, char name[]);	//通过文件输入姓名信息
+
+int IsNumberFormat(const char str[]);	//判断是否是编号类型格式
+int InputNumber(char number[]);	//输入编号信息
+int InputNumberByFile(FILE* fp, char number[]);	//通过文件输入编号信息
+
+int IsPhoneNumberFormat(const char str[]);	//判断是否是电话号类型格式
+int InputPhoneNumber(char phone_number[]);	//输入电话号码信息
+int InputPhoneNumberByFile(FILE* fp, char phone_number[]);
+
+int IsIdNumberFormat(const char str[]);		//判断是否是身份证号类型格式
+int InputIdNumber(char id_number[]);	//输入身份证信息
+int InputIdNumberByFile(FILE* fp, char id_number[]);	//通过文件输入身份证号码信息
+
+int IsStatusFormat(const char str[]);	//判断是否是出入校状态类型格式
+void StrToStatus(const char str[],Status* p_status);	//字符串类型转化为状态类型
+int InputStatus(Status* p_status);	//输入出入校状态信息
+int InputStatusByFile(FILE* fp, Status* p_status);	//通过文件输入出入校状态信息
+
+int InputPerson(Person* p_person);	//输入人员信息
+int InputPersonByFile(FILE* fp, Person* p_person);	//通过文件输入人员信息
+
+void ShowPersonInfo(SIZE_T order, Person* p_person);	//展示人员信息
+
+int CmpByTimeFromSmallToBig(Person* lhs, Person* rhs);	//时间从小到大排序比较函数
+int CmpByTimeFromBigToSmall(Person* lhs, Person* rhs);	//时间从大到小排序比较函数
+
+
+#endif
+</code></pre>
+<h4 id="Time-h"><a href="#Time-h" class="headerlink" title="Time.h"></a>Time.h</h4><pre><code class="c">#ifndef TIME_H
+#define TIME_H
+
+#include&lt;string.h&gt;
+#include&lt;ctype.h&gt;
+#include&lt;stdio.h&gt;
+
+#define TIME_T unsigned int
+
+#define BUFFER_SIZE 1024
+
+typedef unsigned int SIZE_T;
+
+typedef struct
+&#123;
+    TIME_T year;
+    TIME_T month;
+    TIME_T day;
+&#125;Time;
+
+int IsLeapYear(TIME_T year);	//判断是否是闰年
+
+int IsTimeFormat(const char str[]);	//判断是否是时间类型格式
+int StrToTime(const char str[],Time* p_time);	//转换为时间类型
+int InputTime(Time* p_time);	//读入时间
+int InputTimeByFile(FILE* fp, Time* p_time);	//通过文件读入时间
+void ShowTime(Time* p_time);	//展示时间
+
+void OutputTimeToFile(Time* p_time);	//向文件输出时间
+
+int CmpTimeFunc(const Time* lhs, const Time* rhs);	//时间从小到大排序使用的比较函数
+int CmpTimeFuncFromBigToSmall(const Time* lhs, const Time* rhs);	//时间从大到小排序使用的比较函数
+
+#endif
+</code></pre>
+<h4 id="CampusSystem-c"><a href="#CampusSystem-c" class="headerlink" title="CampusSystem.c"></a>CampusSystem.c</h4><pre><code class="c">#include&quot;../include/CampusSystem.h&quot;
+
+const char path[]=&quot;./files/database.txt&quot;;	//保存文件路径
+
+void InitialInfo(System* p_system)
+&#123;
+    FILE* fp = fopen(path, &quot;r&quot;);
+    if(fp == NULL)
+    &#123;
+        puts(&quot;读入文件不存在！&quot;);
+        return;
+    &#125;
+    Person person;
+    while(InputPersonByFile(fp,&amp;person) == 0)
+    &#123;
+        PushBack(p_system, &amp;person);
+    &#125;
+&#125;
+
+void InitialSystem(System* p_system)
+&#123;
+    SIZE_T malloc_size = INITIAL_CAPACITY * sizeof(Person);
+    p_system-&gt;person_array = (Person*)malloc(malloc_size);
+    
+    if(p_system-&gt;person_array == NULL)
+    &#123;
+        puts(&quot;在初始化阶段内存分配失败！&quot;);
+        ExitSystem(p_system);
+    &#125;
+    
+    p_system-&gt;size = 0;
+    p_system-&gt;capacity = 0;
+    
+    InitialInfo(p_system);
+&#125;
+
+void DestructSystem(System* p_system)
+&#123;
+    p_system-&gt;size = 0;
+    p_system-&gt;capacity = 0;
+    free(p_system-&gt;person_array);
+&#125;
+
+void ExpandSystemCapacity(System* p_system)
+&#123;
+    SIZE_T new_capacity = p_system-&gt;capacity + EXPENSION_CAPACITY;
+    SIZE_T realloc_size = new_capacity * sizeof(Person);
+    p_system-&gt;person_array = realloc(p_system-&gt;person_array, realloc_size);
+    
+    if(p_system-&gt;person_array == NULL)
+    &#123;
+        puts(&quot;在扩容阶段内存分配失败！&quot;);
+        ExitSystem(p_system);
+    &#125;
+    
+    p_system-&gt;capacity = new_capacity;
+&#125;
+
+void PushBack(System* p_system,Person* p_person)
+&#123;
+    SIZE_T previous_size = p_system-&gt;size;
+    SIZE_T previous_capacity = p_system-&gt;capacity;
+    
+    if(previous_size == previous_capacity)
+    &#123;
+        ExpandSystemCapacity(p_system);
+    &#125;
+    
+    p_system-&gt;person_array[previous_size] = *p_person;
+    
+    p_system-&gt;size = previous_size + 1;
+&#125;
+
+void Erase(System* p_system, SIZE_T pos)
+&#123;
+    SIZE_T previous_size = p_system-&gt;size;
+    
+    if(pos &gt;= previous_size)
+    &#123;
+        puts(&quot;删除操作不合法！&quot;);
+        return;
+    &#125;
+    
+    Person* p_delete_pos = p_system-&gt;person_array + pos;
+    SIZE_T moving_length = previous_size - pos - 1;
+    SIZE_T moving_size = moving_length * sizeof(Person);
+    
+    memmove(p_delete_pos, p_delete_pos + 1, moving_size);
+    
+    p_system-&gt;size = previous_size - 1;
+&#125;
+
+void PrintInfoList(System* p_system, SIZE_T index_array[])
+&#123;
+    printf(&quot;+----+----------+---------------+--------------------+--------------------+--------------------+----+----------+\n&quot;);
+    printf(&quot;|%-4s|%s\t|%-15s|%-20s|%-20s|%-20s|%-4s|%-10s|\n&quot;, &quot;序号&quot;, &quot;身份信息&quot;, &quot;姓名&quot;, &quot;编号&quot;, &quot;电话号码&quot;, &quot;身份证号&quot;, &quot;状态&quot;, &quot;出入校时间&quot;);
+    printf(&quot;+----+----------+---------------+--------------------+--------------------+--------------------+----+----------+\n&quot;);
+    
+    for(SIZE_T i = 0; index_array[i] != NPOS; i++)
+    &#123;
+        ShowPersonInfo(i+1, p_system-&gt;person_array + index_array[i]);
+        puts(&quot;&quot;);
+        printf(&quot;+----+----------+---------------+--------------------+--------------------+--------------------+----+----------+\n&quot;);
+    &#125;
+&#125;
+
+int InputPersonInfoToFind(Person* p_person)
+&#123;
+    int is_successful = 0;
+    
+    if(InputName(p_person-&gt;name) == -1)
+    &#123;
+        puts(&quot;姓名录入格式错误！&quot;);
+        is_successful = -1;
+    &#125;
+    
+    if(InputIdNumber(p_person-&gt;id_number) == -1)
+    &#123;
+        puts(&quot;身份证录入格式错误！&quot;);
+        is_successful = -1;
+    &#125;
+    if(InputStatus(&amp;(p_person-&gt;status)) == -1)
+    &#123;
+        puts(&quot;出入校状态录入格式错误！&quot;);
+        is_successful = -1;
+    &#125;
+    if(InputTime(&amp;(p_person-&gt;time)) == -1)
+    &#123;
+        puts(&quot;出入校时间录入格式错误！&quot;);
+        is_successful = -1;
+    &#125;
+    return is_successful;
+&#125;
+
+SIZE_T Find(System* p_system, SIZE_T index_array[])
+&#123;
+    puts(&quot;请输入姓名，身份证号，出入校状态，出入校时间来确认删除成员：&quot;);
+    puts(&quot;例:张三 110101199003079251 0 2222/10/02&quot;);
+    puts(&quot;请输入信息：&quot;);
+    Person person;
+    while(InputPersonInfoToFind(&amp;person) == -1)
+    &#123;
+        puts(&quot;信息格式输入错误,请重新输入：&quot;);
+    &#125;
+    
+    SIZE_T array_size = p_system-&gt;size;
+    Person* person_array = p_system-&gt;person_array;
+    
+    SIZE_T idx_arr_size = 0;
+    
+    for(int i = 0; i &lt; array_size; i++)
+    &#123;
+        if(strcmp(person.name, person_array[i].name) == 0  &amp;&amp;
+            strcmp(person.id_number, person_array[i].id_number) == 0  &amp;&amp;
+            person.status == person_array[i].status &amp;&amp;
+            CmpTimeFunc(&amp;person.time, &amp;person_array[i].time) == 0)
+        &#123;
+            index_array[idx_arr_size++] = i;
+        &#125;
+    &#125;
+    index_array[idx_arr_size] = NPOS;
+    return index_array[0];
+&#125;
+
+int IsSIZE_TFormat(const char str[])
+&#123;
+    for(int i=0; str[i]; i++)
+    &#123;
+        if(isdigit(str[i]) == 0)
+        &#123;
+            return -1;
+        &#125;
+    &#125;
+    
+    return 0;
+&#125;
+
+void StrToSIZE_T(const char str[], SIZE_T* number)
+&#123;
+    *number = (SIZE_T)atoi(str);
+&#125;
+
+int InputSIZE_T(SIZE_T* number)
+&#123;
+    char buffer[BUFFER_SIZE];
+    
+    scanf(&quot;%s&quot;,buffer);
+    if(IsSIZE_TFormat(buffer) == -1)
+        return -1;
+    
+    StrToSIZE_T(buffer, number);
+    return 0;
+&#125;
+
+int InputSIZE_TFromRange(SIZE_T* number, SIZE_T left, SIZE_T right)
+&#123;
+    if(InputSIZE_T(number) == -1)
+        return -1;
+    if(*number&lt;left || *number&gt;right)
+        return -1;
+    return 0;
+&#125;
+
+void ShowMenu()
+&#123;
+    puts(&quot;+---------欢迎使用校园出入管理系统---------+&quot;);
+    puts(&quot;|          (请输入0-9中的一个数)           |&quot;);
+    puts(&quot;|                                          |&quot;);
+    puts(&quot;|          1.录入出入校园人员信息          |&quot;);
+    puts(&quot;|          2.保存出入校园人员信息          |&quot;);
+    puts(&quot;|          3.浏览出入校园人员信息          |&quot;);
+    puts(&quot;|          4.查询出入校园人员信息          |&quot;);
+    puts(&quot;|          5.增加出入校园人员信息          |&quot;);
+    puts(&quot;|          6.删除出入校园人员信息          |&quot;);
+    puts(&quot;|          7.修改出入校园人员信息          |&quot;);
+    puts(&quot;|          8.统计出入校园人员信息          |&quot;);
+    puts(&quot;|          9.排序出入校园人员信息          |&quot;);
+    puts(&quot;|          0.退出                          |&quot;);
+    puts(&quot;|                                          |&quot;);
+    puts(&quot;|                         作者：Yhs_Joker  |&quot;);
+    puts(&quot;+------------------------------------------+&quot;);
+&#125;
+
+void ShowInputFormat()
+&#123;
+    puts(&quot;请按照以下规则输入信息：&quot;);
+    puts(&quot;依次输入身份信息，姓名，编号，联系方式，身份证号，出入校状态，出入校时间&quot;);
+    puts(&quot;&quot;);
+    puts(&quot;名词解释：&quot;);
+    puts(&quot;身份信息：“学生”,“教职工”,“其他”&quot;);
+    puts(&quot;编号：全数字；如果没有则填写“无”&quot;);
+    puts(&quot;联系方式：应为一串数字&quot;);
+    puts(&quot;身份证号：应符合中国居民身份证标准&quot;);
+    puts(&quot;出入校状态：0代表出校，1代表入校&quot;);
+    puts(&quot;出入校时间：格式为yyyy/mm/dd，日期应合法，不能出现如2022/02/30这样的日期&quot;);
+    puts(&quot;&quot;);
+    puts(&quot;例:学生 张三 221002802 17517561757 110101199003079251 0 2222/10/02&quot;);
+    puts(&quot;&quot;);
+    puts(&quot;请按照提示填写信息!&quot;);
+&#125;
+
+void EnterInfo(System* p_system)
+&#123;
+    puts(&quot;录入出入校园人员信息&quot;);
+    puts(&quot;&quot;);
+    
+    ShowInputFormat();
+    
+    puts(&quot;请输入批量录入信息数量：&quot;);
+    
+    SIZE_T person_num = 0;
+    while(InputSIZE_T(&amp;person_num) == -1)
+    &#123;
+        puts(&quot;数字格式输入错误，请重新输入：&quot;);
+    &#125;
+    
+    puts(&quot;请依次输入信息：&quot;);
+    for(SIZE_T i=0; i &lt; person_num; i++)
+    &#123;
+        Person person;
+        
+        while(InputPerson(&amp;person) == -1)
+        &#123;
+            puts(&quot;请重新输入信息：&quot;);
+        &#125;
+        
+        PushBack(p_system, &amp;person);
+        printf(&quot;%s的信息录入成功！\n&quot;, person.name);
+    &#125;
+    
+    puts(&quot;&quot;);
+    puts(&quot;录入信息成功!&quot;);
+    
+&#125;
+
+void SaveInfo(System* p_system)
+&#123;
+    puts(&quot;保存出入校园人员信息&quot;);
+    puts(&quot;&quot;);
+    
+    SIZE_T array_size = p_system-&gt;size;
+    FILE* fp = fopen(path, &quot;w&quot;);
+    for(int i = 0; i &lt; array_size; i++)
+    &#123;
+        Person* p = p_system-&gt;person_array + i;
+        fprintf(fp, &quot;%s %s %s %s %s %d %04u/%02u/%02u\n&quot;,
+            p-&gt;identity, p-&gt;name, p-&gt;number, p-&gt;phone_number, 
+            p-&gt;id_number, p-&gt;status, p-&gt;time.year, p-&gt;time.month, 
+            p-&gt;time.day);
+    &#125;
+    fclose(fp);
+    
+    puts(&quot;出入校信息已保存成功！请在files/database.txt中查看！&quot;);
+    
+&#125;
+
+
+
+void ReadInfo(System* p_system)
+&#123;
+    puts(&quot;浏览出入校园人员信息&quot;);
+    puts(&quot;&quot;);
+    
+    SIZE_T array_size = p_system-&gt;size;
+    if(array_size == 0)
+    &#123;
+        puts(&quot;系统中暂无人员信息&quot;);
+        puts(&quot;&quot;);
+        return;
+    &#125;
+    
+    SIZE_T* index_array = malloc((p_system-&gt;capacity + 1) * sizeof(SIZE_T));
+    SIZE_T idx_arr_size = 0;
+    for(int i = 0; i &lt; p_system-&gt;size; i++)
+        index_array[idx_arr_size++] = i;
+    index_array[idx_arr_size] = NPOS;
+    
+    PrintInfoList(p_system, index_array);
+    
+    free(index_array);
+&#125;
+
+void SearchByIdentity(System* p_system)
+&#123;
+    puts(&quot;请输入人员身份：&quot;);
+    
+    char identity[IDENTITY_SIZE];
+    while(InputIdentity(identity) == -1)
+    &#123;
+        puts(&quot;身份格式输入错误，请重新输入：&quot;);
+    &#125;
+    
+    Person* person_array =p_system-&gt;person_array; 
+    SIZE_T array_size = p_system-&gt;size;
+    
+    SIZE_T* index_array = malloc((p_system-&gt;capacity + 1) * sizeof(SIZE_T));
+    SIZE_T idx_arr_size = 0;
+    
+    for(SIZE_T i = 0; i &lt;array_size; i++)
+    &#123;
+        if(strcmp(identity, person_array[i].identity) == 0)
+        &#123;
+            index_array[idx_arr_size++] = i;
+        &#125;
+    &#125;
+    index_array[idx_arr_size] = NPOS;
+    
+    PrintInfoList(p_system, index_array);
+    
+    free(index_array);
+&#125;
+
+void SearchByName(System* p_system)
+&#123;
+    puts(&quot;请输入姓名：&quot;);
+    
+    char name[NAME_SIZE];
+    while(InputName(name) == -1)
+    &#123;
+        puts(&quot;姓名格式输入错误，请重新输入：&quot;);
+    &#125;
+    
+    Person* person_array =p_system-&gt;person_array; 
+    SIZE_T array_size = p_system-&gt;size;
+    
+    SIZE_T* index_array = malloc((p_system-&gt;capacity + 1) * sizeof(SIZE_T));
+    SIZE_T idx_arr_size = 0;
+    
+    for(SIZE_T i = 0; i &lt;array_size; i++)
+    &#123;
+        if(strcmp(name, person_array[i].name) == 0)
+        &#123;
+            index_array[idx_arr_size++] = i;
+        &#125;
+    &#125;
+    index_array[idx_arr_size] = NPOS;
+    
+    PrintInfoList(p_system, index_array);
+    
+    free(index_array);
+&#125;
+
+void SearchByTime(System* p_system)
+&#123;
+    puts(&quot;请输入要查询的时间：&quot;);
+    
+    Time time;
+    while(InputTime(&amp;time) == -1)
+    &#123;
+        puts(&quot;时间格式输入错误，请重新输入：&quot;);
+    &#125;
+    
+    Person* person_array =p_system-&gt;person_array; 
+    SIZE_T array_size = p_system-&gt;size;
+    
+    SIZE_T* index_array = malloc((p_system-&gt;capacity + 1) * sizeof(SIZE_T));
+    SIZE_T idx_arr_size = 0;
+    
+    for(SIZE_T i = 0; i &lt;array_size; i++)
+    &#123;
+        Time per_time = person_array[i].time;
+        if(CmpTimeFunc(&amp;per_time, &amp;time) == 0)
+        &#123;
+            index_array[idx_arr_size++] = i;
+        &#125;
+    &#125;
+    index_array[idx_arr_size] = NPOS;
+    
+    PrintInfoList(p_system, index_array);
+    
+    free(index_array);
+&#125;
+
+void SearchInfo(System* p_system)
+&#123;
+    while(1)
+    &#123;
+        puts(&quot;查询出入校园人员信息&quot;);
+        puts(&quot;&quot;);
+        puts(&quot;1.按照人员身份查询&quot;);
+        puts(&quot;2.按照姓名查询&quot;);
+        puts(&quot;3.按照出/入校时间查询&quot;);
+        puts(&quot;0.退出&quot;);
+        puts(&quot;请输入0-3之间的数字:&quot;);
+        
+        SIZE_T op;
+        while(InputSIZE_TFromRange(&amp;op, 0, 3) == -1)
+        &#123;
+            puts(&quot;输入格式错误，请重新输入：&quot;);
+        &#125;
+        
+        switch(op)
+        &#123;
+        case 1:
+            SearchByIdentity(p_system);
+            break;
+            
+        case 2:
+            SearchByName(p_system);
+            break;
+            
+        case 3:
+            SearchByTime(p_system);
+            break;
+            
+        case 0:
+            return ;
+        &#125;
+        
+        system(&quot;pause&quot;);
+        system(&quot;cls&quot;);
+    &#125;
+    
+&#125;
+
+void CreateInfo(System* p_system)
+&#123;
+    puts(&quot;增加出入校园人员信息&quot;);
+    puts(&quot;&quot;);
+    ShowInputFormat();
+    puts(&quot;请输入增加人员信息：&quot;);
+    
+    Person person;
+    while(InputPerson(&amp;person)==-1)
+    &#123;
+        puts(&quot;请重新输入信息：&quot;);
+    &#125;
+    PushBack(p_system, &amp;person);
+    puts(&quot;人员信息添加成功！&quot;);
+    
+    SaveInfo(p_system);
+&#125;
+
+void DeleteInfo(System* p_system)
+&#123;
+    puts(&quot;删除出入校园人员信息&quot;);
+    puts(&quot;&quot;);
+    
+    SIZE_T* index_array = malloc((p_system-&gt;capacity + 1) * sizeof(SIZE_T));
+    
+    SIZE_T pos=Find(p_system, index_array);
+    if(pos == NPOS)
+    &#123;
+        puts(&quot;未查询到此人！&quot;);
+        return;
+    &#125;
+    
+    puts(&quot;查询成功！&quot;);
+    PrintInfoList(p_system, index_array);
+    puts(&quot;是否要删除数据y/n?:&quot;);
+    
+    char buffer[BUFFER_SIZE];
+    while(scanf(&quot;%s&quot;, buffer))
+    &#123;
+        if(strlen(buffer) == 1)
+        &#123;
+            if(buffer[0]==&#39;y&#39; || buffer[0]==&#39;n&#39;)
+            &#123;
+                break;
+            &#125;
+        &#125;
+        puts(&quot;格式输入错误，请重新输入：&quot;);
+    &#125;
+    
+    if(buffer[0] == &#39;n&#39;)
+    &#123;
+        return;
+    &#125;
+    
+    SIZE_T idx_arr_size = 0;
+    while(index_array[idx_arr_size]!=NPOS) idx_arr_size++;
+    
+    puts(&quot;删除序号几的数据：&quot;);
+    SIZE_T order = 0;
+    while(InputSIZE_TFromRange(&amp;order, 1, idx_arr_size) == -1)
+    &#123;
+        puts(&quot;数据格式错误，请重新输入：&quot;);
+    &#125;
+    pos = index_array[order - 1];
+    
+    Erase(p_system, pos);
+    
+    puts(&quot;删除成功！&quot;);
+    SaveInfo(p_system);
+    
+    free(index_array);
+&#125;
+
+void UpdateInfo(System* p_system)
+&#123;
+    puts(&quot;修改出入校园人员信息&quot;);
+    puts(&quot;&quot;);
+    
+    SIZE_T* index_array = malloc((p_system-&gt;capacity + 1) * sizeof(SIZE_T));
+    
+    SIZE_T pos=Find(p_system, index_array);
+    if(pos == NPOS)
+    &#123;
+        puts(&quot;未查询到此人！&quot;);
+        return;
+    &#125;
+    
+    puts(&quot;查询成功！&quot;);
+    PrintInfoList(p_system, index_array);
+    
+    puts(&quot;是否要修改数据y/n?:&quot;);
+    
+    char buffer[BUFFER_SIZE];
+    while(scanf(&quot;%s&quot;, buffer))
+    &#123;
+        if(strlen(buffer) == 1)
+        &#123;
+            if(buffer[0]==&#39;y&#39; || buffer[0]==&#39;n&#39;)
+            &#123;
+                break;
+            &#125;
+        &#125;
+        puts(&quot;格式输入错误，请重新输入：&quot;);
+    &#125;
+    
+    if(buffer[0] == &#39;n&#39;)
+    &#123;
+        return;
+    &#125;
+    
+    SIZE_T idx_arr_size = 0;
+    while(index_array[idx_arr_size]!=NPOS) idx_arr_size++;
+    
+    puts(&quot;修改序号几的数据？&quot;);
+    SIZE_T order = 0;
+    while(InputSIZE_TFromRange(&amp;order, 1, idx_arr_size) == -1)
+    &#123;
+        puts(&quot;数据格式错误，请重新输入：&quot;);
+    &#125;
+    pos = index_array[order - 1];
+    puts(&quot;修改哪项信息（0-6）：&quot;);
+    
+    SIZE_T index;
+    while(InputSIZE_TFromRange(&amp;index, 0, 6) == -1)
+    &#123;
+        puts(&quot;输入数据错误，请重新输入：&quot;);
+    &#125;
+    
+    Person* person = p_system-&gt;person_array + pos;
+    
+    switch (index)
+    &#123;
+        case 0:
+            puts(&quot;请输入修改后的身份信息：&quot;);
+            while(InputIdentity(person-&gt;identity) == -1)
+            &#123;
+                puts(&quot;身份格式输入错误，请重新输入：&quot;);
+            &#125;
+            break;
+        case 1:
+            puts(&quot;请输入修改后的姓名信息：&quot;);
+            while(InputName(person-&gt;name) == -1)
+            &#123;
+                puts(&quot;姓名格式输入错误，请重新输入：&quot;);
+            &#125;
+            break;
+        case 2:
+            puts(&quot;请输入修改后的编号信息：&quot;);
+            while(InputNumber(person-&gt;number) == -1)
+            &#123;
+                puts(&quot;编号格式输入错误，请重新输入：&quot;);
+            &#125;
+            break;
+        case 3:
+            puts(&quot;请输入修改后的电话号码：&quot;);
+            while(InputPhoneNumber(person-&gt;phone_number) == -1)
+            &#123;
+                puts(&quot;电话号码格式输入错误，请重新输入：&quot;);
+            &#125;
+            break;
+        case 4:
+            puts(&quot;请输入修改后的身份证号码：&quot;);
+            while(InputIdNumber(person-&gt;id_number) == -1)
+            &#123;
+                puts(&quot;身份证号码格式输入错误，请重新输入：&quot;);
+            &#125;
+            break;
+        case 5:
+            puts(&quot;请输入修改后的出入校信息：&quot;);
+            while(InputStatus(&amp;person-&gt;status) == -1)
+            &#123;
+                puts(&quot;出入校状态格式输入错误，请重新输入：&quot;);
+            &#125;
+            break;
+        case 6:
+            puts(&quot;请输入修改后的时间：&quot;);
+            while(InputTime(&amp;person-&gt;time) == -1)
+            &#123;
+                puts(&quot;出入校时间格式输入错误，请重新输入：&quot;);
+            &#125;
+            break;
+    &#125;
+    puts(&quot;修改完成！&quot;);
+    SaveInfo(p_system);
+    
+    free(index_array);
+&#125;
+
+void CountInfoFunc1(System* p_system, Time* p_time)
+&#123;
+    SIZE_T array_size = p_system-&gt;size;
+    Person* person_array = p_system-&gt;person_array;
+    SIZE_T student_num = 0;
+    SIZE_T staff_num = 0;
+    SIZE_T others_num = 0;
+    SIZE_T* index_array = malloc((p_system-&gt;capacity + 1) * sizeof(SIZE_T));
+    SIZE_T idx_arr_size = 0;
+    for(SIZE_T i = 0; i &lt; array_size; i++)
+    &#123;
+        if(CmpTimeFunc(&amp;person_array[i].time,p_time) != 0)
+            continue;
+        if(person_array[i].status == EXIT)
+        &#123;
+            index_array[idx_arr_size++] = i;
+            if(strcmp(&quot;学生&quot;,person_array[i].identity) == 0)
+            &#123;
+                student_num++;
+            &#125;
+            if(strcmp(&quot;教职工&quot;,person_array[i].identity) == 0)
+            &#123;
+                staff_num++;
+            &#125;
+            if(strcmp(&quot;其他&quot;,person_array[i].identity) == 0)
+            &#123;
+                others_num++;
+            &#125;
+        &#125;
+    &#125;
+    index_array[idx_arr_size] = NPOS;
+    printf(&quot;当天出校人员总数：%u人，学生%u人，教职工%u人，其他%u人\n&quot;,student_num+staff_num+others_num,student_num,staff_num,others_num);
+    PrintInfoList(p_system, index_array);
+    free(index_array);
+&#125;
+
+void CountInfoFunc2(System* p_system, Time* p_time)
+&#123;
+    SIZE_T array_size = p_system-&gt;size;
+    Person* person_array = p_system-&gt;person_array;
+    SIZE_T student_num = 0;
+    SIZE_T staff_num = 0;
+    SIZE_T others_num = 0;
+    SIZE_T* index_array = malloc((p_system-&gt;capacity + 1) * sizeof(SIZE_T));
+    SIZE_T idx_arr_size = 0;
+    for(SIZE_T i = 0; i &lt; array_size; i++)
+    &#123;
+        if(CmpTimeFunc(&amp;person_array[i].time,p_time) != 0)
+            continue;
+        if(person_array[i].status == ENTRY)
+        &#123;
+            index_array[idx_arr_size++] = i;
+            if(strcmp(&quot;学生&quot;,person_array[i].identity) == 0)
+            &#123;
+                student_num++;
+            &#125;
+            if(strcmp(&quot;教职工&quot;,person_array[i].identity) == 0)
+            &#123;
+                staff_num++;
+            &#125;
+            if(strcmp(&quot;其他&quot;,person_array[i].identity) == 0)
+            &#123;
+                others_num++;
+            &#125;
+        &#125;
+    &#125;
+    index_array[idx_arr_size] = NPOS;
+    printf(&quot;当天入校人员总数：%u人，学生%u人，教职工%u人，其他%u人\n&quot;,student_num+staff_num+others_num,student_num,staff_num,others_num);
+    PrintInfoList(p_system, index_array);
+    free(index_array);
+&#125;
+
+void CountInfoFunc3(System* p_system)
+&#123;
+    SIZE_T array_size = p_system-&gt;size;
+    Person* person_array = p_system-&gt;person_array;
+    SIZE_T student_num = 0;
+    SIZE_T staff_num = 0;
+    SIZE_T others_num = 0;
+    SIZE_T* index_array = malloc((p_system-&gt;capacity + 1) * sizeof(SIZE_T));
+    SIZE_T idx_arr_size = 0;
+    for(SIZE_T i = 0; i &lt; array_size; i++)
+    &#123;
+        if(person_array[i].status == EXIT)
+        &#123;
+            index_array[idx_arr_size++] = i;
+            if(strcmp(&quot;学生&quot;,person_array[i].identity) == 0)
+            &#123;
+                student_num++;
+            &#125;
+            if(strcmp(&quot;教职工&quot;,person_array[i].identity) == 0)
+            &#123;
+                staff_num++;
+            &#125;
+            if(strcmp(&quot;其他&quot;,person_array[i].identity) == 0)
+            &#123;
+                others_num++;
+            &#125;
+        &#125;
+    &#125;
+    index_array[idx_arr_size] = NPOS;
+    printf(&quot;所有时间段出校人员总数：%u人，学生%u人，教职工%u人，其他%u人\n&quot;,student_num+staff_num+others_num,student_num,staff_num,others_num);
+    PrintInfoList(p_system, index_array);
+    free(index_array);
+&#125;
+
+void CountInfoFunc4(System* p_system)
+&#123;
+    SIZE_T array_size = p_system-&gt;size;
+    Person* person_array = p_system-&gt;person_array;
+    SIZE_T student_num = 0;
+    SIZE_T staff_num = 0;
+    SIZE_T others_num = 0;
+    SIZE_T* index_array = malloc((p_system-&gt;capacity + 1) * sizeof(SIZE_T));
+    SIZE_T idx_arr_size = 0;
+    for(SIZE_T i = 0; i &lt; array_size; i++)
+    &#123;
+        if(person_array[i].status == ENTRY)
+        &#123;
+            index_array[idx_arr_size++] = i;
+            if(strcmp(&quot;学生&quot;,person_array[i].identity) == 0)
+            &#123;
+                student_num++;
+            &#125;
+            if(strcmp(&quot;教职工&quot;,person_array[i].identity) == 0)
+            &#123;
+                staff_num++;
+            &#125;
+            if(strcmp(&quot;其他&quot;,person_array[i].identity) == 0)
+            &#123;
+                others_num++;
+            &#125;
+        &#125;
+    &#125;
+    index_array[idx_arr_size] = NPOS;
+    printf(&quot;所有时间段入校人员总数：%u人，学生%u人，教职工%u人，其他%u人\n&quot;,student_num+staff_num+others_num,student_num,staff_num,others_num);
+    PrintInfoList(p_system, index_array);
+    free(index_array);
+&#125;
+
+void CountInfo(System* p_system)
+&#123;
+    while(1)
+    &#123;
+        puts(&quot;统计出入校园人员信息&quot;);
+        puts(&quot;&quot;);
+        puts(&quot;1.统计某一天出校人员总数&quot;);
+        puts(&quot;2.统计某一天入校人员总数&quot;);
+        puts(&quot;3.统计所有时间段出校人员总数&quot;);
+        puts(&quot;4.统计所有时间段入校人员总数&quot;);
+        puts(&quot;0.退出&quot;);
+        
+        puts(&quot;请输入操作（0-4）：&quot;);
+        
+        SIZE_T op;
+        while(InputSIZE_TFromRange(&amp;op, 0, 4) == -1)
+        &#123;
+            puts(&quot;数据格式错误，请重新输入：&quot;);
+        &#125;
+        
+        Time time;
+        switch(op)
+        &#123;
+            case 1:
+                puts(&quot;请输入你想统计的日期：&quot;);
+                while(InputTime(&amp;time) == -1)
+                &#123;
+                    puts(&quot;输入格式错误，请重新输入：&quot;);
+                &#125;
+                CountInfoFunc1(p_system,&amp;time);
+                break;
+            case 2:
+                puts(&quot;请输入你想统计的日期：&quot;);
+                while(InputTime(&amp;time) == -1)
+                &#123;
+                    puts(&quot;输入格式错误，请重新输入：&quot;);
+                &#125;
+                CountInfoFunc2(p_system,&amp;time);
+                break;
+            case 3:
+                CountInfoFunc3(p_system);
+                break;
+            case 4:
+                CountInfoFunc4(p_system);
+                break;
+            case 0:
+                return;
+        &#125;
+        
+        system(&quot;pause&quot;);
+        system(&quot;cls&quot;);
+    &#125;
+&#125;
+
+void SortInfoFunc1(System* p_system)
+&#123;
+    qsort(p_system-&gt;person_array, p_system-&gt;size, sizeof(Person), (int(*)(const void*,const void*))CmpByTimeFromSmallToBig);
+    SIZE_T array_size = p_system-&gt;size;
+    Person* person_array = p_system-&gt;person_array;
+    SIZE_T* index_array = malloc((p_system-&gt;capacity + 1) * sizeof(SIZE_T));
+    SIZE_T idx_arr_size = 0;
+    for(SIZE_T i = 0; i &lt; array_size; i++)
+    &#123;
+        if(person_array[i].status == EXIT)
+        &#123;
+            index_array[idx_arr_size++] = i;
+        &#125;
+    &#125;
+    index_array[idx_arr_size] = NPOS;
+    PrintInfoList(p_system, index_array);
+    
+    free(index_array);
+&#125;
+
+void SortInfoFunc2(System* p_system)
+&#123;
+    qsort(p_system-&gt;person_array, p_system-&gt;size, sizeof(Person), (int(*)(const void*,const void*))CmpByTimeFromBigToSmall);
+    SIZE_T array_size = p_system-&gt;size;
+    Person* person_array = p_system-&gt;person_array;
+    SIZE_T* index_array = malloc((p_system-&gt;capacity + 1) * sizeof(SIZE_T));
+    SIZE_T idx_arr_size = 0;
+    for(SIZE_T i = 0; i &lt; array_size; i++)
+    &#123;
+        if(person_array[i].status == ENTRY)
+        &#123;
+            index_array[idx_arr_size++] = i;
+        &#125;
+    &#125;
+    index_array[idx_arr_size] = NPOS;
+    PrintInfoList(p_system, index_array);
+    
+    free(index_array);
+&#125;
+
+void SortInfo(System* p_system)
+&#123;
+    while(1)
+    &#123;
+        puts(&quot;排序出入校园人员信息&quot;);
+        puts(&quot;&quot;);
+        puts(&quot;1.对出校人员按出校时间进行升序排序&quot;);
+        puts(&quot;2.对入校人员按入校时间进行降序排序&quot;);
+        puts(&quot;0.退出&quot;);
+        
+        puts(&quot;请输入操作（0-2）：&quot;);
+        
+        SIZE_T op;
+        while(InputSIZE_TFromRange(&amp;op, 0, 2) == -1)
+        &#123;
+            puts(&quot;输入数据错误，请重新输入：&quot;);
+        &#125;
+        
+        switch(op)
+        &#123;
+            case 1:
+                SortInfoFunc1(p_system);
+                break;
+            case 2:
+                SortInfoFunc2(p_system);
+                break;
+            case 0:
+                return;
+        &#125;
+        
+        system(&quot;pause&quot;);
+        system(&quot;cls&quot;);
+    &#125;
+&#125;
+
+void ExitSystem(System* p_system)
+&#123;
+    puts(&quot;是否要退出系统(y/n):&quot;);
+    
+    char buffer[BUFFER_SIZE];
+    while(scanf(&quot;%s&quot;, buffer))
+    &#123;
+        if(strlen(buffer) == 1)
+        &#123;
+            if(buffer[0]==&#39;y&#39; || buffer[0]==&#39;n&#39;)
+            &#123;
+                break;
+            &#125;
+        &#125;
+        puts(&quot;格式输入错误，请重新输入：&quot;);
+    &#125;
+    
+    if(buffer[0] == &#39;n&#39;)
+    &#123;
+        return;
+    &#125;
+    
+    system(&quot;cls&quot;);
+    
+    puts(&quot;退出系统&quot;);
+    puts(&quot;&quot;);
+    SaveInfo(p_system);
+    
+    puts(&quot;感谢使用！&quot;);
+    
+    system(&quot;pause&quot;);
+    exit(0);
+&#125;
+
+void OperationPage(System* p_system)
+&#123;
+    while(1)
+    &#123;
+        system(&quot;cls&quot;);
+        ShowMenu();
+        
+        char op=_getch();
+        
+        system(&quot;cls&quot;);
+        switch(op)
+        &#123;
+        case &#39;1&#39;:
+            EnterInfo(p_system);
+            break;
+        case &#39;2&#39;:
+            SaveInfo(p_system);
+            break;
+        case &#39;3&#39;:
+            ReadInfo(p_system);
+            break;
+        case &#39;4&#39;:
+            SearchInfo(p_system);
+            break;
+        case &#39;5&#39;:
+            CreateInfo(p_system);
+            break;
+        case &#39;6&#39;:
+            DeleteInfo(p_system);
+            break;
+        case &#39;7&#39;:
+            UpdateInfo(p_system);
+            break;
+        case &#39;8&#39;:
+            CountInfo(p_system);
+            break;
+        case &#39;9&#39;:
+            SortInfo(p_system);
+            break;
+        case &#39;0&#39;:
+            ExitSystem(p_system);
+            break;
+        default:
+            break;
+        &#125;
+        system(&quot;pause&quot;);
+        
+    &#125;
+&#125;
+</code></pre>
+<h4 id="Person-c"><a href="#Person-c" class="headerlink" title="Person.c"></a>Person.c</h4><pre><code class="c">#include&quot;../include/Person.h&quot;
+
+const char identity_list[][IDENTITY_SIZE]=&#123;&quot;学生&quot;,&quot;教职工&quot;,&quot;其他&quot;&#125;;	//身份类型列表
+
+int IsIdentityFormat(const char str[])
+&#123;
+    if(strlen(str) &gt;= IDENTITY_SIZE)
+    &#123;
+        return -1;
+    &#125;
+    
+    SIZE_T identity_list_size = sizeof(identity_list) / sizeof(identity_list[0]);
+    for(SIZE_T i = 0; i &lt; identity_list_size; i++)
+    &#123;
+        if(strcmp(str, identity_list[i]) == 0)
+        &#123;
+            return 0;
+        &#125;
+    &#125;
+    return -1;
+&#125;
+
+int InputIdentity(char identity[])
+&#123;
+    char buffer[BUFFER_SIZE];
+    scanf(&quot;%s&quot;, buffer);
+    
+    if(IsIdentityFormat(buffer) == -1)
+    &#123;
+        return -1;
+    &#125;
+    
+    strcpy(identity, buffer);
+    return 0;
+&#125;
+
+int InputIdentityByFile(FILE* fp, char identity[])
+&#123;
+    char buffer[BUFFER_SIZE];
+    fscanf(fp, &quot;%s&quot;, buffer);
+    
+    if(IsIdentityFormat(buffer) == -1)
+    &#123;
+        return -1;
+    &#125;
+    
+    strcpy(identity, buffer);
+    return 0;
+&#125;
+
+int IsNameFormat(const char str[])
+&#123;
+        if(strlen(str) &gt;= NAME_SIZE)
+        &#123;
+            return -1;
+        &#125;
+        
+    return 0;
+&#125;
+
+int InputName(char name[])
+&#123;
+    char buffer[BUFFER_SIZE];
+    scanf(&quot;%s&quot;, buffer);
+    
+    if(IsNameFormat(buffer) == -1)
+    &#123;
+        return -1;
+    &#125;
+    
+    strcpy(name, buffer);
+    return 0;
+&#125;
+
+int InputNameByFile(FILE* fp, char name[])
+&#123;
+    char buffer[BUFFER_SIZE];
+    fscanf(fp, &quot;%s&quot;, buffer);
+    
+    if(IsNameFormat(buffer) == -1)
+    &#123;
+        return -1;
+    &#125;
+    
+    strcpy(name, buffer);
+    return 0;
+&#125;
+
+int IsNumberFormat(const char str[])
+&#123;
+    if(strlen(str) &gt;= NUMBER_SIZE)
+    &#123;
+        return -1;
+    &#125;
+        
+    if(strcmp(str, &quot;无&quot;) == 0)
+    &#123;
+        return 0;
+    &#125;
+    
+    for(int i = 0; str[i]; i++)
+    &#123;
+        if(isdigit(str[i]) == 0)
+        &#123;
+            return -1;
+        &#125;
+    &#125;
+    
+    return 0;
+&#125;
+
+int InputNumber(char number[])
+&#123;
+    char buffer[BUFFER_SIZE];
+    scanf(&quot;%s&quot;, buffer);
+    
+    if(IsNumberFormat(buffer) == -1)
+    &#123;
+        return -1;
+    &#125;
+    
+    strcpy(number, buffer);
+    return 0;
+&#125;
+
+int InputNumberByFile(FILE* fp, char number[])
+&#123;
+    char buffer[BUFFER_SIZE];
+    fscanf(fp, &quot;%s&quot;, buffer);
+    
+    if(IsNumberFormat(buffer) == -1)
+    &#123;
+        return -1;
+    &#125;
+    
+    strcpy(number, buffer);
+    return 0;
+&#125;
+
+int IsPhoneNumberFormat(const char str[])
+&#123;
+    if(strlen(str) &gt;= PHONE_NUMBER_SIZE)
+    &#123;
+        return -1;
+    &#125;
+    for(int i = 0; str[i]; i++)
+    &#123;
+        if(isdigit(str[i]) == 0)
+        &#123;
+            return -1;
+        &#125;
+    &#125;
+    return 0;
+&#125;
+
+int InputPhoneNumber(char phone_number[])
+&#123;
+    char buffer[BUFFER_SIZE];
+    scanf(&quot;%s&quot;, buffer);
+    
+    if(IsPhoneNumberFormat(buffer) == -1)
+    &#123;
+        return -1;
+    &#125;
+    
+    strcpy(phone_number, buffer);
+    return 0;
+&#125;
+
+int InputPhoneNumberByFile(FILE* fp, char phone_number[])
+&#123;
+    char buffer[BUFFER_SIZE];
+    fscanf(fp, &quot;%s&quot;, buffer);
+    
+    if(IsPhoneNumberFormat(buffer) == -1)
+    &#123;
+        return -1;
+    &#125;
+    
+    strcpy(phone_number, buffer);
+    return 0;
+&#125;
+
+int IsIdNumberFormat(const char str[])
+&#123;
+    int length = strlen(str);
+    
+    if(length &gt;= ID_NUMBER_SIZE || length&lt;=10)
+    &#123;
+        return -1;
+    &#125;
+    
+    for(int i = 0; i&lt;length - 1; i++)
+    &#123;
+        if(isdigit(str[i]) == 0 )
+        &#123;
+            return -1;
+        &#125;
+    &#125;
+    
+    char last_ch = str[length - 1];
+    if(isdigit(last_ch)==0 &amp;&amp; tolower(last_ch)!=&#39;x&#39;)
+    &#123;
+        return -1;
+    &#125;
+    
+    return 0;
+&#125;
+
+int InputIdNumber(char id_number[])
+&#123;
+    char buffer[BUFFER_SIZE];
+    scanf(&quot;%s&quot;, buffer);
+    
+    if(IsIdNumberFormat(buffer) == -1)
+    &#123;
+        return -1;
+    &#125;
+    
+    strcpy(id_number, buffer);
+    return 0;
+&#125;
+
+int InputIdNumberByFile(FILE* fp, char id_number[])
+&#123;
+    char buffer[BUFFER_SIZE];
+    fscanf(fp, &quot;%s&quot;, buffer);
+    
+    if(IsIdNumberFormat(buffer) == -1)
+    &#123;
+        return -1;
+    &#125;
+    
+    strcpy(id_number, buffer);
+    return 0;
+&#125;
+
+int IsStatusFormat(const char str[])
+&#123;
+    if(strcmp(str, &quot;0&quot;) == 0)
+        return 0;
+    if(strcmp(str, &quot;1&quot;) == 0)
+        return 0;
+    return -1;
+&#125;
+
+void StrToStatus(const char str[],Status* p_status)
+&#123;
+    if(str[0] == &#39;0&#39;) *p_status = EXIT;
+    if(str[0] == &#39;1&#39;) *p_status = ENTRY;
+&#125;
+
+int InputStatus(Status* p_status)
+&#123;
+    char buffer[BUFFER_SIZE];
+    scanf(&quot;%s&quot;, buffer);
+    
+    if(IsStatusFormat(buffer) == -1)
+    &#123;
+        return -1;
+    &#125;
+    
+    StrToStatus(buffer, p_status);
+    return 0;
+&#125;
+
+int InputStatusByFile(FILE* fp, Status* p_status)
+&#123;
+    char buffer[BUFFER_SIZE];
+    fscanf(fp, &quot;%s&quot;, buffer);
+    
+    if(IsStatusFormat(buffer) == -1)
+    &#123;
+        return -1;
+    &#125;
+    
+    StrToStatus(buffer, p_status);
+    return 0;
+&#125;
+
+int InputPerson(Person* p_person)
+&#123;
+    int is_successful = 0;
+    
+    
+    if(InputIdentity(p_person-&gt;identity) == -1)
+    &#123;
+        puts(&quot;身份信息录入格式错误！&quot;);
+        is_successful = -1;
+    &#125;
+    if(InputName(p_person-&gt;name) == -1)
+    &#123;
+        puts(&quot;姓名录入格式错误！&quot;);
+        is_successful = -1;
+    &#125;
+    if(InputNumber(p_person-&gt;number) == -1)
+    &#123;
+        puts(&quot;编号录入格式错误！&quot;);
+        is_successful = -1;
+    &#125;
+    if(InputPhoneNumber(p_person-&gt;phone_number) == -1)
+    &#123;
+        puts(&quot;电话号码录入格式错误！&quot;);
+        is_successful = -1;
+    &#125;
+    if(InputIdNumber(p_person-&gt;id_number) == -1)
+    &#123;
+        puts(&quot;身份证录入格式错误！&quot;);
+        is_successful = -1;
+    &#125;
+    if(InputStatus(&amp;(p_person-&gt;status)) == -1)
+    &#123;
+        puts(&quot;出入校状态录入格式错误！&quot;);
+        is_successful = -1;
+    &#125;
+    if(InputTime(&amp;(p_person-&gt;time)) == -1)
+    &#123;
+        puts(&quot;出入校时间录入格式错误！&quot;);
+        is_successful = -1;
+    &#125;
+    return is_successful;
+&#125;
+
+int InputPersonByFile(FILE* fp, Person* p_person)
+&#123;
+    if(InputIdentityByFile(fp, p_person-&gt;identity) == -1)
+    &#123;
+        return -1;
+    &#125;
+    if(InputNameByFile(fp, p_person-&gt;name) == -1)
+    &#123;
+        return -1;
+    &#125;
+    if(InputNumberByFile(fp, p_person-&gt;number) == -1)
+    &#123;
+        return -1;
+    &#125;
+    if(InputPhoneNumberByFile(fp, p_person-&gt;phone_number) == -1)
+    &#123;
+        return -1;
+    &#125;
+    if(InputIdNumberByFile(fp, p_person-&gt;id_number) == -1)
+    &#123;
+        return -1;
+    &#125;
+    if(InputStatusByFile(fp, &amp;p_person-&gt;status) == -1)
+    &#123;
+        return -1;
+    &#125;
+    if(InputTimeByFile(fp, &amp;p_person-&gt;time) == -1)
+    &#123;
+        return -1;
+    &#125;
+    return 0;
+&#125;
+
+void ShowPersonInfo(SIZE_T order, Person* p_person)
+&#123;
+    printf(&quot;|%- 4d|%s\t|%-15s|%-20s|%-20s|%-20s|%- 4d|&quot;,
+        order, p_person-&gt;identity, p_person-&gt;name, 
+        p_person-&gt;number, p_person-&gt;phone_number, 
+        p_person-&gt;id_number, p_person-&gt;status);
+    ShowTime(&amp;p_person-&gt;time);
+    printf(&quot;|&quot;);
+&#125;
+
+int CmpByTimeFromSmallToBig(Person* lhs, Person* rhs)
+&#123;
+    return CmpTimeFunc(&amp;lhs-&gt;time, &amp;rhs-&gt;time);
+&#125;
+int CmpByTimeFromBigToSmall(Person* lhs, Person* rhs)
+&#123;
+    return CmpTimeFuncFromBigToSmall(&amp;lhs-&gt;time, &amp;rhs-&gt;time);
+&#125;
+</code></pre>
+<h4 id="Time-c"><a href="#Time-c" class="headerlink" title="Time.c"></a>Time.c</h4><pre><code class="c">#include&quot;../include/Time.h&quot;
+
+const char time_format[11]=&quot;yyyy/mm/dd&quot;; //时间格式信息
+
+const TIME_T common_year[13]=&#123;0,31,28,31,30,31,30,31,31,30,31,30,31&#125;;	//平年信息
+
+const TIME_T leap_year[13]=&#123;0,31,29,31,30,31,30,31,31,30,31,30,31&#125;;	//闰年信息
+
+int IsLeapYear(TIME_T year)
+&#123;
+    return (year%400 == 0) || (year%100 != 0  &amp;&amp;  year%4 == 0);
+&#125;
+
+int IsTimeFormat(const char str[])
+&#123;
+    SIZE_T time_length = strlen(time_format);
+    if(strlen(str) != time_length)
+        return -1;
+    
+    for(SIZE_T i = 0; i &lt; time_length; i++)
+    &#123;
+        if(time_format[i]==&#39;y&#39; || time_format[i]==&#39;m&#39; || time_format[i]==&#39;d&#39;)
+        &#123;
+            if(isdigit(str[i]) == 0)
+            &#123;
+                return -1;
+            &#125;
+        &#125;
+        else
+        &#123;
+            if(str[i] != time_format[i])
+            &#123;
+                return -1;
+            &#125;
+        &#125;
+    &#125;
+    return 0;
+&#125;
+
+int StrToTime(const char str[],Time* p_time)
+&#123;
+    TIME_T year = 0;
+    TIME_T month = 0;
+    TIME_T day = 0;
+    SIZE_T time_length = strlen(str);
+    for(SIZE_T i = 0; i &lt; time_length; i++)
+    &#123;
+        if(time_format[i] == &#39;y&#39;)
+        &#123;
+            year = year * 10 + str[i] - &#39;0&#39;;
+        &#125;
+        if(time_format[i] == &#39;m&#39;)
+        &#123;
+            month = month * 10 + str[i] - &#39;0&#39;;
+        &#125;
+        if(time_format[i] == &#39;d&#39;)
+        &#123;
+            day = day * 10 + str[i] - &#39;0&#39;;
+        &#125;
+    &#125;
+    
+    if(month&lt;1 || month&gt;12)
+    &#123;
+        return -1;
+    &#125;
+    
+    if(IsLeapYear(year))
+    &#123;
+        if(day&lt;1 || day&gt;leap_year[month])
+        &#123;
+            return -1;
+        &#125;
+    &#125;
+    else
+    &#123;
+        if(day&lt;1 || day&gt;common_year[month])
+        &#123;
+            return -1;
+        &#125;
+    &#125;
+    
+    
+    *p_time = (Time)&#123;year, month, day&#125;;
+    
+    return 0;
+&#125;
+
+int InputTime(Time* p_time)
+&#123;
+    char buffer[BUFFER_SIZE];
+    scanf(&quot;%s&quot;,buffer);
+    
+    if(IsTimeFormat(buffer) == -1)
+    &#123;
+        return -1;
+    &#125;
+    
+    if(StrToTime(buffer, p_time) == -1)
+    &#123;
+        return -1;
+    &#125;
+    
+    return 0;
+&#125;
+
+int InputTimeByFile(FILE* fp, Time* p_time)
+&#123;
+    char buffer[BUFFER_SIZE];
+    fscanf(fp, &quot;%s&quot;,buffer);
+    
+    if(IsTimeFormat(buffer) == -1)
+    &#123;
+        return -1;
+    &#125;
+    
+    if(StrToTime(buffer, p_time) == -1)
+    &#123;
+        return -1;
+    &#125;
+    
+    return 0;
+&#125;
+
+void ShowTime(Time* p_time)
+&#123;
+    printf(&quot;%04u/%02u/%02u&quot;, p_time-&gt;year,p_time-&gt;month, p_time-&gt;day);
+&#125;
+
+int CmpTimeFunc(const Time* lhs, const Time* rhs)
+&#123;
+    if(lhs-&gt;year != rhs-&gt;year) return lhs-&gt;year - rhs-&gt;year;
+    if(lhs-&gt;month != rhs-&gt;month) return lhs-&gt;month - rhs-&gt;month;
+    return lhs-&gt;day - rhs-&gt;day;
+&#125;
+
+int CmpTimeFuncFromBigToSmall(const Time* lhs, const Time* rhs)
+&#123;
+    return CmpTimeFunc(rhs,lhs);
+&#125;
+</code></pre>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2025 Yhs_JokerのBlog
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Yhs_Joker
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+    </body>
+</html>

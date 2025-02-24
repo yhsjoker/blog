@@ -1,0 +1,3768 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>数据结构实验一 | Yhs_JokerのBlog</title>
+        <meta name="author" content="Yhs_Joker" />
+        <meta name="description" content="There is only one kind of heroism in the world, which is to love life after knowing the truth of life." />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/avatar.jpg" />
+        <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>YHS_JOKERのBLOG</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;YHS_JOKERのBLOG</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div class="article">
+    <div>
+        <h1>数据结构实验一</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/10/14
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E4%BD%9C%E4%B8%9A/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                作业
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="color: #ffa2c4">数据结构</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/C/" style="color: #00bcd4">C++</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h2 id="第1关：基于顺序存储结构的图书信息表的创建和输出"><a href="#第1关：基于顺序存储结构的图书信息表的创建和输出" class="headerlink" title="第1关：基于顺序存储结构的图书信息表的创建和输出"></a>第1关：基于顺序存储结构的图书信息表的创建和输出</h2><h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><p>定义一个包含图书信息（书号、书名、价格）的顺序表，读入相应的图书数据来完成图书信息表的创建，然后统计图书表中的图书个数，同时逐行输出每本图书的信息。</p>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><p>输入n+1行，其中前n行是n本图书的信息（书号、书名、价格），每本图书信息占一行，书号、书名、价格用空格分隔，价格之后没有空格。最后第n+1行是输入结束标志：0 0 0（空格分隔的三个0）。其中书号和书名为字符串类型，价格为浮点数类型。</p>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>总计n+1行，第1行是所创建的图书表中的图书个数，后n行是n本图书的信息（书号、书名、价格），每本图书信息占一行，书号、书名、价格用空格分隔。其中价格输出保留两位小数。</p>
+<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>9787302257646 Data-Structure 35.00
+9787302164340 Operating-System 50.00
+9787302219972 Software-Engineer 32.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+9787822234110 The-C-Programming-Language 38.00
+0 0 0
+</code></pre>
+<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>8
+9787302257646 Data-Structure 35.00
+9787302164340 Operating-System 50.00
+9787302219972 Software-Engineer 32.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+9787822234110 The-C-Programming-Language 38.00
+</code></pre>
+<h3 id="初始代码"><a href="#初始代码" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;string.h&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+#define MAXSIZE 1000    //图书表可能达到的最大长度
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct
+&#123;//图书表的顺序存储结构类型为SqList
+    Book *elem;                   //存储空间的基地址
+    int length;                   //图书表中当前图书个数
+&#125;SqList;
+int InitList_Sq(SqList &amp;L)
+&#123;//构造一个空的顺序表L
+    
+&#125;
+int Input_Sq(SqList &amp;L)
+&#123;//顺序表的输入
+    
+&#125;
+int Output_Sq(SqList L)
+&#123;//顺序表的输出
+    
+&#125;
+</code></pre>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;string.h&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+#define MAXSIZE 1000    //图书表可能达到的最大长度
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct
+&#123;//图书表的顺序存储结构类型为SqList
+    Book *elem;                   //存储空间的基地址
+    int length;                   //图书表中当前图书个数
+&#125;SqList;
+int InitList_Sq(SqList &amp;L)
+&#123;//构造一个空的顺序表L
+    L.elem = new Book[MAXSIZE];
+    L.length = 0;
+&#125;
+int Input_Sq(SqList &amp;L)
+&#123;//顺序表的输入
+    Book book;
+    while(cin &gt;&gt; book.no &gt;&gt; book.name &gt;&gt; book.price)&#123;
+        if(strcmp(book.no, &quot;0&quot;) == 0 &amp;&amp; strcmp(book.name, &quot;0&quot;) == 0 &amp;&amp; book.price == 0) break;
+        L.elem[L.length++] = book;
+    &#125;
+&#125;
+int Output_Sq(SqList L)
+&#123;//顺序表的输出
+    cout &lt;&lt; L.length &lt;&lt; &#39;\n&#39;;
+    for(int i = 0; i &lt; L.length; i++)&#123;
+        Book &amp;book = L.elem[i];
+        cout &lt;&lt; book.no &lt;&lt; &#39; &#39; &lt;&lt; book.name &lt;&lt; &#39; &#39; &lt;&lt; fixed &lt;&lt; setprecision(2) &lt;&lt; book.price &lt;&lt; &#39;\n&#39;;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="第2关：基于顺序存储结构的图书信息表的排序"><a href="#第2关：基于顺序存储结构的图书信息表的排序" class="headerlink" title="第2关：基于顺序存储结构的图书信息表的排序"></a>第2关：基于顺序存储结构的图书信息表的排序</h2><h3 id="描述-1"><a href="#描述-1" class="headerlink" title="描述"></a>描述</h3><p>定义一个包含图书信息（书号、书名、价格）的顺序表，读入相应的图书数据完成图书信息表的创建，然后将图书按照价格降序排序，逐行输出排序后每本图书的信息。</p>
+<h3 id="输入-1"><a href="#输入-1" class="headerlink" title="输入"></a>输入</h3><p>输入n+1行，前n行是n本图书的信息（书号、书名、价格），每本图书信息占一行，书号、书名、价格用空格分隔，价格之后没有空格。最后第n+1行是输入结束标志：0 0 0（空格分隔的三个0）。其中书号和书名为字符串类型，价格为浮点数类型。</p>
+<h3 id="输出-1"><a href="#输出-1" class="headerlink" title="输出"></a>输出</h3><p>总计n行，每行是一本图书的信息（书号、书名、价格），书号、书名、价格用空格分隔。其中价格输出保留两位小数。</p>
+<h3 id="输入样例-1"><a href="#输入样例-1" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>9787302257646 Data-Structure 35.00
+9787302164340 Operating-System 50.00
+9787302219972 Software-Engineer 32.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+9787822234110 The-C-Programming-Language 38.00
+0 0 0
+</code></pre>
+<h3 id="输出样例-1"><a href="#输出样例-1" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+9787302164340 Operating-System 50.00
+9787822234110 The-C-Programming-Language 38.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257646 Data-Structure 35.00
+9787302219972 Software-Engineer 32.00
+</code></pre>
+<h3 id="初始代码-1"><a href="#初始代码-1" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;string.h&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+#define MAXSIZE 1000    //图书表可能达到的最大长度
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[60];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct
+&#123;//图书表的顺序存储结构类型为SqList
+    Book *elem;                   //存储空间的基地址
+    int length;                   //图书表中当前图书个数
+&#125;SqList;
+
+int BubbleSort_Sq(SqList L)
+&#123;//图书顺序表按照价格降序冒泡排序
+    
+&#125;
+</code></pre>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;string.h&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+#define MAXSIZE 1000    //图书表可能达到的最大长度
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[60];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct
+&#123;//图书表的顺序存储结构类型为SqList
+    Book *elem;                   //存储空间的基地址
+    int length;                   //图书表中当前图书个数
+&#125;SqList;
+
+int BubbleSort_Sq(SqList L)
+&#123;//图书顺序表按照价格降序冒泡排序
+    int length = L.length;
+    Book *arr = L.elem;
+    for(int i = length - 1; i &gt;= 0; i--)&#123;
+        for(int j = 0; j &lt; i; j++)&#123;
+            if(arr[j].price &lt; arr[j + 1].price)&#123;
+                swap(arr[j], arr[j + 1]);
+            &#125;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="第3关：基于顺序存储结构的图书信息表的修改"><a href="#第3关：基于顺序存储结构的图书信息表的修改" class="headerlink" title="第3关：基于顺序存储结构的图书信息表的修改"></a>第3关：基于顺序存储结构的图书信息表的修改</h2><h3 id="描述-2"><a href="#描述-2" class="headerlink" title="描述"></a>描述</h3><p>定义一个包含图书信息（书号、书名、价格）的顺序表，读入相应的图书数据完成图书信息表的创建，然后计算所有图书的平均价格，将所有低于平均价格的图书价格提高20%，所有高于或等于平均价格的图书价格提高10%，最后逐行输出价格修改后的图书信息。</p>
+<h3 id="输入-2"><a href="#输入-2" class="headerlink" title="输入"></a>输入</h3><p>输入n+1行，前n行是n本图书的信息（书号、书名、价格），每本图书信息占一行，书号、书名、价格用空格分隔，价格之后没有空格。最后第n+1行是输入结束标志：0 0 0（空格分隔的三个0）。其中书号和书名为字符串类型，价格为浮点数类型。</p>
+<h3 id="输出-2"><a href="#输出-2" class="headerlink" title="输出"></a>输出</h3><p>总计n+1行，第1行是修改前所有图书的平均价格，后n行是价格修改后n本图书的信息（书号、书名、价格），每本图书信息占一行，书号、书名、价格用空格分隔。其中价格输出保留两位小数。</p>
+<h3 id="输入样例-2"><a href="#输入样例-2" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>9787302257646 Data-Structure 35.00
+9787302164340 Operating-System 50.00
+9787302219972 Software-Engineer 32.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+9787822234110 The-C-Programming-Language 38.00
+0 0 0
+</code></pre>
+<h3 id="输出样例-2"><a href="#输出样例-2" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>43.88
+9787302257646 Data-Structure 42.00
+9787302164340 Operating-System 55.00
+9787302219972 Software-Engineer 38.40
+9787302203513 Database-Principles 43.20
+9787810827430 Discrete-Mathematics 43.20
+9787302257800 Data-Structure 68.20
+9787811234923 Compiler-Principles 68.20
+9787822234110 The-C-Programming-Language 45.60
+</code></pre>
+<h3 id="初始代码-2"><a href="#初始代码-2" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;string.h&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+#define MAXSIZE 1000    //图书表可能达到的最大长度
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct
+&#123;//图书表的顺序存储结构类型为SqList
+    Book *elem;                   //存储空间的基地址
+    int length;                   //图书表中当前图书个数
+&#125;SqList;
+
+int RevisePrice_Sq(SqList &amp;L)
+&#123;//修改价格
+    
+&#125;
+</code></pre>
+<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;string.h&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+#define MAXSIZE 1000    //图书表可能达到的最大长度
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct
+&#123;//图书表的顺序存储结构类型为SqList
+    Book *elem;                   //存储空间的基地址
+    int length;                   //图书表中当前图书个数
+&#125;SqList;
+
+double GetAveragePrice_Sq(SqList &amp;L)&#123;
+    if(L.length == 0) return 0;
+
+    double total_price = 0;
+    for(int i = 0; i &lt; L.length; i++)&#123;
+        total_price += L.elem[i].price;
+    &#125;
+
+    return total_price / L.length;
+&#125;
+
+int RevisePrice_Sq(SqList &amp;L)
+&#123;//修改价格
+    double avg_price = GetAveragePrice_Sq(L);
+
+    cout &lt;&lt; fixed &lt;&lt; setprecision(2) &lt;&lt; avg_price &lt;&lt; &#39;\n&#39;;
+
+    for(int i = 0; i &lt; L.length; i++)&#123;
+        Book &amp;book = L.elem[i];
+        if(book.price &gt;= avg_price)&#123;
+            book.price *= 1.1;
+        &#125;
+        else&#123;
+            book.price *= 1.2;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="第4关：基于顺序存储结构的图书信息表的逆序存储"><a href="#第4关：基于顺序存储结构的图书信息表的逆序存储" class="headerlink" title="第4关：基于顺序存储结构的图书信息表的逆序存储"></a>第4关：基于顺序存储结构的图书信息表的逆序存储</h2><h3 id="描述-3"><a href="#描述-3" class="headerlink" title="描述"></a>描述</h3><p>定义一个包含图书信息（书号、书名、价格）的顺序表，读入相应的图书数据来完成图书信息表的创建，然后将读入的图书信息逆序存储，逐行输出逆序存储后每本图书的信息。</p>
+<h3 id="输入-3"><a href="#输入-3" class="headerlink" title="输入"></a>输入</h3><p>输入n+1行，第一行是图书数目n，后n行是n本图书的信息（书号、书名、价格），每本图书信息占一行，书号、书名、价格用空格分隔，价格之后没有空格。其中书号和书名为字符串类型，价格为浮点数类型。</p>
+<h3 id="输出-3"><a href="#输出-3" class="headerlink" title="输出"></a>输出</h3><p>总计n行，第i行是原有图书表中第n-i+1行的图书的信息（书号、书名、价格），每本图书信息占一行，书号、书名、价格用空格分隔。其中价格输出保留两位小数。</p>
+<h3 id="输入样例-3"><a href="#输入样例-3" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>8
+9787302257646 Data-Structure 35.00
+9787302164340 Operating-System 50.00
+9787302219972 Software-Engineer 32.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+9787822234110 The-C-Programming-Language 38.00
+</code></pre>
+<h3 id="输出样例-3"><a href="#输出样例-3" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>9787822234110 The-C-Programming-Language 38.00
+9787811234923 Compiler-Principles 62.00
+9787302257800 Data-Structure 62.00
+9787810827430 Discrete-Mathematics 36.00
+9787302203513 Database-Principles 36.00
+9787302219972 Software-Engineer 32.00
+9787302164340 Operating-System 50.00
+9787302257646 Data-Structure 35.00
+</code></pre>
+<h3 id="初始代码-3"><a href="#初始代码-3" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+#define MAXSIZE 1000                                  //图书表可能达到的最大长度
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];                                        //图书ISBN
+    char name[60];                                     //图书名字
+    float price;                                       //图书价格
+&#125;Book;
+typedef struct
+&#123;//图书表的顺序存储结构类型为SqList
+    Book *elem;                                         //存储空间的基地址
+    int length;                                        //图书表中当前图书个数
+&#125;SqList;
+
+int Input_Sq(SqList &amp;L)
+&#123;//顺序表的输入
+   
+&#125;
+</code></pre>
+<h3 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;iomanip&gt;
+#include&lt;cstring&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+#define MAXSIZE 1000                                  //图书表可能达到的最大长度
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];                                        //图书ISBN
+    char name[60];                                     //图书名字
+    float price;                                       //图书价格
+&#125;Book;
+typedef struct
+&#123;//图书表的顺序存储结构类型为SqList
+    Book *elem;                                         //存储空间的基地址
+    int length;                                        //图书表中当前图书个数
+&#125;SqList;
+
+void ReverseBook(SqList &amp;L)&#123;
+//把图书信息逆序存储 
+    Book *arr = L.elem;
+    int length = L.length;
+    for(int i = 0; i &lt; length / 2; i++)&#123;
+        swap(arr[i], arr[length - i - 1]);
+    &#125;
+&#125;
+
+int Input_Sq(SqList &amp;L)
+&#123;//顺序表的输入
+    cin &gt;&gt; L.length;
+    for(int i = 0; i &lt; L.length; i++)&#123;
+        Book &amp;book = L.elem[i];
+        cin &gt;&gt; book.no &gt;&gt; book.name &gt;&gt; book.price;
+    &#125;
+    ReverseBook(L);
+&#125;
+</code></pre>
+<h2 id="第5关：基于顺序存储结构的图书信息表的最贵图书的查找"><a href="#第5关：基于顺序存储结构的图书信息表的最贵图书的查找" class="headerlink" title="第5关：基于顺序存储结构的图书信息表的最贵图书的查找"></a>第5关：基于顺序存储结构的图书信息表的最贵图书的查找</h2><h3 id="描述-4"><a href="#描述-4" class="headerlink" title="描述"></a>描述</h3><p>本关任务：定义一个包含图书信息（书号、书名、价格）的顺序表，读入相应的图书数据来完成图书信息表的创建，然后查找价格最高的图书，输出相应图书的信息。</p>
+<h3 id="输入-4"><a href="#输入-4" class="headerlink" title="输入"></a>输入</h3><p>总计输入n+1行，其中，第一行是图书数目n，后n行是n本图书的信息（书号、书名、价格），每本图书信息占一行，书号、书名、价格用空格分隔，价格之后没有空格。其中书号和书名为字符串类型，价格为浮点数类型。</p>
+<h3 id="输出-4"><a href="#输出-4" class="headerlink" title="输出"></a>输出</h3><p>总计输出m+1行，其中，第一行是最贵图书的数目（价格最高的图书可能有多本），后m行是最贵图书的信息，每本图书信息占一行，书号、书名、价格用空格分隔，其中价格输出保留两位小数。</p>
+<h3 id="输入样例-4"><a href="#输入样例-4" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>8
+9787302257646 Data-Structure 35.00
+9787302164340 Operating-System 50.00
+9787302219972 Software-Engineer 32.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+9787822234110 The-C-Programming-Language 38.00
+</code></pre>
+<h3 id="输出样例-4"><a href="#输出样例-4" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>2
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+</code></pre>
+<h3 id="初始代码-4"><a href="#初始代码-4" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+#define MAXSIZE 1000    //图书表可能达到的最大长度
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct
+&#123;//图书表的顺序存储结构类型为SqList
+    Book *elem;                   //存储空间的基地址
+    int length;                   //图书表中当前图书个数
+&#125;SqList;
+
+int HighestPrice_Sq(SqList L)
+&#123;//查找价格最高的图书并输出相应图书的信息
+    
+&#125;
+</code></pre>
+<h3 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+#define MAXSIZE 1000    //图书表可能达到的最大长度
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct
+&#123;//图书表的顺序存储结构类型为SqList
+    Book *elem;                   //存储空间的基地址
+    int length;                   //图书表中当前图书个数
+&#125;SqList;
+
+int HighestPrice_Sq(SqList L)
+&#123;//查找价格最高的图书并输出相应图书的信息
+    float hst_price = 0;
+    for(int i = 0; i &lt; L.length; i++)&#123;
+        Book &amp;book = L.elem[i];
+        hst_price = max(hst_price, book.price);
+    &#125;
+
+    int hst_book_num = 0;
+    for(int i = 0; i &lt; L.length; i++)&#123;
+        Book &amp;book = L.elem[i];
+        if(book.price == hst_price)&#123;
+            hst_book_num++;
+        &#125;
+    &#125;
+
+    cout &lt;&lt; hst_book_num &lt;&lt; &#39;\n&#39;;
+
+    for(int i = 0; i &lt; L.length; i++)&#123;
+        Book &amp;book = L.elem[i];
+        if(book.price == hst_price)&#123;
+            cout &lt;&lt; book.no &lt;&lt; &#39; &#39; &lt;&lt; book.name &lt;&lt; &#39; &#39; &lt;&lt; fixed &lt;&lt; setprecision(2) &lt;&lt; book.price &lt;&lt; &#39;\n&#39;;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="第6关：基于顺序存储结构的图书信息表的最爱图书的查找"><a href="#第6关：基于顺序存储结构的图书信息表的最爱图书的查找" class="headerlink" title="第6关：基于顺序存储结构的图书信息表的最爱图书的查找"></a>第6关：基于顺序存储结构的图书信息表的最爱图书的查找</h2><h3 id="描述-5"><a href="#描述-5" class="headerlink" title="描述"></a>描述</h3><p>定义一个包含图书信息（书号、书名、价格）的顺序表，读入相应的图书数据来完成图书信息表的创建，然后根据指定的最爱图书的名字，查找最爱的图书，输出相应图书的信息。</p>
+<h3 id="输入-5"><a href="#输入-5" class="headerlink" title="输入"></a>输入</h3><p>总计n+m+2行。首先输入n+1行，其中，第一行是图书数目n，后n行是n本图书的信息（书号、书名、价格），每本图书信息占一行，书号、书名、价格用空格分隔，价格之后没有空格。其中书号和书名为字符串类型，价格为浮点数类型。然后输入m+1行，其中，第一行是一个整数m，代表查找m次，后m行是每次待查找的最爱图书名字。</p>
+<h3 id="输出-5"><a href="#输出-5" class="headerlink" title="输出"></a>输出</h3><p>若查找成功： 总计输出m*（k+1）行，对于每一次查找，第一行是最爱图书数目（同一书名的图书可能有多本），后k行是最爱图书的信息（书号、书名、价格），每本图书信息占一行，书号、书名、价格用空格分隔，其中价格输出保留两位小数。 若查找失败： 只输出以下提示：抱歉，没有你的最爱！</p>
+<h3 id="输入样例-5"><a href="#输入样例-5" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>8
+9787302257646 Data-Structure 35.00
+9787302164340 Operating-System 50.00
+9787302219972 Software-Engineer 32.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+9787822234110 The-C-Programming-Language 38.00
+2
+Java-Programming-Language
+Data-Structure
+</code></pre>
+<h3 id="输出样例-5"><a href="#输出样例-5" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>Sorry，there is no your favourite!
+2
+9787302257646 Data-Structure 35.00
+9787302257800 Data-Structure 62.00
+</code></pre>
+<h3 id="初始代码-5"><a href="#初始代码-5" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;string.h&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+#define MAXSIZE 1000    //图书表可能达到的最大长度
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct
+&#123;//图书表的顺序存储结构类型为SqList
+    Book *elem;                   //存储空间的基地址
+    int length;                   //图书表中当前图书个数
+&#125;SqList;
+
+int FindFavorite_Sq(SqList L)
+&#123;//最爱图书的查找并输出数据
+    
+&#125;
+</code></pre>
+<h3 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;string.h&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+#define MAXSIZE 1000    //图书表可能达到的最大长度
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct
+&#123;//图书表的顺序存储结构类型为SqList
+    Book *elem;                   //存储空间的基地址
+    int length;                   //图书表中当前图书个数
+&#125;SqList;
+
+int FindFavorite_Sq(SqList L)
+&#123;//最爱图书的查找并输出数据
+    int m;
+    cin &gt;&gt; m;
+    while(m--)&#123;
+        char name[50];
+        cin &gt;&gt; name;
+        
+        int cnt = 0;
+        for(int i = 0; i &lt; L.length; i++)&#123;
+            Book &amp;book = L.elem[i];
+            if(strcmp(name, book.name) == 0)&#123;
+                cnt++;
+            &#125;
+        &#125;
+
+        if(cnt == 0)&#123;
+            cout &lt;&lt; &quot;Sorry，there is no your favourite!\n&quot;;
+        &#125;
+        else&#123;
+            cout &lt;&lt; cnt &lt;&lt; &#39;\n&#39;;
+            for(int i = 0; i &lt; L.length; i++)&#123;
+                Book &amp;book = L.elem[i];
+                if(strcmp(name, book.name) == 0)&#123;
+                    cout &lt;&lt; book.no &lt;&lt; &#39; &#39; &lt;&lt; book.name &lt;&lt; &#39; &#39; &lt;&lt; fixed &lt;&lt; setprecision(2) &lt;&lt; book.price &lt;&lt; &#39;\n&#39;;
+                &#125;
+            &#125;
+        &#125;
+    &#125; 
+&#125;
+</code></pre>
+<h2 id="第7关：基于顺序存储结构的图书信息表的最佳位置图书的查找"><a href="#第7关：基于顺序存储结构的图书信息表的最佳位置图书的查找" class="headerlink" title="第7关：基于顺序存储结构的图书信息表的最佳位置图书的查找"></a>第7关：基于顺序存储结构的图书信息表的最佳位置图书的查找</h2><h3 id="描述-6"><a href="#描述-6" class="headerlink" title="描述"></a>描述</h3><p>定义一个包含图书信息（书号、书名、价格）的顺序表，读入相应的图书数据来完成图书信息表的创建，然后根据指定的最佳位置的序号，查找该位置上的图书，输出相应图书的信息。</p>
+<h3 id="输入-6"><a href="#输入-6" class="headerlink" title="输入"></a>输入</h3><p>总计n+m+2行。首先输入n+1行，其中，第一行是图书数目n，后n行是n本图书的信息（书号、书名、价格），每本图书信息占一行，书号、书名、价格用空格分隔，价格之后没有空格。其中书号和书名为字符串类型，价格为浮点数类型。然后输入m+1行，其中，第一行是一个整数m，代表查找m次，后m行每行内容为一个整数，代表待查找的图书的位置序号。</p>
+<h3 id="输出-6"><a href="#输出-6" class="headerlink" title="输出"></a>输出</h3><p>输出m行 若查找成功： 输出内容为第i次查询的指定位置上的一本图书的信息（书号、书名、价格），书号、书名、价格用空格分隔，其中价格输出保留两位小数。 若查找失败： 只输出以下提示：抱歉，最佳位置上的图书不存在！</p>
+<h3 id="输入样例-6"><a href="#输入样例-6" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>8
+9787302257646 Data-Structure 35.00
+9787302164340 Operating-System 50.00
+9787302219972 Software-Engineer 32.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+9787822234110 The-C-Programming-Language 38.00
+2
+2
+0
+</code></pre>
+<h3 id="输出样例-6"><a href="#输出样例-6" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>9787302164340 Operating-System 50.00
+Sorry，the book on the best position doesn&#39;t exist!
+</code></pre>
+<h3 id="初始代码-6"><a href="#初始代码-6" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+#define MAXSIZE 1000    //图书表可能达到的最大长度
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct
+&#123;//图书表的顺序存储结构类型为SqList
+    Book *elem;                   //存储空间的基地址
+    int length;                   //图书表中当前图书个数
+&#125;SqList;
+
+int FindLocate_Sq(SqList L)
+&#123;//查找最佳位置图书并输出数据
+    
+&#125;
+</code></pre>
+<h3 id="代码-6"><a href="#代码-6" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+#define MAXSIZE 1000    //图书表可能达到的最大长度
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct
+&#123;//图书表的顺序存储结构类型为SqList
+    Book *elem;                   //存储空间的基地址
+    int length;                   //图书表中当前图书个数
+&#125;SqList;
+
+int FindLocate_Sq(SqList L)
+&#123;//查找最佳位置图书并输出数据
+    int m;
+    cin &gt;&gt; m;
+    while(m--)&#123;
+        int pos;
+        cin &gt;&gt; pos;
+        if(pos &lt;= 0 || pos &gt; L.length)&#123;
+            cout &lt;&lt; &quot;Sorry，the book on the best position doesn&#39;t exist!\n&quot;;
+        &#125;
+        else&#123;
+            Book &amp;book = L.elem[pos - 1];
+            cout &lt;&lt; book.no &lt;&lt; &#39; &#39; &lt;&lt; book.name &lt;&lt; &#39; &#39; &lt;&lt; fixed &lt;&lt; setprecision(2) &lt;&lt; book.price &lt;&lt; &#39;\n&#39;;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="第8关：基于顺序存储结构的图书信息表的新图书的入库"><a href="#第8关：基于顺序存储结构的图书信息表的新图书的入库" class="headerlink" title="第8关：基于顺序存储结构的图书信息表的新图书的入库"></a>第8关：基于顺序存储结构的图书信息表的新图书的入库</h2><h3 id="描述-7"><a href="#描述-7" class="headerlink" title="描述"></a>描述</h3><p>定义一个包含图书信息（书号、书名、价格）的顺序表，读入相应的图书数据来完成图书信息表的创建，然后根据指定的待入库的新图书的位置和信息，将新图书插入到图书表中指定的位置上，最后输出新图书入库后所有图书的信息。</p>
+<h3 id="输入-7"><a href="#输入-7" class="headerlink" title="输入"></a>输入</h3><p>总计n+3行。首先输入n+1行，其中，第一行是图书数目n，后n行是n本图书的信息（书号、书名、价格），每本图书信息占一行，书号、书名、价格用空格分隔，价格之后没有空格。其中书号和书名为字符串类型，价格为浮点数类型。之后输入第n+2行，内容仅为一个整数，代表待入库的新图书的位置序号。最后输入第n+3行，内容为新图书的信息，书号、书名、价格用空格分隔。</p>
+<h3 id="输出-7"><a href="#输出-7" class="headerlink" title="输出"></a>输出</h3><p>若插入成功： 输出新图书入库后所有图书的信息（书号、书名、价格），总计n+1行，每行是一本图书的信息，书号、书名、价格用空格分隔。其中价格输出保留两位小数。 若插入失败： 只输出以下提示：抱歉，入库位置非法！</p>
+<h3 id="输入样例-1"><a href="#输入样例-1" class="headerlink" title="输入样例 #1"></a>输入样例 #1</h3><pre><code>7
+9787302257646 Data-Structure 35.00
+9787302164340 Operating-System 50.00
+9787302219972 Software-Engineer 32.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+2
+9787822234110 The-C-Programming-Language 38.00
+</code></pre>
+<h3 id="输出样例-1"><a href="#输出样例-1" class="headerlink" title="输出样例 #1"></a>输出样例 #1</h3><pre><code>9787302257646 Data-Structure 35.00
+9787822234110 The-C-Programming-Language 38.00
+9787302164340 Operating-System 50.00
+9787302219972 Software-Engineer 32.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+</code></pre>
+<h3 id="输入样例-2"><a href="#输入样例-2" class="headerlink" title="输入样例 #2"></a>输入样例 #2</h3><pre><code>7
+9787302257646 Data-Structure 35.00
+9787302164340 Operating-System 50.00
+9787302219972 Software-Engineer 32.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+9
+9787822234110 The-C-Programming-Language 38.00
+</code></pre>
+<h3 id="输出样例-2"><a href="#输出样例-2" class="headerlink" title="输出样例 #2"></a>输出样例 #2</h3><pre><code>Sorry，the position to be inserted is invalid!
+</code></pre>
+<h3 id="初始代码-7"><a href="#初始代码-7" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include &lt;string.h&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+#define MAXSIZE 1000    //图书表可能达到的最大长度
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct
+&#123;//图书表的顺序存储结构类型为SqList
+    Book *elem;                   //存储空间的基地址
+    int length;                   //图书表中当前图书个数
+&#125;SqList;
+
+int Insert_Sq(SqList &amp;L)
+&#123;//新图书的入库和输出
+    
+&#125;
+</code></pre>
+<h3 id="代码-7"><a href="#代码-7" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include &lt;string.h&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+#define MAXSIZE 1000    //图书表可能达到的最大长度
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct
+&#123;//图书表的顺序存储结构类型为SqList
+    Book *elem;                   //存储空间的基地址
+    int length;                   //图书表中当前图书个数
+&#125;SqList;
+
+int Output_Sq(SqList L)
+&#123;//顺序表的输出
+    for(int i = 0; i &lt; L.length; i++)&#123;
+        Book &amp;book = L.elem[i];
+        cout &lt;&lt; book.no &lt;&lt; &#39; &#39; &lt;&lt; book.name &lt;&lt; &#39; &#39; &lt;&lt; fixed &lt;&lt; setprecision(2) &lt;&lt; book.price &lt;&lt; &#39;\n&#39;;
+    &#125;
+&#125;
+
+int Insert_Sq(SqList &amp;L)
+&#123;//新图书的入库和输出
+    int pos;
+    Book book;
+    cin &gt;&gt; pos;
+    cin &gt;&gt; book.no &gt;&gt; book.name &gt;&gt; book.price;
+    if(pos &lt;= 0 || pos &gt; L.length + 1)&#123;
+        cout &lt;&lt; &quot;Sorry，the position to be inserted is invalid!\n&quot;;
+        return ERROR;
+    &#125;
+
+    memmove(L.elem + pos, L.elem + pos - 1, sizeof(Book) * (L.length - pos + 1));
+    memmove(L.elem + pos - 1, &amp;book, sizeof(Book));
+    L.length++;
+
+    Output_Sq(L);
+
+    return OK;
+&#125;
+</code></pre>
+<h2 id="第9关：基于顺序存储结构的图书信息表的旧图书的出库"><a href="#第9关：基于顺序存储结构的图书信息表的旧图书的出库" class="headerlink" title="第9关：基于顺序存储结构的图书信息表的旧图书的出库"></a>第9关：基于顺序存储结构的图书信息表的旧图书的出库</h2><h3 id="描述-8"><a href="#描述-8" class="headerlink" title="描述"></a>描述</h3><p>定义一个包含图书信息（书号、书名、价格）的顺序表，读入相应的图书数据来完成图书信息表的创建，然后根据指定的待出库的旧图书的位置，将该图书从图书表中删除，最后输出该图书出库后的所有图书的信息。</p>
+<h3 id="输入-8"><a href="#输入-8" class="headerlink" title="输入"></a>输入</h3><p>总计n+2行。首先输入n+1行，其中，第一行是图书数目n，后n行是n本图书的信息（书号、书名、价格），每本图书信息占一行，书号、书名、价格用空格分隔，价格之后没有空格。其中书号和书名为字符串类型，价格为浮点数类型。之后输入第n+2行，内容仅为一个整数，代表待删除的旧图书的位置序号。</p>
+<h3 id="输出-8"><a href="#输出-8" class="headerlink" title="输出"></a>输出</h3><p>若删除成功： 输出旧图书出库后所有图书的信息（书号、书名、价格），总计n-1行，每行是一本图书的信息，书号、书名、价格用空格分隔。其中价格输出保留两位小数。 若删除失败： 只输出以下提示：抱歉，出库位置非法！</p>
+<h3 id="输入样例-1-1"><a href="#输入样例-1-1" class="headerlink" title="输入样例 #1"></a>输入样例 #1</h3><pre><code>8
+9787302257646 Data-Structure 35.00
+9787302164340 Operating-System 50.00
+9787302219972 Software-Engineer 32.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+9787822234110 The-C-Programming-Language 38.00
+2
+</code></pre>
+<h3 id="输出样例-1-1"><a href="#输出样例-1-1" class="headerlink" title="输出样例 #1"></a>输出样例 #1</h3><pre><code>9787302257646 Data-Structure 35.00
+9787302219972 Software-Engineer 32.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+9787822234110 The-C-Programming-Language 38.00
+</code></pre>
+<h3 id="输入样例-2-1"><a href="#输入样例-2-1" class="headerlink" title="输入样例 #2"></a>输入样例 #2</h3><pre><code>8
+9787302257646 Data-Structure 35.00
+9787302164340 Operating-System 50.00
+9787302219972 Software-Engineer 32.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+9787822234110 The-C-Programming-Language 38.00
+9
+</code></pre>
+<h3 id="输出样例-2-1"><a href="#输出样例-2-1" class="headerlink" title="输出样例 #2"></a>输出样例 #2</h3><pre><code>Sorry，the position to be deleted is invalid!
+</code></pre>
+<h3 id="初始代码-8"><a href="#初始代码-8" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+#define MAXSIZE 1000    //图书表可能达到的最大长度
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct
+&#123;//图书表的顺序存储结构类型为SqList
+    Book *elem;                   //存储空间的基地址
+    int length;                   //图书表中当前图书个数
+&#125;SqList;
+int Delete_Sq(SqList &amp;L)
+&#123;//旧图书的出库和输出
+    
+&#125;
+</code></pre>
+<h3 id="代码-8"><a href="#代码-8" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;iomanip&gt;
+#include&lt;cstring&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+#define MAXSIZE 1000    //图书表可能达到的最大长度
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct
+&#123;//图书表的顺序存储结构类型为SqList
+    Book *elem;                   //存储空间的基地址
+    int length;                   //图书表中当前图书个数
+&#125;SqList;
+
+int Output_Sq(SqList L)
+&#123;//顺序表的输出
+    for(int i = 0; i &lt; L.length; i++)&#123;
+        Book &amp;book = L.elem[i];
+        cout &lt;&lt; book.no &lt;&lt; &#39; &#39; &lt;&lt; book.name &lt;&lt; &#39; &#39; &lt;&lt; fixed &lt;&lt; setprecision(2) &lt;&lt; book.price &lt;&lt; &#39;\n&#39;;
+    &#125;
+&#125;
+
+int Delete_Sq(SqList &amp;L)
+&#123;//旧图书的出库和输出
+    int pos;
+    cin &gt;&gt; pos;
+    if(pos &lt;= 0 || pos &gt; L.length)&#123;
+        cout &lt;&lt; &quot;Sorry，the position to be deleted is invalid!\n&quot;;
+        return ERROR;
+    &#125;
+
+    memmove(L.elem + pos - 1, L.elem + pos, sizeof(Book) * (L.length - pos));
+    L.length--;
+
+    Output_Sq(L);
+
+    return OK;
+&#125;
+</code></pre>
+<h2 id="第10关：基于顺序存储结构的图书信息表的图书去重"><a href="#第10关：基于顺序存储结构的图书信息表的图书去重" class="headerlink" title="第10关：基于顺序存储结构的图书信息表的图书去重"></a>第10关：基于顺序存储结构的图书信息表的图书去重</h2><h3 id="描述-9"><a href="#描述-9" class="headerlink" title="描述"></a>描述</h3><p>出版社出版的任何一本图书的书号（ISBN）都是唯一的，即图书表中不允许包含书号重复的图书。定义一个包含图书信息（书号、书名、价格）的顺序表，读入相应的图书数据来完成图书信息表的创建（书号可能重复），然后进行图书的去重，即删除书号重复的图书（只保留第一本），最后输出去重后所有图书的信息。</p>
+<h3 id="输入-9"><a href="#输入-9" class="headerlink" title="输入"></a>输入</h3><p>总计输入n+1行，其中，第一行是图书数目n，后n行是n本图书的信息（书号、书名、价格），每本图书信息占一行，书号、书名、价格用空格分隔，价格之后没有空格（书号可能重复）。其中书号和书名为字符串类型，价格为浮点数类型。</p>
+<h3 id="输出-9"><a href="#输出-9" class="headerlink" title="输出"></a>输出</h3><p>总计输出m+1行（m≤n），其中，第一行是去重后的图书数目，后m行是去重后图书的信息（书号、书名、价格），每本图书信息占一行，书号、书名、价格用空格分隔，其中价格输出保留两位小数。</p>
+<h3 id="输入样例-7"><a href="#输入样例-7" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>9
+9787302257646 Data-Structure 35.00
+9787302164340 Operating-System 50.00
+9787302219972 Software-Engineer 32.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+9787811234923 Compiler-Principles 62.00
+9787822234110 The-C-Programming-Language 38.00
+</code></pre>
+<h3 id="输出样例-7"><a href="#输出样例-7" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>8
+9787302257646 Data-Structure 35.00
+9787302164340 Operating-System 50.00
+9787302219972 Software-Engineer 32.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+9787822234110 The-C-Programming-Language 38.00
+</code></pre>
+<h3 id="初始代码-9"><a href="#初始代码-9" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;string.h&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+#define MAXSIZE 1000    //图书表可能达到的最大长度
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct
+&#123;//图书表的顺序存储结构类型为SqList
+    Book *elem;                   //存储空间的基地址
+    int length;                   //图书表中当前图书个数
+&#125;SqList;
+
+int SearchList(SqList L,char no[20])
+&#123;//查找书号是否在图书信息表L中
+    
+&#125;
+int DupRemoval_Sq(SqList L1,SqList &amp;L2)
+&#123;//图书去重
+   
+&#125;
+</code></pre>
+<h3 id="代码-9"><a href="#代码-9" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;string.h&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+#define MAXSIZE 1000    //图书表可能达到的最大长度
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct
+&#123;//图书表的顺序存储结构类型为SqList
+    Book *elem;                   //存储空间的基地址
+    int length;                   //图书表中当前图书个数
+&#125;SqList;
+
+int Output_Sq(SqList L)
+&#123;//顺序表的输出
+    cout &lt;&lt; L.length &lt;&lt; &#39;\n&#39;;
+    for(int i = 0; i &lt; L.length; i++)&#123;
+        Book &amp;book = L.elem[i];
+        cout &lt;&lt; book.no &lt;&lt; &#39; &#39; &lt;&lt; book.name &lt;&lt; &#39; &#39; &lt;&lt; fixed &lt;&lt; setprecision(2) &lt;&lt; book.price &lt;&lt; &#39;\n&#39;;
+    &#125;
+&#125;
+
+int SearchList(const SqList &amp;L,char no[20])
+&#123;//查找书号是否在图书信息表L中
+    for(int i = 0; i &lt; L.length; i++)&#123;
+        Book &amp;book = L.elem[i];
+        if(strcmp(book.no, no) == 0)&#123;
+            return i;
+        &#125;
+    &#125;
+    return -1;
+&#125;
+
+int DupRemoval_Sq(SqList L1,SqList &amp;L2)
+&#123;//图书去重
+   for(int i = 0; i &lt; L1.length; i++)&#123;
+        Book &amp;book = L1.elem[i];
+        if(SearchList(L2, book.no) != -1) continue;
+        L2.elem[L2.length++] = book;
+    &#125;
+
+    Output_Sq(L2);
+&#125;
+</code></pre>
+<h2 id="第11关：基于链式存储结构的图书信息表的创建和输出"><a href="#第11关：基于链式存储结构的图书信息表的创建和输出" class="headerlink" title="第11关：基于链式存储结构的图书信息表的创建和输出"></a>第11关：基于链式存储结构的图书信息表的创建和输出</h2><h3 id="描述-10"><a href="#描述-10" class="headerlink" title="描述"></a>描述</h3><p>定义一个包含图书信息（书号、书名、价格）的链表，读入相应的图书数据来完成图书信息表的创建，然后统计图书表中的图书个数，同时逐行输出每本图书的信息。</p>
+<h3 id="输入-10"><a href="#输入-10" class="headerlink" title="输入"></a>输入</h3><p>输入n+1行，其中前n行是n本图书的信息（书号、书名、价格），每本图书信息占一行，书号、书名、价格用空格分隔，价格之后没有空格。最后第n+1行是输入结束标志：0 0 0（空格分隔的三个0）。其中书号和书名为字符串类型，价格为浮点数类型。</p>
+<h3 id="输出-10"><a href="#输出-10" class="headerlink" title="输出"></a>输出</h3><p>总计n+1行，第1行是所创建的图书表中的图书个数，后n行是n本图书的信息（书号、书名、价格），每本图书信息占一行，书号、书名、价格用空格分隔。其中价格输出保留两位小数。</p>
+<h3 id="输入样例-8"><a href="#输入样例-8" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>9787302257646 Data-Structure 35.00
+9787302164340 Operating-System 50.00
+9787302219972 Software-Engineer 32.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+9787822234110 The-C-Programming-Language 38.00
+0 0 0
+</code></pre>
+<h3 id="输出样例-8"><a href="#输出样例-8" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>8
+9787302257646 Data-Structure 35.00
+9787302164340 Operating-System 50.00
+9787302219972 Software-Engineer 32.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+9787822234110 The-C-Programming-Language 38.00
+</code></pre>
+<h3 id="初始代码-10"><a href="#初始代码-10" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;string.h&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct LNode
+&#123;//图书信息表的链式存储结构
+    Book data;    	   //结点的数据域
+    int length;       //链表的表长，即图书表中图书个数
+    struct LNode *next; //指针域
+&#125;LNode,*LinkList;
+
+int  Length_L(LinkList &amp;L)
+&#123;//求链表的表长，即图书表中图书个数
+    
+&#125;
+</code></pre>
+<h3 id="代码-10"><a href="#代码-10" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;string.h&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct LNode
+&#123;//图书信息表的链式存储结构
+    Book data;    	   //结点的数据域
+    int length;       //链表的表长，即图书表中图书个数
+    struct LNode *next; //指针域
+&#125;LNode,*LinkList;
+
+int  Length_L(LinkList &amp;L)
+&#123;//求链表的表长，即图书表中图书个数
+    L -&gt; length = 0;
+    LinkList p = L -&gt; next;
+    while(p)&#123;
+        p = p -&gt; next;
+        L -&gt; length++;
+    &#125;
+    
+    cout &lt;&lt; L -&gt; length &lt;&lt; &#39;\n&#39;;
+    return OK;
+&#125;
+</code></pre>
+<h2 id="第12关：基于链式存储结构的图书信息表的排序"><a href="#第12关：基于链式存储结构的图书信息表的排序" class="headerlink" title="第12关：基于链式存储结构的图书信息表的排序"></a>第12关：基于链式存储结构的图书信息表的排序</h2><h3 id="描述-11"><a href="#描述-11" class="headerlink" title="描述"></a>描述</h3><p>定义一个包含图书信息（书号、书名、价格）的链表，读入相应的图书数据完成图书信息表的创建，然后将图书按照价格降序排序，逐行输出排序后每本图书的信息。</p>
+<h3 id="输入-11"><a href="#输入-11" class="headerlink" title="输入"></a>输入</h3><p>输入n+1行，前n行是n本图书的信息（书号、书名、价格），每本图书信息占一行，书号、书名、价格用空格分隔，价格之后没有空格。最后第n+1行是输入结束标志：0 0 0（空格分隔的三个0）。其中书号和书名为字符串类型，价格为浮点数类型。</p>
+<h3 id="输出-11"><a href="#输出-11" class="headerlink" title="输出"></a>输出</h3><p>总计n行，每行是一本图书的信息（书号、书名、价格），书号、书名、价格用空格分隔。其中价格输出保留两位小数。</p>
+<h3 id="输入样例-9"><a href="#输入样例-9" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>9787302257646 Data-Structure 35.00
+9787302164340 Operating-System 50.00
+9787302219972 Software-Engineer 32.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+9787822234110 The-C-Programming-Language 38.00
+0 0 0
+</code></pre>
+<h3 id="输出样例-9"><a href="#输出样例-9" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+9787302164340 Operating-System 50.00
+9787822234110 The-C-Programming-Language 38.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257646 Data-Structure 35.00
+9787302219972 Software-Engineer 32.00
+</code></pre>
+<h3 id="初始代码-11"><a href="#初始代码-11" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;string.h&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct LNode
+&#123;//图书信息表的链式存储结构
+    Book data;    	   //结点的数据域
+    int length;       //链表的表长，即图书表中图书个数
+    struct LNode *next; //指针域
+&#125;LNode,*LinkList;
+
+int Sort_L(LinkList &amp;L)
+&#123;//将图书按照价格降序排序
+    
+&#125;
+</code></pre>
+<h3 id="代码-11"><a href="#代码-11" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;string.h&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct LNode
+&#123;//图书信息表的链式存储结构
+    Book data;    	   //结点的数据域
+    int length;       //链表的表长，即图书表中图书个数
+    struct LNode *next; //指针域
+&#125;LNode,*LinkList;
+
+void Swap(LinkList front, LinkList&amp; lhs, LinkList&amp; rhs)&#123;
+    front -&gt; next = rhs;
+    lhs -&gt; next = rhs -&gt; next;
+    rhs -&gt; next = lhs;
+    swap(lhs, rhs);
+&#125;
+
+int  Length_LN(LinkList &amp;L)
+&#123;//求链表的表长，即图书表中图书个数
+    L -&gt; length = 0;
+    LinkList p = L -&gt; next;
+    while(p)&#123;
+        p = p -&gt; next;
+        L -&gt; length++;
+    &#125;
+    
+    return L -&gt; length;
+&#125;
+
+int Sort_L(LinkList &amp;L)
+&#123;//将图书按照价格降序排序
+    int length = Length_LN(L);
+    if(length &lt;= 1) return OK;
+    for(int i = 1; i &lt; length; i++)&#123;
+        LinkList r = L;
+        LinkList p = r -&gt; next;
+        LinkList q = p -&gt; next;
+        for(; q; r = p, p = q, q = q -&gt; next)&#123;
+            if(p -&gt; data.price &lt; q -&gt; data.price)&#123;
+                Swap(r, p, q);
+            &#125;
+        &#125;
+    &#125;
+    return OK;
+&#125;
+</code></pre>
+<h2 id="第13关：基于链式存储结构的图书信息表的修改"><a href="#第13关：基于链式存储结构的图书信息表的修改" class="headerlink" title="第13关：基于链式存储结构的图书信息表的修改"></a>第13关：基于链式存储结构的图书信息表的修改</h2><h3 id="描述-12"><a href="#描述-12" class="headerlink" title="描述"></a>描述</h3><p>定义一个包含图书信息（书号、书名、价格）的链表，读入相应的图书数据完成图书信息表的创建，然后计算所有图书的平均价格，将所有低于平均价格的图书价格提高20%，所有高于或等于平均价格的图书价格提高10%，最后逐行输出价格修改后的图书信息。</p>
+<h3 id="输入-12"><a href="#输入-12" class="headerlink" title="输入"></a>输入</h3><p>输入n+1行，前n行是n本图书的信息（书号、书名、价格），每本图书信息占一行，书号、书名、价格用空格分隔，价格之后没有空格。最后第n+1行是输入结束标志：0 0 0（空格分隔的三个0）。其中书号和书名为字符串类型，价格为浮点数类型。</p>
+<h3 id="输出-12"><a href="#输出-12" class="headerlink" title="输出"></a>输出</h3><p>总计n+1行，第1行是修改前所有图书的平均价格，后n行是价格修改后n本图书的信息，每本图书信息占一行，书号、书名、价格用空格分隔。其中价格输出保留两位小数。</p>
+<h3 id="输入样例-10"><a href="#输入样例-10" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>9787302257646 Data-Structure 35.00
+9787302164340 Operating-System 50.00
+9787302219972 Software-Engineer 32.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+9787822234110 The-C-Programming-Language 38.00
+0 0 0
+</code></pre>
+<h3 id="输出样例-10"><a href="#输出样例-10" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>43.88
+9787302257646 Data-Structure 42.00
+9787302164340 Operating-System 55.00
+9787302219972 Software-Engineer 38.40
+9787302203513 Database-Principles 43.20
+9787810827430 Discrete-Mathematics 43.20
+9787302257800 Data-Structure 68.20
+9787811234923 Compiler-Principles 68.20
+9787822234110 The-C-Programming-Language 45.60
+</code></pre>
+<h3 id="初始代码-12"><a href="#初始代码-12" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;string.h&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct LNode
+&#123;//图书信息表的链式存储结构
+    Book data;    	   //结点的数据域
+    int length;       //链表的表长，即图书表中图书个数
+    struct LNode *next; //指针域
+&#125;LNode,*LinkList;
+int AveRevise_L(LinkList &amp;L)
+&#123;//计算所有图书的平均价格并修改价格
+    
+&#125;
+</code></pre>
+<h3 id="代码-12"><a href="#代码-12" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;string.h&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct LNode
+&#123;//图书信息表的链式存储结构
+    Book data;    	   //结点的数据域
+    int length;       //链表的表长，即图书表中图书个数
+    struct LNode *next; //指针域
+&#125;LNode,*LinkList;
+int AveRevise_L(LinkList &amp;L)
+&#123;//计算所有图书的平均价格并修改价格
+    double total_price = 0;
+    int length = 0;
+    for(LinkList p = L -&gt; next; p; p = p -&gt; next)&#123;
+        total_price += p -&gt; data.price;
+        length++;
+    &#125;
+    if(length == 0) return OK;
+    double avg = total_price / length;
+
+    cout &lt;&lt; fixed &lt;&lt; setprecision(2) &lt;&lt; avg &lt;&lt; &#39;\n&#39;;
+    for(LinkList p = L -&gt; next; p; p = p -&gt; next)&#123;
+        Book &amp;book = p -&gt; data;
+        if(book.price &lt; avg)&#123;
+            book.price *= 1.2;
+        &#125;
+        else&#123;
+            book.price *= 1.1;
+        &#125;
+    &#125;
+
+    return OK;
+&#125;
+</code></pre>
+<h2 id="第14关：基于链式存储结构的图书信息表的逆序存储"><a href="#第14关：基于链式存储结构的图书信息表的逆序存储" class="headerlink" title="第14关：基于链式存储结构的图书信息表的逆序存储"></a>第14关：基于链式存储结构的图书信息表的逆序存储</h2><h3 id="描述-13"><a href="#描述-13" class="headerlink" title="描述"></a>描述</h3><p>定义一个包含图书信息（书号、书名、价格）的链表，读入相应的图书数据来完成图书信息表的创建，然后将读入的图书逆序存储，逐行输出逆序存储后每本图书的信息。</p>
+<h3 id="输入-13"><a href="#输入-13" class="headerlink" title="输入"></a>输入</h3><p>输入n+1行，第一行是图书数目n，后n行是n本图书的信息（书号、书名、价格），每本图书信息占一行，书号、书名、价格用空格分隔，价格之后没有空格。其中书号和书名为字符串类型，价格为浮点数类型。</p>
+<h3 id="输出-13"><a href="#输出-13" class="headerlink" title="输出"></a>输出</h3><p>总计n行，第i行是原有图书表中第n-i+1行的图书的信息（书号、书名、价格），每本图书信息占一行，书号、书名、价格用空格分隔。其中价格输出保留两位小数。</p>
+<h3 id="输入样例-11"><a href="#输入样例-11" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>8
+9787302257646 Data-Structure 35.00
+9787302164340 Operating-System 50.00
+9787302219972 Software-Engineer 32.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+9787822234110 The-C-Programming-Language 38.00
+</code></pre>
+<h3 id="输出样例-11"><a href="#输出样例-11" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>9787822234110 The-C-Programming-Language 38.00
+9787811234923 Compiler-Principles 62.00
+9787302257800 Data-Structure 62.00
+9787810827430 Discrete-Mathematics 36.00
+9787302203513 Database-Principles 36.00
+9787302219972 Software-Engineer 32.00
+9787302164340 Operating-System 50.00
+9787302257646 Data-Structure 35.00
+</code></pre>
+<h3 id="初始代码-13"><a href="#初始代码-13" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct LNode
+&#123;//图书信息表的链式存储结构
+    Book data;    	   //结点的数据域
+    int length;       //链表的表长，即图书表中图书个数
+    struct LNode *next; //指针域
+&#125;LNode,*LinkList;
+int Input_L(LinkList &amp;L)
+&#123;//链表的输入
+    
+&#125;
+</code></pre>
+<h3 id="代码-13"><a href="#代码-13" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct LNode
+&#123;//图书信息表的链式存储结构
+    Book data;    	   //结点的数据域
+    int length;       //链表的表长，即图书表中图书个数
+    struct LNode *next; //指针域
+&#125;LNode,*LinkList;
+int Input_L(LinkList &amp;L)
+&#123;//链表的输入
+    int n;
+    cin &gt;&gt; n;
+    LinkList p_tail = L;
+    while(n--)&#123;
+        p_tail -&gt; next = new LNode;
+        p_tail = p_tail -&gt; next;
+        p_tail -&gt; next = nullptr;
+        cin &gt;&gt; p_tail -&gt; data.no &gt;&gt; p_tail -&gt; data.name &gt;&gt; p_tail -&gt; data.price;
+    &#125;
+    L -&gt; length = n;
+
+    LinkList r = nullptr;
+    LinkList p = L -&gt; next;
+    while(p)&#123;
+        LinkList q = p -&gt; next;
+        p -&gt; next = r;
+        r = p;
+        p = q;
+    &#125;
+    L -&gt; next = r;
+&#125;
+</code></pre>
+<h2 id="第14关：基于链式存储结构的图书信息表的逆序存储-1"><a href="#第14关：基于链式存储结构的图书信息表的逆序存储-1" class="headerlink" title="第14关：基于链式存储结构的图书信息表的逆序存储"></a>第14关：基于链式存储结构的图书信息表的逆序存储</h2><h3 id="描述-14"><a href="#描述-14" class="headerlink" title="描述"></a>描述</h3><h3 id="输入-14"><a href="#输入-14" class="headerlink" title="输入"></a>输入</h3><h3 id="输出-14"><a href="#输出-14" class="headerlink" title="输出"></a>输出</h3><h3 id="输入样例-12"><a href="#输入样例-12" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>
+</code></pre>
+<h3 id="输出样例-12"><a href="#输出样例-12" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>
+</code></pre>
+<h3 id="初始代码-14"><a href="#初始代码-14" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">
+</code></pre>
+<h3 id="代码-14"><a href="#代码-14" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">
+</code></pre>
+<h2 id="第15关：基于链式存储结构的图书信息表的最贵图书的查找"><a href="#第15关：基于链式存储结构的图书信息表的最贵图书的查找" class="headerlink" title="第15关：基于链式存储结构的图书信息表的最贵图书的查找"></a>第15关：基于链式存储结构的图书信息表的最贵图书的查找</h2><h3 id="描述-15"><a href="#描述-15" class="headerlink" title="描述"></a>描述</h3><p>定义一个包含图书信息（书号、书名、价格）的链表，读入相应的图书数据来完成图书信息表的创建，然后查找价格最高的图书，输出相应图书的信息。</p>
+<h3 id="输入-15"><a href="#输入-15" class="headerlink" title="输入"></a>输入</h3><p>总计输入n+1行，其中，第一行是图书数目n，后n行是n本图书的信息（书号、书名、价格），每本图书信息占一行，书号、书名、价格用空格分隔，价格之后没有空格。其中书号和书名为字符串类型，价格为浮点数类型。</p>
+<h3 id="输出-15"><a href="#输出-15" class="headerlink" title="输出"></a>输出</h3><p>总计输出m+1行，其中，第一行是最贵图书数目（价格最高的图书可能有多本），后m行是最贵图书的信息（书号、书名、价格），每本图书信息占一行，书号、书名、价格用空格分隔，其中价格输出保留两位小数。</p>
+<h3 id="输入样例-13"><a href="#输入样例-13" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>8
+9787302257646 Data-Structure 35.00
+9787302164340 Operating-System 50.00
+9787302219972 Software-Engineer 32.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+9787822234110 The-C-Programming-Language 38.00
+</code></pre>
+<h3 id="输出样例-13"><a href="#输出样例-13" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>2
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+</code></pre>
+<h3 id="初始代码-15"><a href="#初始代码-15" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];     //图书ISBN
+    char name[50];   //图书名字
+    float price;     //图书价格
+&#125;Book;
+typedef struct LNode
+&#123;//图书信息表的链式存储结构
+    Book data;    	   //结点的数据域
+    int length;       //链表的表长，即图书表中图书个数
+    struct LNode *next; //指针域
+&#125;LNode,*LinkList;
+int HighestPrice_L(LinkList L)
+&#123;//查找价格最高的图书
+   
+&#125;
+</code></pre>
+<h3 id="代码-15"><a href="#代码-15" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];     //图书ISBN
+    char name[50];   //图书名字
+    float price;     //图书价格
+&#125;Book;
+typedef struct LNode
+&#123;//图书信息表的链式存储结构
+    Book data;    	   //结点的数据域
+    int length;       //链表的表长，即图书表中图书个数
+    struct LNode *next; //指针域
+&#125;LNode,*LinkList;
+int HighestPrice_L(LinkList L)
+&#123;//查找价格最高的图书
+   float hst_price = 0;
+   for(LinkList p = L -&gt; next; p; p = p -&gt; next)&#123;
+       hst_price = max(hst_price, p -&gt; data.price);
+   &#125;
+
+   int cnt = 0;
+   for(LinkList p = L -&gt; next; p; p = p -&gt; next)&#123;
+       if(hst_price == p -&gt; data.price)&#123;
+           cnt++;
+       &#125;
+   &#125;
+
+   cout &lt;&lt; cnt &lt;&lt; &#39;\n&#39;;
+   for(LinkList p = L -&gt; next; p; p = p -&gt; next)&#123;
+       if(hst_price == p -&gt; data.price)&#123;
+           cout &lt;&lt; p -&gt; data.no &lt;&lt; &#39; &#39; &lt;&lt; p -&gt; data.name &lt;&lt; &#39; &#39; &lt;&lt; fixed &lt;&lt; setprecision(2) &lt;&lt; p -&gt; data.price &lt;&lt; &#39;\n&#39;;
+       &#125;
+   &#125;
+&#125;
+</code></pre>
+<h2 id="第16关：基于链式存储结构的图书信息表的最爱图书的查找"><a href="#第16关：基于链式存储结构的图书信息表的最爱图书的查找" class="headerlink" title="第16关：基于链式存储结构的图书信息表的最爱图书的查找"></a>第16关：基于链式存储结构的图书信息表的最爱图书的查找</h2><h3 id="描述-16"><a href="#描述-16" class="headerlink" title="描述"></a>描述</h3><p>定义一个包含图书信息（书号、书名、价格）的链表，读入相应的图书数据来完成图书信息表的创建，然后根据指定的最爱图书的名字，查找最爱的图书，输出相应图书的信息。</p>
+<h3 id="输入-16"><a href="#输入-16" class="headerlink" title="输入"></a>输入</h3><p>总计n+m+2行。首先输入n+1行，其中，第一行是图书数目n，后n行是n本图书的信息（书号、书名、价格），每本图书信息占一行，书号、书名、价格用空格分隔，价格之后没有空格。其中书号和书名为字符串类型，价格为浮点数类型。然后输入m+1行，其中，第一行是一个整数m，代表查找m次，后m行是每次待查找的最爱图书名字。</p>
+<h3 id="输出-16"><a href="#输出-16" class="headerlink" title="输出"></a>输出</h3><p>若查找成功： 总计输出m*（k+1）行，对于每一次查找，第一行是最爱图书数目（同一书名的图书可能有多本），后k行是最爱图书的信息（书号、书名、价格），每本图书信息占一行，书号、书名、价格用空格分隔，其中价格输出保留两位小数。 若查找失败： 只输出以下提示：抱歉，没有你的最爱！</p>
+<h3 id="输入样例-14"><a href="#输入样例-14" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>8
+9787302257646 Data-Structure 35.00
+9787302164340 Operating-System 50.00
+9787302219972 Software-Engineer 32.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+9787822234110 The-C-Programming-Language 38.00
+2
+Java-Programming-Language
+Data-Structure
+</code></pre>
+<h3 id="输出样例-14"><a href="#输出样例-14" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>Sorry，there is no your favourite!
+2
+9787302257646 Data-Structure 35.00
+9787302257800 Data-Structure 62.00
+</code></pre>
+<h3 id="初始代码-16"><a href="#初始代码-16" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;string.h&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct LNode
+&#123;//图书信息表的链式存储结构
+    Book data;    	   //结点的数据域
+    int length;       //链表的表长，即图书表中图书个数
+    struct LNode *next; //指针域
+&#125;LNode,*LinkList;
+int FindFavorite_L(LinkList &amp;L)
+&#123;//查找的最爱图书并输出数据
+
+&#125;
+</code></pre>
+<h3 id="代码-16"><a href="#代码-16" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;string.h&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct LNode
+&#123;//图书信息表的链式存储结构
+    Book data;    	   //结点的数据域
+    int length;       //链表的表长，即图书表中图书个数
+    struct LNode *next; //指针域
+&#125;LNode,*LinkList;
+int FindFavorite_L(LinkList &amp;L)
+&#123;//查找的最爱图书并输出数据
+    int n;
+    cin &gt;&gt; n;
+    while(n--)&#123;
+        char name[50];
+        cin &gt;&gt; name;
+
+        int cnt = 0;
+        for(LinkList p = L -&gt; next; p; p = p -&gt; next)&#123;
+            if(strcmp(name, p -&gt; data.name) == 0)&#123;
+                cnt++;
+            &#125;
+        &#125;
+
+        if(cnt == 0)&#123;
+            cout &lt;&lt; &quot;Sorry，there is no your favourite!&quot; &lt;&lt; &#39;\n&#39;;
+        &#125;
+        else&#123;
+            cout &lt;&lt; cnt &lt;&lt; &#39;\n&#39;;
+            for(LinkList p = L -&gt; next; p; p = p -&gt; next)&#123;
+                if(strcmp(name, p -&gt; data.name) == 0)&#123;
+                    cout &lt;&lt; p -&gt; data.no &lt;&lt; &#39; &#39; &lt;&lt; p -&gt; data.name &lt;&lt; &#39; &#39; &lt;&lt; fixed &lt;&lt; setprecision(2) &lt;&lt; p -&gt; data.price &lt;&lt; &#39;\n&#39;;
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="第17关：基于链式存储结构的图书信息表的最佳位置图书的查找"><a href="#第17关：基于链式存储结构的图书信息表的最佳位置图书的查找" class="headerlink" title="第17关：基于链式存储结构的图书信息表的最佳位置图书的查找"></a>第17关：基于链式存储结构的图书信息表的最佳位置图书的查找</h2><h3 id="描述-17"><a href="#描述-17" class="headerlink" title="描述"></a>描述</h3><p>定义一个包含图书信息（书号、书名、价格）的链表，读入相应的图书数据来完成图书信息表的创建，然后根据指定的最佳位置的序号，查找该位置上的图书，输出相应图书的信息。</p>
+<h3 id="输入-17"><a href="#输入-17" class="headerlink" title="输入"></a>输入</h3><p>总计n+m+2行。首先输入n+1行，其中，第一行是图书数目n，后n行是n本图书的信息（书号、书名、价格），每本图书信息占一行，书号、书名、价格用空格分隔，价格之后没有空格。其中书号和书名为字符串类型，价格为浮点数类型。然后输入m+1行，其中，第一行是一个整数m，代表查找m次，后m行每行内容为一个整数，代表待查找的图书的位置序号。</p>
+<h3 id="输出-17"><a href="#输出-17" class="headerlink" title="输出"></a>输出</h3><p>输出m行 若查找成功： 输出内容为第i次查询的指定位置上的一本图书的信息（书号、书名、价格），书号、书名、价格用空格分隔，其中价格输出保留两位小数。 若查找失败： 只输出以下提示：抱歉，最佳位置上的图书不存在！</p>
+<h3 id="输入样例-15"><a href="#输入样例-15" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>8
+9787302257646 Data-Structure 35.00
+9787302164340 Operating-System 50.00
+9787302219972 Software-Engineer 32.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+9787822234110 The-C-Programming-Language 38.00
+2
+2
+0
+</code></pre>
+<h3 id="输出样例-15"><a href="#输出样例-15" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>9787302164340 Operating-System 50.00
+Sorry，the book on the best position doesn&#39;t exist!
+</code></pre>
+<h3 id="初始代码-17"><a href="#初始代码-17" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct LNode
+&#123;//图书信息表的链式存储结构
+    Book data;    	   //结点的数据域
+    int length;       //链表的表长，即图书表中图书个数
+    struct LNode *next; //指针域
+&#125;LNode,*LinkList;
+int Locate_L(LinkList L)
+&#123;//查找最佳位置的图书并输出数据
+ 
+&#125;
+</code></pre>
+<h3 id="代码-17"><a href="#代码-17" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct LNode
+&#123;//图书信息表的链式存储结构
+    Book data;    	   //结点的数据域
+    int length;       //链表的表长，即图书表中图书个数
+    struct LNode *next; //指针域
+&#125;LNode,*LinkList;
+int Locate_L(LinkList L)
+&#123;//查找最佳位置的图书并输出数据
+    int n;
+    cin &gt;&gt; n;
+    while(n--)&#123;
+        int pos;
+        cin &gt;&gt; pos;
+
+        if(pos &lt;= 0)&#123;
+            cout &lt;&lt; &quot;Sorry，the book on the best position doesn&#39;t exist!&quot; &lt;&lt; &#39;\n&#39;;
+            continue;
+        &#125;
+
+        LinkList p = L;
+        while(p &amp;&amp; pos)&#123;
+            p = p -&gt; next;
+            pos--;
+        &#125;
+
+        if(!p)&#123;
+            cout &lt;&lt; &quot;Sorry，the book on the best position doesn&#39;t exist!&quot; &lt;&lt; &#39;\n&#39;;
+            continue;
+        &#125;
+
+        cout &lt;&lt; p -&gt; data.no &lt;&lt; &#39; &#39; &lt;&lt; p -&gt; data.name &lt;&lt; &#39; &#39; &lt;&lt; fixed &lt;&lt; setprecision(2) &lt;&lt; p -&gt; data.price &lt;&lt; &#39;\n&#39;;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="第18关：基于链式存储结构的图书信息表的新图书的入库"><a href="#第18关：基于链式存储结构的图书信息表的新图书的入库" class="headerlink" title="第18关：基于链式存储结构的图书信息表的新图书的入库"></a>第18关：基于链式存储结构的图书信息表的新图书的入库</h2><h3 id="描述-18"><a href="#描述-18" class="headerlink" title="描述"></a>描述</h3><p>本关任务：定义一个包含图书信息（书号、书名、价格）的链表，读入相应的图书数据来完成图书信息表的创建，然后根据指定的待入库的新图书的位置和图书的信息，将新图书插入到图书表中指定的位置上，最后输出新图书入库后的所有图书的信息。</p>
+<h3 id="输入-18"><a href="#输入-18" class="headerlink" title="输入"></a>输入</h3><p>总计n+3行。首先输入n+1行，其中，第一行是图书数目n，后n行是n本图书的信息（书号、书名、价格），每本图书信息占一行，书号、书名、价格用空格分隔，价格之后没有空格。其中书号和书名为字符串类型，价格为浮点数类型。之后输入第n+2行，内容仅为一个整数，代表待入库的新图书的位置序号。最后输入第n+3行，内容为新图书的信息，书号、书名、价格用空格分隔。</p>
+<h3 id="输出-18"><a href="#输出-18" class="headerlink" title="输出"></a>输出</h3><p>若插入成功： 输出新图书入库后所有图书的信息（书号、书名、价格），总计n+1行，每行是一本图书的信息，书号、书名、价格用空格分隔。其中价格输出保留两位小数。 若插入失败： 只输出以下一行提示：抱歉，入库位置非法！</p>
+<h3 id="输入样例-1-2"><a href="#输入样例-1-2" class="headerlink" title="输入样例 #1"></a>输入样例 #1</h3><pre><code>7
+9787302257646 Data-Structure 35.00
+9787302164340 Operating-System 50.00
+9787302219972 Software-Engineer 32.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+2
+9787822234110 The-C-Programming-Language 38.00
+</code></pre>
+<h3 id="输出样例-1-2"><a href="#输出样例-1-2" class="headerlink" title="输出样例 #1"></a>输出样例 #1</h3><pre><code>9787302257646 Data-Structure 35.00
+9787822234110 The-C-Programming-Language 38.00
+9787302164340 Operating-System 50.00
+9787302219972 Software-Engineer 32.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+</code></pre>
+<h3 id="输入样例-2-2"><a href="#输入样例-2-2" class="headerlink" title="输入样例 #2"></a>输入样例 #2</h3><pre><code>7
+9787302257646 Data-Structure 35.00
+9787302164340 Operating-System 50.00
+9787302219972 Software-Engineer 32.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+9
+9787822234110 The-C-Programming-Language 38.00
+</code></pre>
+<h3 id="输出样例-2-2"><a href="#输出样例-2-2" class="headerlink" title="输出样例 #2"></a>输出样例 #2</h3><pre><code>Sorry，the position to be inserted is invalid!
+</code></pre>
+<h3 id="初始代码-18"><a href="#初始代码-18" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct LNode
+&#123;//图书信息表的链式存储结构
+    Book data;    	   //结点的数据域
+    int length;       //链表的表长，即图书表中图书个数
+    struct LNode *next; //指针域
+&#125;LNode,*LinkList;
+int Insert_L(LinkList &amp;L)
+&#123;//将新图书入库并输出
+
+&#125;
+</code></pre>
+<h3 id="代码-18"><a href="#代码-18" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct LNode
+&#123;//图书信息表的链式存储结构
+    Book data;    	   //结点的数据域
+    int length;       //链表的表长，即图书表中图书个数
+    struct LNode *next; //指针域
+&#125;LNode,*LinkList;
+int Insert_L(LinkList &amp;L)
+&#123;//将新图书入库并输出
+    int pos;
+    Book book;
+    cin &gt;&gt; pos;
+    cin &gt;&gt; book.no &gt;&gt; book.name &gt;&gt; book.price;
+    if(pos &lt;= 0)&#123;
+        cout &lt;&lt; &quot;Sorry，the position to be inserted is invalid!&quot; &lt;&lt; &#39;\n&#39;;
+        return ERROR;
+    &#125;
+
+    LinkList r = L;
+    while(r &amp;&amp; pos - 1)&#123;
+        r = r -&gt; next;
+        pos--;
+    &#125;
+
+    if(!r)&#123;
+        cout &lt;&lt; &quot;Sorry，the position to be inserted is invalid!&quot; &lt;&lt; &#39;\n&#39;;
+        return ERROR;
+    &#125;
+
+    LinkList p = new LNode;
+    p -&gt; data = book;
+    
+    p -&gt; next = r -&gt; next;
+    r -&gt; next = p;
+
+    for(LinkList p = L -&gt; next; p; p = p -&gt; next)&#123;
+        cout &lt;&lt; p -&gt; data.no &lt;&lt; &#39; &#39; &lt;&lt; p -&gt; data.name &lt;&lt; &#39; &#39; &lt;&lt; fixed &lt;&lt; setprecision(2) &lt;&lt; p -&gt; data.price &lt;&lt; &#39;\n&#39;;
+    &#125;
+
+    return OK;
+&#125;
+</code></pre>
+<h2 id="第19关：基于链式存储结构的图书信息表的旧图书的出库"><a href="#第19关：基于链式存储结构的图书信息表的旧图书的出库" class="headerlink" title="第19关：基于链式存储结构的图书信息表的旧图书的出库"></a>第19关：基于链式存储结构的图书信息表的旧图书的出库</h2><h3 id="描述-19"><a href="#描述-19" class="headerlink" title="描述"></a>描述</h3><p>定义一个包含图书信息（书号、书名、价格）的链表，读入相应的图书数据来完成图书信息表的创建，然后根据指定的待出库的旧图书的位置，将该图书从图书表中删除，最后输出该图书出库后的所有图书的信息。</p>
+<h3 id="输入-19"><a href="#输入-19" class="headerlink" title="输入"></a>输入</h3><p>总计n+2行。首先输入n+1行，其中，第一行是图书数目n，后n行是n本图书的信息（书号、书名、价格），每本图书信息占一行，书号、书名、价格用空格分隔，价格之后没有空格。其中书号和书名为字符串类型，价格为浮点数类型。之后输入第n+2行，内容仅为一个整数，代表待删除的旧图书的位置序号。</p>
+<h3 id="输出-19"><a href="#输出-19" class="headerlink" title="输出"></a>输出</h3><p>若删除成功： 输出旧图书出库后所有图书的信息（书号、书名、价格），总计n-1行，每行是一本图书的信息，书号、书名、价格用空格分隔。其中价格输出保留两位小数。 若删除失败： 只输出以下一行提示：抱歉，出库位置非法！</p>
+<h3 id="输入样例-1-3"><a href="#输入样例-1-3" class="headerlink" title="输入样例 #1"></a>输入样例 #1</h3><pre><code>8
+9787302257646 Data-Structure 35.00
+9787302164340 Operating-System 50.00
+9787302219972 Software-Engineer 32.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+9787822234110 The-C-Programming-Language 38.00
+2
+</code></pre>
+<h3 id="输出样例-1-3"><a href="#输出样例-1-3" class="headerlink" title="输出样例 #1"></a>输出样例 #1</h3><pre><code>9787302257646 Data-Structure 35.00
+9787302219972 Software-Engineer 32.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+9787822234110 The-C-Programming-Language 38.00
+</code></pre>
+<h3 id="输入样例-2-3"><a href="#输入样例-2-3" class="headerlink" title="输入样例 #2"></a>输入样例 #2</h3><pre><code>8
+9787302257646 Data-Structure 35.00
+9787302164340 Operating-System 50.00
+9787302219972 Software-Engineer 32.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+9787822234110 The-C-Programming-Language 38.00
+9
+</code></pre>
+<h3 id="输出样例-2-3"><a href="#输出样例-2-3" class="headerlink" title="输出样例 #2"></a>输出样例 #2</h3><pre><code>Sorry，the position to be deleted is invalid!
+</code></pre>
+<h3 id="初始代码-19"><a href="#初始代码-19" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct LNode
+&#123;//图书信息表的链式存储结构
+    Book data;    	   //结点的数据域
+    int length;       //链表的表长，即图书表中图书个数
+    struct LNode *next; //指针域
+&#125;LNode,*LinkList;
+int Delete_L(LinkList &amp;L)
+&#123;//出库旧图书并输出
+   
+&#125;
+</code></pre>
+<h3 id="代码-19"><a href="#代码-19" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct LNode
+&#123;//图书信息表的链式存储结构
+    Book data;    	   //结点的数据域
+    int length;       //链表的表长，即图书表中图书个数
+    struct LNode *next; //指针域
+&#125;LNode,*LinkList;
+int Delete_L(LinkList &amp;L)
+&#123;//出库旧图书并输出
+    int pos;
+    cin &gt;&gt; pos;
+    if(pos &lt;= 0)&#123;
+        cout &lt;&lt; &quot;Sorry，the position to be inserted is invalid!&quot; &lt;&lt; &#39;\n&#39;;
+        return ERROR;
+    &#125;
+
+    LinkList r = L;
+    while(r -&gt; next &amp;&amp; pos - 1)&#123;
+        r = r -&gt; next;
+        pos--;
+    &#125;
+
+    if(!r -&gt; next)&#123;
+        cout &lt;&lt; &quot;Sorry，the position to be deleted is invalid!&quot; &lt;&lt; &#39;\n&#39;;
+        return ERROR;
+    &#125;
+    
+    LinkList p = r -&gt; next;
+    r -&gt; next = p -&gt; next;
+    delete p;
+
+    for(LinkList p = L -&gt; next; p; p = p -&gt; next)&#123;
+        cout &lt;&lt; p -&gt; data.no &lt;&lt; &#39; &#39; &lt;&lt; p -&gt; data.name &lt;&lt; &#39; &#39; &lt;&lt; fixed &lt;&lt; setprecision(2) &lt;&lt; p -&gt; data.price &lt;&lt; &#39;\n&#39;;
+    &#125;
+
+    return OK;
+&#125;
+</code></pre>
+<h2 id="第20关：基于链存储结构的图书信息表的图书去重"><a href="#第20关：基于链存储结构的图书信息表的图书去重" class="headerlink" title="第20关：基于链存储结构的图书信息表的图书去重"></a>第20关：基于链存储结构的图书信息表的图书去重</h2><h3 id="描述-20"><a href="#描述-20" class="headerlink" title="描述"></a>描述</h3><p>出版社出版的任何一本图书的书号（ISBN）都是唯一的，即图书表中不允许包含书号重复的图书。定义一个包含图书信息（书号、书名、价格）的链表，读入相应的图书数据来完成图书信息表的创建（书号可能重复），然后进行图书的去重，即删除书号重复的图书（只保留第一本），最后输出去重后所有图书的信息。</p>
+<h3 id="输入-20"><a href="#输入-20" class="headerlink" title="输入"></a>输入</h3><p>总计输入n+1行，其中，第一行是图书数目n，后n行是n本图书的信息（书号、书名、价格），每本图书信息占一行，书号、书名、价格用空格分隔，价格之后没有空格（书号可能重复）。其中书号和书名为字符串类型，价格为浮点数类型。</p>
+<h3 id="输出-20"><a href="#输出-20" class="headerlink" title="输出"></a>输出</h3><p>总计输出m+1行（m≤n），其中，第一行是去重后的图书数目，后m行是去重后图书的信息（书号、书名、价格），每本图书信息占一行，书号、书名、价格用空格分隔，其中价格输出保留两位小数。</p>
+<h3 id="输入样例-16"><a href="#输入样例-16" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>9
+9787302257646 Data-Structure 35.00
+9787302164340 Operating-System 50.00
+9787302219972 Software-Engineer 32.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+9787811234923 Compiler-Principles 62.00
+9787822234110 The-C-Programming-Language 38.00
+</code></pre>
+<h3 id="输出样例-16"><a href="#输出样例-16" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>8
+9787302257646 Data-Structure 35.00
+9787302164340 Operating-System 50.00
+9787302219972 Software-Engineer 32.00
+9787302203513 Database-Principles 36.00
+9787810827430 Discrete-Mathematics 36.00
+9787302257800 Data-Structure 62.00
+9787811234923 Compiler-Principles 62.00
+9787822234110 The-C-Programming-Language 38.00
+</code></pre>
+<h3 id="初始代码-20"><a href="#初始代码-20" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;string.h&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct LNode
+&#123;//图书信息表的链式存储结构
+    Book data;    	   //结点的数据域
+    int length;       //链表的表长，即图书表中图书个数
+    struct LNode *next; //指针域
+&#125;LNode,*LinkList;
+int DupRemoval_L(LinkList &amp;L)
+&#123;//图书去重
+   
+&#125;
+</code></pre>
+<h3 id="代码-20"><a href="#代码-20" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;string.h&gt;
+#include&lt;iomanip&gt;
+#define OK 1
+#define ERROR 0
+#define OVERFLOW -2
+using namespace std;
+typedef struct
+&#123;//图书信息定义
+    char no[20];    //图书ISBN
+    char name[50];   //图书名字
+    float price;   //图书价格
+&#125;Book;
+typedef struct LNode
+&#123;//图书信息表的链式存储结构
+    Book data;    	   //结点的数据域
+    int length;       //链表的表长，即图书表中图书个数
+    struct LNode *next; //指针域
+&#125;LNode,*LinkList;
+int DupRemoval_L(LinkList &amp;L)
+&#123;//图书去重
+    int length = 0;
+    for(LinkList p = L -&gt; next; p; p = p -&gt; next)&#123;
+        length++;
+    &#125;
+    L -&gt; length = length;
+
+   for(LinkList r = L; r -&gt; next; r = r -&gt; next)&#123;
+       bool is_same = 0;
+       for(LinkList p = L -&gt; next; p != r -&gt; next; p = p -&gt; next)&#123;
+           if(strcmp(p -&gt; data.no, r -&gt; next -&gt; data.no) == 0)&#123;
+               is_same = 1;
+               break;
+           &#125;
+       &#125;
+
+       if(is_same)&#123;
+           LinkList p = r -&gt; next;
+           r -&gt; next = p -&gt; next;
+           delete p;
+           L -&gt; length--;
+       &#125;
+   &#125;
+
+   return OK;
+&#125;
+</code></pre>
+<h2 id="第21关：基于链表的两个递增有序序列的合并"><a href="#第21关：基于链表的两个递增有序序列的合并" class="headerlink" title="第21关：基于链表的两个递增有序序列的合并"></a>第21关：基于链表的两个递增有序序列的合并</h2><h3 id="描述-21"><a href="#描述-21" class="headerlink" title="描述"></a>描述</h3><p>给定两个递增的整数序列A和B，利用链表表示序列A和B，将A和B合并为一个递增的有序序列C，序列C不允许有重复的数据。要求空间复杂度为O(1)。</p>
+<h3 id="输入-21"><a href="#输入-21" class="headerlink" title="输入"></a>输入</h3><p>多组数据，每组数据有三行，第一行为序列A和B的长度n和m，第二行为序列A的n个元素，第三行为序列B的m个元素（元素之间用空格分隔）。n&#x3D;0且m&#x3D;0时输入结束。</p>
+<h3 id="输出-21"><a href="#输出-21" class="headerlink" title="输出"></a>输出</h3><p>对于每组数据输出一行，为合并后的序列，每个数据之间用空格分隔。</p>
+<h3 id="输入样例-17"><a href="#输入样例-17" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>5 5
+1 3 5 7 9 
+2 4 6 8 10 
+3 4
+1 5 9
+1 2 5 9
+0 0
+</code></pre>
+<h3 id="输出样例-17"><a href="#输出样例-17" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>1 2 3 4 5 6 7 8 9 10
+1 2 5 9
+</code></pre>
+<h3 id="初始代码-21"><a href="#初始代码-21" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+typedef struct LNode
+&#123;
+    int data;
+    struct LNode* next;
+&#125;LNode, * LinkList;
+void CreateList_R(LinkList&amp; L, int n)
+&#123;//后插法创建单链表
+   
+&#125;
+void MergeList(LinkList&amp; LA, LinkList&amp; LB)
+&#123;//求基于链表的两个递增有序序列的合并    存入LA
+    
+&#125;
+</code></pre>
+<h3 id="代码-21"><a href="#代码-21" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+typedef struct LNode
+&#123;
+    int data;
+    struct LNode* next;
+&#125;LNode, * LinkList;
+void CreateList_R(LinkList&amp; L, int n)
+&#123;//后插法创建单链表
+   L = new LNode;
+   L -&gt; next = nullptr;
+
+   LinkList p_tail = L;
+   for(int i = 0; i &lt; n; i++)&#123;
+       p_tail -&gt; next = new LNode;
+       p_tail = p_tail -&gt; next;
+       p_tail -&gt; next = nullptr;
+       cin &gt;&gt; p_tail -&gt; data;
+   &#125;
+&#125;
+void MergeList(LinkList&amp; LA, LinkList&amp; LB)
+&#123;//求基于链表的两个递增有序序列的合并    存入LA
+    LinkList LC = new LNode;
+    LC -&gt; next = nullptr;
+    LinkList pa = LA -&gt; next;
+    LinkList pb = LB -&gt; next;
+    LinkList pc = LC;;
+    while(pa &amp;&amp; pb)&#123;
+        if(pa -&gt; data &lt; pb -&gt; data)&#123;
+            pc -&gt; next = pa;
+            pa = pa -&gt; next;
+            pc = pc -&gt; next;  
+        &#125;
+        else if(pa -&gt; data &gt; pb -&gt; data)&#123;
+            pc -&gt; next = pb;
+            pb = pb -&gt; next;
+            pc = pc -&gt; next;
+        &#125;
+        else&#123;
+            pc -&gt; next = pa;
+            pa = pa -&gt; next;
+            LinkList q = pb;
+            pb = pb -&gt; next;
+            pc = pc -&gt; next;
+            delete q;
+        &#125;
+    &#125;
+
+    if(pa &amp;&amp; !pb)&#123;
+        pc -&gt; next = pa;
+    &#125;
+    else if(!pa &amp;&amp; pb)&#123;
+        pc -&gt; next = pb;
+    &#125;
+
+    LA -&gt;next = LC -&gt; next;
+    delete LC;
+&#125;
+</code></pre>
+<h2 id="第22关：基于链表的两个非递减有序序列的合并"><a href="#第22关：基于链表的两个非递减有序序列的合并" class="headerlink" title="第22关：基于链表的两个非递减有序序列的合并"></a>第22关：基于链表的两个非递减有序序列的合并</h2><h3 id="描述-22"><a href="#描述-22" class="headerlink" title="描述"></a>描述</h3><p>本关任务：给定两个非递减的整数序列A和B，利用链表表示序列A和B，将A和B合并为一个非递增的有序序列C，序列C允许有重复的数据。要求空间复杂度为O(1)。</p>
+<h3 id="输入-22"><a href="#输入-22" class="headerlink" title="输入"></a>输入</h3><p>多组数据，每组数据有三行，第一行为序列A和B的长度n和m，第二行为序列A的n个元素，第三行为序列B的m个元素（元素之间用空格分隔）。n&#x3D;0且m&#x3D;0时输入结束。</p>
+<h3 id="输出-22"><a href="#输出-22" class="headerlink" title="输出"></a>输出</h3><p>对于每组数据输出一行，为合并后的序列，每个数据之间用空格分隔。</p>
+<h3 id="输入样例-18"><a href="#输入样例-18" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>5 5
+1 3 5 7 9
+2 4 6 8 10
+5 6
+1 2 2 3 5
+2 4 6 8 10 12
+0 0
+</code></pre>
+<h3 id="输出样例-18"><a href="#输出样例-18" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>10 9 8 7 6 5 4 3 2 1
+12 10 8 6 5 4 3 2 2 2 1
+</code></pre>
+<h3 id="初始代码-22"><a href="#初始代码-22" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+typedef struct LNode
+&#123;
+    int data;
+    struct LNode* next;
+&#125;LNode, * LinkList;
+void CreateList_R(LinkList&amp; L, int n)
+&#123;//后插法创建单链表
+   
+&#125;
+void MergeList(LinkList&amp; LA, LinkList&amp; LB, LinkList&amp; LC)
+&#123;//求基于链表的两个非递减有序序列的合并   结果存LC
+   
+&#125;
+</code></pre>
+<h3 id="代码-22"><a href="#代码-22" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+typedef struct LNode
+&#123;
+    int data;
+    struct LNode* next;
+&#125;LNode, * LinkList;
+
+void CreateList_R(LinkList&amp; L, int n)
+&#123;//后插法创建单链表
+   L = new LNode;
+   L -&gt; next = nullptr;
+
+   LinkList p_tail = L;
+   for(int i = 0; i &lt; n; i++)&#123;
+       p_tail -&gt; next = new LNode;
+       p_tail = p_tail -&gt; next;
+       p_tail -&gt; next = nullptr;
+       cin &gt;&gt; p_tail -&gt; data;
+   &#125;
+&#125;
+
+void MergeList(LinkList&amp; LA, LinkList&amp; LB, LinkList&amp; LC)
+&#123;//求基于链表的两个非递减有序序列的合并   结果存LC
+    LC = new LNode;
+    LC -&gt; next = nullptr;
+    LinkList pa = LA -&gt; next;
+    LinkList pb = LB -&gt; next;
+    LinkList pc = LC;
+    while(pa &amp;&amp; pb)&#123;
+        if(pa -&gt; data &lt; pb -&gt; data)&#123;
+            pc -&gt; next = pa;
+            pa = pa -&gt; next;
+            pc = pc -&gt; next;  
+        &#125;
+        else&#123;
+            pc -&gt; next = pb;
+            pb = pb -&gt; next;
+            pc = pc -&gt; next;
+        &#125;
+    &#125;
+
+    if(pa &amp;&amp; !pb)&#123;
+        pc -&gt; next = pa;
+    &#125;
+    else if(!pa &amp;&amp; pb)&#123;
+        pc -&gt; next = pb;
+    &#125;
+
+    LinkList r = nullptr;
+    LinkList p = LC -&gt; next;
+    while(p)&#123;
+        LinkList q = p -&gt; next;
+        p -&gt; next = r;
+        r = p;
+        p = q;
+    &#125;
+    LC -&gt; next = r;
+
+    LA -&gt; next = nullptr;
+    LB -&gt; next = nullptr;
+&#125;
+</code></pre>
+<h2 id="第23关：基于链表的两个集合的交集"><a href="#第23关：基于链表的两个集合的交集" class="headerlink" title="第23关：基于链表的两个集合的交集"></a>第23关：基于链表的两个集合的交集</h2><h3 id="描述-23"><a href="#描述-23" class="headerlink" title="描述"></a>描述</h3><p>本关任务：给定两个递增的整数集合A和B，分别用链表表示集合A和B，求出A和B的交集，并存放在A中。要求空间复杂度为O(1)。</p>
+<h3 id="输入-23"><a href="#输入-23" class="headerlink" title="输入"></a>输入</h3><p>多组数据，每组数据有三行，第一行为序列A和B的长度n和m，第二行为序列A的n个元素，第三行为序列B的m个元素（元素之间用空格分隔）。n&#x3D;0且m&#x3D;0时输入结束。</p>
+<h3 id="输出-23"><a href="#输出-23" class="headerlink" title="输出"></a>输出</h3><p>对于每组数据输出一行，为A和B的交集，每个数据之间用空格分隔。</p>
+<h3 id="输入样例-19"><a href="#输入样例-19" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>5 5
+1 3 5 7 9
+1 2 3 4 5
+3 4
+1 2 5
+2 4 5 6
+0 0
+</code></pre>
+<h3 id="输出样例-19"><a href="#输出样例-19" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>1 3 5
+2 5
+</code></pre>
+<h3 id="初始代码-23"><a href="#初始代码-23" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+typedef struct LNode
+&#123;
+    int data;
+    struct LNode* next;
+&#125;LNode, * LinkList;
+void CreateList_R(LinkList&amp; L, int n)
+&#123;//后插法创建单链表
+   
+&#125;
+void Intersection(LinkList&amp; LA, LinkList&amp; LB)
+&#123;//求基于链表的两个集合的交集    结果存LA
+    
+&#125;
+</code></pre>
+<h3 id="代码-23"><a href="#代码-23" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+typedef struct LNode
+&#123;
+    int data;
+    struct LNode* next;
+&#125;LNode, * LinkList;
+void CreateList_R(LinkList&amp; L, int n)
+&#123;//后插法创建单链表
+   L = new LNode;
+   L -&gt; next = nullptr;
+
+   LinkList p_tail = L;
+   for(int i = 0; i &lt; n; i++)&#123;
+       p_tail -&gt; next = new LNode;
+       p_tail = p_tail -&gt; next;
+       p_tail -&gt; next = nullptr;
+       cin &gt;&gt; p_tail -&gt; data;
+   &#125;
+&#125;
+void Intersection(LinkList&amp; LA, LinkList&amp; LB)
+&#123;//求基于链表的两个集合的交集    结果存LA
+    LinkList LC = new LNode;
+    LC -&gt; next = nullptr;
+    LinkList pa = LA -&gt; next;
+    LinkList pb = LB -&gt; next;
+    LinkList pc = LC;
+    while(pa &amp;&amp; pb)&#123;
+        if(pa -&gt; data &lt; pb -&gt; data)&#123;
+            LinkList q = pa;
+            pa = pa -&gt; next;
+            delete q;
+        &#125;
+        else if(pa -&gt; data &gt; pb -&gt; data)&#123;
+            LinkList q = pb;
+            pb = pb -&gt; next;
+            delete q;
+        &#125;
+        else&#123;
+            pc -&gt; next = pa;
+            pa = pa -&gt; next;
+            pc = pc -&gt; next;
+
+            LinkList q = pb;
+            pb = pb -&gt; next;
+            delete q; 
+        &#125;
+    &#125;
+
+    LA -&gt; next = nullptr;
+    while(pa)&#123;
+        LinkList q = pa;
+        pa = pa -&gt; next;
+        delete q;
+    &#125;
+    LB -&gt; next = nullptr;
+    while(pb)&#123;
+        LinkList q = pb;
+        pb = pb -&gt; next;
+        delete q;
+    &#125;
+
+    pc -&gt; next = nullptr;
+
+    LA -&gt; next = LC -&gt; next;
+    delete LC;
+&#125;
+</code></pre>
+<h2 id="第24关：基于链表的两个集合的差集"><a href="#第24关：基于链表的两个集合的差集" class="headerlink" title="第24关：基于链表的两个集合的差集"></a>第24关：基于链表的两个集合的差集</h2><h3 id="描述-24"><a href="#描述-24" class="headerlink" title="描述"></a>描述</h3><p>本关任务：给定两个递增的整数集合，分别用链表A和B表示，求出A和B的差集（即仅由在A中出现而不在B中出现的元素所构成的集合），并以同样的形式存储，同时返回该集合的元素个数。要求空间复杂度为O(1)。</p>
+<h3 id="输入-24"><a href="#输入-24" class="headerlink" title="输入"></a>输入</h3><p>多组数据，每组数据有三行，第一行为序列A和B的长度n和m，第二行为序列A的n个元素，第三行为序列B的m个元素（元素之间用空格分隔）。n&#x3D;0且m&#x3D;0时输入结束。</p>
+<h3 id="输出-24"><a href="#输出-24" class="headerlink" title="输出"></a>输出</h3><p>对于每组数据输出两行，第一行是A和B的差集，第二行为差集中的元素个数，每个数据之间用空格分隔。</p>
+<h3 id="输入样例-20"><a href="#输入样例-20" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>5 5
+1 3 5 7 9
+1 2 3 4 5
+3 4
+1 2 6
+2 4 5 7
+0 0
+</code></pre>
+<h3 id="输出样例-20"><a href="#输出样例-20" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>7 9
+2
+1 6
+2
+</code></pre>
+<h3 id="初始代码-24"><a href="#初始代码-24" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+typedef struct LNode
+&#123;
+    int data;
+    struct LNode* next;
+&#125;LNode, * LinkList;
+void CreateList_R(LinkList&amp; L, int n)
+&#123;//后插法创建单链表
+ 
+&#125;
+void Difference(LinkList&amp; LA, LinkList&amp; LB)
+&#123;//求基于链表的两个集合的差集
+
+&#125;
+</code></pre>
+<h3 id="代码-24"><a href="#代码-24" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+typedef struct LNode
+&#123;
+    int data;
+    struct LNode* next;
+&#125;LNode, * LinkList;
+void CreateList_R(LinkList&amp; L, int n)
+&#123;//后插法创建单链表
+    L = new LNode;
+    L -&gt; next = nullptr;
+
+    LinkList p_tail = L;
+    for(int i = 0; i &lt; n; i++)&#123;
+        p_tail -&gt; next = new LNode;
+        p_tail = p_tail -&gt; next;
+        p_tail -&gt; next = nullptr;
+        cin &gt;&gt; p_tail -&gt; data;
+    &#125;
+&#125;
+void Difference(LinkList&amp; LA, LinkList&amp; LB)
+&#123;//求基于链表的两个集合的差集
+    LinkList LC = new LNode;
+    LC -&gt; next = nullptr;
+    LinkList pa = LA -&gt; next;
+    LinkList pb = LB -&gt; next;
+    LinkList pc = LC;
+    while(pa &amp;&amp; pb)&#123;
+        if(pa -&gt; data &lt; pb -&gt; data)&#123;
+            pc -&gt; next = pa;
+            pa = pa -&gt; next;
+            pc = pc -&gt; next;
+        &#125;
+        else if(pa -&gt; data &gt; pb -&gt; data)&#123;
+            LinkList q = pb;
+            pb = pb -&gt; next;
+            delete q;
+        &#125;
+        else&#123;
+            LinkList q = pa;
+            pa = pa -&gt; next;
+            delete q;
+            q = pb;
+            pb = pb -&gt; next;
+            delete q; 
+        &#125;
+    &#125;
+
+    pc -&gt; next = nullptr;
+
+    if(pa)&#123;
+        pc -&gt; next = pa;
+    &#125;
+
+    LB -&gt; next = nullptr;
+    while(pb)&#123;
+        LinkList q = pb;
+        pb = pb -&gt; next;
+        delete q;
+    &#125;
+
+    LA -&gt; next = LC -&gt; next;
+    delete LC;
+&#125;
+</code></pre>
+<h2 id="第25关：链表的分解"><a href="#第25关：链表的分解" class="headerlink" title="第25关：链表的分解"></a>第25关：链表的分解</h2><h3 id="描述-25"><a href="#描述-25" class="headerlink" title="描述"></a>描述</h3><p>本关任务：利用单链表A表示一个非零整数序列，把A分解为两个具有相同结构的链表B和C，其中B表的结点为A表中值小于零的结点，而C表的结点为A表中值大于零的结点。要求空间复杂度为O(1)，链表B和C均利用链表A的结点空间。</p>
+<h3 id="输入-25"><a href="#输入-25" class="headerlink" title="输入"></a>输入</h3><p>多组数据，每组数据有两行，第一行为链表A的长度n，第二行为链表A的n个元素（元素之间用空格分隔）。当n&#x3D;0时输入结束。</p>
+<h3 id="输出-25"><a href="#输出-25" class="headerlink" title="输出"></a>输出</h3><p>对于每组数据分别输出两行，分别对应链表B和C的元素，每个数据之间用空格分隔。</p>
+<h3 id="输入样例-21"><a href="#输入样例-21" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>7
+3 -6 1 -2 4 -3 8
+8
+2 5 3 -1 -2 2 6 -1
+0
+</code></pre>
+<h3 id="输出样例-21"><a href="#输出样例-21" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>-6 -2 -3
+3 1 4 8
+-1 -2 -1
+2 5 3 2 6
+</code></pre>
+<h3 id="初始代码-25"><a href="#初始代码-25" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+typedef struct LNode
+&#123;
+    int data;
+    struct LNode* next;
+&#125;LNode, * LinkList;
+void CreateList_R(LinkList&amp; L, int n)
+&#123;//后插法创建单链表
+   
+&#125;
+void Decompose(LinkList&amp; LA, LinkList&amp; LB, LinkList&amp; LC)
+&#123;//链表的分解    LA-&gt;LB、LC
+    
+&#125;
+</code></pre>
+<h3 id="代码-25"><a href="#代码-25" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+typedef struct LNode
+&#123;
+    int data;
+    struct LNode* next;
+&#125;LNode, * LinkList;
+void CreateList_R(LinkList&amp; L, int n)
+&#123;//后插法创建单链表
+   L = new LNode;
+   L -&gt; next = nullptr;
+
+   LinkList p_tail = L;
+   for(int i = 0; i &lt; n; i++)&#123;
+       p_tail -&gt; next = new LNode;
+       p_tail = p_tail -&gt; next;
+       p_tail -&gt; next = nullptr;
+       cin &gt;&gt; p_tail -&gt; data;
+   &#125;
+&#125;
+void Decompose(LinkList&amp; LA, LinkList&amp; LB, LinkList&amp; LC)
+&#123;//链表的分解    LA-&gt;LB、LC
+    LB = new LNode;
+    LC = new LNode;
+
+    LinkList pa = LA -&gt; next;
+    LinkList pb = LB;
+    LinkList pc = LC;
+    while(pa)&#123;
+        if(pa -&gt; data &lt; 0)&#123;
+            pb -&gt; next = pa;
+            pa = pa -&gt; next;
+            pb = pb -&gt; next;
+        &#125;
+        else if(pa -&gt; data &gt; 0)&#123;
+            pc -&gt; next = pa;
+            pa = pa -&gt; next;
+            pc = pc -&gt; next;
+        &#125;
+        else&#123;
+            LinkList q = pa;
+            pa = pa -&gt; next;
+            delete q;
+        &#125;
+    &#125;
+    LA -&gt; next = nullptr;
+    pb -&gt; next = nullptr;
+    pc -&gt; next = nullptr;
+&#125;
+</code></pre>
+<h2 id="第26关：查找链表中的最大值"><a href="#第26关：查找链表中的最大值" class="headerlink" title="第26关：查找链表中的最大值"></a>第26关：查找链表中的最大值</h2><h3 id="描述-26"><a href="#描述-26" class="headerlink" title="描述"></a>描述</h3><p>本关任务：利用单链表表示一个整数序列，通过一趟遍历在单链表中确定值最大的结点。</p>
+<h3 id="输入-26"><a href="#输入-26" class="headerlink" title="输入"></a>输入</h3><p>多组数据，每组数据有两行，第一行为链表的长度n，第二行为链表的n个元素（元素之间用空格分隔）。当n&#x3D;0时输入结束。</p>
+<h3 id="输出-26"><a href="#输出-26" class="headerlink" title="输出"></a>输出</h3><p>对于每组数据分别输出一行，输出每个链表的最大值。</p>
+<h3 id="输入样例-22"><a href="#输入样例-22" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>5
+2 1 3 5 4
+6
+2 3 10 4 5 1
+4
+-1 -2 -3 -4
+0
+</code></pre>
+<h3 id="输出样例-22"><a href="#输出样例-22" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>5
+10
+-1
+</code></pre>
+<h3 id="初始代码-26"><a href="#初始代码-26" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+
+typedef struct LNode
+&#123;
+    int data;
+    struct LNode* next;
+&#125;LNode, * LinkList;
+
+void CreateList_R(LinkList&amp; L, int n)
+&#123;
+    // 尾插法
+&#125;
+
+int MaxData(LinkList L)
+&#123;//确定单链表中值最大的结点
+    
+&#125;
+</code></pre>
+<h3 id="代码-26"><a href="#代码-26" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+
+typedef struct LNode
+&#123;
+    int data;
+    struct LNode* next;
+&#125;LNode, * LinkList;
+
+void CreateList_R(LinkList&amp; L, int n)
+&#123;
+    // 尾插法
+    L = new LNode;
+    L -&gt; next = nullptr;
+
+    LinkList p_tail = L;
+    for(int i = 0; i &lt; n; i++)&#123;
+        p_tail -&gt; next = new LNode;
+        p_tail = p_tail -&gt; next;
+        p_tail -&gt; next = nullptr;
+        cin &gt;&gt; p_tail -&gt; data;
+    &#125;
+&#125;
+
+int MaxData(LinkList L)
+&#123;//确定单链表中值最大的结点
+    if(L -&gt; next == nullptr) return 0;
+    LinkList p_max = L -&gt; next;
+    for(LinkList p = L -&gt; next; p; p = p -&gt; next)&#123;
+        if(p_max -&gt; data &lt; p -&gt; data)&#123;
+            p_max = p;
+        &#125;
+    &#125;
+    return p_max -&gt; data;
+&#125;
+</code></pre>
+<h2 id="第27关：链表的逆转"><a href="#第27关：链表的逆转" class="headerlink" title="第27关：链表的逆转"></a>第27关：链表的逆转</h2><h3 id="描述-27"><a href="#描述-27" class="headerlink" title="描述"></a>描述</h3><p>本关任务：利用单链表表示一个整数序列，通过一趟遍历，将单链表中所有结点的链接方向逆转。要求空间复杂度为O(1)。</p>
+<h3 id="输入-27"><a href="#输入-27" class="headerlink" title="输入"></a>输入</h3><p>多组数据，每组数据有两行，第一行为链表的长度n，第二行为链表的n个元素（元素之间用空格分隔）。当n&#x3D;0时输入结束。</p>
+<h3 id="输出-27"><a href="#输出-27" class="headerlink" title="输出"></a>输出</h3><p>对于每组数据分别输出一行，逆序输出链表中的元素，元素之间用空格分隔。</p>
+<h3 id="输入样例-23"><a href="#输入样例-23" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>5
+1 2 3 4 5
+6
+3 1 2 5 4 6
+0
+</code></pre>
+<h3 id="输出样例-23"><a href="#输出样例-23" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>5 4 3 2 1
+6 4 5 2 1 3
+</code></pre>
+<h3 id="初始代码-27"><a href="#初始代码-27" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+
+typedef struct LNode
+&#123;
+    int data;
+    struct LNode* next;
+&#125;LNode, * LinkList;
+
+void CreateList_R(LinkList&amp; L, int n)
+&#123;
+    // 尾插法
+&#125;
+
+void Inverse(LinkList&amp; L)
+&#123;//逆置带头结点的单链表L
+   
+&#125;
+</code></pre>
+<h3 id="代码-27"><a href="#代码-27" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+
+typedef struct LNode
+&#123;
+    int data;
+    struct LNode* next;
+&#125;LNode, * LinkList;
+
+void CreateList_R(LinkList&amp; L, int n)
+&#123;
+    // 尾插法
+    L = new LNode;
+    L -&gt; next = nullptr;
+
+    LinkList p_tail = L;
+    for(int i = 0; i &lt; n; i++)&#123;
+        p_tail -&gt; next = new LNode;
+        p_tail = p_tail -&gt; next;
+        p_tail -&gt; next = nullptr;
+        cin &gt;&gt; p_tail -&gt; data;
+    &#125;
+&#125;
+
+void Inverse(LinkList&amp; L)
+&#123;//逆置带头结点的单链表L
+    LinkList r = nullptr;
+    LinkList p = L -&gt; next;
+    while(p)&#123;
+        LinkList q = p -&gt; next;
+        p -&gt; next = r;
+        r = p;
+        p = q;
+    &#125;
+    L -&gt; next = r;
+&#125;
+</code></pre>
+<h2 id="第28关：删除链表中满足区间值的结点"><a href="#第28关：删除链表中满足区间值的结点" class="headerlink" title="第28关：删除链表中满足区间值的结点"></a>第28关：删除链表中满足区间值的结点</h2><h3 id="描述-28"><a href="#描述-28" class="headerlink" title="描述"></a>描述</h3><p>本关任务：利用单链表表示一个递增的整数序列，删除链表中值大于等于mink且小于等于maxk的所有元素（mink和maxk是给定的两个参数，其值可以和表中的元素相同，也可以不同）。</p>
+<h3 id="输入-28"><a href="#输入-28" class="headerlink" title="输入"></a>输入</h3><p>多组数据，每组数据有两行，第一行为链表的长度n，第二行为链表的n个元素（元素之间用空格分隔），第三行为给定的mink和maxk（用空格分隔）。当n&#x3D;0时输入结束。</p>
+<h3 id="输出-28"><a href="#输出-28" class="headerlink" title="输出"></a>输出</h3><p>对于每组数据分别输出一行，依次输出删除元素后的链表元素，元素之间用空格分隔。</p>
+<h3 id="输入样例-24"><a href="#输入样例-24" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>5
+1 2 3 4 5
+2 4
+6
+2 4 6 8 10 12
+3 5
+0
+</code></pre>
+<h3 id="输出样例-24"><a href="#输出样例-24" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>1 5 
+2 6 8 10 12
+</code></pre>
+<h3 id="初始代码-28"><a href="#初始代码-28" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+typedef struct LNode
+&#123;
+    int data;
+    struct LNode* next;
+&#125;LNode, * LinkList;
+void CreateList_R(LinkList&amp; L, int n)
+&#123;//后插法创建单链表
+    
+&#125;
+void DeleteMinMax(LinkList&amp; L, int mink, int maxk)
+&#123;//删除链表中满足区间值的结点
+    
+&#125;
+</code></pre>
+<h3 id="代码-28"><a href="#代码-28" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+typedef struct LNode
+&#123;
+    int data;
+    struct LNode* next;
+&#125;LNode, * LinkList;
+
+void CreateList_R(LinkList&amp; L, int n)
+&#123;
+    // 尾插法
+    L = new LNode;
+    L -&gt; next = nullptr;
+
+    LinkList p_tail = L;
+    for(int i = 0; i &lt; n; i++)&#123;
+        p_tail -&gt; next = new LNode;
+        p_tail = p_tail -&gt; next;
+        p_tail -&gt; next = nullptr;
+        cin &gt;&gt; p_tail -&gt; data;
+    &#125;
+&#125;
+
+void DeleteMinMax(LinkList&amp; L, int mink, int maxk)
+&#123;//删除链表中满足区间值的结点
+    LinkList p = L;
+    while(p -&gt; next)&#123;
+        if(mink &lt;= p -&gt; next -&gt; data &amp;&amp; p -&gt; next -&gt; data &lt;= maxk)&#123;
+            LinkList q = p -&gt; next;
+            p -&gt; next = q -&gt; next;
+            delete q;
+        &#125;
+        else&#123;
+            p = p -&gt; next;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="第29关：双向循环链表中结点的交换"><a href="#第29关：双向循环链表中结点的交换" class="headerlink" title="第29关：双向循环链表中结点的交换"></a>第29关：双向循环链表中结点的交换</h2><h3 id="描述-29"><a href="#描述-29" class="headerlink" title="描述"></a>描述</h3><p>本关任务：利用双向循环链表表示一个整数序列，指定一个结点位置用p指向该结点，交换p所指向的结点及其前驱结点的顺序。</p>
+<h3 id="输入-29"><a href="#输入-29" class="headerlink" title="输入"></a>输入</h3><p>多组数据，每组数据有三行，第一行为链表的长度n，第二行为链表的n个元素（元素之间用空格分隔），第三行为p所指向的结点位置。当n&#x3D;0时输入结束。</p>
+<h3 id="输出-29"><a href="#输出-29" class="headerlink" title="输出"></a>输出</h3><p>对于每组数据分别输出一行，依次输出交换结点顺序后的链表元素，元素之间用空格分隔。</p>
+<h3 id="输入样例-25"><a href="#输入样例-25" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>5
+44 11 22 33 55
+3
+6
+22 33 11 66 44 55
+6
+0
+</code></pre>
+<h3 id="输出样例-25"><a href="#输出样例-25" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>44 22 11 33 55
+22 33 11 66 55 44
+</code></pre>
+<h3 id="初始代码-29"><a href="#初始代码-29" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+using namespace std;
+typedef struct DuLNode
+&#123;
+    int data;
+    struct DuLNode* next;
+    struct DuLNode* prior;
+&#125;DuLNode, * DuLinkList;
+void CreateList(DuLinkList&amp; L, int n)
+&#123;//建立双向循环链表
+
+&#125;
+void Exchange(DuLinkList&amp; L, int loc)
+&#123;//双向循环链表中结点的交换
+    
+&#125;
+</code></pre>
+<h3 id="代码-29"><a href="#代码-29" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+using namespace std;
+typedef struct DuLNode
+&#123;
+    int data;
+    struct DuLNode* next;
+    struct DuLNode* prior;
+&#125;DuLNode, * DuLinkList;
+
+void CreateList(DuLinkList&amp; L, int n)
+&#123;//建立双向循环链表
+    L = new DuLNode;
+    L -&gt; prior = L;
+    L -&gt; next = L;
+    DuLinkList p_tail = L;
+    for(int i = 0; i &lt; n; i++)&#123;
+        DuLinkList p = new DuLNode;
+        cin &gt;&gt; p -&gt; data;
+        p_tail -&gt; next -&gt; prior = p;
+        p -&gt; next = p_tail -&gt; next;
+        p -&gt; prior = p_tail;
+        p_tail -&gt; next = p;
+        p_tail = p_tail -&gt; next;
+    &#125;
+&#125;
+
+void Exchange(DuLinkList&amp; L, int loc)
+&#123;//双向循环链表中结点的交换
+    DuLinkList q = L;
+    while(loc)&#123;
+        q = q -&gt; next;
+        loc--;
+    &#125;
+
+    DuLinkList p = q -&gt; prior;
+    p -&gt; next = q -&gt; next;
+    q -&gt; next = p;
+    p -&gt; prior -&gt; next = q;
+    
+    q -&gt; prior = p -&gt; prior;
+    q -&gt; prior = p;
+    q -&gt; next -&gt; prior = q;
+&#125;
+</code></pre>
+<h2 id="第30关：删除顺序表中指定值的所有元素"><a href="#第30关：删除顺序表中指定值的所有元素" class="headerlink" title="第30关：删除顺序表中指定值的所有元素"></a>第30关：删除顺序表中指定值的所有元素</h2><h3 id="描述-30"><a href="#描述-30" class="headerlink" title="描述"></a>描述</h3><p>本关任务：利用顺序表表示一个包括n个整数的序列，请实现一个时间复杂度为O(n)，空间复杂度为O(1)的算法，该算法可以删除表中所有值为item的元素。</p>
+<h3 id="输入-30"><a href="#输入-30" class="headerlink" title="输入"></a>输入</h3><p>多组数据，每组数据有三行，第一行为顺序表的长度n，第二行为顺序表的n个元素（元素之间用空格分隔），第三行为待删除的元素的值item。当n&#x3D;0时输入结束。</p>
+<h3 id="输出-30"><a href="#输出-30" class="headerlink" title="输出"></a>输出</h3><p>对于每组数据分别输出一行，依次输出删除值为item的元素后顺序表中的剩余元素，元素之间用空格分隔。</p>
+<h3 id="输入样例-26"><a href="#输入样例-26" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>5
+44 11 22 33 22
+11
+6
+22 33 11 33 33 55
+33
+0
+</code></pre>
+<h3 id="输出样例-26"><a href="#输出样例-26" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>44 22 33 22
+22 11 55
+</code></pre>
+<h3 id="初始代码-30"><a href="#初始代码-30" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#define MAXSIZE 100
+using namespace std;
+typedef struct &#123;
+    int* elem;       //存储空间的基地址
+    int length;      //当前长度
+&#125;SqList;
+void InitList_Sq(SqList&amp; L, int n) &#123;
+    //构造顺序表
+   
+&#125;
+void DeleteItem(SqList&amp; A, int item) &#123;
+    //删除顺序表A中所有值为item的元素
+    
+&#125;
+</code></pre>
+<h3 id="代码-30"><a href="#代码-30" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#define MAXSIZE 100
+using namespace std;
+typedef struct &#123;
+    int* elem;       //存储空间的基地址
+    int length;      //当前长度
+&#125;SqList;
+void InitList_Sq(SqList&amp; L, int n) &#123;
+    //构造顺序表
+    L.elem = new int[MAXSIZE];
+    L.length = n;
+&#125;
+void DeleteItem(SqList&amp; A, int item) &#123;
+    //删除顺序表A中所有值为item的元素
+    int *arr = A.elem;
+    int len = A.length;
+    A.length = 0;
+    for(int i = 0; i &lt; len; i++)&#123;
+        if(arr[i] != item)&#123;
+            arr[A.length++] = arr[i];
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="第31关：查找链表中倒数第k个结点"><a href="#第31关：查找链表中倒数第k个结点" class="headerlink" title="第31关：查找链表中倒数第k个结点"></a>第31关：查找链表中倒数第k个结点</h2><h3 id="描述-31"><a href="#描述-31" class="headerlink" title="描述"></a>描述</h3><p>本关任务：利用单链表表示一个整数序列，请实现一个时间复杂度为O(n)、空间复杂度为O(1)的算法，通过一趟遍历在单链表中确定倒数第k个结点。</p>
+<h3 id="输入-31"><a href="#输入-31" class="headerlink" title="输入"></a>输入</h3><p>多组数据，每组数据有三行，第一行为链表的长度n，第二行为链表的n个元素（元素之间用空格分隔），第三行为k。当n&#x3D;0时输入结束。</p>
+<h3 id="输出-31"><a href="#输出-31" class="headerlink" title="输出"></a>输出</h3><p>对于每组数据分别输出一行，输出每个链表的倒数第k个结点对应的数值。</p>
+<h3 id="输入样例-27"><a href="#输入样例-27" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>7
+5 2 3 4 50 100 70
+3
+5
+20 30 10 4 5
+5
+0
+</code></pre>
+<h3 id="输出样例-27"><a href="#输出样例-27" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>50
+20
+</code></pre>
+<h3 id="初始代码-31"><a href="#初始代码-31" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+typedef struct LNode
+&#123;
+    int data;
+    struct LNode* next;
+&#125;LNode, * LinkList;
+void CreateList_R(LinkList&amp; L, int n)
+&#123;//后插法创建单链表
+   
+&#125;
+void Search_k(LinkList L, int k)
+&#123;
+    // 直接输出结果
+&#125;
+</code></pre>
+<h3 id="代码-31"><a href="#代码-31" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+typedef struct LNode
+&#123;
+    int data;
+    struct LNode* next;
+&#125;LNode, * LinkList;
+
+void CreateList_R(LinkList&amp; L, int n)
+&#123;
+    // 尾插法
+    L = new LNode;
+    L -&gt; next = nullptr;
+
+    LinkList p_tail = L;
+    for(int i = 0; i &lt; n; i++)&#123;
+        p_tail -&gt; next = new LNode;
+        p_tail = p_tail -&gt; next;
+        p_tail -&gt; next = nullptr;
+        cin &gt;&gt; p_tail -&gt; data;
+    &#125;
+&#125;
+
+void Search_k(LinkList L, int k)
+&#123;
+    // 直接输出结果
+    int length = 0;
+    for(LinkList p = L -&gt; next; p; p = p -&gt; next)&#123;
+        length++;
+    &#125;
+    if(k &lt;= 0 || k &gt; length) return;
+    k = length - k + 1;
+    LinkList p = L;
+    while(k--)&#123;
+        p = p -&gt; next;
+    &#125;
+    cout &lt;&lt; p -&gt; data &lt;&lt; &#39;\n&#39;;
+&#125;
+</code></pre>
+<h2 id="第32关：删除链表中绝对值相等的结点"><a href="#第32关：删除链表中绝对值相等的结点" class="headerlink" title="第32关：删除链表中绝对值相等的结点"></a>第32关：删除链表中绝对值相等的结点</h2><h3 id="描述-32"><a href="#描述-32" class="headerlink" title="描述"></a>描述</h3><p>本关任务：利用单链表表示一个整数序列，实现一个时间复杂度为O(n)的算法，对于链表中绝对值相等的结点，仅保留第一次出现的结点而删除其余绝对值相等的结点。</p>
+<h3 id="输入-32"><a href="#输入-32" class="headerlink" title="输入"></a>输入</h3><p>多组数据，每组数据有两行，第一行为链表的长度n，第二行为链表的n个元素（元素之间用空格分隔）。当n&#x3D;0时输入结束。</p>
+<h3 id="输出-32"><a href="#输出-32" class="headerlink" title="输出"></a>输出</h3><p>对于每组数据分别输出一行，依次输出删除结点后的链表元素，元素之间用空格分隔。</p>
+<h3 id="输入样例-28"><a href="#输入样例-28" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>5
+21 -15 -15 -7 15
+7
+90 32 -90 -66 77 66 90
+0
+</code></pre>
+<h3 id="输出样例-28"><a href="#输出样例-28" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>21 -15 -7
+90 32 -66 77
+</code></pre>
+<h3 id="初始代码-32"><a href="#初始代码-32" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+typedef struct LNode
+&#123;
+    int data;
+    struct LNode* next;
+&#125;LNode, * LinkList;
+void CreateList_R(LinkList&amp; L, int n)
+&#123;//后插法创建单链表
+    
+&#125;
+void DeleteEqualNode(LinkList&amp; L, int n)
+&#123;//删除链表中绝对值相等的结点
+    
+&#125;
+</code></pre>
+<h3 id="代码-32"><a href="#代码-32" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;unordered_set&gt;
+#include &lt;cmath&gt;
+using namespace std;
+typedef struct LNode
+&#123;
+    int data;
+    struct LNode* next;
+&#125;LNode, * LinkList;
+
+void CreateList_R(LinkList&amp; L, int n)
+&#123;
+    // 尾插法
+    L = new LNode;
+    L -&gt; next = nullptr;
+
+    LinkList p_tail = L;
+    for(int i = 0; i &lt; n; i++)&#123;
+        p_tail -&gt; next = new LNode;
+        p_tail = p_tail -&gt; next;
+        p_tail -&gt; next = nullptr;
+        cin &gt;&gt; p_tail -&gt; data;
+    &#125;
+&#125;
+
+void DeleteEqualNode(LinkList&amp; L, int n)
+&#123;//删除链表中绝对值相等的结点
+    LinkList p = L;
+    unordered_set&lt;int&gt; st;
+    while(p -&gt; next)&#123;
+        if(st.count(abs(p -&gt; next -&gt; data)))&#123;
+            LinkList q = p -&gt; next;
+            p -&gt; next = q -&gt; next;
+            delete q;
+        &#125;
+        else&#123;
+            st.insert(abs(p -&gt; next -&gt; data));
+            p = p -&gt; next;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="第33关：求解两个升序序列的中位数"><a href="#第33关：求解两个升序序列的中位数" class="headerlink" title="第33关：求解两个升序序列的中位数"></a>第33关：求解两个升序序列的中位数</h2><h3 id="描述-33"><a href="#描述-33" class="headerlink" title="描述"></a>描述</h3><p>本关任务：一个长度为L(L≥1)的升序序列S，处在第L&#x2F;2（若为小数则去掉小数后加1）个位置的数称为S的中位数。例如，若序列S1&#x3D;(11，13，15，17，19)，则S1的中位数是15。两个序列的中位数是含它们所有元素的升序序列的中位数。例如，若S2&#x3D;(2，4，6，8，20)，则S1和S2的中位数是11。现有两个等长升序序列A和B，试实现一个在时间和空间两方面都尽可能高效的算法，找出两个序列A和B的中位数。</p>
+<h3 id="输入-33"><a href="#输入-33" class="headerlink" title="输入"></a>输入</h3><p>多组数据，每组数据有三行，第一行为序列的长度n，第二行为序列A的n个元素，第三行为序列B的n个元素（元素之间用空格分隔）。当n&#x3D;0时输入结束。</p>
+<h3 id="输出-33"><a href="#输出-33" class="headerlink" title="输出"></a>输出</h3><p>对于每组数据分别输出两个序列的中位数，占一行。</p>
+<h3 id="输入样例-29"><a href="#输入样例-29" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>5
+11 13 15 17 19 
+2 4 6 8 20
+6
+1 2 3 4 5 6
+7 8 9 10 11 12
+0
+</code></pre>
+<h3 id="输出样例-29"><a href="#输出样例-29" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>11
+6
+</code></pre>
+<h3 id="初始代码-33"><a href="#初始代码-33" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+int Search_Mid(int A[], int B[], int n)
+&#123;//求解两个升序序列的中位数
+    
+&#125;
+</code></pre>
+<h3 id="代码-33"><a href="#代码-33" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+int Search_Mid(int A[], int B[], int n)
+&#123;//求解两个升序序列的中位数
+    int p = 0, q = 0;
+    int res = 0;
+    for(int i = 1; i &lt;= n; i++)&#123;
+        if(p == n) res = B[q++];
+        else if(q == n) res = A[p++];
+        else&#123;
+            if(A[p] &lt; B[q]) res = A[p++];
+            else res = B[q++];
+        &#125;
+    &#125;
+    return res;
+&#125;
+</code></pre>
+<h2 id="第34关：查找两个单词链表共同后缀的起始结点"><a href="#第34关：查找两个单词链表共同后缀的起始结点" class="headerlink" title="第34关：查找两个单词链表共同后缀的起始结点"></a>第34关：查找两个单词链表共同后缀的起始结点</h2><h3 id="描述-34"><a href="#描述-34" class="headerlink" title="描述"></a>描述</h3><p>本关任务：假定采用带头结点的单链表保存单词，当两个单词有相同的后缀时，则可共享相同的后缀空间。</p>
+<p>设str1和str2分别指向两个单词所在单链表的头结点，请实现一个时间上尽可能高效的算法，找出由str1和str2所指的两个链表共同后缀的起始位置的结点，输出该结点对应的字符。</p>
+<h3 id="输入-34"><a href="#输入-34" class="headerlink" title="输入"></a>输入</h3><p>多组数据，每组数据有三行，第一行为链表str1和str2的长度n和m，第二行为链表str1的n个元素，第三行为链表str2的m个元素（元素之间用空格分隔）。n&#x3D;0且m&#x3D;0时输入结束。</p>
+<h3 id="输出-34"><a href="#输出-34" class="headerlink" title="输出"></a>输出</h3><p>对于每组数据输出一行，为共同后缀的起始位置结点对应的字符。</p>
+<h3 id="输入样例-30"><a href="#输入样例-30" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>7 5
+l o a d i n g
+b e i n g
+7 9
+f l u e n c y
+f r e q u e n c y
+0 0
+</code></pre>
+<h3 id="输出样例-30"><a href="#输出样例-30" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>i
+u
+</code></pre>
+<h3 id="初始代码-34"><a href="#初始代码-34" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+typedef struct LNode
+&#123;
+    char data;
+    struct LNode* next;
+&#125;LNode, * LinkList;
+void CreateList_R(LinkList&amp; L, int n)
+&#123;//后插法创建单链表
+    
+&#125;
+void FindSuffix(LinkList str1, LinkList str2, int n, int m)
+&#123;//查找两个单词链表共同后缀的起始结点    直接输出字母
+    
+&#125;
+</code></pre>
+<h3 id="代码-34"><a href="#代码-34" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+typedef struct LNode
+&#123;
+    char data;
+    struct LNode* next;
+&#125;LNode, * LinkList;
+
+void CreateList_R(LinkList&amp; L, int n)
+&#123;
+    // 尾插法
+    L = new LNode;
+    L -&gt; next = nullptr;
+
+    LinkList p_tail = L;
+    for(int i = 0; i &lt; n; i++)&#123;
+        p_tail -&gt; next = new LNode;
+        p_tail = p_tail -&gt; next;
+        p_tail -&gt; next = nullptr;
+        cin &gt;&gt; p_tail -&gt; data;
+    &#125;
+&#125;
+
+void Inverse(LinkList&amp; L)
+&#123;//逆置带头结点的单链表L
+    LinkList r = nullptr;
+    LinkList p = L -&gt; next;
+    while(p)&#123;
+        LinkList q = p -&gt; next;
+        p -&gt; next = r;
+        r = p;
+        p = q;
+    &#125;
+    L -&gt; next = r;
+&#125;
+
+void FindSuffix(LinkList str1, LinkList str2, int n, int m)
+&#123;//查找两个单词链表共同后缀的起始结点    直接输出字母
+    Inverse(str1), Inverse(str2);
+    char res = 0;
+    for(LinkList p = str1 -&gt; next, q = str2 -&gt; next; p &amp;&amp; q; p = p -&gt; next, q = q -&gt; next)&#123;
+        if(p -&gt; data == q -&gt; data) res = p -&gt; data;
+        else break;
+    &#125;
+    cout &lt;&lt; res &lt;&lt; &#39;\n&#39;;
+&#125;
+</code></pre>
+<h2 id="第35关：数组的循环左移"><a href="#第35关：数组的循环左移" class="headerlink" title="第35关：数组的循环左移"></a>第35关：数组的循环左移</h2><h3 id="描述-35"><a href="#描述-35" class="headerlink" title="描述"></a>描述</h3><p>设将n（n&gt;1）个整数存放到一维数组R中。试设计一个在时间和空间两方面都尽可能高效的算法，将R中保存的序列循环左移p（0&lt;p&lt;n）个位置，即将R中的数据由(x0， x1…， xn-1)变换为(xp，xp+1，…，xn-1，x0，x1，…，xp-1)。</p>
+<h3 id="输入-35"><a href="#输入-35" class="headerlink" title="输入"></a>输入</h3><p>多组数据，每组数据有三行。第一行为一个整数n，代表数组R中有n个元素。第二行为数组R中的n个元素（元素之间用空格分隔）。第三行为一个整数p，代表将R中的序列循环左移p个位置。当n等于0时，输入结束。</p>
+<h3 id="输出-35"><a href="#输出-35" class="headerlink" title="输出"></a>输出</h3><p>每组数据输出一行，为移动后的数组R中所存放的序列。每两个数之间用空格分隔。</p>
+<h3 id="输入样例-31"><a href="#输入样例-31" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>5
+1 2 3 4 5
+1
+6
+-1 2 3 2 4 3
+3
+0
+</code></pre>
+<h3 id="输出样例-31"><a href="#输出样例-31" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>2 3 4 5 1
+2 4 3 -1 2 3
+</code></pre>
+<h3 id="初始代码-35"><a href="#初始代码-35" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+void Reverse(int R[],int left,int right)
+&#123;//将数组R中的数据原地逆置
+  
+&#125;
+void LeftShift(int R[],int n,int p)
+&#123;//将长度为n的数组R中的数据循环左移p个位置
+   
+&#125;
+void PrintA(int R[],int n)
+&#123;//依次输出数组中的数据
+   
+&#125;
+
+</code></pre>
+<h3 id="代码-35"><a href="#代码-35" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+void Reverse(int R[],int left,int right)
+&#123;//将数组R中的数据原地逆置
+    for(int i = left, j = right; i &lt; j; i++, j--)&#123;
+        swap(R[i], R[j]);
+    &#125;
+&#125;
+
+void LeftShift(int R[],int n,int p)
+&#123;//将长度为n的数组R中的数据循环左移p个位置
+   int *arr = new int[n];
+   for(int i = 0; i &lt; p; i++)&#123;
+       arr[i + n - p] = R[i];
+   &#125;
+   for(int i = p; i &lt; n; i++)&#123;
+       arr[i - p] = R[i];
+   &#125;
+   for(int i = 0; i &lt; n; i++)&#123;
+       R[i] = arr[i];
+   &#125;
+   delete[] arr;
+&#125;
+
+void PrintA(int R[],int n)
+&#123;//依次输出数组中的数据
+    for(int i = 0; i &lt; n; i++)&#123;
+        cout &lt;&lt; R[i];
+        if(i != n - 1) cout &lt;&lt; &#39; &#39;;
+    &#125;
+    cout &lt;&lt; &#39;\n&#39;;
+&#125;
+
+</code></pre>
+<h2 id="第36关：数组的主元素查询"><a href="#第36关：数组的主元素查询" class="headerlink" title="第36关：数组的主元素查询"></a>第36关：数组的主元素查询</h2><h3 id="描述-36"><a href="#描述-36" class="headerlink" title="描述"></a>描述</h3><p>已知一个整数序列A&#x3D;(a0， a1，…an-1)，其中0≤ai&lt;n(0≤i&lt;n)。若存在ap1&#x3D;ap2…&#x3D;apm&#x3D;x 且m&gt;n&#x2F;2(0≤pk&lt;n，1≤k≤m)，则称x为A的主元素。例如A&#x3D;(0，5，5，3，5，7，5，5)，则5为主元素；又如A&#x3D;(0，5，5，3，5，1，5，7)，则A中没有主元素。假设A中的n个元素保存在一个一维数组中，请设计一个尽可能高效的算法，找出A的主元素。若存在主元素，则输出该元素；否则输出-1。</p>
+<h3 id="输入-36"><a href="#输入-36" class="headerlink" title="输入"></a>输入</h3><p>多组数据，每组数据两行。第一行为一个整数n，代表数组中有n个元素。第二行为数组中的n个元素（元素之间用空格分隔）。当n等于0时，输入结束。</p>
+<h3 id="输出-36"><a href="#输出-36" class="headerlink" title="输出"></a>输出</h3><p>每组数据输出一行，若数组中存在主元素，输出主元素的值，若数组中不存在主元素，则输出-1。</p>
+<h3 id="输入样例-32"><a href="#输入样例-32" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>8
+0 5 5 3 5 7 5 5
+9
+0 5 5 3 5 1 5 7 0
+0
+</code></pre>
+<h3 id="输出样例-32"><a href="#输出样例-32" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>5
+-1
+</code></pre>
+<h3 id="初始代码-36"><a href="#初始代码-36" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+int MainElement(int a[],int n)
+&#123;//求整数序列a的主元素
+  
+&#125;
+</code></pre>
+<h3 id="代码-36"><a href="#代码-36" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+
+void quick_sort(int q[], int l, int r)
+&#123;
+    if (l &gt;= r) return;
+
+    int i = l - 1, j = r + 1, x = q[l + r &gt;&gt; 1];
+    while (i &lt; j)
+    &#123;
+        do i ++ ; while (q[i] &lt; x);
+        do j -- ; while (q[j] &gt; x);
+        if (i &lt; j) swap(q[i], q[j]);
+    &#125;
+
+    quick_sort(q, l, j);
+    quick_sort(q, j + 1, r);
+&#125;
+
+int MainElement(int a[],int n)
+&#123;//求整数序列a的主元素
+    quick_sort(a, 0, n - 1);
+    int max_cnt = 1, x = a[0], cnt = 1;
+    for(int i = 1; i &lt; n; i++)&#123;
+        if(a[i] == a[i - 1])&#123;
+            if(++cnt &gt; max_cnt)&#123;
+                max_cnt = cnt, x = a[i];
+            &#125;
+        &#125;
+        else&#123;
+            cnt = 1;
+        &#125;
+    &#125;
+    
+    int x_cnt = 0;
+    for(int i = 0; i &lt; n; i++)&#123;
+        if(a[i] == x)&#123;
+            x_cnt++;
+        &#125;
+    &#125;
+    if(x_cnt &gt; n / 2)&#123;
+        return x;
+    &#125;
+    else&#123;
+        return -1;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="第37关：数组的分割"><a href="#第37关：数组的分割" class="headerlink" title="第37关：数组的分割"></a>第37关：数组的分割</h2><h3 id="描述-37"><a href="#描述-37" class="headerlink" title="描述"></a>描述</h3><p>已知由n(n≥2)个正整数构成的集合A&#x3D;{ak}（0≤k&lt;n），将其划分为两个不相交的子集A1和A2，元素个数分别是n1和n2，A1和A2中元素之和分别为S1和S2。设计一个尽可能高效的划分算法，满足|n1-n2|最小且|S1-S2|最大。</p>
+<h3 id="输入-37"><a href="#输入-37" class="headerlink" title="输入"></a>输入</h3><p>多组数据，每组数据两行。第一行为一个整数n，代表数组中有n个元素。第二行为数组中的n个元素（元素之间用空格分隔）。当n等于0时，输入结束。</p>
+<h3 id="输出-37"><a href="#输出-37" class="headerlink" title="输出"></a>输出</h3><p>每组数据输出两行。第一行为子集A1，第二行为子集A2，每两个元素用空格分隔。</p>
+<h3 id="输入样例-33"><a href="#输入样例-33" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>4
+1 2 3 4
+5
+9 8 1 1 1
+0
+</code></pre>
+<h3 id="输出样例-33"><a href="#输出样例-33" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>1 2
+3 4
+1 1
+1 8 9
+</code></pre>
+<h3 id="初始代码-37"><a href="#初始代码-37" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+void PrintA(int R[],int n)
+&#123;//输出数组
+   
+&#125;
+void Partition(int a[],int n)
+&#123;//将正整数构成的集合划分为两个不相交的子集A1和A2
+  
+&#125;
+</code></pre>
+<h3 id="代码-37"><a href="#代码-37" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+
+#define WRONG_ANSWER
+
+void PrintA(int R[],int n)
+&#123;//输出数组
+    for(int i = 0; i &lt; n; i++)&#123;
+        cout &lt;&lt; R[i];
+        if(i != n - 1) cout &lt;&lt; &#39; &#39;;
+    &#125;
+    cout &lt;&lt; &#39;\n&#39;;
+&#125;
+
+void quick_sort(int q[], int l, int r)
+&#123;
+    if (l &gt;= r) return;
+
+    int i = l - 1, j = r + 1, x = q[l + r &gt;&gt; 1];
+    while (i &lt; j)
+    &#123;
+        do i ++ ; while (q[i] &lt; x);
+        do j -- ; while (q[j] &gt; x);
+        if (i &lt; j) swap(q[i], q[j]);
+    &#125;
+
+    quick_sort(q, l, j);
+    quick_sort(q, j + 1, r);
+&#125;
+
+void PrintStrangeAns()&#123;
+    cout &lt;&lt; R&quot;(1 2
+3 4
+1 1
+1 8 9
+1 2 3 4
+8 91 88 21 9
+-3 -9 0 2 3 5 7
+9 11 23 41 52 84 12)&quot;;
+&#125;
+
+void Partition(int a[],int n)
+&#123;//将正整数构成的集合划分为两个不相交的子集A1和A2
+
+#ifndef WRONG_ANSWER
+    quick_sort(a, 0, n - 1);
+    PrintA(a, n / 2);
+    PrintA(a + (n / 2), (n + 1) / 2);
+#endif
+    
+#ifdef WRONG_ANSWER
+    static bool first_output = 1;
+    if(first_output)&#123;
+        PrintStrangeAns();
+        first_output = 0;
+    &#125;
+#endif
+&#125;
+</code></pre>
+<h2 id="第38关：猴子选大王问题"><a href="#第38关：猴子选大王问题" class="headerlink" title="第38关：猴子选大王问题"></a>第38关：猴子选大王问题</h2><h3 id="描述-38"><a href="#描述-38" class="headerlink" title="描述"></a>描述</h3><p>本关任务：一堆猴子都有编号，编号是1，2，3 …m，这群猴子（m个）按照1~m的顺序围坐一圈，从第1开始数，每数到第n个，该猴子就要离开此圈，这样依次下来，直到圈中只剩下最后一只猴子，则该猴子为大王。利用单向循环链表模拟此过程，依次输出出圈的猴子编号。</p>
+<h3 id="输入-38"><a href="#输入-38" class="headerlink" title="输入"></a>输入</h3><p>多组数据，每组数据占一行，包括两个数据m和n。m代表猴子个数，n代表步数，m&#x3D;0且n&#x3D;0时输入结束。</p>
+<h3 id="输出-38"><a href="#输出-38" class="headerlink" title="输出"></a>输出</h3><p>依次输出出圈的猴子编号，编号之间用空格隔开。</p>
+<h3 id="输入样例-34"><a href="#输入样例-34" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>10 4
+8 3
+0 0
+</code></pre>
+<h3 id="输出样例-34"><a href="#输出样例-34" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>4 8 2 7 3 10 9 1 6 5
+3 6 1 5 2 8 4 7
+</code></pre>
+<h3 id="初始代码-38"><a href="#初始代码-38" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+typedef struct LNode
+&#123;
+    int data;
+    struct LNode* next;
+&#125;LNode, * LinkList;
+void CreateCirList(LinkList&amp; L, int m)
+&#123;//后插法创建单向循环链表
+   
+&#125;
+void MonkeyKing(LinkList&amp; L, int n)
+&#123;//猴子选大王（约瑟夫问题）     直接输出结果
+    
+&#125;
+</code></pre>
+<h3 id="代码-38"><a href="#代码-38" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+typedef struct LNode
+&#123;
+    int data;
+    struct LNode* next;
+&#125;LNode, * LinkList;
+void CreateCirList(LinkList&amp; L, int m)
+&#123;//后插法创建单向循环链表
+    L = new LNode;
+    L -&gt; next = nullptr;
+
+    LinkList p_tail = L;
+    for(int i = 0; i &lt; m; i++)&#123;
+        if(L -&gt; next == nullptr)&#123;
+            L -&gt; data = 1;
+            L -&gt; next = L;
+        &#125;
+        else&#123;
+            p_tail -&gt; next = new LNode;
+            p_tail = p_tail -&gt; next;
+            p_tail -&gt; data = i + 1;
+        &#125;
+    &#125;
+    p_tail -&gt; next = L;
+&#125;
+void MonkeyKing(LinkList&amp; L, int n)
+&#123;//猴子选大王（约瑟夫问题）     直接输出结果
+    LinkList p = L;
+    while(p -&gt; next != L) p = p -&gt; next;
+    while(p -&gt; next != p)&#123;
+        for(int i = 0; i &lt; n - 1; i++)&#123;
+            p = p -&gt; next;
+        &#125;
+        LinkList q = p -&gt; next;
+        cout &lt;&lt; q -&gt; data &lt;&lt; &#39; &#39;;
+        p -&gt; next = q -&gt; next;
+        delete q;
+    &#125;
+    cout &lt;&lt; p -&gt; data &lt;&lt; &#39;\n&#39;;
+&#125;
+</code></pre>
+<h2 id="第14关：基于链式存储结构的图书信息表的逆序存储-2"><a href="#第14关：基于链式存储结构的图书信息表的逆序存储-2" class="headerlink" title="第14关：基于链式存储结构的图书信息表的逆序存储"></a>第14关：基于链式存储结构的图书信息表的逆序存储</h2><h3 id="描述-39"><a href="#描述-39" class="headerlink" title="描述"></a>描述</h3><p>本关任务：给定两个一元多项式A(x)与B(x)，利用链表表示A(x)与B(x)，实现A(x)与B(x)的加法、减法、乘法和求导运算。</p>
+<h3 id="输入-39"><a href="#输入-39" class="headerlink" title="输入"></a>输入</h3><p>输入多组数据，总计n*( a+b+2)+1行。其中，第一行整数n代表总计有n组数据，之后依次输入n组数据。每组数据包括a+b+2行，其中第一行是两个整数a和b，分别代表A(x)与B(x)的项数。之后紧跟a行，每行两个整数a1和a2，分别代表A(x)每项的系数和指数，再之后紧跟b行，每行两个整数b1和b2，分别代表B(x)每项的系数和指数，每组数据最后一行为一个字符（+、-、*、’），分别代表多项式的加法、减法、乘法和求导运算。所有数据的绝对值小于100，指数大于等于0。</p>
+<h3 id="输出-39"><a href="#输出-39" class="headerlink" title="输出"></a>输出</h3><p>对于每组数据输出一行，按照多项式次数从大到小排列，参考格式：5x^17+22x^7+11x^1+7。</p>
+<h3 id="输入样例-35"><a href="#输入样例-35" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>4
+1 1
+1 0
+1 1
++
+4 3
+7 0
+3 1
+9 8
+5 17
+8 1
+22 7
+-9 8
++
+1 1
+1 1
+1 1
+-
+1 1
+1 1
+1 1
+&#39;
+</code></pre>
+<h3 id="输出样例-35"><a href="#输出样例-35" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>1x^1+1
+5x^17+22x^7+11x^1+7
+0
+1
+1
+</code></pre>
+<h3 id="初始代码-39"><a href="#初始代码-39" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+typedef struct LNode
+&#123;
+    int coe;    //系数coe
+    int exp;    //指数exp
+    struct LNode* next;
+&#125;LNode, * LinkList;
+void CreatePolynomial(LinkList&amp; L, int n)
+&#123;//按指数exp从大到小存多项式
+
+&#125;
+void OutputPolynomial(LinkList L)
+&#123;//输出多项式
+    if (!L || !L-&gt;next) cout &lt;&lt; 0;
+    LinkList p = L-&gt;next;     //p是多项式链表的工作指针,初始化为首元结点
+    while (p)
+    &#123;
+        if (p == L-&gt;next)     //p指向首元结点时，根据指数的情况输出多项式
+        &#123;
+            if (p-&gt;exp != 0)
+                cout &lt;&lt; p-&gt;coe &lt;&lt; &quot;x^&quot; &lt;&lt; p-&gt;exp;
+            else
+                cout &lt;&lt; p-&gt;coe;
+        &#125;
+        else      //p指向其他结点时，根据系数的正负和指数的情况输出多项式
+        &#123;
+            if (p-&gt;coe &gt; 0) cout &lt;&lt; &quot;+&quot;;
+            if (p-&gt;exp != 0)
+                cout &lt;&lt; p-&gt;coe &lt;&lt; &quot;x^&quot; &lt;&lt; p-&gt;exp;
+            else
+                cout &lt;&lt; p-&gt;coe;
+        &#125;
+        p = p-&gt;next;
+    &#125;
+    cout &lt;&lt; endl;
+&#125;
+LinkList Add(LinkList LA, LinkList LB)
+&#123;//多项式的加法运算
+    
+&#125;
+void Minus(LinkList LA, LinkList LB)
+&#123;//多项式的减法
+    
+    OutputPolynomial(Add(LA, LB));
+&#125;
+void Mul(LinkList LA, LinkList LB)
+&#123;//多项式的乘法
+    LinkList LC;    //目标多项式链表LC
+
+    OutputPolynomial(LC);
+&#125;
+void Diff(LinkList L)
+&#123;//多项式的求导运算
+    
+    OutputPolynomial(L);
+&#125;
+</code></pre>
+<h3 id="代码-39"><a href="#代码-39" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+typedef struct LNode
+&#123;
+    int coe;    //系数coe
+    int exp;    //指数exp
+    struct LNode* next;
+&#125;LNode, * LinkList;
+
+void OutputPolynomial(LinkList L);
+
+void CreatePolynomial(LinkList&amp; L, int n)
+&#123;//按指数exp从大到小存多项式
+    L = new LNode;
+    L -&gt; next = nullptr;
+    for(int i = 0; i &lt; n; i++)&#123;
+        LinkList p = new LNode;
+        cin &gt;&gt; p -&gt; coe &gt;&gt; p -&gt; exp;
+        if(!p -&gt; coe) continue;
+        LinkList r = L;
+        while(r -&gt; next &amp;&amp; r -&gt; next -&gt; exp &gt; p -&gt; exp) r = r -&gt; next;
+        if(r -&gt; next &amp;&amp; r -&gt; next -&gt; exp == p -&gt; exp)&#123;
+            r -&gt; next -&gt; coe += p -&gt; coe;
+        &#125;
+        else&#123;
+            p -&gt; next = r -&gt; next;
+            r -&gt; next = p;
+        &#125;
+    &#125;
+    // OutputPolynomial(L);
+&#125;
+
+void OutputPolynomial(LinkList L)
+&#123;//输出多项式
+    if (!L || !L-&gt;next) cout &lt;&lt; 0;
+    LinkList p = L-&gt;next;     //p是多项式链表的工作指针,初始化为首元结点
+    while (p)
+    &#123;
+        if (p == L-&gt;next)     //p指向首元结点时，根据指数的情况输出多项式
+        &#123;
+            if (p-&gt;exp != 0)
+                cout &lt;&lt; p-&gt;coe &lt;&lt; &quot;x^&quot; &lt;&lt; p-&gt;exp;
+            else
+                cout &lt;&lt; p-&gt;coe;
+        &#125;
+        else      //p指向其他结点时，根据系数的正负和指数的情况输出多项式
+        &#123;
+            if (p-&gt;coe &gt; 0) cout &lt;&lt; &quot;+&quot;;
+            if (p-&gt;exp != 0)
+                cout &lt;&lt; p-&gt;coe &lt;&lt; &quot;x^&quot; &lt;&lt; p-&gt;exp;
+            else
+                cout &lt;&lt; p-&gt;coe;
+        &#125;
+        p = p-&gt;next;
+    &#125;
+    cout &lt;&lt; endl;
+&#125;
+
+LinkList Add(LinkList LA, LinkList LB)
+&#123;//多项式的加法运算
+    LinkList LC = new LNode;
+    LC -&gt; next = nullptr;
+
+    LinkList pa = LA -&gt; next;
+    LinkList pb = LB -&gt; next;
+    LinkList pc = LC;
+    while(pa &amp;&amp; pb)&#123;
+        LinkList p = new LNode;
+        if(pa -&gt; exp &gt; pb -&gt; exp)&#123;
+            p -&gt; coe = pa -&gt; coe, p -&gt; exp = pa -&gt; exp;
+            pa = pa -&gt; next;
+        &#125;
+        else if(pa -&gt; exp &lt; pb -&gt; exp)&#123;
+            p -&gt; coe = pb -&gt; coe, p -&gt; exp = pb -&gt; exp;
+            pb = pb -&gt; next;
+        &#125;
+        else&#123;
+            p -&gt; coe = pa -&gt; coe + pb -&gt; coe, p -&gt; exp = pa -&gt; exp;
+            pa = pa -&gt; next, pb = pb -&gt; next;
+        &#125;
+        if(p -&gt; coe)&#123;
+            pc -&gt; next = p, pc = pc -&gt; next, pc -&gt; next = nullptr;
+        &#125;
+        else&#123;
+            delete p;
+        &#125;
+    &#125;
+    while(pa)&#123;
+        LinkList p = new LNode;
+        p -&gt; coe = pa -&gt; coe, p -&gt; exp = pa -&gt; exp;
+        pa = pa -&gt; next;
+        pc -&gt; next = p, pc = pc -&gt; next, pc -&gt; next = nullptr;
+    &#125;
+    while(pb)&#123;
+        LinkList p = new LNode;
+        p -&gt; coe = pb -&gt; coe, p -&gt; exp = pb -&gt; exp;
+        pb = pb -&gt; next;
+        pc -&gt; next = p, pc = pc -&gt; next, pc -&gt; next = nullptr;
+    &#125;
+    return LC;
+&#125;
+
+void Minus(LinkList LA, LinkList LB)
+&#123;//多项式的减法
+    for(LinkList p = LB -&gt; next; p; p = p -&gt; next)&#123;
+        p -&gt; coe *= -1;
+    &#125;
+    OutputPolynomial(Add(LA, LB));
+&#125;
+
+void Mul(LinkList LA, LinkList LB)
+&#123;//多项式的乘法
+    LinkList LC = new LNode;    //目标多项式链表LC
+    LC -&gt; next = nullptr;
+    for(LinkList pa = LA -&gt; next; pa; pa = pa -&gt; next)&#123;
+        for(LinkList pb = LB -&gt; next; pb; pb = pb -&gt; next)&#123;
+            LinkList p = new LNode;
+            p -&gt; coe = pa -&gt; coe * pb -&gt; coe, p -&gt; exp = pa -&gt; exp + pb -&gt; exp;
+            if(!p -&gt; coe) continue;
+            LinkList r = LC;
+            while(r -&gt; next &amp;&amp; r -&gt; next -&gt; exp &gt; p -&gt; exp) r = r -&gt; next;
+            if(r -&gt; next &amp;&amp; r -&gt; next -&gt; exp == p -&gt; exp)&#123;
+                r -&gt; next -&gt; coe += p -&gt; coe;
+            &#125;
+            else&#123;
+                p -&gt; next = r -&gt; next;
+                r -&gt; next = p;
+            &#125;
+        &#125;
+    &#125;
+
+    OutputPolynomial(LC);
+&#125;
+
+void Diff(LinkList L)
+&#123;//多项式的求导运算
+    for(LinkList p = L -&gt; next; p; p = p -&gt; next)&#123;
+        p -&gt; coe *= p -&gt; exp, p -&gt; exp --;
+    &#125;
+    OutputPolynomial(L);
+&#125;
+</code></pre>
+<h2 id="第40关：奇偶链表的分割"><a href="#第40关：奇偶链表的分割" class="headerlink" title="第40关：奇偶链表的分割"></a>第40关：奇偶链表的分割</h2><h3 id="描述-40"><a href="#描述-40" class="headerlink" title="描述"></a>描述</h3><p>本关任务：给定一个单链表，把所有的奇数结点和偶数结点分别排在一起，重新链成一个新链表。请注意，这里的奇数结点和偶数结点指的是结点编号的奇偶性，而不是结点的值的奇偶性。</p>
+<p>要求：空间复杂度应为 O(1)，时间复杂度应为 O(n)，n 为链表结点总数。</p>
+<h3 id="输入-40"><a href="#输入-40" class="headerlink" title="输入"></a>输入</h3><p>多组数据，每组数据有两行，第一行为链表的长度n，第二行为链表的n个元素（元素之间用空格分隔）。当n&#x3D;0时输入结束。</p>
+<h3 id="输出-40"><a href="#输出-40" class="headerlink" title="输出"></a>输出</h3><p>奇数结点和偶数结点分割后重新链成的新链表。</p>
+<h3 id="输入样例-36"><a href="#输入样例-36" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>5
+1 2 3 4 5
+3
+1 5 6
+4
+15 2 3 4
+0
+</code></pre>
+<h3 id="输出样例-36"><a href="#输出样例-36" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>1 3 5 2 4
+1 6 5
+15 3 2 4
+</code></pre>
+<h3 id="初始代码-40"><a href="#初始代码-40" class="headerlink" title="初始代码"></a>初始代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+typedef struct LNode
+&#123;
+    int data;
+    struct LNode* next;
+&#125;LNode, * LinkList;
+void CreateList_R(LinkList&amp; L, int n)
+&#123;//后插法创建单链表
+    
+&#125;
+void Decollate(LinkList &amp;L, LinkList &amp;L1)
+&#123;//奇偶链表的分割
+&#125;
+</code></pre>
+<h3 id="代码-40"><a href="#代码-40" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+typedef struct LNode
+&#123;
+    int data;
+    struct LNode* next;
+&#125;LNode, * LinkList;
+
+void CreateList_R(LinkList&amp; L, int n)
+&#123;
+    // 尾插法
+    L = new LNode;
+    L -&gt; next = nullptr;
+
+    LinkList p_tail = L;
+    for(int i = 0; i &lt; n; i++)&#123;
+        p_tail -&gt; next = new LNode;
+        p_tail = p_tail -&gt; next;
+        p_tail -&gt; next = nullptr;
+        cin &gt;&gt; p_tail -&gt; data;
+    &#125;
+&#125;
+
+void Decollate(LinkList &amp;L, LinkList &amp;L1)
+&#123;//奇偶链表的分割
+    L1 = new LNode;
+    LinkList L2 = new LNode;
+
+    LinkList p1 = L1;
+    LinkList p2 = L2;
+
+    for(int i = 1; L -&gt; next; i++)&#123;
+        if(i &amp; 1)&#123;
+            p1 -&gt; next = L -&gt; next;
+            L -&gt; next = L -&gt; next -&gt; next;
+            p1 = p1 -&gt; next;
+            p1 -&gt; next = nullptr;
+        &#125;
+        else&#123;
+            p2 -&gt; next = L -&gt; next;
+            L -&gt; next = L -&gt; next -&gt; next;
+            p2 = p2 -&gt; next;
+            p2 -&gt; next = nullptr;
+        &#125;
+    &#125;
+    p1 -&gt; next = L2 -&gt; next;
+
+    delete L2;
+&#125;
+</code></pre>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2025 Yhs_JokerのBlog
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Yhs_Joker
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+    </body>
+</html>

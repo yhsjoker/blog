@@ -1,0 +1,407 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>无聊的数列 | Yhs_JokerのBlog</title>
+        <meta name="author" content="Yhs_Joker" />
+        <meta name="description" content="There is only one kind of heroism in the world, which is to love life after knowing the truth of life." />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/avatar.jpg" />
+        <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>YHS_JOKERのBLOG</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;YHS_JOKERのBLOG</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div class="article">
+    <div>
+        <h1>无聊的数列</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2022/12/3
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E9%A2%98%E8%A7%A3/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                题解
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%B4%9B%E8%B0%B7/" style="color: #00a596">洛谷</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/" style="color: #00bcd4">线段树</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E8%93%9D/" style="color: #03a9f4">蓝</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h2 id="原题戳这里"><a href="#原题戳这里" class="headerlink" title="原题戳这里"></a><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1438">原题戳这里</a></h2><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>维护一个数列a_i,支持两种操作:</p>
+<ul>
+<li><p><code>1 l r K D</code>:给出一个长度等于r-l+1的等差数列,首项为K,公差为D,并将它对应加到[l,r]范围内的每一个数上,即:令a_l&#x3D;a_l+K,a_{l+1}&#x3D;a_{l+1}+K+D…a_r&#x3D;a_r+K+(r-l)*D</p>
+</li>
+<li><p><code>2 p</code>:询问序列的第p个数的值a_p</p>
+</li>
+</ul>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>第一行两个整数数n,m表示数列长度和操作个数</p>
+<p>第二行n个整数,第i个数表示a_i</p>
+<p>接下来的m行,每行先输入一个整数 opt</p>
+<p>若opt&#x3D;1则再输入四个整数l,r,K,D</p>
+<p>若opt&#x3D;2则再输入一个整数p</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>对于每个询问，一行一个整数表示答案</p>
+<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><h3 id="输入-1"><a href="#输入-1" class="headerlink" title="输入 #1"></a>输入 #1</h3><pre><code>5 2
+1 2 3 4 5
+1 2 4 1 2
+2 3
+</code></pre>
+<h3 id="输出-1"><a href="#输出-1" class="headerlink" title="输出 #1"></a>输出 #1</h3><pre><code>6
+</code></pre>
+<h2 id="说明-提示"><a href="#说明-提示" class="headerlink" title="说明&#x2F;提示"></a>说明&#x2F;提示</h2><h3 id="数据规模与约定"><a href="#数据规模与约定" class="headerlink" title="数据规模与约定"></a>数据规模与约定</h3><p>对于100%数据,0&lt;&#x3D;n,m&lt;&#x3D;100000,-200&lt;&#x3D;a_i,K,D&lt;&#x3D;200,1&lt;&#x3D;l&lt;&#x3D;r&lt;&#x3D;n,1&lt;&#x3D;p&lt;&#x3D;n</p>
+<hr>
+<h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>维护一个能实现上述操作的序列</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>由于需要维护区间操作信息,所以我们首先想到线段树,因此我们需要思考如何用线段树维护增加等差数列的信息.暴力单点修改每一个点很明显是会超时的,如果用懒标记直接维护每个区间的起始项,公差也很难pushdown下去,因此我们需要转换思路.</p>
+<p>等差数列有个很重要的性质就是差相等,因此如果用差分来做的话就可以将区间增加等差数列转换为区间增加相同的数,很容易用懒标记来维护.因此我们线段树中维护的就应该是原序列的差分序列,增加等差数列的操作就变成了区间每个数增加相同的数,单点查询就变成了查询区间和,这些操作很容易实现.</p>
+<p>举个例子:</p>
+<p>原序列: 0,0,0,0,0,0,0</p>
+<p>原序列的差分序列: 0,0,0,0,0,0,0</p>
+<p>为原序列2到5的位置增加一个等差序列2,3,4,5</p>
+<p>原序列变为: 0,2,3,4,5.0,0</p>
+<p>差分序列变为0,2,1,1,1,-5,0</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;algorithm&gt;
+#include&lt;cstring&gt;
+#define int long long
+#define IOS ios::sync_with_stdio(0);\
+cin.tie(0);\
+cout.tie(0);
+
+using namespace std;
+
+const int N=100010;
+
+struct Node
+&#123;
+    int l,r;
+    int sum,add;
+&#125;;
+
+Node tr[N*4];
+int w[N];
+
+void pushup(Node &amp;u,Node &amp;l,Node &amp;r)
+&#123;
+    u.sum=l.sum+r.sum;
+&#125;
+
+void pushup(int u)
+&#123;
+    pushup(tr[u],tr[u&lt;&lt;1],tr[u&lt;&lt;1|1]);
+&#125;
+
+void build(int u,int l,int r)
+&#123;
+    if(l==r)
+        tr[u]=&#123;l,r,w[r]-w[r-1],0&#125;;
+    else
+    &#123;
+        tr[u]=&#123;l,r&#125;;
+        int mid=(l+r)/2;
+        build(u&lt;&lt;1,l,mid);
+        build(u&lt;&lt;1|1,mid+1,r);
+        pushup(u);
+    &#125;
+&#125;
+
+void pushdown(Node &amp;u,Node &amp;l,Node &amp;r)
+&#123;
+    if(u.add)
+    &#123;
+        l.add+=u.add;
+        r.add+=u.add;
+        l.sum+=(l.r-l.l+1)*u.add;
+        r.sum+=(r.r-r.l+1)*u.add;
+        u.add=0;
+    &#125;
+&#125;
+
+void pushdown(int u)
+&#123;
+    pushdown(tr[u],tr[u&lt;&lt;1],tr[u&lt;&lt;1|1]);
+&#125;
+
+void modify(int u,int l,int r,int k)
+&#123;
+    if(l&lt;=tr[u].l&amp;&amp;tr[u].r&lt;=r)
+    &#123;
+        tr[u].sum+=(tr[u].r-tr[u].l+1)*k;
+        tr[u].add+=k;
+    &#125;
+    else
+    &#123;
+        pushdown(u);
+        int mid=(tr[u].l+tr[u].r)/2;
+        if(l&lt;=mid) modify(u&lt;&lt;1,l,r,k);
+        if(r&gt;mid) modify(u&lt;&lt;1|1,l,r,k);
+        pushup(u);
+    &#125;
+&#125;
+
+int query(int u,int l,int r)
+&#123;
+    if(l&lt;=tr[u].l&amp;&amp;tr[u].r&lt;=r)
+        return tr[u].sum;
+    else
+    &#123;
+        pushdown(u);
+        int mid=(tr[u].l+tr[u].r)/2;
+        int res=0;
+        if(l&lt;=mid) res+=query(u&lt;&lt;1,l,r);
+        if(r&gt;mid) res+=query(u&lt;&lt;1|1,l,r);
+        return res;
+    &#125;
+&#125;
+
+signed main()
+&#123;
+    IOS
+    int n,m;
+    cin&gt;&gt;n&gt;&gt;m;
+    for(int i=1;i&lt;=n;i++)
+        cin&gt;&gt;w[i];
+    
+    build(1,1,n);
+    
+    while(m--)
+    &#123;
+        int op,l,r,k,d,p;
+        cin&gt;&gt;op;
+        if(op==1)
+        &#123;
+            cin&gt;&gt;l&gt;&gt;r&gt;&gt;k&gt;&gt;d;
+
+            modify(1,l,l,k);
+
+            if(l+1&lt;=n)modify(1,l+1,r,d);
+                //注意要防止越界
+
+            if(r+1&lt;=n)modify(1,r+1,r+1,-(k+(r-l)*d));
+                //记得差分序列要在末尾还原之前造成的影响
+        &#125;
+        else
+        &#123;
+            cin&gt;&gt;p;
+            cout&lt;&lt;query(1,1,p)&lt;&lt;&#39;\n&#39;;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2025 Yhs_JokerのBlog
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Yhs_Joker
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+    </body>
+</html>

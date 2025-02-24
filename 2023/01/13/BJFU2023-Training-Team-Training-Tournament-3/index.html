@@ -1,0 +1,613 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>BJFU-2023-集训队训练赛-3 | Yhs_JokerのBlog</title>
+        <meta name="author" content="Yhs_Joker" />
+        <meta name="description" content="There is only one kind of heroism in the world, which is to love life after knowing the truth of life." />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/avatar.jpg" />
+        <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>YHS_JOKERのBLOG</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;YHS_JOKERのBLOG</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div class="article">
+    <div>
+        <h1>BJFU-2023-集训队训练赛-3</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/1/13
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E9%A2%98%E8%A7%A3/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                题解
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E9%9B%86%E8%AE%AD%E9%98%9F%E8%AE%AD%E7%BB%83%E8%B5%9B/" style="color: #00bcd4">集训队训练赛</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h2 id="A"><a href="#A" class="headerlink" title="A"></a>A</h2><h3 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h3><p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1611/C">https://codeforces.com/problemset/problem/1611/C</a></p>
+<h3 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h3><p>给定一个变化后的序列b，求变化前的序列a，打印任意一种即可，a中元素互不相同，且范围为1-n，变化规则为：</p>
+<ul>
+<li>如果数列a最左端的元素小于最右端的元素，则将a的最左端元素放入数列b的最左端，如果数列a最右端的元素小于最左端的，则将最右端元素放入数列b的最右端</li>
+</ul>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>首先我们可以得知，n一定是最后进入序列b的，因此n一定出现在b的最左端或最右端，若未出现的话，则不可能变化成功。我们可以采用倒推，如果b的首部元素小于尾部，则将首部元素放回a的左端，若b的尾部元素小于首部，则将尾部元素放回a的右端，复原回去的a就满足条件。</p>
+<pre><code class="cpp">int n;
+list&lt;int&gt; a,ans;
+
+void init()
+&#123;
+    a.clear();
+    ans.clear();
+    cin&gt;&gt;n;
+    for(int i=0;i&lt;n;i++)
+    &#123;
+        int x;
+        cin&gt;&gt;x;
+        a.push_back(x);
+    &#125;
+&#125;
+
+void solve()
+&#123;
+    init();
+    if(a.front()==n||a.back()==n)
+    &#123;
+        while(!a.empty())
+        &#123;
+            if(a.front()&lt;a.back())
+            &#123;
+                ans.push_front(a.front());
+                a.pop_front();
+            &#125;
+            else
+            &#123;
+                ans.push_back(a.back());
+                a.pop_back();
+            &#125;
+        &#125;
+        for(auto e:ans)
+        &#123;
+            cout&lt;&lt;e&lt;&lt;&#39; &#39;;
+        &#125;
+        cout&lt;&lt;&#39;\n&#39;;
+    &#125;
+    else
+    &#123;
+        cout&lt;&lt;&quot;-1\n&quot;;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="B"><a href="#B" class="headerlink" title="B"></a>B</h2><h3 id="题目链接-1"><a href="#题目链接-1" class="headerlink" title="题目链接"></a>题目链接</h3><p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1553/B">https://codeforces.com/problemset/problem/1553/B</a></p>
+<h3 id="题目大意-1"><a href="#题目大意-1" class="headerlink" title="题目大意"></a>题目大意</h3><p>给定两个字符串s1，s2，问s2能否通过下列规则得出</p>
+<ul>
+<li>在s1中选择一个位置pos，将其向右滑动k1，再向左滑动k2，滑过的所有字符依次组成s2，其中k1，k2&gt;&#x3D;0，如s1&#x3D;”abc”，s2可以为”abcba”</li>
+</ul>
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>定义一个字符串为abcdefg，则在d点掉头的字符串一定可以在如下字符串中找到，abcdcba，因此我们可以将所有s1能产生的字符串记录，然后查询字符串中是否含有s2即可</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">string s1,s2;
+vector&lt;string&gt; v;
+
+void init()
+&#123;
+    cin&gt;&gt;s1&gt;&gt;s2;
+    v.clear();
+&#125;
+
+void solve()
+&#123;
+    init();
+    for(int i=1;i&lt;=s1.size();i++)
+    &#123;
+        string rs=s1.substr(0,i-1);
+        reverse(rs.begin(),rs.end());
+        v.push_back(s1.substr(0,i)+rs);
+    &#125;
+    for(const auto&amp; e:v)
+    &#123;
+        if(e.find(s2)!=string::npos)
+        &#123;
+            cout&lt;&lt;&quot;YES\n&quot;;
+            return;
+        &#125;
+    &#125;
+    cout&lt;&lt;&quot;NO\n&quot;;
+&#125;
+</code></pre>
+<h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><h3 id="题目链接-2"><a href="#题目链接-2" class="headerlink" title="题目链接"></a>题目链接</h3><p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1491/D">https://codeforces.com/problemset/problem/1491/D</a></p>
+<h3 id="题目大意-2"><a href="#题目大意-2" class="headerlink" title="题目大意"></a>题目大意</h3><p>给全体自然数按照一下规则连有向边，问是否可以从a走到b，连边规则为：</p>
+<ul>
+<li>u-&gt;u+v,其中u&amp;v&#x3D;&#x3D;v</li>
+</ul>
+<h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><p>通过模拟我们发现，u+v的二进制中含有的1的数量小于等于u，并且u+v在任意二进制位中u的后缀1数量都要大于等于u+v，这一点显然是可以递推的，因此，答案就是判断a和b是否满足上述关系即可。</p>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">int a,b;
+
+void input()
+&#123;
+    cin&gt;&gt;a&gt;&gt;b;
+&#125;
+
+void solve()
+&#123;
+    input();
+    if(a&gt;b)&#123;cout&lt;&lt;&quot;NO\n&quot;;return;&#125;
+    int cnta=0,cntb=0;
+    for(int i=0;i&lt;=31;i++)
+    &#123;
+        if(a&gt;&gt;i&amp;1) cnta++;
+        if(b&gt;&gt;i&amp;1) cntb++;
+        if(cnta&lt;cntb)
+        &#123;
+            cout&lt;&lt;&quot;NO\n&quot;;
+            return;
+        &#125;
+    &#125;
+    cout&lt;&lt;&quot;YES\n&quot;;
+&#125;
+</code></pre>
+<h2 id="D"><a href="#D" class="headerlink" title="D"></a>D</h2><h3 id="题目链接-3"><a href="#题目链接-3" class="headerlink" title="题目链接"></a>题目链接</h3><p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1490/C">https://codeforces.com/problemset/problem/1490/C</a></p>
+<h3 id="题目大意-3"><a href="#题目大意-3" class="headerlink" title="题目大意"></a>题目大意</h3><p>给定一个数x，问是否能分解为a^3+b^3的形式，其中a,b&gt;0</p>
+<h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><p>假定a&gt;&#x3D;b，枚举a，如果a^3&gt;&#x3D;x或者2*a^3&lt;x，则都无法成立，否则，判断x-a^3是否为某一整数的三次方即可</p>
+<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">int x;
+
+void init()
+&#123;
+    cin&gt;&gt;x;
+&#125;
+
+void solve()
+&#123;
+    init();
+    for(int i=1;i&lt;=10000;i++)
+    &#123;
+        int i3=i*i*i;
+        if(i3&gt;=x)&#123;cout&lt;&lt;&quot;NO\n&quot;;return;&#125;
+        if(i3*2&lt;x) continue;
+        int j3=x-i3;
+        int j=round(pow(j3,1.0/3));
+        if(j*j*j==j3)
+        &#123;
+            cout&lt;&lt;&quot;YES\n&quot;;
+            return;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="E"><a href="#E" class="headerlink" title="E"></a>E</h2><h3 id="题目链接-4"><a href="#题目链接-4" class="headerlink" title="题目链接"></a>题目链接</h3><p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1486/B">https://codeforces.com/problemset/problem/1486/B</a></p>
+<h3 id="题目大意-4"><a href="#题目大意-4" class="headerlink" title="题目大意"></a>题目大意</h3><p>给定一组二维点，求到所有点的哈密尔顿距离之和最短的点的个数</p>
+<h3 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h3><p>首先判断一维点中哈密尔顿距离最短的情况。如果是奇数个点，则一定位于最中间的点，如a1,a2,a3,a4,a5，在a1至a5范围内距离都是a5-a1，在a2至a4范围内距离都是a4-a2，则想要使总距离最短，则此点必须与中心点距离最短，即0。若是偶数个点，则中间两个点的闭区间内距离都为最短，证明方法同上。二维中距离和最短的点的个数就是求出横坐标集和纵坐标集中距离最短的点的个数的乘积。</p>
+<h3 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">int n;
+int x[N],y[N];
+
+void init()
+&#123;
+    cin&gt;&gt;n;
+    for(int i=0;i&lt;n;i++)
+        cin&gt;&gt;x[i]&gt;&gt;y[i];
+&#125;
+
+void solve()
+&#123;
+    init();
+    sort(x,x+n);
+    sort(y,y+n);
+    if(n&amp;1)
+    &#123;
+        cout&lt;&lt;1&lt;&lt;&#39;\n&#39;;
+    &#125;
+    else
+    &#123;
+        int nx=x[n/2]-x[n/2-1]+1;
+        int ny=y[n/2]-y[n/2-1]+1;
+        cout&lt;&lt;nx*ny&lt;&lt;&#39;\n&#39;;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="F"><a href="#F" class="headerlink" title="F"></a>F</h2><h3 id="题目链接-5"><a href="#题目链接-5" class="headerlink" title="题目链接"></a>题目链接</h3><p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1482/B">https://codeforces.com/problemset/problem/1482/B</a></p>
+<h3 id="题目大意-5"><a href="#题目大意-5" class="headerlink" title="题目大意"></a>题目大意</h3><p>给定一个序列，求最大的m，序列满足规则如下：</p>
+<ul>
+<li>a[1]&#x3D;s%m,a[i]&#x3D;(a[i-1]+c)%m</li>
+<li>n&gt;0,m&gt;0,c&gt;&#x3D;0且c&lt;m,s&gt;&#x3D;0</li>
+</ul>
+<h3 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h3><p>根据规则可以得出c&#x3D;(a[i+1]-a[i]+m)%m。首先用a[i+1]-a[i]，如果计算出c有两组以上的解，则不存在m。如果计算出两组解，若同为正或同为负，则也不存在，若一正一负，则可以得出m就是它们的差值。若只有一组解，则m可以取无穷大都满足。</p>
+<h3 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">int n;
+int a[N];
+set&lt;int&gt; s;
+
+void init()
+&#123;
+    cin&gt;&gt;n;
+    for(int i=0;i&lt;n;i++)
+        cin&gt;&gt;a[i];
+    s.clear();
+&#125;
+
+void solve()
+&#123;
+    init();
+    for(int i=1;i&lt;n;i++)
+        s.insert(a[i]-a[i-1]);
+    if(s.size()&gt;2)
+        cout&lt;&lt;&quot;-1\n&quot;;
+    else if(s.size()==2)
+    &#123;
+        int x=*s.begin(),y=*(++s.begin());
+        if(x*y&gt;=0) cout&lt;&lt;&quot;-1\n&quot;;
+        else
+        &#123;
+            int m=0;
+            if(x&gt;y) m=x-y;
+            else m=y-x;
+            for(int i=0;i&lt;n;i++)
+                if(m&lt;=abs(a[i]))
+                &#123;
+                    cout&lt;&lt;&quot;-1\n&quot;;
+                    return;
+                &#125;
+            cout&lt;&lt;m&lt;&lt;&#39; &#39;&lt;&lt;(a[1]-a[0]+m)%m&lt;&lt;&#39;\n&#39;;
+        &#125;
+    &#125;
+    else
+    &#123;
+        cout&lt;&lt;&quot;0\n&quot;;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="G"><a href="#G" class="headerlink" title="G"></a>G</h2><h3 id="题目链接-6"><a href="#题目链接-6" class="headerlink" title="题目链接"></a>题目链接</h3><p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1478/B">https://codeforces.com/problemset/problem/1478/B</a></p>
+<h3 id="题目大意-6"><a href="#题目大意-6" class="headerlink" title="题目大意"></a>题目大意</h3><p>给定n个整数和一个d，判断每一个整数能否分解为任意个含d的数。</p>
+<h3 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h3><p>当整数a大于d*10后，一定可以取出来，因为一定能满足以下的分解形式，其中一个数是d*10+(a-d*10)%d,另外的所有数都是d。因此只需要开始处理出小于d*10的数能否成功分解即可。</p>
+<h3 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">set&lt;int&gt; s[10];
+int q,d;
+
+void dfs(int k,int sum)
+&#123;
+    for(int i=k;i&lt;k*10;i+=10)
+    &#123;
+        int su=sum+i;
+        if(su&gt;=k*10) continue;
+        if(s[k].count(su)) continue;
+        s[k].insert(su);
+        dfs(k,su);
+    &#125;
+&#125;
+
+void init()
+&#123;
+    for(int i=1;i&lt;=9;i++)
+        dfs(i,0);
+&#125;
+
+void solve()
+&#123;
+    cin&gt;&gt;q&gt;&gt;d;
+    while(q--)
+    &#123;
+        int a;
+        cin&gt;&gt;a;
+        if(a&gt;=d*10) cout&lt;&lt;&quot;YES\n&quot;;
+        else
+        &#123;
+            if(s[d].count(a)) cout&lt;&lt;&quot;YES\n&quot;;
+            else cout&lt;&lt;&quot;NO\n&quot;;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="H"><a href="#H" class="headerlink" title="H"></a>H</h2><h3 id="题目链接-7"><a href="#题目链接-7" class="headerlink" title="题目链接"></a>题目链接</h3><p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1461/B">https://codeforces.com/problemset/problem/1461/B</a></p>
+<h3 id="题目大意-7"><a href="#题目大意-7" class="headerlink" title="题目大意"></a>题目大意</h3><p>问给定图形中含有多少个指定图形</p>
+<h3 id="思路-7"><a href="#思路-7" class="headerlink" title="思路"></a>思路</h3><p>我们可以发现，一个更大的指定图形可以由四个小的图形组成，因此可以考虑动态规划。设f[i][j]点表示指定图形在该点的最大边长，其中以指定图形的最中下部为基准，向单侧延伸的长度为边长。那么若f[i-1][j],f[i][j],f[i][j-1],f[i][j+1]中的值都大于等于x，则f[i][j]点更新为x+1</p>
+<h3 id="代码-6"><a href="#代码-6" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">int n,m;
+char a[N][N];
+int f[N][N];
+
+void init()
+&#123;
+    cin&gt;&gt;n&gt;&gt;m;
+    for(int i=1;i&lt;=n;i++)
+        for(int j=1;j&lt;=m;j++)
+            cin&gt;&gt;a[i][j];
+    for(int i=1;i&lt;=n;i++)
+        for(int j=1;j&lt;=m;j++)
+            f[i][j]=(a[i][j]==&#39;*&#39;);
+&#125;
+
+void solve()
+&#123;
+    init();
+    for(int k=2;k&lt;=(max(n,m)+1)/2;k++)
+    for(int i=k;i&lt;=n;i++)
+    &#123;
+        for(int j=k;j&lt;=m-k+1;j++)
+        &#123;
+            if(f[i][j]&gt;=k-1&amp;&amp;f[i][j-1]&gt;=k-1&amp;&amp;f[i][j+1]&gt;=k-1&amp;&amp;f[i-1][j]&gt;=k-1)
+                f[i][j]++;
+        &#125;
+    &#125;
+    int ans=0;
+    for(int i=1;i&lt;=n;i++)
+        for(int j=1;j&lt;=m;j++)
+            ans+=f[i][j];
+    cout&lt;&lt;ans&lt;&lt;&#39;\n&#39;;
+&#125;
+</code></pre>
+<h2 id="I"><a href="#I" class="headerlink" title="I"></a>I</h2><h3 id="题目链接-8"><a href="#题目链接-8" class="headerlink" title="题目链接"></a>题目链接</h3><p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1451/C">https://codeforces.com/problemset/problem/1451/C</a></p>
+<h3 id="题目大意-8"><a href="#题目大意-8" class="headerlink" title="题目大意"></a>题目大意</h3><p>给定字符串s1，s2，问能否通过如下转化规则使s1变为s2：</p>
+<ul>
+<li>可以任意交换s1中字符的顺序</li>
+<li>相邻k个字符相同的话，则可以ascii值都+1</li>
+</ul>
+<h3 id="思路-8"><a href="#思路-8" class="headerlink" title="思路"></a>思路</h3><p>只要有k个相同的字母，就可以将它们变为任意大于等于它们的字符。那么就可以让k个相等的字母为一组，其他剩余的字母不能改变。然后从字母a开始比较两个字符串中字母个数的差异。当且仅当前每一个字母都差k倍，且底层的字母能补充上层缺少的字母时，成立。</p>
+<h3 id="代码-7"><a href="#代码-7" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">int n,k;
+string s1,s2;
+map&lt;char,int&gt; mp;
+
+void init()
+&#123;
+    cin&gt;&gt;n&gt;&gt;k;
+    cin&gt;&gt;s1&gt;&gt;s2;
+    mp.clear();
+&#125;
+
+void solve()
+&#123;
+    init();
+    int num=0;
+    for(auto c:s1) mp[c]++;
+    for(auto c:s2) mp[c]--;
+    for(auto e:mp)
+    &#123;
+        //cout&lt;&lt;e.first&lt;&lt;&#39;:&#39;&lt;&lt;e.second&lt;&lt;&#39;\n&#39;;
+        int nu=e.second;
+        if(nu%k) &#123;cout&lt;&lt;&quot;NO\n&quot;;return;&#125;
+        num+=nu/k;
+        if(num&lt;0)&#123;cout&lt;&lt;&quot;NO\n&quot;;return;&#125;
+    &#125;
+    cout&lt;&lt;&quot;YES\n&quot;;
+&#125;
+</code></pre>
+<h2 id="L"><a href="#L" class="headerlink" title="L"></a>L</h2><h3 id="题目链接-9"><a href="#题目链接-9" class="headerlink" title="题目链接"></a>题目链接</h3><p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1443/C">https://codeforces.com/problemset/problem/1443/C</a></p>
+<h3 id="题目大意-9"><a href="#题目大意-9" class="headerlink" title="题目大意"></a>题目大意</h3><p>给定两个长度为n的数组，表示分别表示外卖送达的时间和自己去取餐的时间，外卖可以同时叫，取餐只能一个一个去取，问所需要的最短时间。</p>
+<h3 id="思路-9"><a href="#思路-9" class="headerlink" title="思路"></a>思路</h3><p>按照外卖时间排序，每一个外卖时间都可以作为一个分界线，小于当前外卖时间的都点外卖，剩余的自己取。自己取的时间可以用前缀和维护。</p>
+<h3 id="代码-8"><a href="#代码-8" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">struct S
+&#123;
+    int a,b;
+    bool operator&lt;(S r)
+    &#123;
+        return a&lt;r.a;
+    &#125;
+&#125;;
+int n;
+S a[N];
+int s[N];
+
+void init()
+&#123;
+    cin&gt;&gt;n;
+    for(int i=1;i&lt;=n;i++)
+        cin&gt;&gt;a[i].a;
+    for(int i=1;i&lt;=n;i++)
+        cin&gt;&gt;a[i].b;
+&#125;
+
+void solve()
+&#123;
+    init();
+    sort(a+1,a+1+n);
+    for(int i=1;i&lt;=n;i++) s[i]=s[i-1]+a[i].b;
+    int ans=2e9;
+    for(int i=0;i&lt;=n;i++)
+    &#123;
+        ans=min(ans,max(s[n]-s[i],a[i].a));
+    &#125;
+    cout&lt;&lt;ans&lt;&lt;&#39;\n&#39;;
+&#125;
+</code></pre>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2025 Yhs_JokerのBlog
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Yhs_Joker
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+    </body>
+</html>

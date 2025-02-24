@@ -1,0 +1,678 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>数据结构实验三 | Yhs_JokerのBlog</title>
+        <meta name="author" content="Yhs_Joker" />
+        <meta name="description" content="There is only one kind of heroism in the world, which is to love life after knowing the truth of life." />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/avatar.jpg" />
+        <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>YHS_JOKERのBLOG</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;YHS_JOKERのBLOG</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div class="article">
+    <div>
+        <h1>数据结构实验三</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/11/17
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E4%BD%9C%E4%B8%9A/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                作业
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="color: #ffa2c4">数据结构</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/C/" style="color: #00bcd4">C++</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h2 id="第1关：基于栈的中缀算术表达式求值"><a href="#第1关：基于栈的中缀算术表达式求值" class="headerlink" title="第1关：基于栈的中缀算术表达式求值"></a>第1关：基于栈的中缀算术表达式求值</h2><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp"> #include&lt;iostream&gt;
+#include&lt;fstream&gt;
+#include&lt;string.h&gt;
+using namespace std;
+#define MAXSIZE 2000
+
+//- - - - - 串的堆式顺序存储结构- - - - - 
+typedef struct
+&#123;   
+   char *ch;				//若是非空串，则按串长分配存储区，否则ch为NULL   
+   int length;			//串的当前长度   
+&#125;HString; 
+
+int IndexBF(HString S,HString T,int pos)
+&#123;//返回模式T在主串S中第pos个字符开始第一次出现的位置。若不存在，则返回值为0 
+ //其中，T非空，1≤pos≤StrLength(S) 
+   for(int i = pos - 1; i &lt; S.length - T.length + 1; i++)&#123;
+      bool is_same = 1;
+      for(int j = 0; j &lt; T.length; j++)&#123;
+         if(S.ch[i + j] != T.ch[j])&#123;
+            is_same = 0;
+            break;
+         &#125;
+      &#125;
+      if(is_same) return i + 1;
+   &#125;
+   return 0;
+&#125; 
+
+
+bool VirusDetection(HString Virus,HString Person)
+&#123;//判断是否匹配，如果可以，返回true，否则返回false 
+//模式匹配算法调用Index_BF函数 
+   for(int i = 0; i &lt; Virus.length; i++)&#123;
+      if(IndexBF(Person, Virus, 1)) return true;
+      char c = Virus.ch[0];
+      memmove(Virus.ch, Virus.ch + 1, Virus.length - 1);
+      Virus.ch[Virus.length - 1] = c;
+   &#125;
+   return false;
+&#125;
+</code></pre>
+<h2 id="第1关-基于BF算法的病毒感染检测"><a href="#第1关-基于BF算法的病毒感染检测" class="headerlink" title="第1关 基于BF算法的病毒感染检测"></a>第1关 基于BF算法的病毒感染检测</h2><h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;cstring&gt;
+#include&lt;stdlib.h&gt;
+#include&lt;regex&gt;
+using namespace std;
+
+
+#define MAXLEN 5000			//串的最大长度
+typedef struct&#123;   
+    char *ch;			//存储串的一维数组
+    int length;				//串的当前长度   
+&#125;HString;
+
+
+void InputRule(HString ip[],int n)
+&#123;//输入n条规则，并将其中的n个ip地址存放到ip数组 
+    string pattern(R&quot;(\d+.\d+.\d+.\d+)&quot;);
+    regex r(pattern);
+    
+    for(int i = 0; i &lt; n; i++)&#123;
+        ip[i].ch = new char[MAXLEN];
+        string pro;
+        getline(cin, pro);
+        
+        smatch result;
+        regex_search(pro, result, r);
+        string s_ip = result[0];
+        strcpy(ip[i].ch, s_ip.c_str());
+        ip[i].length = s_ip.size();
+    &#125;
+    
+&#125;
+
+void InputLog(HString &amp;log,int m)
+&#123;//输入m条日志，并合并存放到log
+   delete log.ch;
+   log.ch = new char[10000];
+    for(int i = 0; i &lt; m; i++)&#123;
+        string str;
+        getline(cin, str);
+        strcat(log.ch, str.c_str());
+    &#125;
+    log.length = strlen(log.ch);
+&#125;
+
+int IndexBF(HString S, HString T)
+&#123;//简单模式匹配算法,S为主串(目标串)，T为子串(模式串)。
+    //匹配成功返回主串中所含子串第一次出现的位置，否则返回-1。
+    for(int i = 0; i &lt; S.length - T.length + 1; i++)&#123;
+        bool is_same = 1;
+        for(int j = 0; j &lt; T.length; j++)&#123;
+            if(S.ch[i + j] != T.ch[j])&#123;
+                is_same = 0;
+                break;
+            &#125;
+        &#125;
+        if(is_same) return i;
+    &#125;
+    return -1;
+&#125;
+</code></pre>
+<h2 id="第2关-基于BF算法的网络入侵检测"><a href="#第2关-基于BF算法的网络入侵检测" class="headerlink" title="第2关 基于BF算法的网络入侵检测"></a>第2关 基于BF算法的网络入侵检测</h2><h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;cstring&gt;
+#include&lt;stdlib.h&gt;
+#include&lt;regex&gt;
+using namespace std;
+
+
+#define MAXLEN 5000			//串的最大长度
+typedef struct&#123;   
+    char *ch;			//存储串的一维数组
+    int length;				//串的当前长度   
+&#125;HString;
+
+
+void InputRule(HString ip[],int n)
+&#123;//输入n条规则，并将其中的n个ip地址存放到ip数组 
+    string pattern(R&quot;(\d+.\d+.\d+.\d+)&quot;);
+    regex r(pattern);
+    
+    for(int i = 0; i &lt; n; i++)&#123;
+        ip[i].ch = new char[MAXLEN];
+        string pro;
+        getline(cin, pro);
+        
+        smatch result;
+        regex_search(pro, result, r);
+        string s_ip = result[0];
+        strcpy(ip[i].ch, s_ip.c_str());
+        ip[i].length = s_ip.size();
+    &#125;
+    
+&#125;
+
+void InputLog(HString &amp;log,int m)
+&#123;//输入m条日志，并合并存放到log
+   delete log.ch;
+   log.ch = new char[10000];
+    for(int i = 0; i &lt; m; i++)&#123;
+        string str;
+        getline(cin, str);
+        strcat(log.ch, str.c_str());
+    &#125;
+    log.length = strlen(log.ch);
+&#125;
+
+int IndexBF(HString S, HString T)
+&#123;//简单模式匹配算法,S为主串(目标串)，T为子串(模式串)。
+    //匹配成功返回主串中所含子串第一次出现的位置，否则返回-1。
+    for(int i = 0; i &lt; S.length - T.length + 1; i++)&#123;
+        bool is_same = 1;
+        for(int j = 0; j &lt; T.length; j++)&#123;
+            if(S.ch[i + j] != T.ch[j])&#123;
+                is_same = 0;
+                break;
+            &#125;
+        &#125;
+        if(is_same) return i;
+    &#125;
+    return -1;
+&#125;
+</code></pre>
+<h2 id="第3关-基于KMP算法的网络入侵检测"><a href="#第3关-基于KMP算法的网络入侵检测" class="headerlink" title="第3关 基于KMP算法的网络入侵检测"></a>第3关 基于KMP算法的网络入侵检测</h2><h3 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include &quot;iostream&quot;
+#include &quot;cstring&quot;
+#include&lt;stdlib.h&gt;
+#include&lt;regex&gt;
+using namespace std;
+
+
+#define MAXLEN 5000			//串的最大长度
+typedef struct&#123;   
+    char *ch;			//存储串的一维数组
+    int length;				//串的当前长度   
+&#125;HString;
+
+
+void InputRule(HString ip[],int n)
+&#123;//输入n条规则，并将其中的n个ip地址存放到ip数组 
+    string pattern(R&quot;(\d+.\d+.\d+.\d+)&quot;);
+    regex r(pattern);
+    
+    for(int i = 0; i &lt; n; i++)&#123;
+        ip[i].ch = new char[MAXLEN];
+        string pro;
+        getline(cin, pro);
+        
+        smatch result;
+        regex_search(pro, result, r);
+        string s_ip = result[0];
+        strcpy(ip[i].ch, s_ip.c_str());
+        ip[i].length = s_ip.size();
+    &#125;
+&#125;
+
+void InputLog(HString &amp;log,int m)
+&#123;//输入m条日志，并合并存放到log，返回log的length
+    for(int i = 0; i &lt; m; i++)&#123;
+        string str;
+        getline(cin, str);
+        strcat(log.ch, str.c_str());
+    &#125;
+    log.length = strlen(log.ch);
+&#125;
+
+void GetNext(HString pattern,int* next)
+&#123;//求模式串pattern的next函数值并存入数组next
+    next[0] = -1;
+    char* p = pattern.ch;
+    for (int i = 1, j = -1; i &lt; pattern.length; i ++ )
+    &#123;
+        while (j &gt;= 0 &amp;&amp; p[j + 1] != p[i]) j = next[j];
+        if (p[j + 1] == p[i]) j ++ ;
+        next[i] = j;
+    &#125;
+&#125;
+
+int IndexKMP(HString target,HString pattern,int* next)
+&#123;//KMP匹配算法,target为主串，pattern为子串。
+    //匹配成功返回主串中所含子串第一次出现的位置，否则返回-1。
+    //调用GetNext函数获取模式串的next数组
+    GetNext(pattern, next);
+    char* s = target.ch;
+    char* p = pattern.ch;
+    for (int i = 0, j = -1; i &lt; target.length; i++)
+    &#123;
+        while (j != -1 &amp;&amp; s[i] != p[j + 1]) j = next[j];
+        if (s[i] == p[j + 1]) j ++ ;
+        if (j == pattern.length - 1)
+        &#123;
+            return i - j;
+        &#125;
+    &#125;
+    return -1;
+&#125;
+</code></pre>
+<h2 id="第4关-基于BM算法的网络入侵检测"><a href="#第4关-基于BM算法的网络入侵检测" class="headerlink" title="第4关 基于BM算法的网络入侵检测"></a>第4关 基于BM算法的网络入侵检测</h2><h3 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;string&gt;
+#include&lt;regex&gt;
+#include &quot;cstring&quot;
+using namespace std;
+
+#define ASCII_SIZE 256     //ASCII码共256位，可表示所有字符，作为坏字符数组的大小
+#define MAXLEN 5000			//串的最大长度
+typedef struct&#123;   
+    char *ch;				   //存储串的一维数组
+    int length;				   //串的当前长度   
+&#125;HString;
+
+void InputRule(HString ip[],int n)
+&#123;//将输入的n个ip地址存放到ip数组
+    string pattern(R&quot;(\d+.\d+.\d+.\d+)&quot;);
+    regex r(pattern);
+    
+    for(int i = 0; i &lt; n; i++)&#123;
+        ip[i].ch = new char[MAXLEN];
+        string pro;
+        getline(cin, pro);
+        
+        smatch result;
+        regex_search(pro, result, r);
+        string s_ip = result[0];
+        strcpy(ip[i].ch, s_ip.c_str());
+        ip[i].length = s_ip.size();
+    &#125;
+&#125;
+
+void InputLog(HString &amp;log,int m)
+&#123;//将输入的m条日志合并存放到log，返回log的总长度
+    for(int i = 0; i &lt; m; i++)&#123;
+        string str;
+        getline(cin, str);
+        strcat(log.ch, str.c_str());
+    &#125;
+    log.length = strlen(log.ch);
+&#125;
+
+void GetBC(HString pattern,int *bc)
+&#123;//得到坏字符bc数组
+    int n = pattern.length;
+    for(int i = 0; i &lt; ASCII_SIZE; i++)&#123;
+        bc[i] = -1;
+    &#125;
+    for(int i = 0; i &lt; n; i++)&#123;
+        bc[pattern.ch[i]] = i;
+    &#125;
+&#125;
+
+void GetGS(HString pattern,int *suffix,bool *prefix)
+&#123;//得到好后缀gs，其中suffix为int类型数组存储后缀字符对应前面的位置，prefix为bool类型数组存储是否存在匹配的前缀字符串
+    //suffix和prefix共同构成好后缀数组
+    int n = pattern.length;
+    for(int i = 0; i &lt; n; i++)&#123;
+        suffix[i] = -1;
+        prefix[i] = 0;
+    &#125;
+    for(int i = 0; i &lt; n - 1; i++)&#123;
+        int j = i, k = 0;
+        while(j &gt;= 0 &amp;&amp; pattern.ch[j] == pattern.ch[n - 1 - k])&#123;
+            j--, k++;
+            suffix[k] = j + 1;
+        &#125;
+        if(j == -1)&#123;
+            prefix[k] = true;
+        &#125;
+    &#125;
+&#125;
+
+int GetGSMove(int *suffix,bool *prefix,int bc_pos,int pattern_length)
+&#123;//利用suffix和prefix数组，返回好后缀移动的次数
+    //bc_pos表示坏字符BC的位置（后一位为好后缀起点位置）
+    int k = pattern_length - 1 - bc_pos;
+    if(suffix[k] != -1) return bc_pos - suffix[k] + 1;
+    for(int r = bc_pos + 2; bc_pos &lt; pattern_length; r++)&#123;
+        if(prefix[pattern_length - r]) return r;
+    &#125;
+    return pattern_length;
+&#125;
+
+int IndexBM(HString str,HString pattern)
+&#123;//在str.ch中匹配pattern.ch，匹配成功返回主串中所含子串第一次出现的位置，否则返回-1。
+    //分别求坏字符数组bc和好字符数组suffix、prefix，分别计算两个策略的移动位数，取大值作为最终移动位数
+    int *bc = new int[MAXLEN];
+    GetBC(pattern, bc);
+    int *suffix = new int[pattern.length];
+    bool *prefix = new bool[pattern.length];
+    GetGS(pattern, suffix, prefix);
+    for(int i = 0, ml1, ml2; i &lt; str.length - pattern.length + 1; i += max(ml1, ml2))&#123;
+        int j;
+        for(j = pattern.length - 1; j &gt;= 0; j--)&#123;
+            if(str.ch[i + j] != pattern.ch[j])&#123;
+                break;
+            &#125;
+        &#125;
+        if(j &lt; 0)&#123;
+            delete[] bc;
+            delete[] suffix;
+            delete[] prefix;
+            return i;
+        &#125;
+        ml1 = j - bc[str.ch[i + j]];
+        ml2 = 0;
+        if(j &lt; pattern.length - 1)&#123;
+            ml2 = GetGSMove(suffix, prefix, j, pattern.length);
+        &#125;
+    &#125;
+    delete[] bc;
+    delete[] suffix;
+    delete[] prefix;
+    return -1;
+&#125;
+</code></pre>
+<h2 id="第5关-统计字符出现的频度"><a href="#第5关-统计字符出现的频度" class="headerlink" title="第5关 统计字符出现的频度"></a>第5关 统计字符出现的频度</h2><h3 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;cstring&gt;
+using namespace std;
+
+int Ascii2Idx(char x)&#123;
+    if(isdigit(x)) return x - &#39;0&#39;;
+    return x - &#39;A&#39; + 10;
+&#125;
+
+char Idx2Ascii(int x)&#123;
+    if(x &lt; 10) return x + &#39;0&#39;;
+    return x + &#39;A&#39; - 10;
+&#125;
+
+void Count(string c,int b[])
+&#123;//统计字符出现的频度
+    for(auto e : c)&#123;
+        b[Ascii2Idx(e)]++;
+    &#125;
+    for(int i = 0; i &lt; 36; i++)&#123;
+        if(b[i])&#123;
+            cout &lt;&lt; Idx2Ascii(i) &lt;&lt; &quot;:&quot; &lt;&lt; b[i] &lt;&lt; &#39;\n&#39;;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="第6关-递归实现字符串的逆序存储"><a href="#第6关-递归实现字符串的逆序存储" class="headerlink" title="第6关 递归实现字符串的逆序存储"></a>第6关 递归实现字符串的逆序存储</h2><h3 id="代码-6"><a href="#代码-6" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;cstring&gt;
+#define MAXSIZE 100
+using namespace std;
+void Reverse(char *a,int n)
+&#123;//递归实现字符串的逆序存储
+    if(n &lt;= 1) return;
+    swap(a[0], a[n - 1]);
+    Reverse(a + 1, n - 2);
+&#125;
+</code></pre>
+<h2 id="第7关-字符串的插入"><a href="#第7关-字符串的插入" class="headerlink" title="第7关 字符串的插入"></a>第7关 字符串的插入</h2><h3 id="代码-7"><a href="#代码-7" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#define MAXSIZE 100
+using namespace std;
+void Insert(char s[],char t[],int pos,int LenS,int LenT)
+&#123;//字符串的插入
+    for(int i = LenS - 1; i &gt;= pos - 1; i--)&#123;
+        s[i + LenT] = s[i];
+    &#125;
+    for(int i = 0; i &lt; LenT; i++)&#123;
+        s[pos - 1 + i] = t[i];
+    &#125;
+    s[LenS + LenT] = &#39;\0&#39;;
+    cout &lt;&lt; s &lt;&lt; &#39;\n&#39;;
+&#125;
+</code></pre>
+<h2 id="第8关-查找子串第一次出现的位置"><a href="#第8关-查找子串第一次出现的位置" class="headerlink" title="第8关 查找子串第一次出现的位置"></a>第8关 查找子串第一次出现的位置</h2><h3 id="代码-8"><a href="#代码-8" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;string.h&gt;
+using namespace std;
+
+const int N = 10000;
+
+int ne[N];
+
+int IndexSubstring(string s1,string s2)
+&#123;//查找子串第一次出现的位置
+    ne[0] = -1;
+    for (int i = 1, j = -1; i &lt; s2.size(); i ++ )
+    &#123;
+        while (j &gt;= 0 &amp;&amp; s2[j + 1] != s2[i]) j = ne[j];
+        if (s2[j + 1] == s2[i]) j ++ ;
+        ne[i] = j;
+    &#125;
+
+    for (int i = 0, j = -1; i &lt; s1.size(); i ++ )
+    &#123;
+        while (j != -1 &amp;&amp; s1[i] != s2[j + 1]) j = ne[j];
+        if (s1[i] == s2[j + 1]) j ++ ;
+        if (j == s2.size() - 1)
+        &#123;
+            return i - j;
+        &#125;
+    &#125;
+    return -1;
+&#125;
+</code></pre>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2025 Yhs_JokerのBlog
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Yhs_Joker
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+    </body>
+</html>

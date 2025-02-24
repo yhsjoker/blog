@@ -1,0 +1,686 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Codeforces Round 888 (Div. 3) | Yhs_JokerのBlog</title>
+        <meta name="author" content="Yhs_Joker" />
+        <meta name="description" content="There is only one kind of heroism in the world, which is to love life after knowing the truth of life." />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/avatar.jpg" />
+        <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>YHS_JOKERのBLOG</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;YHS_JOKERのBLOG</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div class="article">
+    <div>
+        <h1>Codeforces Round 888 (Div. 3)</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/7/26
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E9%A2%98%E8%A7%A3/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                题解
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/codeforces/" style="color: #03a9f4">codeforces</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h2 id="A-Escalator-Conversations"><a href="#A-Escalator-Conversations" class="headerlink" title="A. Escalator Conversations"></a>A. Escalator Conversations</h2><pre><code class="cpp">const int N = 3e5+10;
+int a[N];
+int n,m,k,h;
+ 
+void solve()&#123;
+    cin&gt;&gt;n&gt;&gt;m&gt;&gt;k&gt;&gt;h;
+    set&lt;int&gt; se;
+    while(m--)
+    &#123;
+        se.insert(h+k*m);
+        se.insert(h-k*m);
+    &#125;
+    int res=0;
+    for(int i=0;i&lt;n;i++)
+    &#123;
+        int x;
+        cin&gt;&gt;x;
+        if(se.count(x)&amp;&amp;x!=h)
+        &#123;
+            res++;
+        &#125;
+    &#125;
+    cout&lt;&lt;res&lt;&lt;&#39;\n&#39;;
+    
+&#125;
+</code></pre>
+<h2 id="B-Parity-Sort"><a href="#B-Parity-Sort" class="headerlink" title="B. Parity Sort"></a>B. Parity Sort</h2><pre><code class="cpp">const int N = 3e5+10;
+ 
+int n, k;
+int a[N];
+bool st[N];
+ 
+void solve()&#123;
+    cin&gt;&gt;n;
+    vector&lt;int&gt; odd1,even1;
+    queue&lt;int&gt; odd,even;
+    for(int i=0;i&lt;n;i++)
+    &#123;
+        int x;
+        cin&gt;&gt;x;
+        if(x&amp;1)
+        &#123;
+            st[i]=1;
+            odd1.push_back(x);
+        &#125;
+        else
+        &#123;
+            st[i]=0;
+            even1.push_back(x);
+        &#125;
+    &#125;
+    sort(even1.begin(),even1.end());
+    sort(odd1.begin(),odd1.end());
+    
+    for(auto i:odd1)
+    &#123;
+        odd.push(i);
+    &#125;
+    for(auto i:even1)
+    &#123;
+        even.push(i);
+    &#125;
+    bool flag=1;
+    for(int i=0;i&lt;n;i++)
+    &#123;
+        if(st[i])
+        &#123;
+            a[i]=odd.front();
+            odd.pop();
+        &#125;
+        else
+        &#123;
+            a[i]=even.front();
+            even.pop();
+        &#125;
+        if(i!=0&amp;&amp;a[i]&lt;a[i-1])
+        &#123;
+            flag=0;
+            break;
+        &#125;
+    &#125;
+    if(flag) cout&lt;&lt;&quot;YES\n&quot;;
+    else cout&lt;&lt;&quot;NO\n&quot;;
+&#125;
+</code></pre>
+<h2 id="C-Tiles-Comeback"><a href="#C-Tiles-Comeback" class="headerlink" title="C. Tiles Comeback"></a>C. Tiles Comeback</h2><pre><code class="cpp">const int N = 3e5+10;
+ 
+int n, k;
+int a[N];
+ 
+void solve()&#123;
+    cin&gt;&gt;n&gt;&gt;k;
+    for(int i=1; i&lt;=n; i++) cin&gt;&gt;a[i];
+    int cnt1 = 0, cnt2 = 0;
+    int p1 = -1, p2 = -1;
+    for(int i=1; i&lt;=n; i++)&#123;
+        if(a[i] == a[1])&#123;
+            if(++cnt1 == k)&#123;
+                p1 = i;
+                break;
+            &#125;
+        &#125;
+    &#125;
+    for(int i=n; i&gt;=1; i--)&#123;
+        if(a[i] == a[n])&#123;
+            if(++cnt2 == k)&#123;
+                p2 = i;
+                break;
+            &#125;
+        &#125;
+    &#125;
+    if(p1==-1||p2==-1)&#123;
+        cout&lt;&lt;&quot;NO\n&quot;; return;
+    &#125;
+    if(a[1] == a[n])&#123;
+        cout&lt;&lt;&quot;YES\n&quot;; return;
+    &#125;
+    if(p1&lt;p2)&#123;
+        cout&lt;&lt;&quot;YES\n&quot;; return;
+    &#125;
+    if(p1&gt;p2)&#123;
+        cout&lt;&lt;&quot;NO\n&quot;; return;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="D-Prefix-Permutation-Sums"><a href="#D-Prefix-Permutation-Sums" class="headerlink" title="D. Prefix Permutation Sums"></a>D. Prefix Permutation Sums</h2><pre><code class="cpp">const int N = 3e5+10;
+ 
+int n, k;
+int a[N],b[N];
+bool st[N];
+ 
+void solve()&#123;
+    cin&gt;&gt;n;
+    if(n==2)
+    &#123;
+        int x;
+        cin&gt;&gt;x;
+        if(x==1||x==2||x==3) cout&lt;&lt;&quot;YES\n&quot;;
+        else cout&lt;&lt;&quot;NO\n&quot;;
+        return;
+    &#125;
+    int extra=-1;
+    set&lt;int&gt; se;
+    bool flag=1;
+    for(int i=1;i&lt;=n-1;i++)
+    &#123;
+        cin&gt;&gt;b[i];
+        if(se.count(b[i]-b[i-1])||b[i]-b[i-1]&gt;n)
+        &#123;
+            if(extra!=-1)
+            &#123;
+                flag=0;
+            &#125;
+            extra=b[i]-b[i-1];
+            if(extra==1||extra==2)
+            &#123;
+                flag=0;
+            &#125;
+        &#125;
+        else se.insert(b[i]-b[i-1]);
+    &#125;
+    if(flag==0)
+    &#123;
+        cout&lt;&lt;&quot;NO\n&quot;;
+        return;
+    &#125;
+    if(extra==-1)
+    &#123;
+        cout&lt;&lt;&quot;YES\n&quot;;
+        return;
+    &#125;
+    int res=0;
+    for(int i=1;i&lt;=n;i++)
+    &#123;
+        if(se.count(i)==0)
+        &#123;
+            res+=i;
+        &#125;
+    &#125;
+    if(res==extra) cout&lt;&lt;&quot;YES\n&quot;;
+    else cout&lt;&lt;&quot;NO\n&quot;;
+&#125;
+</code></pre>
+<h2 id="E-Nastya-and-Potions"><a href="#E-Nastya-and-Potions" class="headerlink" title="E. Nastya and Potions"></a>E. Nastya and Potions</h2><pre><code class="cpp">const int N = 2e5+10,M=2*N;
+ 
+int n, k;
+int h[N],e[M],ne[M],idx;
+int money[N];
+bool have[N];
+int ans[N];
+ 
+void add(int a,int b)
+&#123;
+    e[idx]=b,ne[idx]=h[a],h[a]=idx++;
+&#125;
+ 
+int dfs(int u)
+&#123;
+    if(have[u]) return 0;
+    int res=0;
+    bool flag=0;
+    for(int i=h[u];~i;i=ne[i])
+    &#123;
+        flag=1;
+        int j=e[i];
+        if(ans[j]!=-1) res+=ans[j];
+        else
+        &#123;
+            ans[j]=dfs(j);
+            res+=ans[j];
+        &#125;
+    &#125;
+    if(!flag) return money[u];
+    return min(res,money[u]);
+&#125;
+ 
+void solve()&#123;
+    cin&gt;&gt;n&gt;&gt;k;
+    memset(h,-1,sizeof(int)*(n+1));
+    memset(have,0,sizeof(int)*(n+1));
+    memset(ans,-1,sizeof(int)*(n+1));
+    idx=0;
+    
+    for(int i=1;i&lt;=n;i++) cin&gt;&gt;money[i];
+    
+    while(k--)
+    &#123;
+        int x;
+        cin&gt;&gt;x;
+        have[x]=true;
+        ans[x]=0;
+    &#125;
+    
+    for(int i=1;i&lt;=n;i++)
+    &#123;
+        int x;
+        cin&gt;&gt;x;
+        while(x--)
+        &#123;
+            int y;
+            cin&gt;&gt;y;
+            add(i,y);
+        &#125;
+        if(x==0&amp;&amp;!have[i]) ans[i]=money[i];
+    &#125;
+    
+    for(int i=1;i&lt;=n;i++)
+    &#123;
+        if(ans[i]!=-1) cout&lt;&lt;ans[i]&lt;&lt;&#39; &#39;;
+        else cout&lt;&lt;dfs(i)&lt;&lt;&#39; &#39;;
+    &#125;
+    cout&lt;&lt;&#39;\n&#39;;
+    
+&#125;
+</code></pre>
+<h2 id="F-Lisa-and-the-Martians"><a href="#F-Lisa-and-the-Martians" class="headerlink" title="F. Lisa and the Martians"></a>F. Lisa and the Martians</h2><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>对于ai与aj的每一位来说，若同为0或同为1，那么(ai^x)&amp;(aj^x)对应的那一位可以取为1，否则为0。因此，题目转化为找到两个数ai和aj，它们拥有最长的相同前缀，因此可以使用字典树解决。本题与字典树板子题最大异或对基本相同。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">const int N = 2e5+10, M = 4e6+10;
+ 
+int n, k;
+int a[N], son[M][2], idx, id[M];
+int ra, rb, rx, res = -1; 
+ 
+void insert(int x, int idd)&#123;
+    int p = 0;
+    for(int i=k-1; i&gt;=0; i--)&#123;
+        int&amp; s = son[p][x&gt;&gt;i&amp;1];
+        if(!s) s = ++idx;
+        p = s;
+    &#125;
+    id[p] = idd;
+&#125;
+ 
+void search(int x, int iddd)&#123;
+    int p = 0, rxx = 0, re = 0;
+    for(int i=k-1; i&gt;=0; i--)&#123;
+        int s = x &gt;&gt; i &amp; 1;
+        if(son[p][s])&#123;
+            re+=(1&lt;&lt;i);
+            p = son[p][s];
+            rxx+=((s==0)&lt;&lt;i);
+        &#125;
+        else&#123;
+            p = son[p][!s];
+        &#125;
+    &#125;
+    
+    int idd = id[p];
+    
+    if(re&gt;res)&#123;
+        res = re, ra = idd, rb = iddd, rx = rxx;
+    &#125;
+&#125;
+ 
+ 
+void solve()&#123;
+    cin&gt;&gt;n&gt;&gt;k;
+    res = -1;
+    idx = 0;
+    for(int i=1; i&lt;=n; i++) cin&gt;&gt;a[i];
+    insert(a[1], 1);
+    for(int i=2; i&lt;=n; i++)&#123;
+        search(a[i], i);
+        insert(a[i], i);
+    &#125;
+    cout&lt;&lt;ra&lt;&lt;&#39; &#39;&lt;&lt;rb&lt;&lt;&#39; &#39;&lt;&lt;rx&lt;&lt;&#39;\n&#39;;
+    for(int i=0; i&lt;=idx; i++)&#123;
+        son[i][0] = son[i][1] = 0;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="G-Vlad-and-the-Mountains"><a href="#G-Vlad-and-the-Mountains" class="headerlink" title="G. Vlad and the Mountains"></a>G. Vlad and the Mountains</h2><h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>我们发现，从山峰A到山峰B所需要消耗的体力的最大值就是从A到B路径中最高的山峰C的高度减去山峰A的高度，这一点不难证明。那么问题就转化为查找从A到B所有路径中的最高山峰高度的最小值。那么我们可以使用kruskal+lca来实现。首先将边的权值设定为边的两个顶点山峰中高度的最大值，然后建立最小生成树，所有路径都应在该树上。然后通过lca得到A到B路径上的最大值。最后若e&gt;&#x3D;lca(A, B) - h[A]，那么就可以到达。注意，题中的图不一定联通，因此需要判断给定两点是否联通。</p>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">int n, m;
+struct edge&#123;
+    int u, v, w;
+    bool operator&lt;(edge r)&#123;
+        return w&lt;r.w;
+    &#125;
+&#125;;
+ 
+edge edges[M];
+ 
+int p[N],p2[N];
+ 
+int find(int x)&#123;
+    if(p[x] != x) p[x] = find(p[x]);
+    return p[x];
+&#125;
+ 
+int find2(int x)&#123;
+    return p2[x];
+&#125;
+ 
+int h[N], e[M], ne[M], w[M], idx;
+int depth[N], fa[N][18], d[N][18];
+int hh[N];
+ 
+ 
+void add(int a, int b, int c)&#123;
+    e[idx] = b, ne[idx] = h[a], w[idx] = c, h[a] = idx++;
+&#125;
+ 
+void bfs(int t)&#123;
+    depth[0] = 0, depth[t] = 1;
+    queue&lt;int&gt; q;
+    q.push(t);
+    while(q.size())&#123;
+        int u = q.front();
+        p2[u] = t;
+        q.pop();
+        for(int i=h[u]; ~i; i=ne[i])&#123;
+            int j=e[i];
+            // cout&lt;&lt;&quot;j:&quot;&lt;&lt;j&lt;&lt;&#39;\n&#39;;
+            if(depth[j]&gt;depth[u]+1)&#123;
+                depth[j]=depth[u]+1;
+                q.push(j);
+                fa[j][0] = u;
+                d[j][0] = w[i];
+                for(int k=1; k&lt;=17; k++)&#123;
+                    int anc = fa[j][k-1];
+                    fa[j][k] = fa[anc][k-1];
+                    d[j][k] = max(d[j][k-1], d[anc][k-1]);
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+&#125;
+ 
+int lca(int a, int b)&#123;
+    int mx = 0;
+    if(depth[a]&lt;depth[b]) swap(a, b);
+    for(int k=16; k&gt;=0; k--)&#123;
+        if(depth[fa[a][k]]&gt;=depth[b])&#123;
+            mx = max(mx, d[a][k]);
+            a = fa[a][k];
+        &#125;
+    &#125;
+ 
+    if(a==b)&#123;
+        return mx;
+    &#125;
+ 
+    if(a!=b)&#123;
+        for(int k=17; k&gt;=0; k--)&#123;
+            if(fa[a][k]!=fa[b][k])&#123;
+                mx = max(&#123;mx, d[a][k], d[b][k]&#125;);
+                a = fa[a][k];
+                b = fa[b][k];
+            &#125;
+        &#125;
+    &#125;
+    mx = max(&#123;mx, d[a][0], d[b][0]&#125;);
+    return mx;
+&#125;
+ 
+void solve() &#123;
+    idx = 0;
+    cin&gt;&gt;n&gt;&gt;m;
+    memset(h, -1, sizeof(int)*(n+1));
+    for(int i=0; i&lt;=n; i++)&#123;
+        for(int j=0; j&lt;18; j++)&#123;
+            fa[i][j] = d[i][j] = 0;
+        &#125;
+    &#125;
+    for(int i=1; i&lt;=n; i++) p[i] = i, p2[i] = i;
+    for(int i=1; i&lt;=n; i++)&#123;
+        cin&gt;&gt;hh[i];
+    &#125;
+    for(int i=0; i&lt;m; i++)&#123;
+        int a, b;
+        cin&gt;&gt;a&gt;&gt;b;
+        edges[i] = &#123;a, b, max(hh[a], hh[b])&#125;;
+    &#125;
+    sort(edges, edges+m);
+    for(int i = 0; i&lt;m; i++)&#123;
+        int pa = find(edges[i].u), pb = find(edges[i].v);
+        if(pa!=pb)&#123;
+            p[pa] = pb;
+            add(edges[i].u, edges[i].v, edges[i].w);
+            add(edges[i].v, edges[i].u, edges[i].w);
+        &#125;
+    &#125;
+ 
+    memset(depth, 0x3f, sizeof(int)*(n+1));
+    for(int i=1; i&lt;=n; i++)&#123;
+        if(p2[i] == i)&#123;
+            bfs(i);
+        &#125;
+    &#125;
+ 
+    int q;
+    cin&gt;&gt;q;
+    while(q--)&#123;
+        int u, v, e;
+        cin&gt;&gt;u&gt;&gt;v&gt;&gt;e;
+        if(find2(u)!=find2(v))&#123;
+            cout&lt;&lt;&quot;No\n&quot;;
+            continue;
+        &#125;
+        if(e&gt;=lca(u, v)-hh[u])&#123;
+            cout&lt;&lt;&quot;Yes\n&quot;;
+        &#125;
+        else&#123;
+            cout&lt;&lt;&quot;No\n&quot;;
+        &#125;
+    &#125;
+    cout&lt;&lt;&#39;\n&#39;;
+&#125;
+</code></pre>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2025 Yhs_JokerのBlog
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Yhs_Joker
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+    </body>
+</html>

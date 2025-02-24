@@ -1,0 +1,459 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Codeforces Round 871 (Div. 4) | Yhs_JokerのBlog</title>
+        <meta name="author" content="Yhs_Joker" />
+        <meta name="description" content="There is only one kind of heroism in the world, which is to love life after knowing the truth of life." />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/avatar.jpg" />
+        <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>YHS_JOKERのBLOG</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;YHS_JOKERのBLOG</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div class="article">
+    <div>
+        <h1>Codeforces Round 871 (Div. 4)</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/5/21
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E9%A2%98%E8%A7%A3/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                题解
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/codeforces/" style="color: #00a596">codeforces</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h2 id="A-Love-Story"><a href="#A-Love-Story" class="headerlink" title="A. Love Story"></a>A. Love Story</h2><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>遍历判断即可</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">string s = &quot;codeforces&quot;;
+ 
+void solve()&#123;
+    string str;
+    cin&gt;&gt;str;
+    int res = 0;
+    for(int i=0; i&lt;s.size(); i++)&#123;
+        if(s[i]!=str[i]) res++;
+    &#125;
+    cout&lt;&lt;res&lt;&lt;&#39;\n&#39;;
+    
+&#125;
+</code></pre>
+<h2 id="B-Blank-Space"><a href="#B-Blank-Space" class="headerlink" title="B. Blank Space"></a>B. Blank Space</h2><h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>经典的计算连续个数的最大值</p>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">int n, a[N];
+ 
+void solve()&#123;
+    cin&gt;&gt;n;
+    for(int i=0; i&lt;n; i++) cin&gt;&gt;a[i];
+    int res = 0, k = 0;
+    for(int i=0; i&lt;n; i++)&#123;
+        if(a[i]) k = 0;
+        else&#123;
+            res = max(res, ++k);
+        &#125;
+    &#125;
+    cout&lt;&lt;res&lt;&lt;&#39;\n&#39;;
+&#125;
+</code></pre>
+<h2 id="C-Mr-Perfectly-Fine"><a href="#C-Mr-Perfectly-Fine" class="headerlink" title="C. Mr. Perfectly Fine"></a>C. Mr. Perfectly Fine</h2><h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><p>找到11的最小值，10和01的最小值，计算取哪个即可。如果不存在11并且不同时存在01和10，则失败</p>
+<pre><code class="cpp">int n, a[N];
+string s[N];
+ 
+void solve()&#123;
+    cin&gt;&gt;n;
+    int res = 2e10;
+    
+    int m1 = 2e10, m2 = 2e10;
+    for(int i=0; i&lt;n; i++)&#123;
+        cin&gt;&gt;a[i]&gt;&gt;s[i];
+        if(s[i] == &quot;11&quot;) res = min(res, a[i]);
+        if(s[i] == &quot;10&quot;) m1 = min(m1, a[i]);
+        if(s[i] == &quot;01&quot;) m2 = min(m2, a[i]);
+    &#125;
+    
+    res = min(res, m1+m2);
+    if(res == 2e10) cout&lt;&lt;-1&lt;&lt;&#39;\n&#39;;
+    else cout&lt;&lt;res&lt;&lt;&#39;\n&#39;;
+&#125;
+</code></pre>
+<h2 id="D-Gold-Rush"><a href="#D-Gold-Rush" class="headerlink" title="D. Gold Rush"></a>D. Gold Rush</h2><h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><p>判断n能否通过乘以任意个1&#x2F;3和2&#x2F;3得到m，只要求出n和m差的3的因子个数和2的因子个数即可。</p>
+<p>如果n无法通过除以有限个2和3得到m，或者除以的2的因子个数大于3的，则不可以，其余情况均可。</p>
+<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">int n, m;
+ 
+void solve()&#123;
+    int n, m;
+    cin&gt;&gt;n&gt;&gt;m;
+    int n3 = 0, m3 = 0;
+    while(n%3==0) n3++, n/=3;
+    while(m%3==0) m3++, m/=3;
+    if(n3&lt;m3) &#123;cout&lt;&lt;&quot;NO\n&quot;; return;&#125;
+    int d = n3-m3;
+    if(m%n!=0) &#123;cout&lt;&lt;&quot;NO\n&quot;; return;&#125;
+    int dv = m/n, n2 = 0;
+    while(dv%2==0) dv/=2, n2++;
+    if(dv!=1) &#123;cout&lt;&lt;&quot;NO\n&quot;; return;&#125;
+    if(n2&gt;d)&#123;cout&lt;&lt;&quot;NO\n&quot;;&#125;
+    else cout&lt;&lt;&quot;YES\n&quot;;
+&#125;	
+</code></pre>
+<h2 id="E-The-Lakes"><a href="#E-The-Lakes" class="headerlink" title="E. The Lakes"></a>E. The Lakes</h2><h3 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h3><p>简单的Flood Fill算法</p>
+<h3 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">int n, m;
+int a[1005][1005];
+ 
+int dfs(int x, int y)&#123;
+    if(a[x][y] == 0) return 0;
+    int sum = a[x][y];
+    a[x][y] = 0;
+    sum+=dfs(x-1, y)+dfs(x+1, y)+dfs(x, y-1)+dfs(x, y+1);
+    return sum;
+&#125;
+ 
+void solve()&#123;
+    cin&gt;&gt;n&gt;&gt;m;
+    for(int i=0; i&lt;=n+1; i++)&#123;
+        for(int j=0; j&lt;=m+1; j++)&#123;
+            a[i][j] = 0;
+        &#125;
+    &#125;
+    for(int i=1; i&lt;=n; i++)&#123;
+        for(int j=1; j&lt;=m; j++)&#123;
+            cin&gt;&gt;a[i][j];
+        &#125;
+    &#125;
+    
+    int res = 0;
+    
+    for(int i=1; i&lt;=n; i++)&#123;
+        for(int j=1; j&lt;=m; j++)&#123;
+            res = max(res, dfs(i, j));
+        &#125;
+    &#125;
+    cout&lt;&lt;res&lt;&lt;&#39;\n&#39;;
+&#125;	
+</code></pre>
+<h2 id="F-Forever-Winter"><a href="#F-Forever-Winter" class="headerlink" title="F. Forever Winter"></a>F. Forever Winter</h2><h3 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h3><p>判断该图是否有如下性质：</p>
+<ol>
+<li>x*(y+1) &#x3D;&#x3D; m</li>
+<li>度为x的点的个数&gt;&#x3D;1</li>
+<li>度为y+1的点的个数&gt;&#x3D;x</li>
+<li>度为1的点的个数&gt;&#x3D;x*y</li>
+</ol>
+<h3 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">int in[205], nu[1005];
+ 
+int n, m;
+ 
+void solve()&#123;
+    cin&gt;&gt;n&gt;&gt;m;
+    memset(in, 0, sizeof in);
+    memset(nu, 0, sizeof nu);
+    for(int i=0; i&lt;m; i++)&#123;
+        int a, b; cin&gt;&gt;a&gt;&gt;b;
+        in[a]++, in[b]++;
+    &#125;
+    
+    for(int i=1; i&lt;=n; i++)&#123;
+        nu[in[i]]++;
+    &#125;
+    
+    for(int x = 1; x&lt;=m; x++)&#123;
+        if(m%x) continue;
+        int y = m/x - 1;
+        if(nu[x]&gt;=1&amp;&amp;nu[y+1]&gt;=x&amp;&amp;nu[1]&gt;=x*y)&#123;
+            cout&lt;&lt;x&lt;&lt;&#39; &#39;&lt;&lt;y&lt;&lt;&#39;\n&#39;;
+            return;
+        &#125;
+        
+    &#125;
+&#125;	
+</code></pre>
+<h2 id="G-Hits-Different"><a href="#G-Hits-Different" class="headerlink" title="G. Hits Different"></a>G. Hits Different</h2><h3 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h3><p>预处理出斜向右下的前缀和即可</p>
+<h3 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">int f[2025][2025];
+int s[2025][2025];
+ 
+void init()&#123;
+    int x = 1, r = 1, c = 1;
+    while(x&lt;=1e6)&#123;
+        f[r][c] = x*x;
+        if(++c&gt;r) r++, c = 1;
+        x++;
+    &#125;
+    for(int k=1; k&lt;=2023; k++)&#123;
+        for(int i=k, j = 1; i&lt;=2023; i++, j++)&#123;
+            s[i][j] = s[i-1][j-1] + f[i][j];
+        &#125;
+    &#125;
+&#125;
+ 
+const int N = 2e5+10, P = 1e9+7;
+ 
+int n;
+ 
+void solve()&#123;
+    cin&gt;&gt;n;
+    int res = 0;
+    int sum = 0, r, c;
+    for(int i=0; i&lt;=2022; i++)&#123;
+        sum+=i;
+        if(sum+i+1&gt;=n)&#123;
+            r = i+1;
+            c = n - sum;
+            break;
+        &#125;
+    &#125;
+    for(int i=r; i&gt;=c; i--)&#123;
+        res+=s[i][c];
+    &#125;
+    cout&lt;&lt;res&lt;&lt;&#39;\n&#39;;
+&#125;	
+</code></pre>
+<h2 id="H-Don’t-Blame-Me"><a href="#H-Don’t-Blame-Me" class="headerlink" title="H. Don’t Blame Me"></a>H. Don’t Blame Me</h2><h3 id="思路-7"><a href="#思路-7" class="headerlink" title="思路"></a>思路</h3><p>经典的状态压缩DP</p>
+<p>f[i][j]表示在前i个数中，位与和为j的子序列的个数。</p>
+<p>f[i][j]&#x3D;sum(f[i-1][k]), 其中k的条件是a[i]&amp;k &#x3D;&#x3D; j</p>
+<h3 id="代码-6"><a href="#代码-6" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">int n, k, a[N];
+int f[N][1&lt;&lt;6];
+ 
+int get(int x)&#123;
+    int sum = 0;
+    for(int i=0; i&lt;6; i++)
+        if((x&gt;&gt;i)&amp;1)
+            sum++;
+    return sum;
+&#125;
+ 
+void solve()&#123;
+    cin&gt;&gt;n&gt;&gt;k;
+    for(int i=1; i&lt;=n; i++) cin&gt;&gt;a[i];
+    for(int i=1; i&lt;=n; i++)&#123;
+        for(int j=0; j&lt;(1&lt;&lt;6); j++)&#123;
+            f[i][j] = 0;
+        &#125;
+    &#125;
+    for(int i=1; i&lt;=n; i++)&#123;
+        f[i][a[i]] = 1;
+        for(int j=0; j&lt;(1&lt;&lt;6); j++)&#123;
+            f[i][j] = (f[i][j] + f[i-1][j])%P;
+            for(int k=0; k&lt;(1&lt;&lt;6); k++)&#123;
+                if((a[i]&amp;k) != j) continue;
+                f[i][j] = (f[i][j] + f[i-1][k])%P;
+            &#125;
+        &#125;
+    &#125;
+    int res = 0;
+    for(int i=0; i&lt;(1&lt;&lt;6); i++)&#123;
+        if(get(i)!=k) continue;
+        res = (res + f[n][i])%P;
+    &#125;
+    cout&lt;&lt;res&lt;&lt;&#39;\n&#39;;
+&#125;	
+</code></pre>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2025 Yhs_JokerのBlog
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Yhs_Joker
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+    </body>
+</html>

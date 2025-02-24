@@ -1,0 +1,648 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>BJFU-2023-集训队训练赛-2 | Yhs_JokerのBlog</title>
+        <meta name="author" content="Yhs_Joker" />
+        <meta name="description" content="There is only one kind of heroism in the world, which is to love life after knowing the truth of life." />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/avatar.jpg" />
+        <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>YHS_JOKERのBLOG</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;YHS_JOKERのBLOG</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div class="article">
+    <div>
+        <h1>BJFU-2023-集训队训练赛-2</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/1/12
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E9%A2%98%E8%A7%A3/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                题解
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E9%9B%86%E8%AE%AD%E9%98%9F%E8%AE%AD%E7%BB%83%E8%B5%9B/" style="color: #00a596">集训队训练赛</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h2 id="A"><a href="#A" class="headerlink" title="A"></a>A</h2><h3 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h3><p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1552/B">https://codeforces.com/problemset/problem/1552/B</a></p>
+<h3 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h3><p>有n个人，每个人有过去五场比赛的名次，问是否有人在这场比赛中能赢过所有人，赢过一个人的条件是在过去的五场比赛中排名比他高至少三次</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>要判断是否会有运动员获得奖牌，只要判断最有可能的运动员能否获得奖牌即可，那我们可以用快排来将最有可能的人放在最前面，再判断是否符合即可。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">struct p
+&#123;
+    int ord;
+    int sco[M];
+    bool operator&lt;(p r)
+    &#123;
+        int win=0;
+        for(int i=0;i&lt;5;i++)
+            if(sco[i]&lt;r.sco[i])
+                win++;
+        return win&gt;=3;
+    &#125;
+&#125;;
+
+int n;
+p a[N];
+
+void init()
+&#123;
+    cin&gt;&gt;n;
+    for(int i=1;i&lt;=n;i++)
+    &#123;
+        a[i].ord=i;
+        for(int j=0;j&lt;M;j++)
+            cin&gt;&gt;a[i].sco[j];
+    &#125;
+&#125;
+
+void solve()
+&#123;
+    init();
+    sort(a+1,a+1+n);
+    for(int i=2;i&lt;=n;i++)
+    &#123;
+        if(!(a[1]&lt;a[i]))
+        &#123;
+            cout&lt;&lt;&quot;-1\n&quot;;
+            return;
+        &#125;
+    &#125;
+    cout&lt;&lt;a[1].ord&lt;&lt;&#39;\n&#39;;
+    
+&#125;
+</code></pre>
+<h2 id="B"><a href="#B" class="headerlink" title="B"></a>B</h2><h3 id="题目链接-1"><a href="#题目链接-1" class="headerlink" title="题目链接"></a>题目链接</h3><p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1551/C">https://codeforces.com/problemset/problem/1551/C</a></p>
+<h3 id="题目大意-1"><a href="#题目大意-1" class="headerlink" title="题目大意"></a>题目大意</h3><p>给定n个只含有a,b,c,d,e的单词，在这n个单词中选择最大数目的单词，其中选择的单词需要满足如下规则：</p>
+<ul>
+<li>这些单词中某一个字母的数量要大于其他单词的数量和</li>
+</ul>
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>枚举每一种选择的字母，优先选择单词中这个字母数减其他字母数的差最大的单词，直到差值和小于等于零时，就不能选择了。</p>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">struct S
+&#123;
+    int num[M];
+    int tot;
+    bool operator&lt;(S r)
+    &#123;
+        return num[base]-(tot-num[base])&gt;r.num[base]-(r.tot-r.num[base]);
+    &#125;
+&#125;;
+
+int n;
+S a[N];
+
+void init()
+&#123;
+    cin&gt;&gt;n;
+    string s;
+    for(int i=0;i&lt;n;i++)
+    &#123;
+        cin&gt;&gt;s;
+        for(int j=0;j&lt;5;j++)
+            a[i].num[j]=0;
+        for(auto e:s)
+            a[i].num[e-&#39;a&#39;]++;
+        a[i].tot=s.size();
+    &#125;
+&#125;
+
+void solve()
+&#123;
+    init();
+    int ans=0;
+    for(base=0;base&lt;M;base++)
+    &#123;
+        sort(a,a+n);
+        int dif=0;
+        for(int i=0;i&lt;n;i++)
+        &#123;
+            dif+=a[i].num[base]-(a[i].tot-a[i].num[base]);
+            if(dif&lt;=0)
+            &#123;
+                ans=max(ans,i);
+                break;
+            &#125;
+        &#125;
+        if(dif&gt;0) ans=n;
+    &#125;
+    cout&lt;&lt;ans&lt;&lt;&#39;\n&#39;;
+&#125;
+</code></pre>
+<h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><h3 id="题目链接-2"><a href="#题目链接-2" class="headerlink" title="题目链接"></a>题目链接</h3><p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1548/A">https://codeforces.com/problemset/problem/1548/A</a></p>
+<h3 id="题目大意-2"><a href="#题目大意-2" class="headerlink" title="题目大意"></a>题目大意</h3><p>给定n个节点和m个边<br>接下来会有q次操作</p>
+<ul>
+<li>在u，v间添加一条边，保证此前u，v间无边</li>
+<li>在u，v间移除一条边，保证此前u，v间有边</li>
+<li>表示执行以下操作直至不可再执行为止。定义一个人的强度为其编号。在每个 大小大于 1 的连通块中找到强度最小的人，将这个人及其所连的边一同删去。在所有操作执行完毕后，请你输出还剩下多少人。注意，每个 3 操作之间彼此独立。即删人只是暂时的，这次操作结束之后所有被删的人连同边会复活。</li>
+</ul>
+<h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><p>我们可以考虑什么人会存活到最后，1是独立的人，2是比相连的所有点都大，那么可以统一为一个信息，就是周围比它大的点数为0。因此我们可以统计每一个点周围比它大的点的个数。在统计时没有必要遍历一遍，我们只需统计这个信息从0变为1和从1变为0时的变化即可，从0变为1说明又有一个点要被删除，从1变为0说明又多了一个点存活下来。</p>
+<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">int n,m,q;
+int cnt[N];
+int num=0;
+
+void init()
+&#123;
+    cin&gt;&gt;n&gt;&gt;m;
+    for(int i=1;i&lt;=m;i++)
+    &#123;
+        int a,b;
+        cin&gt;&gt;a&gt;&gt;b;
+        if(a&gt;b) swap(a,b);
+        if(!cnt[a]) num++;
+        cnt[a]++;
+    &#125;
+&#125;
+
+void solve()
+&#123;
+    init();
+    cin&gt;&gt;q;
+    while(q--)
+    &#123;
+        int op,u,v;
+        cin&gt;&gt;op;
+        if(op==1)
+        &#123;
+            cin&gt;&gt;u&gt;&gt;v;
+            if(u&gt;v) swap(u,v);
+            if(!cnt[u])
+                num++;
+            cnt[u]++;
+        &#125;
+        else if(op==2)
+        &#123;
+            cin&gt;&gt;u&gt;&gt;v;
+            if(u&gt;v) swap(u,v);
+            cnt[u]--;
+            if(!cnt[u])
+                num--;
+        &#125;
+        else
+        &#123;
+            cout&lt;&lt;n-num&lt;&lt;&#39;\n&#39;;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="D"><a href="#D" class="headerlink" title="D"></a>D</h2><h3 id="题目链接-3"><a href="#题目链接-3" class="headerlink" title="题目链接"></a>题目链接</h3><p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1527/B1">https://codeforces.com/problemset/problem/1527/B1</a></p>
+<h3 id="题目大意-3"><a href="#题目大意-3" class="headerlink" title="题目大意"></a>题目大意</h3><p>给定一个只含有0，1的回文串，两个人依次进行如下操作，问游戏结束后谁的花费最低</p>
+<ul>
+<li>选择一个0变为1，花费1</li>
+<li>若当前不是回文串，则可以翻转该回文串，花费为0</li>
+<li>当全为1后，游戏结束</li>
+</ul>
+<h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><p>首先考虑含有偶数个0的情况，当Alice先手后，Bob可以选择在对称位置也改为1，依次进行，直到最后一个0时，Bob可以选择翻转字符串，让Alice再花费1，所以Bob必胜。接下来考虑奇数个1的情况，当只有1个1时，Bob必胜，否则，Alice选择把中间的0改为1，然后当Bob下完后，Alice在对称位置改为1，直到最后一个1时，Alice选择翻转字符串，就可以让Bob最终比自己多花费1，Alice获胜。</p>
+<h3 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">int n;
+char s[N];
+
+void init()
+&#123;
+    cin&gt;&gt;n&gt;&gt;s;
+&#125;
+
+void solve()
+&#123;
+    init();
+    int t=0;
+    for(int i=0;i&lt;n;i++)
+        if(s[i]==&#39;0&#39;)
+            t++;
+    if(t&amp;1)
+    &#123;
+        if(t==1) cout&lt;&lt;&quot;BOB\n&quot;;
+        else cout&lt;&lt;&quot;ALICE\n&quot;;
+    &#125;
+    else
+    &#123;
+        cout&lt;&lt;&quot;BOB\n&quot;;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="E"><a href="#E" class="headerlink" title="E"></a>E</h2><h3 id="题目链接-4"><a href="#题目链接-4" class="headerlink" title="题目链接"></a>题目链接</h3><p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1521/B">https://codeforces.com/problemset/problem/1521/B</a></p>
+<h3 id="题目大意-4"><a href="#题目大意-4" class="headerlink" title="题目大意"></a>题目大意</h3><p>给定一个长度为n的序列，使其变为Good，序列为Good的条件为相邻两数互质，你可以进行的操作为</p>
+<ul>
+<li>选择两个数x,y，改变它们为x’，y’，其中min(x,y)&#x3D;&#x3D;min(x’,y’)<br>你最多可以进行n次操作</li>
+</ul>
+<h3 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h3><p>我们可以知道，k和k+1互质，所以，我们可以选择序列中最小的数m为基准，使整个序列变为如下形式：m+3，m+2,m+1,m,m+1,m+2,m+3.m+4即可，每次改变m和一个其他数，就可以保证更改前后最小数一定是m</p>
+<h3 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">int n;
+int a[N];
+
+void init()
+&#123;
+    cin&gt;&gt;n;
+    for(int i=1;i&lt;=n;i++)
+        cin&gt;&gt;a[i];
+&#125;
+
+void solve()
+&#123;
+    init();
+    cout&lt;&lt;n-1&lt;&lt;&#39;\n&#39;;
+    int idx=1;
+    for(int i=2;i&lt;=n;i++)
+    &#123;
+        if(a[i]&lt;a[idx]) idx=i;
+    &#125;
+    for(int i=1;i&lt;=n;i++)
+    &#123;
+        if(idx==i) continue;
+        cout&lt;&lt;idx&lt;&lt;&#39; &#39;&lt;&lt;i&lt;&lt;&#39; &#39;&lt;&lt;a[idx]&lt;&lt;&#39; &#39;&lt;&lt;a[idx]+abs(i-idx)&lt;&lt;&#39;\n&#39;;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="F"><a href="#F" class="headerlink" title="F"></a>F</h2><h3 id="题目链接-5"><a href="#题目链接-5" class="headerlink" title="题目链接"></a>题目链接</h3><p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1520/A">https://codeforces.com/problemset/problem/1520/A</a></p>
+<h3 id="题目大意-5"><a href="#题目大意-5" class="headerlink" title="题目大意"></a>题目大意</h3><p>给定一个序列，求是否存在同一种字符出现在不连续的位置，如：ABA不连续，AAB连续</p>
+<h3 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h3><p>当出现一个字符在之前出现过后，判断这个字符的前一个字符是否和它相同，不相同的话就一定是不连续的</p>
+<h3 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">int n;
+char s[N];
+set&lt;char&gt; st;
+
+void init()
+&#123;
+    cin&gt;&gt;n&gt;&gt;s;
+    st.clear();
+&#125;
+
+void solve()
+&#123;
+    init();
+    for(int i=0;i&lt;n;i++)
+    &#123;
+        if(!st.count(s[i]))
+            st.insert(s[i]);
+        else
+        &#123;
+            if(s[i-1]!=s[i])
+            &#123;
+                cout&lt;&lt;&quot;NO\n&quot;;
+                return;
+            &#125;
+        &#125;
+    &#125;
+    cout&lt;&lt;&quot;YES\n&quot;;
+&#125;
+</code></pre>
+<h2 id="G"><a href="#G" class="headerlink" title="G"></a>G</h2><h3 id="题目链接-6"><a href="#题目链接-6" class="headerlink" title="题目链接"></a>题目链接</h3><p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1514/C">https://codeforces.com/problemset/problem/1514/C</a></p>
+<h3 id="题目大意-6"><a href="#题目大意-6" class="headerlink" title="题目大意"></a>题目大意</h3><p>在[1,2,…,n-1]中选择任意个数，使得它们的乘积%n&#x3D;&#x3D;1，打印出任一答案即可</p>
+<h3 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h3><p>首先我们令乘积为m，则m%n&#x3D;&#x3D;1可以推出gcd(m,n)&#x3D;&#x3D;1（见证明1）,然后我们就可以求出所有与n互质的数，将它们乘起来模n，若结果不为1，则将结果w去除即可，w肯定在与n互质的数中（见证明2）</p>
+<blockquote>
+<p>证明1：反证法，假设m,n不互质，则gcd(m,n)&#x3D;&#x3D;d(d&gt;1)。m%n&#x3D;&#x3D;1可以表示为m&#x3D;&#x3D;n*k+1,令m&#x3D;ad，n&#x3D;bd，则ad&#x3D;nbd+1,(a-nb)d&#x3D;&#x3D;1,由于a，b，n，d都为整数，且d&gt;1，则此式不成立，所以证得若m%n&#x3D;&#x3D;1,则gcd(m,n)&#x3D;&#x3D;1</p>
+</blockquote>
+<blockquote>
+<p>证明2：gcd(m,n)&#x3D;&#x3D;1,则gcd(m%n,n)&#x3D;&#x3D;1,则gcd(w,n)&#x3D;&#x3D;1，由于w&lt;n，所以w在与n互质的数中</p>
+</blockquote>
+<h3 id="代码-6"><a href="#代码-6" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">int n;
+set&lt;int&gt; ans;
+
+int gcd(int x,int y)&#123;return y?gcd(y,x%y):x;&#125;
+
+void init()
+&#123;
+    cin&gt;&gt;n;
+&#125;
+
+void solve()
+&#123;
+    init();
+    int m=1;
+    for(int i=1;i&lt;n;i++)
+        if(gcd(i,n)==1)
+            ans.insert(i),m=m*i%n;
+    if(m&gt;1) ans.erase(m);
+    cout&lt;&lt;ans.size()&lt;&lt;&#39;\n&#39;;
+    for(auto e:ans)
+        cout&lt;&lt;e&lt;&lt;&#39; &#39;;
+&#125;
+</code></pre>
+<h2 id="H"><a href="#H" class="headerlink" title="H"></a>H</h2><h3 id="题目链接-7"><a href="#题目链接-7" class="headerlink" title="题目链接"></a>题目链接</h3><p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1512/D">https://codeforces.com/problemset/problem/1512/D</a></p>
+<h3 id="题目大意-7"><a href="#题目大意-7" class="headerlink" title="题目大意"></a>题目大意</h3><p>给定n+2长度的序列，是否能选择其中n个数，使得这n个数的和等于剩余两个数中的其中一个</p>
+<h3 id="思路-7"><a href="#思路-7" class="headerlink" title="思路"></a>思路</h3><p>剩余的两个数只可能是序列中次大或最大的。若是次大的，则一定是前n个数，判断是否相等即可。若是最大的，则剩余的一个数一定是前面所有数的和减去最大数，判断是否存在这样一个数即可。</p>
+<h3 id="代码-7"><a href="#代码-7" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">int n;
+int a[N];
+void init()
+&#123;
+    cin&gt;&gt;n;
+    for(int i=0;i&lt;n+2;i++)
+    &#123;
+        cin&gt;&gt;a[i];
+    &#125;
+&#125;
+
+void solve()
+&#123;
+    init();
+    int tot=0;
+    sort(a,a+n+2);
+    for(int i=0;i&lt;n;i++)
+        tot+=a[i];
+    if(tot==a[n])
+    &#123;
+        for(int i=0;i&lt;n;i++)
+            cout&lt;&lt;a[i]&lt;&lt;&#39; &#39;;
+        cout&lt;&lt;&#39;\n&#39;;
+        return;
+    &#125;
+    tot+=a[n];
+    int delidx=-1;
+    for(int i=0;i&lt;n+1;i++)
+    &#123;
+        if(tot-a[i]==a[n+1])
+            delidx=i;
+    &#125;
+    if(delidx==-1)
+    &#123;
+        cout&lt;&lt;&quot;-1\n&quot;;
+        return;
+    &#125;
+    for(int i=0;i&lt;n+1;i++)
+    &#123;
+        if(i==delidx) continue;
+        cout&lt;&lt;a[i]&lt;&lt;&#39; &#39;;
+    &#125;
+    cout&lt;&lt;&#39;\n&#39;;
+&#125;
+</code></pre>
+<h2 id="K"><a href="#K" class="headerlink" title="K"></a>K</h2><h3 id="题目链接-8"><a href="#题目链接-8" class="headerlink" title="题目链接"></a>题目链接</h3><p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1594/D">https://codeforces.com/problemset/problem/1594/D</a></p>
+<h3 id="题目大意-8"><a href="#题目大意-8" class="headerlink" title="题目大意"></a>题目大意</h3><p>给定n个人和m个描述，描述信息是a描述b是诚实者&#x2F;说谎者，问在这种情况下说谎者最多是几个</p>
+<h3 id="思路-8"><a href="#思路-8" class="headerlink" title="思路"></a>思路</h3><p>若a描述b是诚实者，则a和b身份相同。若a描述b是说谎者，则a和b身份相反。可以用并查集来维护，身份相同则在一个集合中，否则不在一个集合。若一个集合中出现了矛盾，则输出-1。</p>
+<h3 id="代码-8"><a href="#代码-8" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">const int N=200010,M=500010;
+
+int n,m;
+int x[M],y[M];
+bool same[M];
+int p[N*2],sz[N*2];
+
+char s[30];
+
+int find(int x)
+&#123;
+    if(p[x]==x) return p[x];
+    p[x]=find(p[x]);
+    sz[p[x]]+=sz[x];
+    sz[x]=0;
+    return p[x];
+&#125;
+
+void merge(int a,int b)
+&#123;
+    int pa=find(a),pb=find(b);
+    if(pa==pb) return;
+    p[pa]=pb;
+    sz[pb]+=sz[pa];
+    sz[pa]=0;
+&#125;
+
+void init()
+&#123;
+    cin&gt;&gt;n&gt;&gt;m;
+    for(int i=1;i&lt;=m;i++)
+    &#123;
+        cin&gt;&gt;x[i]&gt;&gt;y[i]&gt;&gt;s;
+        if(*s==&#39;c&#39;) same[i]=1;
+        else same[i]=0;
+    &#125;
+    for(int i=1;i&lt;=n*2;i++)
+        p[i]=i;
+    for(int i=1;i&lt;=n;i++)
+        sz[i]=1;
+    for(int i=n+1;i&lt;=n*2;i++)
+        sz[i]=0;
+&#125;
+
+void solve()
+&#123;
+    init();
+    for(int i=1;i&lt;=m;i++)
+    &#123;
+        if(same[i])
+            merge(x[i],y[i]),merge(x[i]+n,y[i]+n);
+        else
+            merge(x[i],y[i]+n),merge(x[i]+n,y[i]);
+    &#125;
+    int ans=0;
+    for(int i=1;i&lt;=n;i++)
+    &#123;
+        if(find(i)==find(i+n))
+        &#123;
+            cout&lt;&lt;&quot;-1\n&quot;;
+            return;
+        &#125;
+        ans+=max(sz[find(i)],sz[find(i+n)]);
+        sz[find(i)]=0;
+        sz[find(i+n)]=0;
+    &#125;
+    cout&lt;&lt;ans&lt;&lt;&#39;\n&#39;;
+    
+&#125;
+</code></pre>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2025 Yhs_JokerのBlog
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Yhs_Joker
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+    </body>
+</html>

@@ -1,0 +1,427 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>The Child and Sequence | Yhs_JokerのBlog</title>
+        <meta name="author" content="Yhs_Joker" />
+        <meta name="description" content="There is only one kind of heroism in the world, which is to love life after knowing the truth of life." />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/avatar.jpg" />
+        <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>YHS_JOKERのBLOG</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;YHS_JOKERのBLOG</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div class="article">
+    <div>
+        <h1>The Child and Sequence</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2022/12/3
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E9%A2%98%E8%A7%A3/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                题解
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/" style="color: #00a596">线段树</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E8%93%9D/" style="color: #03a9f4">蓝</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/codeforces/" style="color: #ff7d73">codeforces</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <span id="more"></span>
+
+<h2 id="原题戳这里"><a href="#原题戳这里" class="headerlink" title="原题戳这里"></a><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/438/D">原题戳这里</a></h2><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>At the children’s day, the child came to Picks’s house, and messed his house up. Picks was angry at him. A lot of important things were lost, in particular the favorite sequence of Picks.</p>
+<p>Fortunately, Picks remembers how to repair the sequence. Initially he should create an integer array a[1], a[2], …, a[n]. Then he should perform a sequence of m operations. An operation can be one of the following:</p>
+<ol>
+<li>Print operation l, r. Picks should write down the value of sum[l,r],sum[l,r]&#x3D;a[l]+a[l+1]+…+a[r]</li>
+<li>Modulo operation l, r, x. Picks should perform assignment a[i] &#x3D; a[i] mod x for each i (l ≤ i ≤ r).</li>
+<li>Set operation k, x. Picks should set the value of a[k] to x (in other words perform an assignment a[k] &#x3D; x).</li>
+</ol>
+<p>Can you help Picks to perform the whole sequence of operations?</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>The first line of input contains two integer: n, m (1 ≤ n, m ≤ 105). The second line contains n integers, separated by space: a[1], a[2], …, a[n] (1 ≤ a[i] ≤ 109) — initial value of array elements.</p>
+<p>Each of the next m lines begins with a number type , type belongs to {1,2,3}.</p>
+<ul>
+<li>If type &#x3D; 1, there will be two integers more in the line: l, r (1 ≤ l ≤ r ≤ n), which correspond the operation 1.</li>
+<li>If type &#x3D; 2, there will be three integers more in the line: l, r, x (1 ≤ l ≤ r ≤ n; 1 ≤ x ≤ 109), which correspond the operation 2.</li>
+<li>If type &#x3D; 3, there will be two integers more in the line: k, x (1 ≤ k ≤ n; 1 ≤ x ≤ 109), which correspond the operation 3.</li>
+</ul>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>For each operation 1, please print a line containing the answer. Notice that the answer may exceed the 32-bit integer.</p>
+<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><h3 id="输入-1"><a href="#输入-1" class="headerlink" title="输入 #1"></a>输入 #1</h3><pre><code>5 5
+1 2 3 4 5
+2 3 5 4
+3 3 5
+1 2 5
+2 1 3 3
+1 1 3
+</code></pre>
+<h3 id="输出-1"><a href="#输出-1" class="headerlink" title="输出 #1"></a>输出 #1</h3><pre><code>8
+5
+</code></pre>
+<h3 id="输入-2"><a href="#输入-2" class="headerlink" title="输入 #2"></a>输入 #2</h3><pre><code>10 10
+6 9 6 7 6 1 10 10 9 5
+1 3 9
+2 7 10 9
+2 5 10 8
+1 4 7
+3 3 7
+2 7 9 9
+1 2 4
+1 6 6
+1 5 9
+3 1 10
+</code></pre>
+<h3 id="输出-2"><a href="#输出-2" class="headerlink" title="输出 #2"></a>输出 #2</h3><pre><code>49
+15
+23
+1
+9
+</code></pre>
+<h2 id="提示-说明"><a href="#提示-说明" class="headerlink" title="提示&#x2F;说明"></a>提示&#x2F;说明</h2><p>Consider the first testcase:</p>
+<ul>
+<li>At first, a &#x3D; {1, 2, 3, 4, 5}.</li>
+<li>After operation 1, a &#x3D; {1, 2, 3, 0, 1}.</li>
+<li>After operation 2, a &#x3D; {1, 2, 5, 0, 1}.</li>
+<li>At operation 3, 2 + 5 + 0 + 1 &#x3D; 8.</li>
+<li>After operation 4, a &#x3D; {1, 2, 2, 0, 1}.</li>
+<li>At operation 5, 1 + 2 + 2 &#x3D; 5.</li>
+</ul>
+<hr>
+<h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>给定一个数列，实现区间查询和，区间取模，单点修改。</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>很明显需要我们维护一颗线段树,那么求区间和和单点修改操作很容易实现,唯一的问题就是区间取模操作.由于区间取模操作无法用懒标记维护,所以我们需要暴力枚举区间内每一个点来取模,但是这样做时间复杂度很高.</p>
+<p>不过我们可以知道,当一个区间内的最大值也比模数小的话,就不需要继续递归下去,因此我们可以再维护一个区间最大值,每当区间最大值小于模数后就停止递归下去,这样就可以降低时间复杂度.操作的整体次数也很少,因为x mod p &lt; x&#x2F;2(p&lt;x) ,所以我们对每个数至多需要取模log x次即可.</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code>#include&lt;iostream&gt;
+
+#define int long long
+#define IOS ios::sync_with_stdio(0);\
+cin.tie(0);\
+cout.tie(0);
+
+using namespace std;
+
+const int N=100010;
+
+struct Node
+&#123;
+    int l,r;        //l是区间左端点,r是区间右端点
+    int sum,mx;     //sum维护区间和,mx维护区间最大值
+&#125;;
+
+Node tr[N*4];
+int w[N];
+
+void pushup(Node&amp; u,Node&amp; l,Node&amp; r)
+&#123;
+    u.sum=l.sum+r.sum;
+    u.mx=max(l.mx,r.mx);
+&#125;
+
+void pushup(int u)
+&#123;
+    pushup(tr[u],tr[u&lt;&lt;1],tr[u&lt;&lt;1|1]);
+&#125;
+
+void build(int u,int l,int r)
+&#123;
+    if(l==r)
+        tr[u]=&#123;r,r,w[r],w[r]&#125;;
+    else
+    &#123;
+        tr[u]=&#123;l,r&#125;;
+        int mid=l+r&gt;&gt;1;
+        build(u&lt;&lt;1,l,mid);
+        build(u&lt;&lt;1|1,mid+1,r);
+        pushup(u);
+    &#125;
+&#125;
+
+void modify(int u,int x,int k)
+&#123;
+    if(tr[u].l==x&amp;&amp;tr[u].r==x)
+        tr[u]=&#123;x,x,k,k&#125;;
+    else
+    &#123;
+        int mid=tr[u].l+tr[u].r&gt;&gt;1;
+        if(x&lt;=mid) modify(u&lt;&lt;1,x,k);
+        else modify(u&lt;&lt;1|1,x,k);
+        pushup(u);
+    &#125;
+&#125;
+
+void modifyMod(int u,int l,int r,int k)
+&#123;
+    if(tr[u].mx&lt;k) return;
+    //降低时间复杂度最关键的一步,当模数大于当前区间最大值时,就可以停止向下递归
+
+    if(tr[u].l==tr[u].r)
+        tr[u].mx=tr[u].sum=tr[u].sum%k;
+    else
+    &#123;
+        int mid=tr[u].l+tr[u].r&gt;&gt;1;
+        if(l&lt;=mid) modifyMod(u&lt;&lt;1,l,r,k);
+        if(r&gt;mid) modifyMod(u&lt;&lt;1|1,l,r,k);
+        pushup(u);
+    &#125;
+&#125;
+
+int query(int u,int l,int r)
+&#123;
+    if(l&lt;=tr[u].l&amp;&amp;tr[u].r&lt;=r)
+        return tr[u].sum;
+    else
+    &#123;
+        int mid=tr[u].l+tr[u].r&gt;&gt;1;
+        int res=0;
+        if(l&lt;=mid) res+=query(u&lt;&lt;1,l,r);
+        if(r&gt;mid) res+=query(u&lt;&lt;1|1,l,r);
+        return res;
+    &#125;
+&#125;
+
+signed main()
+&#123;
+    IOS
+    int n,m;
+    cin&gt;&gt;n&gt;&gt;m;
+    for(int i=1;i&lt;=n;i++)
+        cin&gt;&gt;w[i];
+    build(1,1,n);
+    while(m--)
+    &#123;
+        int op,l,r,k;
+        cin&gt;&gt;op;
+        if(op==1)
+        &#123;
+            cin&gt;&gt;l&gt;&gt;r;
+            cout&lt;&lt;query(1,l,r)&lt;&lt;&#39;\n&#39;;
+        &#125;
+        if(op==2)
+        &#123;
+            cin&gt;&gt;l&gt;&gt;r&gt;&gt;k;
+            modifyMod(1,l,r,k);
+        &#125;
+        if(op==3)
+        &#123;
+            cin&gt;&gt;l&gt;&gt;k;
+            modify(1,l,k);
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2025 Yhs_JokerのBlog
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Yhs_Joker
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+    </body>
+</html>
