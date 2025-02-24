@@ -8,10 +8,10 @@
         <meta name="description" content="There is only one kind of heroism in the world, which is to love life after knowing the truth of life." />
         <meta name="keywords" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-        <link rel="icon" href="/images/avatar.jpg" />
+        <link rel="icon" href="/blog/images/avatar.jpg" />
         <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
 <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
-<link rel="stylesheet" href="/css/fonts.min.css" />
+<link rel="stylesheet" href="/blog/css/fonts.min.css" />
 <script> const mixins = {}; </script>
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
@@ -23,26 +23,26 @@
     rel="stylesheet"
     href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
 />
-<script src="/js/lib/highlight.js"></script>
+<script src="/blog/js/lib/highlight.js"></script>
 
 
 <script src="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.js"></script>
 <script src="https://cdn.staticfile.org/KaTeX/0.16.8/contrib/auto-render.min.js"></script>
 <link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.css" />
-<script src="/js/lib/math.js"></script>
+<script src="/blog/js/lib/math.js"></script>
 
 
-<script src="/js/lib/preview.js"></script>
-
-
-
+<script src="/blog/js/lib/preview.js"></script>
 
 
 
 
 
 
-<link rel="stylesheet" href="/css/main.css" />
+
+
+
+<link rel="stylesheet" href="/blog/css/main.css" />
 
     <meta name="generator" content="Hexo 6.3.0"></head>
     <body>
@@ -52,37 +52,37 @@
                     <div id="loading-circle">
                         <h2>LOADING</h2>
                         <p>加载过慢请开启缓存 浏览器默认开启</p>
-                        <img src="/images/loading.gif" />
+                        <img src="/blog/images/loading.gif" />
                     </div>
                 </div>
             </transition>
             <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
     <nav id="desktop-menu">
-        <a class="title" href="/">
+        <a class="title" href="/blog/">
             <span>YHS_JOKERのBLOG</span>
         </a>
         
-        <a href="/">
+        <a href="/blog/">
             <i class="fa-solid fa-house fa-fw"></i>
             <span>&ensp;Home</span>
         </a>
         
-        <a href="/about">
+        <a href="/blog/about">
             <i class="fa-solid fa-id-card fa-fw"></i>
             <span>&ensp;About</span>
         </a>
         
-        <a href="/archives">
+        <a href="/blog/archives">
             <i class="fa-solid fa-box-archive fa-fw"></i>
             <span>&ensp;Archives</span>
         </a>
         
-        <a href="/categories">
+        <a href="/blog/categories">
             <i class="fa-solid fa-bookmark fa-fw"></i>
             <span>&ensp;Categories</span>
         </a>
         
-        <a href="/tags">
+        <a href="/blog/tags">
             <i class="fa-solid fa-tags fa-fw"></i>
             <span>&ensp;Tags</span>
         </a>
@@ -96,7 +96,7 @@
         <transition name="slide">
             <div class="items" v-show="showMenuItems">
                 
-                <a href="/">
+                <a href="/blog/">
                     <div class="item">
                         <div style="min-width: 20px; max-width: 50px; width: 10%">
                             <i class="fa-solid fa-house fa-fw"></i>
@@ -105,7 +105,7 @@
                     </div>
                 </a>
                 
-                <a href="/about">
+                <a href="/blog/about">
                     <div class="item">
                         <div style="min-width: 20px; max-width: 50px; width: 10%">
                             <i class="fa-solid fa-id-card fa-fw"></i>
@@ -114,7 +114,7 @@
                     </div>
                 </a>
                 
-                <a href="/archives">
+                <a href="/blog/archives">
                     <div class="item">
                         <div style="min-width: 20px; max-width: 50px; width: 10%">
                             <i class="fa-solid fa-box-archive fa-fw"></i>
@@ -123,7 +123,7 @@
                     </div>
                 </a>
                 
-                <a href="/categories">
+                <a href="/blog/categories">
                     <div class="item">
                         <div style="min-width: 20px; max-width: 50px; width: 10%">
                             <i class="fa-solid fa-bookmark fa-fw"></i>
@@ -132,7 +132,7 @@
                     </div>
                 </a>
                 
-                <a href="/tags">
+                <a href="/blog/tags">
                     <div class="item">
                         <div style="min-width: 20px; max-width: 50px; width: 10%">
                             <i class="fa-solid fa-tags fa-fw"></i>
@@ -163,7 +163,7 @@
         </span>
         
         <span class="category">
-            <a href="/categories/%E9%A2%98%E8%A7%A3/">
+            <a href="/blog/categories/%E9%A2%98%E8%A7%A3/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
@@ -180,7 +180,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E6%96%B0%E7%94%9F%E8%B5%9B/" style="color: #00bcd4">新生赛</a>
+                <a href="/blog/tags/%E6%96%B0%E7%94%9F%E8%B5%9B/" style="color: #ff7d73">新生赛</a>
             </span>
             
         </span>
@@ -188,7 +188,7 @@
     </div>
     
     <div class="content" v-pre>
-        <h2 id="A-Hello-World-复现"><a href="#A-Hello-World-复现" class="headerlink" title="A Hello World 复现"></a>A Hello World 复现</h2><h3 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h3><p><img src="/./../post_source/2021BJFU%E6%96%B0%E7%94%9F%E8%B5%9B/A.png" alt="A"></p>
+        <h2 id="A-Hello-World-复现"><a href="#A-Hello-World-复现" class="headerlink" title="A Hello World 复现"></a>A Hello World 复现</h2><h3 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h3><p><img src="/blog/./../post_source/2021BJFU%E6%96%B0%E7%94%9F%E8%B5%9B/A.png" alt="A"></p>
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>签到题。</p>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include &lt;bits/stdc++.h&gt;
 using namespace std;
@@ -199,7 +199,7 @@ int main()&#123;
     cout &lt;&lt; &quot;Hello World &quot; &lt;&lt; n;
 &#125;
 </code></pre>
-<h2 id="B-OJ的包围"><a href="#B-OJ的包围" class="headerlink" title="B OJ的包围"></a>B OJ的包围</h2><h3 id="题面-1"><a href="#题面-1" class="headerlink" title="题面"></a>题面</h3><p><img src="/./../post_source/2021BJFU%E6%96%B0%E7%94%9F%E8%B5%9B/B.jpeg" alt="B"></p>
+<h2 id="B-OJ的包围"><a href="#B-OJ的包围" class="headerlink" title="B OJ的包围"></a>B OJ的包围</h2><h3 id="题面-1"><a href="#题面-1" class="headerlink" title="题面"></a>题面</h3><p><img src="/blog/./../post_source/2021BJFU%E6%96%B0%E7%94%9F%E8%B5%9B/B.jpeg" alt="B"></p>
 <h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>模拟题，由外向内逐层填字符即可。</p>
 <p>可以提前处理出来每一层的字符来化简代码量。</p>
 <h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include &lt;bits/stdc++.h&gt;
@@ -240,7 +240,7 @@ void solve()&#123;
     &#125;
 &#125;
 </code></pre>
-<h2 id="C-JJR的神奇克隆机器"><a href="#C-JJR的神奇克隆机器" class="headerlink" title="C JJR的神奇克隆机器"></a>C JJR的神奇克隆机器</h2><h3 id="题面-2"><a href="#题面-2" class="headerlink" title="题面"></a>题面</h3><p><img src="/./../post_source/2021BJFU%E6%96%B0%E7%94%9F%E8%B5%9B/C.png" alt="C"></p>
+<h2 id="C-JJR的神奇克隆机器"><a href="#C-JJR的神奇克隆机器" class="headerlink" title="C JJR的神奇克隆机器"></a>C JJR的神奇克隆机器</h2><h3 id="题面-2"><a href="#题面-2" class="headerlink" title="题面"></a>题面</h3><p><img src="/blog/./../post_source/2021BJFU%E6%96%B0%E7%94%9F%E8%B5%9B/C.png" alt="C"></p>
 <h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><p>由于原本数量初始为 $1$ ，因此</p>
 <ul>
 <li><p>当 $y&#x3D;0$ 时，答案一定为 <code>NO</code> 。</p>
@@ -304,7 +304,7 @@ void solve()&#123;
     &#125;
 &#125;
 </code></pre>
-<h2 id="D-贝塔的难题"><a href="#D-贝塔的难题" class="headerlink" title="D 贝塔的难题"></a>D 贝塔的难题</h2><h3 id="题面-3"><a href="#题面-3" class="headerlink" title="题面"></a>题面</h3><p><img src="/./../post_source/2021BJFU%E6%96%B0%E7%94%9F%E8%B5%9B/D.jpeg" alt="D"></p>
+<h2 id="D-贝塔的难题"><a href="#D-贝塔的难题" class="headerlink" title="D 贝塔的难题"></a>D 贝塔的难题</h2><h3 id="题面-3"><a href="#题面-3" class="headerlink" title="题面"></a>题面</h3><p><img src="/blog/./../post_source/2021BJFU%E6%96%B0%E7%94%9F%E8%B5%9B/D.jpeg" alt="D"></p>
 <h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><p>首先求出每两个数的 $gcd$ ，然后排序即可。</p>
 <p>求解 $gcd$ 可以使用 <code>__gcd(int a, int b)</code> 函数，也可以自己手写一个 $gcd$ 函数：</p>
 <pre><code class="cpp">int gcd(int a, int b)&#123;
@@ -354,7 +354,7 @@ void solve()&#123;
     
 &#125;
 </code></pre>
-<h2 id="E-星尘斗士"><a href="#E-星尘斗士" class="headerlink" title="E 星尘斗士"></a>E 星尘斗士</h2><h3 id="题面-4"><a href="#题面-4" class="headerlink" title="题面"></a>题面</h3><p><img src="/./../post_source/2021BJFU%E6%96%B0%E7%94%9F%E8%B5%9B/E.jpeg" alt="E"></p>
+<h2 id="E-星尘斗士"><a href="#E-星尘斗士" class="headerlink" title="E 星尘斗士"></a>E 星尘斗士</h2><h3 id="题面-4"><a href="#题面-4" class="headerlink" title="题面"></a>题面</h3><p><img src="/blog/./../post_source/2021BJFU%E6%96%B0%E7%94%9F%E8%B5%9B/E.jpeg" alt="E"></p>
 <h3 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h3><p>模拟题，学会使用结构体排序即可。</p>
 <h3 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
 #define FAST_IO ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
@@ -403,7 +403,7 @@ void solve()&#123;
     &#125;
 &#125;
 </code></pre>
-<h2 id="F-图书馆前的水坑"><a href="#F-图书馆前的水坑" class="headerlink" title="F 图书馆前的水坑"></a>F 图书馆前的水坑</h2><h3 id="题面-5"><a href="#题面-5" class="headerlink" title="题面"></a>题面</h3><p><img src="/./../post_source/2021BJFU%E6%96%B0%E7%94%9F%E8%B5%9B/F.jpeg" alt="F"></p>
+<h2 id="F-图书馆前的水坑"><a href="#F-图书馆前的水坑" class="headerlink" title="F 图书馆前的水坑"></a>F 图书馆前的水坑</h2><h3 id="题面-5"><a href="#题面-5" class="headerlink" title="题面"></a>题面</h3><p><img src="/blog/./../post_source/2021BJFU%E6%96%B0%E7%94%9F%E8%B5%9B/F.jpeg" alt="F"></p>
 <h3 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h3><p>经典的 $Flood\ Fill$ 算法，使用 $bfs$ 或 $dfs$ 填满遇到的水坑。</p>
 <h3 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
 #define FAST_IO ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
@@ -460,7 +460,7 @@ void solve()&#123;
     cout &lt;&lt; res &lt;&lt; &#39;\n&#39;;
 &#125;
 </code></pre>
-<h2 id="G-泰罗的复仇"><a href="#G-泰罗的复仇" class="headerlink" title="G 泰罗的复仇"></a>G 泰罗的复仇</h2><h3 id="题面-6"><a href="#题面-6" class="headerlink" title="题面"></a>题面</h3><p><img src="/./../post_source/2021BJFU%E6%96%B0%E7%94%9F%E8%B5%9B/G.jpeg" alt="G"></p>
+<h2 id="G-泰罗的复仇"><a href="#G-泰罗的复仇" class="headerlink" title="G 泰罗的复仇"></a>G 泰罗的复仇</h2><h3 id="题面-6"><a href="#题面-6" class="headerlink" title="题面"></a>题面</h3><p><img src="/blog/./../post_source/2021BJFU%E6%96%B0%E7%94%9F%E8%B5%9B/G.jpeg" alt="G"></p>
 <h3 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h3><p>考虑贪心，对于所有可以攻击的怪兽，优先攻击生命值低的怪兽，从而可以让我们击败最多数量的怪兽。</p>
 <h3 id="代码-6"><a href="#代码-6" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
 #define FAST_IO ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
@@ -506,7 +506,7 @@ void solve()&#123;
     cout &lt;&lt; res &lt;&lt; &#39;\n&#39;;
 &#125;
 </code></pre>
-<h2 id="H-小明的烦恼"><a href="#H-小明的烦恼" class="headerlink" title="H 小明的烦恼"></a>H 小明的烦恼</h2><h3 id="题面-7"><a href="#题面-7" class="headerlink" title="题面"></a>题面</h3><p><img src="/./../post_source/2021BJFU%E6%96%B0%E7%94%9F%E8%B5%9B/H.jpeg" alt="H"></p>
+<h2 id="H-小明的烦恼"><a href="#H-小明的烦恼" class="headerlink" title="H 小明的烦恼"></a>H 小明的烦恼</h2><h3 id="题面-7"><a href="#题面-7" class="headerlink" title="题面"></a>题面</h3><p><img src="/blog/./../post_source/2021BJFU%E6%96%B0%E7%94%9F%E8%B5%9B/H.jpeg" alt="H"></p>
 <h3 id="思路-7"><a href="#思路-7" class="headerlink" title="思路"></a>思路</h3><p>根据欧拉回路定理，该图存在欧拉回路，因此答案为所有路径的和。</p>
 <p>四舍五入使用如下方式：</p>
 <pre><code class="cpp">double res;
@@ -545,7 +545,7 @@ void solve()&#123;
     cout &lt;&lt; (int)(2 * res + 0.5) &lt;&lt; &#39;\n&#39;;
 &#125;
 </code></pre>
-<h2 id="I-奇奇偶偶"><a href="#I-奇奇偶偶" class="headerlink" title="I 奇奇偶偶"></a>I 奇奇偶偶</h2><h3 id="题面-8"><a href="#题面-8" class="headerlink" title="题面"></a>题面</h3><p><img src="/./../post_source/2021BJFU%E6%96%B0%E7%94%9F%E8%B5%9B/I.jpeg" alt="I"></p>
+<h2 id="I-奇奇偶偶"><a href="#I-奇奇偶偶" class="headerlink" title="I 奇奇偶偶"></a>I 奇奇偶偶</h2><h3 id="题面-8"><a href="#题面-8" class="headerlink" title="题面"></a>题面</h3><p><img src="/blog/./../post_source/2021BJFU%E6%96%B0%E7%94%9F%E8%B5%9B/I.jpeg" alt="I"></p>
 <h3 id="思路-8"><a href="#思路-8" class="headerlink" title="思路"></a>思路</h3><p>首先考虑数列中奇数和偶数的个数 $oddnum$ ， $evennum$ ，若 $abs(oddnum - evennum)&gt;1$ ，则一定无法实现操作。</p>
 <p>否则，</p>
 <p>若 $oddnum&gt;evennum$ ，则序列一定为 <code>odd even odd even odd</code> 这样的形式。若 $oddnum&gt;evennum$ ，则为 <code>even odd even odd even</code> 这样的形式。若 $oddnum&#x3D;evennum$ ，则既可以是 <code>odd even odd even</code> ，也可以是 <code>even odd even odd</code> 这样的形式。</p>
@@ -608,7 +608,7 @@ void solve()&#123;
     &#125;
 &#125;
 </code></pre>
-<h2 id="J-猴子排班"><a href="#J-猴子排班" class="headerlink" title="J 猴子排班"></a>J 猴子排班</h2><h3 id="题面-9"><a href="#题面-9" class="headerlink" title="题面"></a>题面</h3><p><img src="/./../post_source/2021BJFU%E6%96%B0%E7%94%9F%E8%B5%9B/J.jpeg" alt="J"></p>
+<h2 id="J-猴子排班"><a href="#J-猴子排班" class="headerlink" title="J 猴子排班"></a>J 猴子排班</h2><h3 id="题面-9"><a href="#题面-9" class="headerlink" title="题面"></a>题面</h3><p><img src="/blog/./../post_source/2021BJFU%E6%96%B0%E7%94%9F%E8%B5%9B/J.jpeg" alt="J"></p>
 <h3 id="思路-9"><a href="#思路-9" class="headerlink" title="思路"></a>思路</h3><p>经典的约瑟夫环问题。</p>
 <p>考虑倒推出：最后剩下的数字，在最开始的数组中的位置。</p>
 <p>假设最后一轮的轮次为第 $n$ 轮。</p>
@@ -648,7 +648,7 @@ void solve()&#123;
     cout &lt;&lt; pos + 1 &lt;&lt; &#39;\n&#39;;
 &#125;
 </code></pre>
-<h2 id="K-你被赋予了这最后的希望"><a href="#K-你被赋予了这最后的希望" class="headerlink" title="K 你被赋予了这最后的希望"></a>K 你被赋予了这最后的希望</h2><h3 id="题面-10"><a href="#题面-10" class="headerlink" title="题面"></a>题面</h3><p><img src="/./../post_source/2021BJFU%E6%96%B0%E7%94%9F%E8%B5%9B/K.jpeg" alt="K"></p>
+<h2 id="K-你被赋予了这最后的希望"><a href="#K-你被赋予了这最后的希望" class="headerlink" title="K 你被赋予了这最后的希望"></a>K 你被赋予了这最后的希望</h2><h3 id="题面-10"><a href="#题面-10" class="headerlink" title="题面"></a>题面</h3><p><img src="/blog/./../post_source/2021BJFU%E6%96%B0%E7%94%9F%E8%B5%9B/K.jpeg" alt="K"></p>
 <h3 id="思路-10"><a href="#思路-10" class="headerlink" title="思路"></a>思路</h3><p>首先考虑暴力做法，枚举每一个周期 $k$ ，查看是否满足条件，接下来分析如何 $check$ 。</p>
 <p>首先我们记字符串总长度 $n &#x3D; a + b$ 。假设一个周期内 $A$ 的数量为 $x$ ， $B$ 的数量为 $y$ ，其中 $x$ 和 $y$ 满足 $k &#x3D; x + y$ ，循环节的数量为 $p &#x3D; \lfloor \frac{n}{k}\rfloor$ ，那么一定满足 $x·p\le a$ 且 $y·p\le b$ 。同时，剩余的边角料 $A$ 和 $B$ 的数量都应该小于等于循环节中 $A$ 和 $B$ 的数量，因此 $x·(p+1)\ge a$ 且 $y·(p+1)\ge b$ 。</p>
 <p>将上述四个不等式合并一下，得到</p>
@@ -693,7 +693,7 @@ void solve()&#123;
     cout &lt;&lt; res &lt;&lt; &#39;\n&#39;;
 &#125;
 </code></pre>
-<h2 id="L-勇者阿狗"><a href="#L-勇者阿狗" class="headerlink" title="L 勇者阿狗"></a>L 勇者阿狗</h2><h3 id="题面-11"><a href="#题面-11" class="headerlink" title="题面"></a>题面</h3><p><img src="/./../post_source/2021BJFU%E6%96%B0%E7%94%9F%E8%B5%9B/L.jpeg" alt="L"></p>
+<h2 id="L-勇者阿狗"><a href="#L-勇者阿狗" class="headerlink" title="L 勇者阿狗"></a>L 勇者阿狗</h2><h3 id="题面-11"><a href="#题面-11" class="headerlink" title="题面"></a>题面</h3><p><img src="/blog/./../post_source/2021BJFU%E6%96%B0%E7%94%9F%E8%B5%9B/L.jpeg" alt="L"></p>
 <h3 id="思路-11"><a href="#思路-11" class="headerlink" title="思路"></a>思路</h3><p>令一个数字 $x$ 的每位数字和为 $s(x)$ 。</p>
 <p>考虑到每个数字 $x$ 都可以通过初始值 $1$ 来进行有限个 $+1$ 或 $\times 10$ 操作构造出来，其中 $+1$ 操作会令该数字 $s(x)$ 加一，那么我们可以通过该构造方式来构造出 $k$ 的倍数。</p>
 <p>在 $\mod k$ 的意义下进行计算，把 $0$ ~ $k-1$ 中的每一个数看成一个点， $i$ 向 $i+1$ 连值为 $1$ 的边， $i$ 向 $10·i$ 连一条权值为 $0$ 的边。那么从 $1$ 开始走到 $0$ ，也就是从 $1$ 走到 $k$ 的倍数。那么最小的 $s(x)$ 就是该图中从 $1$ 到 $0$ 的最短路。</p>
@@ -765,7 +765,7 @@ void solve()&#123;
     cout &lt;&lt; dist[0] &lt;&lt; &#39;\n&#39;;
 &#125;
 </code></pre>
-<h2 id="M-小楷与小狗"><a href="#M-小楷与小狗" class="headerlink" title="M 小楷与小狗"></a>M 小楷与小狗</h2><h3 id="题面-12"><a href="#题面-12" class="headerlink" title="题面"></a>题面</h3><p><img src="/./../post_source/2021BJFU%E6%96%B0%E7%94%9F%E8%B5%9B/M.jpeg" alt="M"></p>
+<h2 id="M-小楷与小狗"><a href="#M-小楷与小狗" class="headerlink" title="M 小楷与小狗"></a>M 小楷与小狗</h2><h3 id="题面-12"><a href="#题面-12" class="headerlink" title="题面"></a>题面</h3><p><img src="/blog/./../post_source/2021BJFU%E6%96%B0%E7%94%9F%E8%B5%9B/M.jpeg" alt="M"></p>
 <h3 id="思路-12"><a href="#思路-12" class="headerlink" title="思路"></a>思路</h3><p>对于 $n$ 较小时，直接 $dfs$ 搜索出答案。</p>
 <p>对于 $n$ 较大时，可以考虑构造一个序列 $A_n &#x3D; {2^0,2^1,2^2\dots 2^{16}}$ ，这是在数据范围内无法找到任何一组解的数量最大的集合，仅含有 $17$ 个元素，因此当 $n&gt;17$ 时，我们可以只对其中任意 $18$ 个元素跑 $dfs$ ，一定能找到一组解。</p>
 <h3 id="代码-12"><a href="#代码-12" class="headerlink" title="代码"></a>代码</h3><pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
@@ -872,7 +872,7 @@ void solve()&#123;
             </transition>
             
         </div>
-        <script src="/js/main.js"></script>
+        <script src="/blog/js/main.js"></script>
         
         
 
